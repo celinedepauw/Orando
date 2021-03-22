@@ -2,12 +2,14 @@
 import React from 'react';
 
 // == Import
+import Header from 'src/components/Header';
 import './styles.scss';
+
 
 // == Composant
 const App = () => (
   <div className="app">
-    <header>Header de la page</header>
+    <Header />
     <div>Page</div>
     <div>Navigation bas de page pour mobile</div>
     <footer>Footer</footer>
