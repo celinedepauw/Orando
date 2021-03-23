@@ -6,6 +6,7 @@ import Home from 'src/components/Home';
 // if we need to read informations in the state
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
+  walks: state.walks,
 });
 
 // === mapDispatchToProps
