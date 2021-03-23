@@ -3,6 +3,8 @@ import React from 'react';
 
 // == Import
 import Header from 'src/components/Header';
+import MobileNav from 'src/components/MobileNav';
+import Footer from 'src/components/Footer';
 import './styles.scss';
 
 
@@ -11,8 +13,8 @@ const App = () => (
   <div className="app">
     <Header />
     <div>Page</div>
-    <div>Navigation bas de page pour mobile</div>
-    <footer>Footer</footer>
+    <MobileNav />
+    <Footer />
   </div>
 );
 
