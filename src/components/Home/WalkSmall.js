@@ -6,6 +6,7 @@ const WalkSmall = () => (
     <p className="home_walk_date">Date de la rando</p>
     <p className="home_walk_area">Région de la rando</p>
     <p className="home_walk_difficulty">Difficulté de la rando</p>
+    <a href="" className="home_walk_more_infos">En savoir plus</a>
   </div>
 );
 
