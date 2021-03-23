@@ -1,0 +1,43 @@
+@use 'src/styles/vars';
+
+.home {
+
+  .home_title {
+    text-align: center;
+    color: vars.$darkRed;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 1rem;
+  }
+
+  .home_walks_list {
+    display: flex;
+    flex-wrap: nowrap;
+
+    .home_walk_small {
+      border: 1px solid black;
+      padding: 1rem;
+      margin : 1rem;
+    }
+  }
+
+  .home_resume {
+    margin: 1rem;
+    text-align: justify;
+  }
+
+  .home_end {
+    text-align: center;
+
+    .home_go {
+      padding: 1rem;
+    }
+
+    .home_button {
+      padding: 1rem;
+      background-color: vars.$regularRed;
+      border: none;
+    
+    }
+  }
+}

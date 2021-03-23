@@ -3,6 +3,7 @@ import React from 'react';
 
 // == Import
 import Header from 'src/components/Header';
+import Home from 'src/components/Home';
 import './styles.scss';
 
 
@@ -10,7 +11,7 @@ import './styles.scss';
 const App = () => (
   <div className="app">
     <Header />
-    <div>Page</div>
+    <Home />
     <div>Navigation bas de page pour mobile</div>
     <footer>Footer</footer>
   </div>
