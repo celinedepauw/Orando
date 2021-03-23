@@ -1,6 +1,6 @@
 import React from 'react';
 
-import WalkSmall from 'src/components/Home/WalkSmall';
+import WalkSmall from 'src/containers/Home/walkSmall';
 
 import './home.scss';
 
