@@ -1,7 +1,7 @@
 import React from 'react';
 
 // icons from https://react-icons.github.io/react-icons
-import { BiHomeHeart, BiPlus } from 'react-icons/bi';
+import { BiHomeHeart, BiPlus, BiPlusMedical } from 'react-icons/bi';
 // import { IoCreate } from 'react-icons/io';
 import { FaHiking } from 'react-icons/fa';
 // to connection - connected
@@ -17,7 +17,7 @@ const MobileNav = () => (
     </button>
     <button className="mobilenav_create" type="submit">
       <FaHiking size={46} />
-      <BiPlus size={23} className="mobilenav_plus" />
+      <BiPlusMedical size={23} className="mobilenav_plus" />
     </button>
     <button className="mobilenav_connected" type="submit">
       <IoMdPerson size={46} />
