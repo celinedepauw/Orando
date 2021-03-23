@@ -1,0 +1,32 @@
+@use 'src/styles/vars';
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: vars.$regularGreen;
+  height: 50px;
+  align-items: center;
+
+  @media(min-width: vars.$breakpointTablet) {
+    height: 100px;
+    font-size: 1.3rem;
+  }
+  .footer_link {
+    color: vars.$darkYellow;
+    
+  }
+    
+    .footer_instructions_link {
+      display: inline-block;
+      padding-right: 2rem;
+    }
+    .footer_informations_link {
+      display: inline-block;
+      padding-right: 2rem;
+    }
+    .footer_contact_link {
+      display: inline-block;
+    
+    }
+  }
