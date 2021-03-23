@@ -1,12 +1,16 @@
 @use 'src/styles/vars';
 
-
+//some ajustement to do about header height and header_image margin-top
+//think about media queries to ipad and desktop
 
 .header {
   position: relative;
+  height: 300px;
+  overflow: hidden;
 
   .header_image {
     width: 100%;
+    margin-top: -20px;
   }
 
   .header_content {

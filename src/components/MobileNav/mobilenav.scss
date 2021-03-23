@@ -1,0 +1,30 @@
+@use 'src/styles/vars';
+
+
+.mobilenav {
+  position:fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: vars.$darkGreen;
+  padding: 1rem 0 1rem 0;
+
+  .mobilenav_home {
+    border: none;
+    background-color: vars.$darkGreen;
+    color: vars.$darkYellow;
+  }
+
+  .mobilenav_create {
+    border: none;
+    background-color: vars.$darkGreen;
+    color: vars.$darkYellow;
+  }
+
+  .mobilenav_connected {
+    border: none;
+    background-color: vars.$darkGreen;
+    color: vars.$darkYellow;
+  }
+}
