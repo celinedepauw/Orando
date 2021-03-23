@@ -11,7 +11,7 @@ import { IoPersonCircleOutline, IoMdPerson } from 'react-icons/io';
 import './mobilenav.scss';
 
 const MobileNav = () => (
-  <div className="mobilenav">
+  <nav className="mobilenav">
     <button className="mobilenav_home" type="submit">
       <BiHomeHeart size={46} />
     </button>
@@ -22,7 +22,7 @@ const MobileNav = () => (
     <button className="mobilenav_connected" type="submit">
       <IoMdPerson size={46} />
     </button>
-  </div>
+  </nav>
 
 );
 
