@@ -29,8 +29,13 @@
     .home_walk_small {
       text-align: center;
       border: 1px solid black;
+      border-radius: 10px;
       padding: 1rem;
       margin : 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: space-between;
 
       @media(min-width: vars.$breakpointTablet) {
         width: 29%;
@@ -43,30 +48,37 @@
       .home_walk_title {
         font-size: 1.3rem;
         color: vars.$darkYellow;
+        padding: 0.5rem;
       }
 
       .home_walk_date {
         font-style: italic;
         color: vars.$regularGreen;
+        padding: 0.5rem;   
       }
 
       .home_walk_area {
         color: vars.$regularRed;
+        font-weight: bold;
+        padding: 0.5rem;
+        background-color: red;
       }
 
       .home_walk_difficulty {
-
+        padding: 0.5rem;
       }
 
       .home_walk_duration {
-
+        padding: 0.5rem;
       }
 
       .home_walk_more_infos {
+        padding: 0.5rem;
         
         &:hover {
           color: vars.$regularRed;
           font-weight: bold;
+          transform: scale(1.2);
         }
       }
     }
@@ -82,13 +94,33 @@
 
     .home_go {
       padding: 1rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: vars.$darkRed;
+      animation-duration: 1s;
+      animation-name: flash;
+      animation-iteration-count: infinite;
+      transition: none;
+
+      @keyframes flash {
+        0%   { opacity:1; }
+        50%   {opacity:0; }
+        100% { opacity:1; }
+       }
     }
 
     .home_button {
       padding: 1rem;
       background-color: vars.$regularRed;
       border: none;
-    
+      border-radius: 10px;
+
+      &:hover {
+        background-color: vars.$darkRed;
+        transform: scale(1.5);
+      }
     }
   }
 }
+
+

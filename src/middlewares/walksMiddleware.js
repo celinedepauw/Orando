@@ -6,7 +6,7 @@ const walksMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_WALKS:
       // console.log('il faut récupérer les randonnées');
-      axios.get('http://orando.me/public/api/walk')
+      axios.get('http://orando.me/public/api/walks')
       .then((response) => {
           // console.log(response.data);
           store.dispatch(saveWalks(response.data));
