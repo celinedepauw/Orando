@@ -22,7 +22,7 @@ WalkSmall.propTypes = {
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   difficulty: PropTypes.string.isRequired,
-  duration: PropTypes.number.isRequired,
+  duration: PropTypes.string.isRequired,
   area: PropTypes.object.isRequired,
 };
 
