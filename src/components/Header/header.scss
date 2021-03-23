@@ -2,15 +2,33 @@
 
 //some ajustement to do about header height and header_image margin-top
 //think about media queries to ipad and desktop
+//maybe change the picture of header (crop or not) because too height and very
+//difficult to play with the breakpoint (title move)
 
 .header {
   position: relative;
   height: 300px;
   overflow: hidden;
 
+  @media(min-width: vars.$breakpointTablet) {
+    height: 400px;
+  }
+
+  @media(min-width: vars.$breakpointDesktop) {
+    height: 700px;
+  }
+
   .header_image {
     width: 100%;
     margin-top: -20px;
+
+    @media(min-width: vars.$breakpointTablet) {
+      margin-top: -50px;
+    }
+
+    @media(min-width: vars.$breakpointDesktop) {
+      margin-top: -500px;
+    }
   }
 
   .header_content {
