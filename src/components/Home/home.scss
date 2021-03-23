@@ -5,19 +5,58 @@
   .home_title {
     text-align: center;
     color: vars.$darkRed;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
     padding: 1rem;
+
+    @media(min-width: vars.$breakpointTablet) {
+      font-size: 3rem;
+    }
+
+    @media(min-width: vars.$breakpointDesktop) {
+      font-size: 4rem;
+    }
   }
 
   .home_walks_list {
-    display: flex;
-    flex-wrap: nowrap;
+
+    @media(min-width: vars.$breakpointTablet) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
     .home_walk_small {
+      text-align: center;
       border: 1px solid black;
       padding: 1rem;
       margin : 1rem;
+
+      @media(min-width: vars.$breakpointTablet) {
+        width: 29%;
+      }
+
+      @media(min-width: vars.$breakpointXLarge) {
+        width: 22%;
+      }
+
+      .home_walk_title {
+        font-size: 1.3rem;
+        color: vars.$darkYellow;
+      }
+
+      .home_walk_date {
+        font-style: italic;
+        color: vars.$regularGreen;
+      }
+
+      .home_walk_area {
+        color: vars.$regularRed;
+      }
+
+      .home_walk_difficulty {
+
+      }
     }
   }
 
