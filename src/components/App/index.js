@@ -4,6 +4,7 @@ import React from 'react';
 // == Import
 import Header from 'src/components/Header';
 import MobileNav from 'src/components/MobileNav';
+import Footer from 'src/components/Footer';
 import './styles.scss';
 
 
@@ -13,7 +14,7 @@ const App = () => (
     <Header />
     <div>Page</div>
     <MobileNav />
-    <footer>Footer</footer>
+    <Footer />
   </div>
 );
 
