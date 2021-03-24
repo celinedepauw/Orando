@@ -1,12 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './profile.scss';
 
 const Profile = () => (
+
+
   <div className="profile">
     <h2 className="profile_title">Mon Profil</h2>
     <div className="profile_container">
-      <div className="profile_pseudo">Ne Perds Jamais</div>
+      <div className="profile_pseudo">TOTO</div>
       <div className="profile_fistname">Parker</div>
       <div className="profile_lastname">Lewis</div>
       <div className="profile_date_of_birth">02/09/1990</div>
@@ -19,5 +22,6 @@ const Profile = () => (
   </div>
 
 );
+
 
 export default Profile;
