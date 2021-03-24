@@ -1,29 +1,57 @@
 @use 'src/styles/vars';
 
 .account {
+  background-color: vars.$lightYellow;
   
   .account_title {
     text-align: center;
+    margin: 0 50px 0 50px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.7rem;
+    padding: 0.5rem 0 0.5rem 0;
+    border: 2px solid vars.$darkRed;
+    background-color: vars.$darkRed;
+    border-radius: 10px;
   }
 
   .account_container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    flex-direction: column;
 
     .account_profil {
       text-align: center;
+      font-size: 1.3rem;
+      margin: 20px 50px 20px 50px;
       padding: 4rem;
+      background-color: vars.$darkGreen;
+      color: white;
+      border: 1px solid vars.$darkGreen;
+      border-radius: 10px;
     }
 
     .account_incomingwalks {
       text-align: center;
+      font-size: 1.3rem;
+      margin: 20px 50px 20px 50px;
       padding: 4rem;
+      background-color: vars.$darkYellow;
+      color: white;
+      border: 1px solid vars.$darkYellow;
+      border-radius: 10px;
     }
 
     .account_myhikes {
       text-align: center;
+      font-size: 1.3rem;
+      margin: 20px 50px 20px 50px;
       padding: 4rem;
+      background-color: vars.$darkRed;
+      color: white;
+      border: 1px solid vars.$darkRed;
+      border-radius: 10px;
     }
   }
 }
