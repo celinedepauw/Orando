@@ -55,7 +55,17 @@
         display: none;
 
         @media(min-width: vars.$breakpointTablet) {
-          display: block;
+          display: flex;
+          font-weight: bold;
+        }
+
+        .header_nav_item {
+          color: vars.$darkRed;
+          padding-right: 1rem;
+
+          &:hover {
+            transform: scale(1.2);
+          }
         }
 
       }
