@@ -4,9 +4,11 @@ import PropTypes from 'prop-types';
 
 // == Import
 import Header from 'src/components/Header';
+import Page from 'src/components/Page';
 import Home from 'src/containers/Home';
 import MobileNav from 'src/components/MobileNav';
 import Footer from 'src/components/Footer';
+import Walk from 'src/containers/Walk';
 import './styles.scss';
 
 
@@ -19,8 +21,8 @@ const App = ({ loadWalksFromApi }) => {
   return (
     <div className="app">
       <Header />
-      <Home />
       <MobileNav />
+      <Page />
       <Footer />
     </div>
   );
