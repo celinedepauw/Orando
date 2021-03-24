@@ -7,8 +7,7 @@ import Header from 'src/components/Header';
 import Home from 'src/containers/Home';
 import MobileNav from 'src/components/MobileNav';
 import Footer from 'src/components/Footer';
-// Remove this import before pull request
-import Account from 'src/components/Account';
+
 import './styles.scss';
 
 
@@ -21,7 +20,7 @@ const App = ({ loadWalksFromApi }) => {
   return (
     <div className="app">
       <Header />
-      <Account />
+      <Home />
       <Footer />
       <MobileNav />
     </div>
