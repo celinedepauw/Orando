@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 
-import Home from 'src/components/Home';
+import Profile from 'src/components/Profile';
 
 // === mapStateToProps
 // if we need to read informations in the state
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
-  walks: state.walksList.walks,
+  
 });
 
 // === mapDispatchToProps
@@ -16,4 +16,4 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 // === création de l'assistant
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
