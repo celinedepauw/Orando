@@ -1,0 +1,65 @@
+@use 'src/styles/vars';
+
+.profile {
+  background-color: vars.$lightRed;
+  .profile_title {
+    text-align: center;
+    margin: 0 50px 20px 50px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.7rem;
+    padding: 0.5rem 0 0.5rem 0;
+    border: 2px solid vars.$darkRed;
+    background-color: vars.$darkRed;
+    border-radius: 10px;
+  }
+
+  .profile_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-left: 20px;
+    font-size: 1.3rem;
+    
+
+    .profile_pseudo {
+      margin: 20px 50px 20px 50px;
+    }
+  
+    .profile_fistname {
+      margin: 20px 50px 20px 50px;
+  
+    }
+  
+    .profile_lastname {
+      margin: 20px 50px 20px 50px;
+      
+    }
+  
+    .profile_date_of_birth {
+      margin: 20px 50px 20px 50px;
+      
+    }
+  
+    .profile_email { 
+      margin: 20px 50px 20px 50px;
+      
+    }
+  
+    .profile_area {
+      margin: 20px 50px 20px 50px;
+      
+    }
+  
+    .profile_description {
+      margin: 20px 50px 20px 50px;
+      border: 2px dotted vars.$darkRed;
+      border-radius: 10px;
+      padding: 1rem;
+      
+    }
+  }
+
+  
+}

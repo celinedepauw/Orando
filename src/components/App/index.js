@@ -7,7 +7,7 @@ import Header from 'src/components/Header';
 import Home from 'src/containers/Home';
 import MobileNav from 'src/components/MobileNav';
 import Footer from 'src/components/Footer';
-import WalksToCome from 'src/components/WalksToCome';
+
 import './styles.scss';
 
 
@@ -20,9 +20,9 @@ const App = ({ loadWalksFromApi }) => {
   return (
     <div className="app">
       <Header />
-      <WalksToCome />
-      <MobileNav />
+      <Home />
       <Footer />
+      <MobileNav />
     </div>
   );
 };
