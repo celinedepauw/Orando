@@ -14,22 +14,28 @@ const Walk = ({ walks }) => {
 
   // temporaire
   const walk = walks.find((item) => item.id == id);
-  console.log(walk[Object.keys(walk)[0]]);
+  console.log(walk.title);
+
+  //! La fonction getWalkById est plus propre à afficher ici
+  //! Mais il faudra créer un loader qui s'affichera si un utilisateur va sur une page comme celle-ci
+  //! Le loader va se poser en parallèle de la requête API qui va récupérer toutes les walks
+  //! Une fois la requête effectuée et les walks récupérées, le loader disparait
+  //! Et la page peut donc s'afficher correctement
 
   return (
 
     <article className="page">
-      <h2 className="page-title">{walks.title}</h2>
-      <p>Point de départ : {walks.startingPoint}</p>
-      <p>Point d'arriver : {walks.endPoint}</p>
-      <p>Date : {walks.date}</p>
-      <p>Difficulté : {walks.difficulty}</p>
-      <p>Durée : {walks.duration}</p>
-      <p>Dénivelée : {walks.elevation}</p>
-      <p>Nombre de personnes max : {walks.maxNbPersons}</p>
-      <p>Lieux : {walks.area}</p>
+      <h2 className="page-title">{walk.title}</h2>
+      <p>Point de départ : {walk.startingPoint}</p>
+      <p>Point d'arriver : {walk.endPoint}</p>
+      <p>Date : {walk.date}</p>
+      <p>Difficulté : {walk.difficulty}</p>
+      <p>Durée : {walk.duration}</p>
+      <p>Dénivelée : {walk.elevation}</p>
+      <p>Nombre de personnes max : {walk.maxNbPersons}</p>
+      <p>Lieux : {walk.area.name}</p>
       <div className="description">
-        <p className="post-page"> {walks.description}</p>
+        <p className="post-page"> {walk.description}</p>
         <div className="page-links">
           <a className="link" href="#">Link</a>
           <button className="button-page" type="button">Participer</button>
