@@ -10,7 +10,7 @@ import userReducer from './userReducer';
 const rootReducer = combineReducers({
   // nom du tiroir : reducer qui gère cette partie du state
   walksList: walkReducer,
-  users: userReducer,
+  userInfo: userReducer,
 });
 
 export default rootReducer;
