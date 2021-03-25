@@ -1,13 +1,13 @@
 // === action types
-export const FETCH_USERS = 'FETCH_USERS';
-export const SAVE_USERS = 'SAVE_USERS';
+export const FETCH_USER = 'FETCH_USER';
+export const SAVE_USER = 'SAVE_USER';
 
 // === action creators
-export const fetchUsers = () => ({
-  type: FETCH_USERS,
+export const fetchUser = () => ({
+  type: FETCH_USER,
 });
 
-export const saveUsers = (users) => ({
-  type: SAVE_USERS,
-  users: users,
+export const saveUser = (user) => ({
+  type: SAVE_USER,
+  user: user,
 });

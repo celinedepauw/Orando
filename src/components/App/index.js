@@ -8,12 +8,14 @@ import Page from 'src/components/Page';
 import MobileNav from 'src/components/MobileNav';
 import Footer from 'src/components/Footer';
 
+
 import './styles.scss';
 
 // == Composant
-const App = ({ loadWalksFromApi }) => {
+const App = ({ loadWalksFromApi, loadUserFromApi }) => {
   useEffect(() => {
     loadWalksFromApi();
+    loadUserFromApi();
   }, []);
 
   return (
@@ -30,6 +32,7 @@ App.propTypes = {
   // fonction qui permet de charger les recettes
   // pas de paramètre
   loadWalksFromApi: PropTypes.func.isRequired,
+  loadUserFromApi: PropTypes.func.isRequired,
 };
 
 // == Export
