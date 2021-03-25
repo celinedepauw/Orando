@@ -4,14 +4,12 @@ import PropTypes from 'prop-types';
 
 // == Import
 import Header from 'src/components/Header';
-import Home from 'src/containers/Home';
+import Page from 'src/components/Page';
 import MobileNav from 'src/components/MobileNav';
 import Footer from 'src/components/Footer';
 
-import Profile from 'src/containers/Profile';
 
 import './styles.scss';
-
 
 // == Composant
 const App = ({ loadWalksFromApi, loadUserFromApi }) => {
@@ -23,7 +21,7 @@ const App = ({ loadWalksFromApi, loadUserFromApi }) => {
   return (
     <div className="app">
       <Header />
-      <Profile />
+      <Page />
       <Footer />
       <MobileNav />
     </div>
