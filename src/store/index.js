@@ -3,7 +3,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import walksMiddleware from 'src/middlewares/walksMiddleware';
 import usersMiddleware from 'src/middlewares/usersMiddleware';
 
-import reducer from 'src/reducers';
+import reducers from 'src/reducers';
 
 const enhancers = composeWithDevTools(
   applyMiddleware(
@@ -13,7 +13,7 @@ const enhancers = composeWithDevTools(
 );
 const store = createStore(
   // reducer
-  reducer,
+  reducers,
   // enhancer
   enhancers,
 );

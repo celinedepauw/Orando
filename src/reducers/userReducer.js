@@ -1,7 +1,8 @@
 import { SAVE_USER } from 'src/actions/users';
 
 const initialState = {
-  user: [],
+  user: {},
+  loading: true,
 };
 
 function userReducer(state = initialState, action) {
@@ -10,6 +11,8 @@ function userReducer(state = initialState, action) {
       return {
         ...state,
         user: action.user,
+        loading: false,
+
       };
     default:
       return state;

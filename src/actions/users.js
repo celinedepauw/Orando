@@ -9,5 +9,5 @@ export const fetchUser = () => ({
 
 export const saveUser = (user) => ({
   type: SAVE_USER,
-  users: user,
+  user: user,
 });

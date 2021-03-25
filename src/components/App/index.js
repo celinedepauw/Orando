@@ -14,17 +14,23 @@ import './styles.scss';
 
 
 // == Composant
-const App = ({ loadWalksFromApi }) => {
+const App = ({ loadWalksFromApi, loadUserFromApi, loading }) => {
   useEffect(() => {
     loadWalksFromApi();
+    loadUserFromApi();
   }, []);
 
   return (
     <div className="app">
-      <Header />
-      <Profile />
-      <Footer />
-      <MobileNav />
+      {loading && <div>Chargement en cours...</div>}
+      {!loading && (
+        <>
+          <Header />
+          <Profile />
+          <Footer />
+          <MobileNav />
+        </>
+      )}
     </div>
   );
 };
@@ -33,6 +39,8 @@ App.propTypes = {
   // fonction qui permet de charger les recettes
   // pas de paramètre
   loadWalksFromApi: PropTypes.func.isRequired,
+  loadUserFromApi: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
 // == Export

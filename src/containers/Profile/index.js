@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 
+
 import Profile from 'src/components/Profile';
 
 // === mapStateToProps
@@ -14,6 +15,8 @@ const mapStateToProps = (state) => ({
 // if we need to update the state dispatching actions to the store
 const mapDispatchToProps = (dispatch) => ({
   // prop name: function that dispatch the action
+  // test to remove if not works
+ 
 });
 
 // === création de l'assistant
