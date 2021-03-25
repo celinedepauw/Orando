@@ -14,7 +14,7 @@ const mapDispatchToProps = (dispatch) => ({
     const action = fetchWalks();
     dispatch(action);
   },
-  // test to remove if not works
+
   loadUserFromApi: () => {
     const action = fetchUser();
     dispatch(action);

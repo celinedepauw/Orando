@@ -12,7 +12,6 @@ function userReducer(state = initialState, action) {
         ...state,
         user: action.user,
         loading: false,
-
       };
     default:
       return state;
