@@ -9,6 +9,7 @@ const mapStateToProps = (state) => ({
   // name of the prop to fill: we have to get in the state
   // userInfo is the name of the drawer which contains the userReducer
   user: state.userInfo.user,
+  loading: state.userInfo.loading,
 });
 
 // === mapDispatchToProps

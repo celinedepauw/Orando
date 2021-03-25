@@ -14,7 +14,7 @@ import './styles.scss';
 
 
 // == Composant
-const App = ({ loadWalksFromApi, loadUserFromApi, loading }) => {
+const App = ({ loadWalksFromApi, loadUserFromApi }) => {
   useEffect(() => {
     loadWalksFromApi();
     loadUserFromApi();
@@ -22,15 +22,10 @@ const App = ({ loadWalksFromApi, loadUserFromApi, loading }) => {
 
   return (
     <div className="app">
-      {loading && <div>Chargement en cours...</div>}
-      {!loading && (
-        <>
-          <Header />
-          <Profile />
-          <Footer />
-          <MobileNav />
-        </>
-      )}
+      <Header />
+      <Profile />
+      <Footer />
+      <MobileNav />
     </div>
   );
 };
@@ -40,7 +35,6 @@ App.propTypes = {
   // pas de paramètre
   loadWalksFromApi: PropTypes.func.isRequired,
   loadUserFromApi: PropTypes.func.isRequired,
-  loading: PropTypes.bool.isRequired,
 };
 
 // == Export
