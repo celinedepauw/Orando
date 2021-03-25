@@ -6,46 +6,44 @@ import { useParams } from 'react-router-dom';
 
 import './walk.scss';
 
-const Walk = ({ walks }) => {
-  console.log('voici nos hikes: ', walks);
+const Walk = ({ walks, loading }) => {
+  // console.log(walks);
 
-  // L'id est un paramètre de l'URL
   const { id } = useParams();
 
-  // temporaire
-  const walk = walks.find((item) => item.id == id);
-  console.log(walk.title);
-
-  //! La fonction getWalkById est plus propre à afficher ici
-  //! Mais il faudra créer un loader qui s'affichera si un utilisateur va sur une page comme celle-ci
-  //! Le loader va se poser en parallèle de la requête API qui va récupérer toutes les walks
-  //! Une fois la requête effectuée et les walks récupérées, le loader disparait
-  //! Et la page peut donc s'afficher correctement
+  const walk = walks.find((item) => item.id === id);
 
   return (
-
-    <article className="page">
-      <h2 className="page-title">{walk.title}</h2>
-      <p>Point de départ : {walk.startingPoint}</p>
-      <p>Point d'arriver : {walk.endPoint}</p>
-      <p>Date : {walk.date}</p>
-      <p>Difficulté : {walk.difficulty}</p>
-      <p>Durée : {walk.duration}</p>
-      <p>Dénivelée : {walk.elevation}</p>
-      <p>Nombre de personnes max : {walk.maxNbPersons}</p>
-      <p>Lieux : {walk.area.name}</p>
-      <div className="description">
-        <p className="post-page"> {walk.description}</p>
-        <div className="page-links">
-          <a className="link" href="#">Link</a>
-          <button className="button-page" type="button">Participer</button>
-        </div>
-      </div>
-    </article>
+    <div>
+      {loading && <div>Chargement en cours...</div>}
+      {!loading && (
+        <article className="page">
+          <h2 className="page-title">{walk.title}</h2>
+          <p className="starting-point">Point de départ : {walk.startingPoint}</p>
+          <p className="end-point">Point d'arrivée : {walk.endPoint}</p>
+          <p className="date">Date : {walk.date}</p>
+          <p className="difficulty">Difficulté : {walk.difficulty}</p>
+          <p className="duration">Durée : {walk.duration}</p>
+          <p className="elevation">Dénivelé : {walk.elevation}</p>
+          <p className="maxNbPersons">Nombre de personnes max : {walk.maxNbPersons}</p>
+          <p className="area">Lieu : {walk.area.name}</p>
+          <div className="description">
+            <p className="post-page"> {walk.description}</p>
+            <div className="page-links">
+              {/* Ajouter un Link to= lien */}
+              <a className="link" href="#">Contacter l'utilisateur</a>
+              <button className="button-page" type="button">Participer</button>
+            </div>
+          </div>
+        </article>
+      )}
+    </div>
   );
 };
 
 Walk.propTypes = {
+  loading: PropTypes.bool.isRequired,
+
   walks: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
