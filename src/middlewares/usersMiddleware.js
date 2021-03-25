@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 import { FETCH_USER, saveUser } from 'src/actions/users';
 
 const usersMiddleware = (store) => (next) => (action) => {

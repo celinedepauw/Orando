@@ -6,6 +6,7 @@ import { fetchUser } from 'src/actions/users';
 import App from 'src/components/App';
 
 const mapStateToProps = (state) => ({
+
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -13,6 +14,7 @@ const mapDispatchToProps = (dispatch) => ({
     const action = fetchWalks();
     dispatch(action);
   },
+
   loadUserFromApi: () => {
     const action = fetchUser();
     dispatch(action);
