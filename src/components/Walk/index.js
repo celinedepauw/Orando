@@ -11,7 +11,7 @@ const Walk = ({ walks, loading }) => {
 
   const { id } = useParams();
 
-  const walk = walks.find((item) => item.id === id);
+  const walk = walks.find((item) => item.id == id);
 
   return (
     <div>
