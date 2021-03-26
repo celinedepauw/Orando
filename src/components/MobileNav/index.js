@@ -16,10 +16,10 @@ const MobileNav = () => (
     <Link to="/" className="mobilenav_home">
       <BiHomeHeart size={46} />
     </Link>
-    <Link to="/create_hiking" className="mobilenav_create">
+    <a href="http://orando.me/back/walk/create" className="mobilenav_create">
       <FaHiking size={46} />
       <BiPlusMedical size={23} className="mobilenav_plus" />
-    </Link>
+    </a>
     <Link to="/account" className="mobilenav_connected" type="submit">
       <IoMdPerson size={46} />
     </Link>
