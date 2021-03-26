@@ -1,10 +1,14 @@
-import { SAVE_USER, UPDATE_AUTHENTIFICATION_FIELD } from 'src/actions/users';
+import { SAVE_USER, UPDATE_AUTHENTIFICATION_FIELD, SAVE_USER_LOG } from 'src/actions/users';
 
 const initialState = {
   user: {},
   loading: true,
   email: '',
   password: '',
+  // indicate if the user is authenticated
+  isLogged: false,
+  // our token, we have to stock in localstorage
+  token: null,
 };
 
 function userReducer(state = initialState, action) {
@@ -25,6 +29,12 @@ function userReducer(state = initialState, action) {
       return {
         ...state,
         password: action.value,
+      };
+    case SAVE_USER_LOG:
+      return {
+        ...state,
+        isLogged: action.isLogged,
+        token: action.token,
       };
     default:
       return state;
