@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 .field {
   margin: 2rem 0;
   position: relative;
@@ -23,9 +25,9 @@
     
     
     &:focus {
-      border-color: #f0f;
+      border-color: vars.$darkRed;
       & + .label {
-        color: #f0f;
+        color: vars.$darkRed;
       }
     }
   }
