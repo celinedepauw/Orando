@@ -9,6 +9,8 @@ import MobileNav from 'src/components/MobileNav';
 import Footer from 'src/components/Footer';
 
 
+import './styles.scss';
+
 // == Composant
 const App = ({ loadWalksFromApi, loadUserFromApi }) => {
   useEffect(() => {
@@ -27,6 +29,8 @@ const App = ({ loadWalksFromApi, loadUserFromApi }) => {
 };
 
 App.propTypes = {
+  // fonction qui permet de charger les recettes
+  // pas de paramètre
   loadWalksFromApi: PropTypes.func.isRequired,
   loadUserFromApi: PropTypes.func.isRequired,
 };
