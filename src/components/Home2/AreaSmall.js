@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const AreaSmall = ({ id, name, color }) => (
   <div className="home_area">
     <h3 className="home_area_name">{name}</h3>
-    <a href="" className="home_area_walks">C'est par ici !</a>
+    <Link to={`/areas/${id}`} className="home_area_walks">C'est par ici !</Link>
   </div>
 );
 

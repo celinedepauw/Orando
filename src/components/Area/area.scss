@@ -1,0 +1,20 @@
+@use 'src/styles/vars';
+
+.area {
+
+  .area_name {
+      text-align: center;
+      color: vars.$darkRed;
+      font-size: 2rem;
+      font-weight: bold;
+      padding: 1rem;
+  
+      @media(min-width: vars.$breakpointTablet) {
+        font-size: 3rem;
+      }
+  
+      @media(min-width: vars.$breakpointDesktop) {
+        font-size: 4rem;
+      }
+  }
+}
