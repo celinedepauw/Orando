@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Route, Switch } from 'react-router-dom';
 
-import Home from 'src/containers/Home';
+import Home2 from 'src/containers/Home2';
 import Walk from 'src/containers/Walk';
 import Account from 'src/components/Account';
 import Profile from 'src/containers/Profile';
@@ -24,7 +24,7 @@ const Page = () => (
         <WalksToCome />
       </Route>
       <Route path="/">
-        <Home />
+        <Home2 />
       </Route>
     </Switch>
   </div>
