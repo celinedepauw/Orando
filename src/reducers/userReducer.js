@@ -3,6 +3,8 @@ import { SAVE_USER } from 'src/actions/users';
 const initialState = {
   user: {},
   loading: true,
+  email: 'yaya',
+  password: 'yeye',
 };
 
 function userReducer(state = initialState, action) {

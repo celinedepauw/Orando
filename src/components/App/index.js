@@ -7,7 +7,7 @@ import Header from 'src/components/Header';
 import Page from 'src/components/Page';
 import MobileNav from 'src/components/MobileNav';
 import Footer from 'src/components/Footer';
-import Authentification from 'src/components/Authentification';
+import Authentification from 'src/containers/Authentification';
 
 
 import './styles.scss';
