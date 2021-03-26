@@ -1,33 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './account.scss';
-
-// preparation to use Link in the next step
-// import { Link } from 'react-router-dom';
-/*
-<Link
-    to={}
-    className="account_profil"
-    >
-      Fonctionnement du site
-</Link>
-*/
-
 
 // this component will be only static
 const Account = () => (
   <div className="account">
     <h2 className="account_title">Mon compte</h2>
     <div className="account_container">
-      <div className="account_profil">
-        <a href="">Mon profil</a>
-      </div>
-      <div className="account_incomingwalks">
-        <a href="">Mes randonnées à venir</a>
-      </div>
-      <div className="account_myhikes">
-        <a href="">Mes randonnées organisées</a>
-      </div>
+      <Link
+        to="/profile"
+        className="account_profil"
+      >          Mon profil
+      </Link>
+      <Link
+        to="/incoming_walks"
+        className="account_incomingwalks"
+      >          Mes randonnées à venir
+      </Link>
+      <Link to="/my_hikes" className="account_myhikes">
+        Mes randonnées organisées
+      </Link>
     </div>
   </div>
 );
