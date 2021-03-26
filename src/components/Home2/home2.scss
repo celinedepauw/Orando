@@ -30,19 +30,39 @@
       text-align: center;
       border: 1px solid black;
       border-radius: 10px;
-      padding: 1rem;
       margin : 1rem;
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
       justify-content: space-between;
+      background-color: vars.$lightYellow;
 
       @media(min-width: vars.$breakpointTablet) {
-        width: 29%;
+        width: 45%;
       }
 
       @media(min-width: vars.$breakpointXLarge) {
-        width: 22%;
+        width: 29%;
+      }
+
+      .home_area_name {
+        font-size: 1.3rem;
+        padding: 1rem;
+        color: vars.$darkGreen;
+        font-weight: bold;
+        
+      }
+
+      .home_area_walks {
+      color: vars.$regularRed;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+
+      &:hover {
+        color: vars.$darkRed;
+        font-weight: bold;
+        transform: scale(1.2);
+      }
       }
     }
   }

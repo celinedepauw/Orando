@@ -1,13 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import Area from 'src/containers/Home2/area';
 
 import './home2.scss';
 
-const Home2 = () => (
+const Home2 = ({ areas }) => (
   <main className="home2">
     <h2 className="home2_title">Explorez toutes les randonnées disponibles dans votre région !</h2>
     <div className="home_areas_list">
-      <div className="home_area">PACA</div>
-      <div className="home_area">Occitanie</div>
+      {areas.map((area) => (
+        <Area key={area.id} {...area} />
+      ))}
     </div>
     <div className="home2_resume">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque autem tempore nemo veritatis incidunt, repellendus cumque iusto non porro voluptatum corporis sapiente maiores magni rem! Vel eveniet numquam odit atque?
@@ -20,5 +24,13 @@ const Home2 = () => (
     </div>
   </main>
 );
+
+Home2.propTypes = {
+  areas: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    }).isRequired,
+  ).isRequired,
+};
 
 export default Home2;
