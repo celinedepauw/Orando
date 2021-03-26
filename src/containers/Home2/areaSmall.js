@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import Area from 'src/components/Home2/Area';
+import AreaSmall from 'src/components/Home2/AreaSmall';
 
 // === mapStateToProps
 // if we need to read informations in the state
@@ -15,4 +15,4 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 // === création de l'assistant
-export default connect(mapStateToProps, mapDispatchToProps)(Area);
+export default connect(mapStateToProps, mapDispatchToProps)(AreaSmall);
