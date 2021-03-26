@@ -22,7 +22,7 @@ const WalkToComeSmall = ({
 WalkToComeSmall.propTypes = {
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
-  area: PropTypes.string.isRequired,
+  area: PropTypes.object.isRequired,
   difficulty: PropTypes.string.isRequired,
   duration: PropTypes.string.isRequired,
 };
