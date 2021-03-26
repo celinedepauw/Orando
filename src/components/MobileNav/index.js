@@ -1,27 +1,28 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // icons from https://react-icons.github.io/react-icons
 import { BiHomeHeart, BiPlus, BiPlusMedical } from 'react-icons/bi';
 // import { IoCreate } from 'react-icons/io';
 import { FaHiking } from 'react-icons/fa';
 // to connection - connected
-import { IoPersonCircleOutline, IoMdPerson } from 'react-icons/io';
+import { IoMdPerson } from 'react-icons/io';
 
 
 import './mobilenav.scss';
 
 const MobileNav = () => (
   <nav className="mobilenav">
-    <button className="mobilenav_home" type="submit">
+    <Link to="/" className="mobilenav_home">
       <BiHomeHeart size={46} />
-    </button>
-    <button className="mobilenav_create" type="submit">
+    </Link>
+    <Link to="/create_hiking" className="mobilenav_create">
       <FaHiking size={46} />
       <BiPlusMedical size={23} className="mobilenav_plus" />
-    </button>
-    <button className="mobilenav_connected" type="submit">
+    </Link>
+    <Link to="/account" className="mobilenav_connected" type="submit">
       <IoMdPerson size={46} />
-    </button>
+    </Link>
   </nav>
 
 );
