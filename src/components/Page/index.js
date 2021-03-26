@@ -7,6 +7,7 @@ import Walk from 'src/containers/Walk';
 import Account from 'src/components/Account';
 import Profile from 'src/containers/Profile';
 import WalksToCome from 'src/containers/WalksToCome';
+import MyHikes from 'src/containers/MyHikes';
 
 const Page = () => (
   <div className="page">
@@ -22,6 +23,9 @@ const Page = () => (
       </Route>
       <Route path="/incoming_walks">
         <WalksToCome />
+      </Route>
+      <Route path="/my_hikes">
+        <MyHikes />
       </Route>
       <Route path="/">
         <Home />
