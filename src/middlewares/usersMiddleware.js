@@ -26,6 +26,8 @@ const usersMiddleware = (store) => (next) => (action) => {
       })
         .then((response) => {
           store.dispatch(saveUserLog(response.data.logged, response.data.token));
+          // to save the token in the localStorage
+          store.dispatch(localStorage.setItem('Token', response.data.token));
           console.log(response);
         })
         .catch((error) => {
