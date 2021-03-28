@@ -62,6 +62,8 @@
         .header_nav_item {
           color: vars.$darkRed;
           padding-right: 1rem;
+          display: flex;
+          align-items: center;
 
           &:hover {
             transform: scale(1.1);
