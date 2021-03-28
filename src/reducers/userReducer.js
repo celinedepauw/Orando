@@ -1,4 +1,4 @@
-import { SAVE_USER, UPDATE_AUTHENTIFICATION_FIELD, SAVE_USER_LOG } from 'src/actions/users';
+import { SAVE_USER, UPDATE_AUTHENTIFICATION_FIELD, SAVE_USER_AUTH } from 'src/actions/users';
 
 const initialState = {
   user: {},
@@ -30,7 +30,7 @@ function userReducer(state = initialState, action) {
         ...state,
         password: action.value,
       };
-    case SAVE_USER_LOG:
+    case SAVE_USER_AUTH:
       return {
         ...state,
         isLogged: action.isLogged,

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_USER, saveUser, LOG_IN, saveUserLog } from 'src/actions/users';
+import { FETCH_USER, saveUser, LOG_IN, saveUserAuth } from 'src/actions/users';
 
 
 const usersMiddleware = (store) => (next) => (action) => {
@@ -25,9 +25,9 @@ const usersMiddleware = (store) => (next) => (action) => {
         password: password,
       })
         .then((response) => {
-          store.dispatch(saveUserLog(response.data.logged, response.data.token));
+          store.dispatch(saveUserAuth(response.data.logged, response.data.token));
           // to save the token in the localStorage
-          store.dispatch(localStorage.setItem('Token', response.data.token));
+          localStorage.setItem('Token', response.data.token);
           console.log(response);
         })
         .catch((error) => {

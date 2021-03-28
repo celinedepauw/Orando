@@ -5,7 +5,7 @@ export const UPDATE_AUTHENTIFICATION_FIELD = 'UPDATE_AUTHENTIFICATION_FIELD';
 export const SUBMIT_LOGIN = 'SUBMIT_LOGIN';
 export const LOG_IN = 'LOG_IN';
 export const LOG_OUT = 'LOG_OUT';
-export const SAVE_USER_LOG = 'SAVE_USER_LOG';
+export const SAVE_USER_AUTH = 'SAVE_USER_AUTH';
 
 
 // === action creators
@@ -20,8 +20,8 @@ export const saveUser = (user) => ({
 
 // it's the right thing to do? 
 // can i create 2 actions creators with the same type
-export const saveUserLog = (isLogged, token) => ({
-  type: SAVE_USER_LOG,
+export const saveUserAuth = (isLogged, token) => ({
+  type: SAVE_USER_AUTH,
   isLogged,
   token,
 });
