@@ -67,9 +67,10 @@
 
       .area_walk_more_infos {
         padding: 0.5rem;
+        color: vars.$regularRed;
         
         &:hover {
-          color: vars.$regularRed;
+          color: vars.$darkRed;
           font-weight: bold;
           transform: scale(1.2);
         }
