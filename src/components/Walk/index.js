@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
+// import { BiBeenHere, BiDirections, BiEnvelope, BiNote, BiInfoCircle, BiPaperPlane} from 'react-icons/bi';
 
 // import { IoIosStar, IoIosStarOutline } from "react-icons/io";
 
