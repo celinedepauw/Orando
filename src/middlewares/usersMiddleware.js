@@ -8,6 +8,13 @@ const usersMiddleware = (store) => (next) => (action) => {
     case FETCH_USER:
       // console.log('il faut récupérer les randonnées');
       axios.get('http://orando.me/back/api/users/2')
+        // send header information about token to the back
+        // axios.get (`url/${id}`,
+        // {
+        //   headers: { Authorization: `Bearer ${token}`,
+        //    },
+        // },
+        // )
         .then((response) => {
           // console.log(response.data);
           store.dispatch(saveUser(response.data));
