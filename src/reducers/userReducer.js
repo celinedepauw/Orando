@@ -1,4 +1,4 @@
-import { SAVE_USER, UPDATE_AUTHENTIFICATION_FIELD, SAVE_USER_AUTH } from 'src/actions/users';
+import { SAVE_USER, UPDATE_AUTHENTIFICATION_FIELD, SAVE_USER_AUTH, LOG_OUT } from 'src/actions/users';
 
 const initialState = {
   user: {},
@@ -35,6 +35,15 @@ function userReducer(state = initialState, action) {
         ...state,
         isLogged: action.isLogged,
         token: action.token,
+        // we clear out the field
+        email: '',
+        password: '',
+      };
+    case LOG_OUT:
+      return {
+        ...state,
+        isLogged: false,
+        token: null,
       };
     default:
       return state;

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 // == Import
 import Header from 'src/components/Header';
 import Page from 'src/components/Page';
-import MobileNav from 'src/components/MobileNav';
+import MobileNav from 'src/containers/MobileNav';
 import Footer from 'src/components/Footer';
 import Authentification from 'src/containers/Authentification';
 
