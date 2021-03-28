@@ -6,6 +6,10 @@ const usersMiddleware = (store) => (next) => (action) => {
   // console.log('on a intercepté une action dans usersMiddleware: ', action);
   switch (action.type) {
     case FETCH_USER:
+      // to get information about token and id user
+      // back have to send the id with the token
+      // const {token} = localStorage.getItem('token');
+      // const {id} = store.getState().userInfo;
       // console.log('il faut récupérer les randonnées');
       axios.get('http://orando.me/back/api/users/2')
         // send header information about token to the back
