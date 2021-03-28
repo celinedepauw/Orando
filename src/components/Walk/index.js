@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
-// import { BiBeenHere, BiDirections, BiEnvelope, BiNote, BiInfoCircle, BiPaperPlane} from 'react-icons/bi';
+import { BiBeenHere, BiDirections, BiEnvelope, BiInfoCircle } from 'react-icons/bi';
 
 // import { IoIosStar, IoIosStarOutline } from "react-icons/io";
 
@@ -20,8 +20,8 @@ const Walk = ({ walks, loading }) => {
       {!loading && (
         <article className="page">
           <h2 className="page-title">{walk.title}</h2>
-          <p className="starting-point">Point de départ : {walk.startingPoint}</p>
-          <p className="end-point">Point d'arrivée : {walk.endPoint}</p>
+          <p className="starting-point"><BiBeenHere size={30} /> Départ de : {walk.startingPoint}</p>
+          <p className="end-point"><BiDirections size={30} />Arrivée à : {walk.endPoint}</p>
           <p className="date">Date : {walk.date}</p>
           <p className="difficulty">Difficulté : {walk.difficulty}</p>
           <p className="duration">Durée : {walk.duration}</p>
@@ -29,11 +29,11 @@ const Walk = ({ walks, loading }) => {
           <p className="maxNbPersons">Nombre de personnes max : {walk.maxNbPersons}</p>
           <p className="area">Lieu : {walk.area.name}</p>
           <div className="description">
-            <p className="post-page"> {walk.description}</p>
+            <p className="post-page"><BiInfoCircle size={30} /> {walk.description}</p>
             <div className="page-links">
               {/* Ajouter un Link to= lien */}
-              <a className="link" href="#">Contacter l'utilisateur</a>
-              <button className="button-page" type="button">Participer</button>
+              <a className="link" href="#"><BiEnvelope size={30} />Contacter l'utilisateur</a>
+              <button className="button-page" type="button">Je souhaite participer !</button>
             </div>
           </div>
         </article>
