@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import { BiBeenHere, BiDirections, BiEnvelope, BiInfoCircle } from 'react-icons/bi';
+import Moment from 'react-moment';
 
 // import { IoIosStar, IoIosStarOutline } from "react-icons/io";
 
@@ -22,7 +23,7 @@ const Walk = ({ walks, loading }) => {
           <h2 className="page-title">{walk.title}</h2>
           <p className="starting-point"><BiBeenHere size={30} /> Départ de : {walk.startingPoint}</p>
           <p className="end-point"><BiDirections size={30} />Arrivée à : {walk.endPoint}</p>
-          <p className="date">Date : {walk.date}</p>
+          <p className="date">Date : <Moment locale="fr" format="dddd DD MMMM YYYY HH:mm">{walk.date}</Moment></p>
           <p className="difficulty">Difficulté : {walk.difficulty}</p>
           <p className="duration">Durée : {walk.duration}</p>
           <p className="elevation">Dénivelé : {walk.elevation}</p>
