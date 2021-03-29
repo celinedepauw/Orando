@@ -8,7 +8,6 @@ import Page from 'src/components/Page';
 import MobileNav from 'src/components/MobileNav';
 import Footer from 'src/components/Footer';
 
-
 // == Composant
 const App = ({ loadWalksFromApi, loadUserFromApi }) => {
   useEffect(() => {
