@@ -1,0 +1,100 @@
+@use 'src/styles/vars';
+
+.walks_user {
+
+  .walks_user_title {
+    text-align: center;
+    color: vars.$darkRed;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+
+    @media(min-width: vars.$breakpointTablet) {
+      font-size: 3rem;
+    }
+
+    @media(min-width: vars.$breakpointDesktop) {
+      font-size: 4rem;
+    }
+  }
+
+  .walks_user_list {
+
+    @media(min-width: vars.$breakpointTablet) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+      .walk_small {
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 1rem;
+        margin : 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-between;
+  
+        @media(min-width: vars.$breakpointTablet) {
+          width: 29%;
+        }
+  
+        @media(min-width: vars.$breakpointXLarge) {
+          width: 22%;
+        }
+  
+        .walk_title {
+          font-size: 1.3rem;
+          color: vars.$darkYellow;
+          padding: 0.5rem;
+        }
+  
+        .walk_date {
+          font-style: italic;
+          color: vars.$regularGreen;
+          padding: 0.5rem;   
+        }
+  
+        .walk_area {
+          color: vars.$regularRed;
+          font-weight: bold;
+          padding: 0.5rem;
+        }
+  
+        .walk_difficulty {
+          padding: 0.5rem;
+        }
+  
+        .walk_duration {
+          padding: 0.5rem;
+        }
+  
+        .walk_button_more_infos {
+          padding: 0.5rem;
+          margin-bottom: 0.5rem;
+          background-color: vars.$regularYellow;
+          border: none;
+          border-radius: 10px;
+
+          &:hover {
+            background-color: vars.$darkYellow;
+            transform: scale(1.1);
+          }
+        }
+
+        .walk_button_attendees {
+          padding: 0.5rem;
+          background-color: vars.$regularRed;
+          border: none;
+          border-radius: 10px;
+          
+          &:hover {
+            background-color: vars.$darkRed;
+            transform: scale(1.1);
+          }
+        }
+      }
+  }
+}

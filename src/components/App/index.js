@@ -10,11 +10,14 @@ import Footer from 'src/components/Footer';
 import Authentification from 'src/containers/Authentification';
 
 
+
 import './styles.scss';
 
+
 // == Composant
-const App = ({ loadWalksFromApi, loadUserFromApi }) => {
+const App = ({ loadAreasFromApi, loadWalksFromApi, loadUserFromApi }) => {
   useEffect(() => {
+    loadAreasFromApi();
     loadWalksFromApi();
     loadUserFromApi();
   }, []);
@@ -30,8 +33,8 @@ const App = ({ loadWalksFromApi, loadUserFromApi }) => {
 };
 
 App.propTypes = {
-  // fonction qui permet de charger les recettes
-  // pas de paramètre
+  loadAreasFromApi: PropTypes.func.isRequired,
+
   loadWalksFromApi: PropTypes.func.isRequired,
   loadUserFromApi: PropTypes.func.isRequired,
 };

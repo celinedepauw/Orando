@@ -12,6 +12,7 @@ import { RiLogoutCircleRLine, RiLoginCircleLine } from 'react-icons/ri';
 
 import './mobilenav.scss';
 
+
 const MobileNav = ({ isLogged }) => { // Ne pas oublier que les props sont entre accolades
   console.log('toto', isLogged);
 

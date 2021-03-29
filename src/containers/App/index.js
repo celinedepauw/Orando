@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { fetchAreas } from 'src/actions/areas';
 import { fetchWalks } from 'src/actions/walks';
 import { fetchUser } from 'src/actions/users';
 
@@ -10,6 +11,11 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  loadAreasFromApi: () => {
+    const action = fetchAreas();
+    dispatch(action);
+  },
+
   loadWalksFromApi: () => {
     const action = fetchWalks();
     dispatch(action);
