@@ -5,8 +5,14 @@ import PropTypes from 'prop-types';
 // == Import
 import Header from 'src/components/Header';
 import Page from 'src/components/Page';
-import MobileNav from 'src/components/MobileNav';
+import MobileNav from 'src/containers/MobileNav';
 import Footer from 'src/components/Footer';
+import Authentification from 'src/containers/Authentification';
+
+
+
+import './styles.scss';
+
 
 // == Composant
 const App = ({ loadAreasFromApi, loadWalksFromApi, loadUserFromApi }) => {
@@ -19,7 +25,7 @@ const App = ({ loadAreasFromApi, loadWalksFromApi, loadUserFromApi }) => {
   return (
     <div className="app">
       <Header />
-      <Page />
+      <Authentification />
       <Footer />
       <MobileNav />
     </div>
@@ -28,6 +34,7 @@ const App = ({ loadAreasFromApi, loadWalksFromApi, loadUserFromApi }) => {
 
 App.propTypes = {
   loadAreasFromApi: PropTypes.func.isRequired,
+
   loadWalksFromApi: PropTypes.func.isRequired,
   loadUserFromApi: PropTypes.func.isRequired,
 };
