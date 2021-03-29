@@ -33,7 +33,8 @@ function userReducer(state = initialState, action) {
     case SAVE_USER_AUTH:
       return {
         ...state,
-        isLogged: action.isLogged,
+        // why isLogged: action.isLogged doesn't work
+        isLogged: true,
         token: action.token,
         // we clear out the field
         email: '',

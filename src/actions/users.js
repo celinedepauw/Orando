@@ -19,12 +19,11 @@ export const saveUser = (user) => ({
   user: user,
 });
 
-// it's the right thing to do? 
-// can i create 2 actions creators with the same type
-export const saveUserAuth = (isLogged, token) => ({
+export const saveUserAuth = (isLogged, token, currentUserId) => ({
   type: SAVE_USER_AUTH,
   isLogged,
   token,
+  currentUserId,
 });
 
 export const updateAuthentificationField = (identifier, newValue) => ({

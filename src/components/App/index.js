@@ -22,7 +22,7 @@ const App = ({ loadWalksFromApi, loadUserFromApi }) => {
   return (
     <div className="app">
       <Header />
-      <Page />
+      <Authentification />
       <Footer />
       <MobileNav />
     </div>

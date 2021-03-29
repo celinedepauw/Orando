@@ -5,7 +5,7 @@ import { RiLogoutCircleRLine } from 'react-icons/ri';
 import './account.scss';
 
 // this component will be only static
-const Account = (isLogged) => (
+const Account = ({ isLogged }) => (
   <div className="account">
     <h2 className="account_title">Mon compte</h2>
     {isLogged && (

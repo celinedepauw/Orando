@@ -36,10 +36,16 @@ const usersMiddleware = (store) => (next) => (action) => {
         password: password,
       })
         .then((response) => {
-          store.dispatch(saveUserAuth(response.data.logged, response.data.token));
-          // to save the token in the localStorage
-          localStorage.setItem('Token', response.data.token);
-          console.log(response);
+          if (response.status === 200) {
+            store.dispatch(saveUserAuth(
+              response.data.logged,
+              response.data.token,
+              response.data.data.id,
+            ));
+            // to save the token in the localStorage
+            localStorage.setItem('Token', response.data.token);
+            console.log(response);
+          }
         })
         .catch((error) => {
           console.log(error);
