@@ -14,7 +14,7 @@ const MyHikesSmall = ({
     <p className="walk_date">{ date }</p>
     <p className="walk_difficulty">{difficulty}</p>
     <p className="walk_duration">{duration}</p>
-    <button type="button" href="" className="walk_button_more_infos">Voir les détails</button>
+    <button type="button" href="" className="walk_button_more_infos">Plus de détails</button>
     <button type="button" className="walk_button_attendees">Voir les participants</button>
   </div>
 );
