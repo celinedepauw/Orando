@@ -8,6 +8,7 @@ import Account from 'src/components/Account';
 import Profile from 'src/containers/Profile';
 import WalksToCome from 'src/containers/WalksToCome';
 import MyHikes from 'src/containers/MyHikes';
+import AboutUs from 'src/components/AboutUs';
 
 const Page = () => (
   <div className="page">
@@ -26,6 +27,9 @@ const Page = () => (
       </Route>
       <Route path="/my_hikes">
         <MyHikes />
+      </Route>
+      <Route path="/about_us">
+        <AboutUs />
       </Route>
       <Route path="/">
         <Home />

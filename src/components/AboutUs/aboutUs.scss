@@ -1,0 +1,25 @@
+@use 'src/styles/vars';
+
+
+.about_us {
+  margin: 20px;
+  
+  
+  
+  
+  .about_us_title {
+    margin: 20px;
+    
+  }
+
+  h2 {
+    font-size: 3rem;
+    color: vars.$darkRed;
+  }
+  .about_us_image {
+    margin: 40px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+}
