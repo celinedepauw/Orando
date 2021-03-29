@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import './profile.scss';
 
-const Profile = ({ user, loading }) => {
+const Profile = ({ user, loading, loadUserFromApi }) => {
   const userDatas = user.user;
+  useEffect(() => {
+    loadUserFromApi();
+  }, []);
   return (
     <div className="profile">
       {loading && <div>Chargement en cours...</div>}
@@ -31,6 +34,7 @@ const Profile = ({ user, loading }) => {
 Profile.propTypes = {
   loading: PropTypes.bool.isRequired,
   user: PropTypes.object.isRequired,
+  loadUserFromApi: PropTypes.func.isRequired,
 };
 
 export default Profile;

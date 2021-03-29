@@ -9,6 +9,7 @@ import Account from 'src/components/Account';
 import Profile from 'src/containers/Profile';
 import WalksToCome from 'src/containers/WalksToCome';
 import MyHikes from 'src/containers/MyHikes';
+import Authentification from 'src/containers/Authentification';
 
 const Page = () => (
   <div className="page">
@@ -19,8 +20,14 @@ const Page = () => (
       <Route path="/areas/:id">
         <Area />
       </Route>
+      <Route path="/Authentification">
+        <Authentification />
+      </Route>
       <Route path="/account">
         <Account />
+      </Route>
+      <Route path="/profile">
+        <Profile />
       </Route>
       <Route path="/profile">
         <Profile />

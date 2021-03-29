@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 // icons from https://react-icons.github.io/react-icons
@@ -38,6 +39,11 @@ const MobileNav = ({ isLogged }) => { // Ne pas oublier que les props sont entre
       )}
     </nav>
   );
+};
+
+MobileNav.propTypes = {
+  /** toggle between "connected" or "not connected" */
+  isLogged: PropTypes.bool,
 };
 
 export default MobileNav;

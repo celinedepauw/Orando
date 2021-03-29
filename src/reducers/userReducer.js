@@ -9,6 +9,8 @@ const initialState = {
   isLogged: false,
   // our token, we have to stock in localstorage
   token: null,
+  // our user id connected
+  currentUserId: null,
 };
 
 function userReducer(state = initialState, action) {
@@ -33,9 +35,9 @@ function userReducer(state = initialState, action) {
     case SAVE_USER_AUTH:
       return {
         ...state,
-        // why isLogged: action.isLogged doesn't work
-        isLogged: true,
+        isLogged: action.isLogged,
         token: action.token,
+        currentUserId: action.currentUserId,
         // we clear out the field
         email: '',
         password: '',

@@ -1,17 +1,23 @@
 import axios from 'axios';
-import { FETCH_USER, saveUser, LOG_IN, saveUserAuth } from 'src/actions/users';
+import {
+  FETCH_USER,
+  saveUser,
+  LOG_IN,
+  saveUserAuth,
+} from 'src/actions/users';
 
 
 const usersMiddleware = (store) => (next) => (action) => {
   // console.log('on a intercepté une action dans usersMiddleware: ', action);
   switch (action.type) {
-    case FETCH_USER:
+    case FETCH_USER: {
       // to get information about token and id user
       // back have to send the id with the token
       // const {token} = localStorage.getItem('token');
-      // const {id} = store.getState().userInfo;
+      const { currentUserId } = store.getState().userInfo;
+      console.log(currentUserId);
       // console.log('il faut récupérer les randonnées');
-      axios.get('http://orando.me/back/api/users/2')
+      axios.get(`http://orando.me/back/api/users/${currentUserId}`)
         // send header information about token to the back
         // axios.get (`url/${id}`,
         // {
@@ -28,6 +34,7 @@ const usersMiddleware = (store) => (next) => (action) => {
         });
       next(action);
       break;
+    }
     case LOG_IN: {
       console.log('toto');
       const { email, password } = store.getState().userInfo;
@@ -38,7 +45,7 @@ const usersMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           if (response.status === 200) {
             store.dispatch(saveUserAuth(
-              response.data.logged,
+              true,
               response.data.token,
               response.data.data.id,
             ));
