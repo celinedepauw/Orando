@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Moment from 'react-moment';
 
 const MyHikesSmall = ({
   title,
@@ -11,11 +12,12 @@ const MyHikesSmall = ({
   <div className="walk_small">
     <h3 className="walk_title">{title}</h3>
     <p className="walk_area">{area.name}</p>
-    <p className="walk_date">{ date }</p>
+    <p className="walk_date"><Moment locale="fr" format="dddd DD MMMM YYYY HH:mm">{date}</Moment></p>
     <p className="walk_difficulty">{difficulty}</p>
-    <p className="walk_duration">{duration}</p>
-    <button type="button" href="" className="walk_button_more_infos">Plus de détails</button>
+    <p className="walk_duration">{duration} heure(s)</p>
+    <button type="button" className="walk_button_more_infos">Plus de détails</button>
     <button type="button" className="walk_button_attendees">Voir les participants</button>
+    <button type="button" className="walk_button_delete">Annuler cette randonnée</button>
   </div>
 );
 
