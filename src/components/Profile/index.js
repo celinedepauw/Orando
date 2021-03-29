@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import './profile.scss';
 
 const Profile = ({ user, loading }) => {
-  console.log('pourquoi ça ne marche pas', user);
   const userDatas = user.user;
   return (
     <div className="profile">
