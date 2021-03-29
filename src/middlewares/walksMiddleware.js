@@ -1,5 +1,8 @@
 import axios from 'axios';
-import { FETCH_WALKS, saveWalks } from 'src/actions/walks';
+import {
+  FETCH_WALKS,
+  saveWalks,
+} from 'src/actions/walks';
 
 const walksMiddleware = (store) => (next) => (action) => {
   // console.log('on a intercepté une action dans walkMiddleware: ', action);

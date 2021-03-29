@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Moment from 'react-moment';
 
 const WalkToComeSmall = ({
   title,
@@ -11,7 +12,7 @@ const WalkToComeSmall = ({
   <div className="walk_to_come_small">
     <h3 className="walk_to_come_title">{title}</h3>
     <p className="walk_to_come_area">{area.name}</p>
-    <p className="walk_to_come_date">{ date }</p>
+    <p className="walk_to_come_date"><Moment locale="fr" format="dddd DD MMMM YYYY HH:mm">{date}</Moment></p>
     <p className="walk_to_come_difficulty">{difficulty}</p>
     <p className="walk_to_come_duration">{duration}</p>
     <button type="button" href="" className="walk_to_come_button_more_infos">En savoir plus</button>

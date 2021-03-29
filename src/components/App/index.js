@@ -9,8 +9,9 @@ import MobileNav from 'src/components/MobileNav';
 import Footer from 'src/components/Footer';
 
 // == Composant
-const App = ({ loadWalksFromApi, loadUserFromApi }) => {
+const App = ({ loadAreasFromApi, loadWalksFromApi, loadUserFromApi }) => {
   useEffect(() => {
+    loadAreasFromApi();
     loadWalksFromApi();
     loadUserFromApi();
   }, []);
@@ -26,6 +27,7 @@ const App = ({ loadWalksFromApi, loadUserFromApi }) => {
 };
 
 App.propTypes = {
+  loadAreasFromApi: PropTypes.func.isRequired,
   loadWalksFromApi: PropTypes.func.isRequired,
   loadUserFromApi: PropTypes.func.isRequired,
 };
