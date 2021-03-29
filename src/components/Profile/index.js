@@ -5,9 +5,11 @@ import './profile.scss';
 
 const Profile = ({ user, loading, loadUserFromApi }) => {
   const userDatas = user.user;
+  /*
   useEffect(() => {
     loadUserFromApi();
   }, []);
+  */
   return (
     <div className="profile">
       {loading && <div>Chargement en cours...</div>}
