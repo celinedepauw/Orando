@@ -7,10 +7,6 @@ const initialState = {
   password: '',
   // indicate if the user is authenticated
   isLogged: false,
-  // our token, we have to stock in localstorage
-  token: null,
-  // our user id connected
-  currentUserId: null,
 };
 
 function userReducer(state = initialState, action) {
@@ -36,8 +32,6 @@ function userReducer(state = initialState, action) {
       return {
         ...state,
         isLogged: action.isLogged,
-        token: action.token,
-        currentUserId: action.currentUserId,
         // we clear out the field
         email: '',
         password: '',
@@ -46,7 +40,6 @@ function userReducer(state = initialState, action) {
       return {
         ...state,
         isLogged: false,
-        token: null,
       };
     default:
       return state;

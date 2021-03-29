@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchAreas } from 'src/actions/areas';
 import { fetchWalks } from 'src/actions/walks';
-import { fetchUser } from 'src/actions/users';
+import { fetchUser, checkUser } from 'src/actions/users';
 
 // on importe le composant de présentation
 import App from 'src/components/App';
@@ -23,6 +23,10 @@ const mapDispatchToProps = (dispatch) => ({
 
   loadUserFromApi: () => {
     const action = fetchUser();
+    dispatch(action);
+  },
+  checkUserAuth: () => {
+    const action = checkUser();
     dispatch(action);
   },
 });

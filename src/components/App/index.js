@@ -7,19 +7,14 @@ import Header from 'src/components/Header';
 import Page from 'src/containers/Page';
 import MobileNav from 'src/containers/MobileNav';
 import Footer from 'src/components/Footer';
-import Authentification from 'src/containers/Authentification';
-
-
-
 import './styles.scss';
 
-
 // == Composant
-const App = ({ loadAreasFromApi, loadWalksFromApi, loadUserFromApi }) => {
+const App = ({ loadAreasFromApi, loadWalksFromApi, checkUserAuth }) => {
   useEffect(() => {
     loadAreasFromApi();
     loadWalksFromApi();
-    loadUserFromApi();
+    checkUserAuth();
   }, []);
 
   return (
@@ -37,6 +32,7 @@ App.propTypes = {
 
   loadWalksFromApi: PropTypes.func.isRequired,
   loadUserFromApi: PropTypes.func.isRequired,
+  checkUserAuth: PropTypes.func.isRequired,
 };
 
 // == Export

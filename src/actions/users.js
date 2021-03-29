@@ -6,7 +6,7 @@ export const SUBMIT_LOGIN = 'SUBMIT_LOGIN';
 export const LOG_IN = 'LOG_IN';
 export const LOG_OUT = 'LOG_OUT';
 export const SAVE_USER_AUTH = 'SAVE_USER_AUTH';
-
+export const CHECK_USER = 'CHECK_USER';
 
 
 // === action creators
@@ -43,3 +43,7 @@ export const logIn = () => ({
 export const logOut = () => ({
   type: LOG_OUT,
 });
+
+export const checkUser = () => ({
+  type: CHECK_USER,
+})

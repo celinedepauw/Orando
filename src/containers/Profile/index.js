@@ -16,11 +16,6 @@ const mapStateToProps = (state) => ({
 // === mapDispatchToProps
 // if we need to update the state dispatching actions to the store
 const mapDispatchToProps = (dispatch) => ({
-  loadUserFromApi: () => {
-    const action = fetchUser();
-    dispatch(action);
-  },
- 
 });
 
 // === création de l'assistant
