@@ -29,7 +29,7 @@ const usersMiddleware = (store) => (next) => (action) => {
             localStorage.setItem('currentUserId', currentUserId);
             
             // console.log('il faut récupérer les randonnées');
-            axios.get(`http://orando.me/back/api/users/${currentUserId}`, {headers: { Authorization: `Bearer ${authenticationToken}`}})
+            axios.get(`http://orando.me/back/api/users/${currentUserId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
               .then((response) => {
                 // console.log(response.data);
                 store.dispatch(saveUser(response.data));

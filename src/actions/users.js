@@ -19,11 +19,9 @@ export const saveUser = (user) => ({
   user: user,
 });
 
-export const saveUserAuth = (isLogged, token, currentUserId) => ({
+export const saveUserAuth = (isLogged) => ({
   type: SAVE_USER_AUTH,
   isLogged,
-  token,
-  currentUserId,
 });
 
 export const updateAuthentificationField = (identifier, newValue) => ({
@@ -46,4 +44,4 @@ export const logOut = () => ({
 
 export const checkUser = () => ({
   type: CHECK_USER,
-})
+});
