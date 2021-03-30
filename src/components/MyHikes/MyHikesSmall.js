@@ -13,11 +13,12 @@ const MyHikesSmall = ({
 }) => {
   const handleRemove = (evt) => {
     evt.preventDefault();
-    handleDelete(id);
+    handleDelete();
   };
   return (
     <div className="walk_small">
       <h3 className="walk_title">{title}</h3>
+      <p>{id}</p>
       <p className="walk_area">{area.name}</p>
       <p className="walk_date"><Moment locale="fr" format="dddd DD MMMM YYYY HH:mm">{date}</Moment></p>
       <p className="walk_difficulty">{difficulty}</p>

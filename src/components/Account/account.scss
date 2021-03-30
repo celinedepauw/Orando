@@ -2,16 +2,17 @@
 
 .account {
   background-color: vars.$lightYellow;
+  min-height: 100vh;
   
   .account_title {
     text-align: center;
-    margin: 0 50px 0 50px;
+    margin: 50px 50px 50px 50px;
     color: white;
     font-weight: bold;
-    font-size: 1.7rem;
+    font-size: 2.5rem;
     padding: 0.5rem 0 0.5rem 0;
     border: 2px solid vars.$darkRed;
-    background-color: vars.$darkRed;
+    background: linear-gradient(to bottom right, vars.$darkRed, vars.$regularRed);
     border-radius: 10px;
   }
 
@@ -23,10 +24,10 @@
 
     .account_profil {
       text-align: center;
-      font-size: 1.3rem;
+      font-size: 2rem;
       margin: 20px 50px 20px 50px;
       padding: 4rem;
-      background-color: vars.$darkGreen;
+      background: linear-gradient(to bottom right, vars.$darkGreen, vars.$regularGreen);
       color: white;
       border: 1px solid vars.$darkGreen;
       border-radius: 10px;
@@ -34,10 +35,10 @@
 
     .account_incomingwalks {
       text-align: center;
-      font-size: 1.3rem;
+      font-size: 2rem;
       margin: 20px 50px 20px 50px;
       padding: 4rem;
-      background-color: vars.$darkYellow;
+      background: linear-gradient(to bottom right, vars.$darkYellow, vars.$regularYellow);
       color: white;
       border: 1px solid vars.$darkYellow;
       border-radius: 10px;
@@ -45,10 +46,10 @@
 
     .account_myhikes {
       text-align: center;
-      font-size: 1.3rem;
+      font-size: 2rem;
       margin: 20px 50px 20px 50px;
       padding: 4rem;
-      background-color: vars.$darkRed;
+      background: linear-gradient(to bottom right, vars.$darkRed, vars.$regularRed);
       color: white;
       border: 1px solid vars.$darkRed;
       border-radius: 10px;

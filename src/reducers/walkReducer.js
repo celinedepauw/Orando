@@ -1,4 +1,4 @@
-import { SAVE_WALKS, DELETE_WALK } from 'src/actions/walks';
+import { SAVE_WALKS, SAVE_DELETE_WALK } from 'src/actions/walks';
 
 const initialState = {
   walks: [],
@@ -14,7 +14,7 @@ function walkReducer(state = initialState, action) {
         walks: action.walks,
         loading: false,
       };
-    case DELETE_WALK:
+    case SAVE_DELETE_WALK:
       return {
         ...state,
         walkId: action.walkId,
