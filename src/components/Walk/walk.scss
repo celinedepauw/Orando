@@ -8,11 +8,9 @@
     font-size: 2rem;
     padding: 20px;
     margin: 10px;
-    border: solid 1px grey;
     width: 50%;
     margin: auto;
-    color: vars.$darkGreen;
-    background-color: vars.$regularYellow;
+    color: vars.$darkRed;
 
     @media(min-width: vars.$breakpointTablet) {
     }
