@@ -6,7 +6,7 @@ export const SUBMIT_LOGIN = 'SUBMIT_LOGIN';
 export const LOG_IN = 'LOG_IN';
 export const LOG_OUT = 'LOG_OUT';
 export const SAVE_USER_AUTH = 'SAVE_USER_AUTH';
-
+export const CHECK_USER = 'CHECK_USER';
 
 
 // === action creators
@@ -19,11 +19,9 @@ export const saveUser = (user) => ({
   user: user,
 });
 
-export const saveUserAuth = (isLogged, token, currentUserId) => ({
+export const saveUserAuth = (isLogged) => ({
   type: SAVE_USER_AUTH,
   isLogged,
-  token,
-  currentUserId,
 });
 
 export const updateAuthentificationField = (identifier, newValue) => ({
@@ -42,4 +40,8 @@ export const logIn = () => ({
 
 export const logOut = () => ({
   type: LOG_OUT,
+});
+
+export const checkUser = () => ({
+  type: CHECK_USER,
 });

@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 
-import Account from 'src/components/Account';
+import Page from 'src/components/Page';
+
+
 
 const mapStateToProps = (state) => ({
   isLogged: state.userInfo.isLogged,
@@ -9,4 +11,4 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Account);
+export default connect(mapStateToProps, mapDispatchToProps)(Page);

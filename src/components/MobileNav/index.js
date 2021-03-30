@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 // icons from https://react-icons.github.io/react-icons
@@ -32,12 +33,22 @@ const MobileNav = ({ isLogged }) => { // Ne pas oublier que les props sont entre
         </Link>
       )}
       {isLogged && (
-        <Link to="/account" className="mobilenav_connected" type="submit">
-          <IoMdPerson size={46} />
-        </Link>
+        <>
+          <Link to="/account" className="mobilenav_connected" type="submit">
+            <IoMdPerson size={46} />
+          </Link>
+          <Link to="/account" className="mobilenav_connected" type="submit">
+            <RiLogoutCircleRLine size={46} />
+          </Link>
+        </>
       )}
     </nav>
   );
+};
+
+MobileNav.propTypes = {
+  /** toggle between "connected" or "not connected" */
+  isLogged: PropTypes.bool,
 };
 
 export default MobileNav;

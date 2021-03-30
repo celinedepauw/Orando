@@ -5,6 +5,7 @@ import './profile.scss';
 
 const Profile = ({ user, loading }) => {
   const userDatas = user.user;
+
   return (
     <div className="profile">
       {loading && <div>Chargement en cours...</div>}
