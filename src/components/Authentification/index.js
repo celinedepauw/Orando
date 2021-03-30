@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import Field from 'src/components/Field';
 
-const Authentification = ({ 
+const Authentification = ({
   email,
   password,
   updateAuthentificationField,
