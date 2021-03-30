@@ -86,15 +86,28 @@
 
         .walk_button_attendees {
           padding: 0.5rem;
-          background-color: vars.$regularRed;
+          margin-bottom: 0.5rem;
+          background-color: vars.$regularGreen;
           border: none;
           border-radius: 10px;
           
           &:hover {
-            background-color: vars.$darkRed;
+            background-color: vars.$darkGreen;
             transform: scale(1.1);
+          }
+        }
+        .walk_button_delete {
+            padding: 0.5rem;
+            background-color: vars.$regularRed;
+            border: none;
+            border-radius: 10px;
+            
+            &:hover {
+              background-color: vars.$darkRed;
+              transform: scale(1.1);
+            }
           }
         }
       }
   }
-}
+
