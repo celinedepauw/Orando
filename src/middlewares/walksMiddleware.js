@@ -22,9 +22,9 @@ const walksMiddleware = (store) => (next) => (action) => {
       break;
     case DELETE_WALK: {
       console.log('il faut effacer une randonnée');
-      const { walkId } = store.getState().walksList;
-      console.log('walkid middleware', walkId);
-      axios.delete(`http://orando.me/back/api/walks/${walkId}`)
+      // const { walkId } = store.getState().walksList;
+      // console.log('walkid middleware', walkId);
+      axios.delete(`http://orando.me/back/api/walks/${action.walkId}`)
         .then((response) => {
           console.log(response.data);
           // store.dispatch(saveWalks(response.data));

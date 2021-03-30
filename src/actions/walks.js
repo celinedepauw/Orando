@@ -14,11 +14,7 @@ export const saveWalks = (walks) => ({
   walks: walks,
 });
 
-export const deleteWalk = () => ({
+export const deleteWalk = (walkId) => ({
   type: DELETE_WALK,
-});
-
-export const saveDeleteWalk = (walkId) => ({
-  type: SAVE_DELETE_WALK,
   walkId,
 });
