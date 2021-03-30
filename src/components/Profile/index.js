@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import './profile.scss';
@@ -32,7 +32,6 @@ const Profile = ({ user, loading }) => {
 Profile.propTypes = {
   loading: PropTypes.bool.isRequired,
   user: PropTypes.object.isRequired,
-  loadUserFromApi: PropTypes.func.isRequired,
 };
 
 export default Profile;

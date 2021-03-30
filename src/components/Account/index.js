@@ -1,18 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { RiLogoutCircleRLine } from 'react-icons/ri';
 
 import './account.scss';
 
 // this component will be only static
-const Account = ({ isLogged }) => (
+const Account = () => (
   <div className="account">
     <h2 className="account_title">Mon compte</h2>
-    {isLogged && (
-      <Link to="/account" className="account_deconnected" type="submit">
-        <RiLogoutCircleRLine size={46} />
-      </Link>
-    )}
     <div className="account_container">
       <Link
         to="/profile"
@@ -30,5 +24,6 @@ const Account = ({ isLogged }) => (
     </div>
   </div>
 );
+
 
 export default Account;

@@ -5,8 +5,9 @@ import {
   LOG_IN,
   saveUserAuth,
   CHECK_USER,
+  LOG_OUT,
 } from 'src/actions/users';
-import { LOG_OUT } from '../actions/users';
+
 
 const usersMiddleware = (store) => (next) => (action) => {
   // console.log('on a intercepté une action dans usersMiddleware: ', action);
@@ -28,7 +29,6 @@ const usersMiddleware = (store) => (next) => (action) => {
             localStorage.setItem('Token', authenticationToken);
             localStorage.setItem('currentUserId', currentUserId);
             
-            // console.log('il faut récupérer les randonnées');
             axios.get(`http://orando.me/back/api/users/${currentUserId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
               .then((response) => {
                 // console.log(response.data);

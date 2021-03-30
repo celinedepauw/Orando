@@ -33,9 +33,14 @@ const MobileNav = ({ isLogged }) => { // Ne pas oublier que les props sont entre
         </Link>
       )}
       {isLogged && (
-        <Link to="/account" className="mobilenav_connected" type="submit">
-          <IoMdPerson size={46} />
-        </Link>
+        <>
+          <Link to="/account" className="mobilenav_connected" type="submit">
+            <IoMdPerson size={46} />
+          </Link>
+          <Link to="/account" className="mobilenav_connected" type="submit">
+            <RiLogoutCircleRLine size={46} />
+          </Link>
+        </>
       )}
     </nav>
   );
