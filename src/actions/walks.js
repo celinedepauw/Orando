@@ -13,7 +13,7 @@ export const saveWalks = (walks) => ({
   walks: walks,
 });
 
-export const deleteWalk = (id) => ({
+export const deleteWalk = (walkId) => ({
   type: DELETE_WALK,
-  walkId: id,
+  walkId,
 });
