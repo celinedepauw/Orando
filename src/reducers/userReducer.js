@@ -36,11 +36,6 @@ function userReducer(state = initialState, action) {
         email: '',
         password: '',
       };
-    case LOG_OUT:
-      return {
-        ...state,
-        isLogged: false,
-      };
     default:
       return state;
   }

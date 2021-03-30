@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import Field from 'src/components/Field';
@@ -41,6 +41,12 @@ const Authentification = ({
           }}
         />
         <button type="submit" className="authentification_submit">Ok</button>
+        <div className="authentification_inscription">
+          <p className="authentification_text">Si vous n'avez pas encore de compte</p>
+          <a className="authentification_insciption_link" href="http://orando.me/back/register">
+            <button type="button" className="authentification_insciption_button">Cliquez ici</button>
+          </a>
+        </div>
       </form>
     </div>
   );

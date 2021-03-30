@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { logOut } from 'src/actions/users';
 
 import MobileNav from 'src/components/MobileNav';
 
@@ -7,6 +8,9 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  handleLogout: () => {
+    dispatch(logOut());
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MobileNav);
