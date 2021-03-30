@@ -21,15 +21,17 @@ const walksMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     case DELETE_WALK:
+      // const { walkId } = store.getState().walksList;
       console.log('il faut effacer une randonnée');
-      // axios.delete(`http://orando.me/back/api/walks/${id}`)
-       // .then((response) => {
-         //  console.log(response);
+      // console.log(walkId);
+      axios.delete('http://orando.me/back/api/walks/16')
+       .then((response) => {
+         console.log(response);
           // store.dispatch(saveWalks(response.data));
-     //   })
-       // .catch((error) => {
-      //    console.log('error: ', error);
-       // });
+      })
+       .catch((error) => {
+      console.log('error: ', error);
+       });
       next(action);
       break;
     default:

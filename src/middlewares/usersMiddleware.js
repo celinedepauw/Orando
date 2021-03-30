@@ -6,7 +6,7 @@ const usersMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_USER:
       // console.log('il faut récupérer les randonnées');
-      axios.get('http://orando.me/back/api/users/3')
+      axios.get('http://orando.me/back/api/users/99')
       .then((response) => {
           // console.log(response.data);
           store.dispatch(saveUser(response.data));
