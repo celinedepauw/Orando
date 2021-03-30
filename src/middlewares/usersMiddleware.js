@@ -28,13 +28,13 @@ const usersMiddleware = (store) => (next) => (action) => {
             const currentUserId = response.data.data.id;
             localStorage.setItem('Token', authenticationToken);
             localStorage.setItem('currentUserId', currentUserId);
-            
+            // i send a request to get the user info at this time
             axios.get(`http://orando.me/back/api/users/${currentUserId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
               .then((response) => {
                 // console.log(response.data);
                 store.dispatch(saveUser(response.data));
               })
-              .catch((error) => {               
+              .catch((error) => {
                 console.log('error: ', error);
               });
 
