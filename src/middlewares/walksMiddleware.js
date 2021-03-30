@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {
   FETCH_WALKS,
+  DELETE_WALK,
   saveWalks,
 } from 'src/actions/walks';
 
@@ -19,6 +20,21 @@ const walksMiddleware = (store) => (next) => (action) => {
         });
       next(action);
       break;
+    case DELETE_WALK: {
+      console.log('il faut effacer une randonnée');
+      const { walkId } = store.getState().walksList;
+      console.log('walkid middleware', walkId);
+      axios.delete(`http://orando.me/back/api/walks/${walkId}`)
+        .then((response) => {
+          console.log(response.data);
+          // store.dispatch(saveWalks(response.data));
+        })
+        .catch((error) => {
+          console.log('error: ', error);
+        });
+      next(action);
+      break;
+    }
     default:
       next(action);
   }

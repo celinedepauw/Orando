@@ -33,7 +33,7 @@ const Walk = ({ walks, loading }) => {
             <p className="post-page"><BiInfoCircle size={30} /> {walk.description}</p>
             <div className="page-links">
               {/* Ajouter un Link to= lien */}
-              <a className="link" href="#"><BiEnvelope size={30} />Contacter l'utilisateur</a>
+              <a className="link" href="#"><BiEnvelope size={30} />Contacter l'organisateur</a>
               <button className="button-page" type="button">Je souhaite participer !</button>
             </div>
           </div>
@@ -58,7 +58,6 @@ Walk.propTypes = {
       maxNbPersons: PropTypes.number.isRequired,
       area: PropTypes.object.isRequired,
       description: PropTypes.string.isRequired,
-
     }).isRequired,
   ).isRequired,
 };

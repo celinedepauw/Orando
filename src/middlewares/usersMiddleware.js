@@ -11,15 +11,9 @@ const usersMiddleware = (store) => (next) => (action) => {
       // const {token} = localStorage.getItem('token');
       // const {id} = store.getState().userInfo;
       // console.log('il faut récupérer les randonnées');
-      axios.get('http://orando.me/back/api/users/2')
-        // send header information about token to the back
-        // axios.get (`url/${id}`,
-        // {
-        //   headers: { Authorization: `Bearer ${token}`,
-        //    },
-        // },
-        // )
-        .then((response) => {
+      axios.get('http://orando.me/back/api/users/99')
+      .then((response) => {
+
           // console.log(response.data);
           store.dispatch(saveUser(response.data));
         })
