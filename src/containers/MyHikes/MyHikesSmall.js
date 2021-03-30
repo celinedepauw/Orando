@@ -8,7 +8,7 @@ import MyHikesSmall from 'src/components/MyHikes/MyHikesSmall';
 // si on a besoin de lire des informations dans le state
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
-  walkId: state.walksList.walkId,
+  // walkId: state.walksList.walkId,
 });
 
 // === mapDispatchToProps
