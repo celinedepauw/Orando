@@ -2,7 +2,7 @@
 export const FETCH_WALKS = 'FETCH_WALKS';
 export const SAVE_WALKS = 'SAVE_WALKS';
 export const DELETE_WALK = 'DELETE_WALK';
-export const SAVE_DELETE_WALK = 'SAVE_DELETE_WALK';
+export const DELETE_WALK_SUCCESS = 'DELETE_WALK_SUCCESS';
 
 // === action creators
 export const fetchWalks = () => ({
@@ -17,4 +17,9 @@ export const saveWalks = (walks) => ({
 export const deleteWalk = (walkId) => ({
   type: DELETE_WALK,
   walkId,
+});
+
+export const deleteWalkSuccess = (walkId, walks) => ({
+  type: DELETE_WALK_SUCCESS,
+  walks: walks.splice(walkId, 1),
 });
