@@ -50,6 +50,7 @@ const usersMiddleware = (store) => (next) => (action) => {
     }
     case CHECK_USER: {
       const authenticationToken = localStorage.getItem('Token');
+      console.log('mon token', authenticationToken);
       const currentUserId = localStorage.getItem('currentUserId');
       if (!authenticationToken || !currentUserId) {
         localStorage.clear();
