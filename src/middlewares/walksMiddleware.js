@@ -34,6 +34,7 @@ const walksMiddleware = (store) => (next) => (action) => {
           // console.log(typeof walks2);
           // console.log('tableau des randos', walks2);
           if (response.status === 200) {
+            alert('Votre randonnée a bien été supprimée !');
             const authenticationToken = localStorage.getItem('Token');
             const currentUserId = localStorage.getItem('currentUserId');
             axios.get(`http://orando.me/back/api/users/${currentUserId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
