@@ -31,9 +31,9 @@ const MobileNav = ({ isLogged, handleLogout }) => (
         <Link to="/account" className="mobilenav_connected" type="submit">
           <IoMdPerson size={46} />
         </Link>
-        <Link to="/account" className="mobilenav_connected" type="submit" onClick={handleLogout}>
+        <a href="http://orando.me/back/logout" className="mobilenav_connected" type="submit" onClick={handleLogout}>
           <RiLogoutCircleRLine size={46} />
-        </Link>
+        </a>
       </>
     )}
   </nav>

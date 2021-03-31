@@ -50,6 +50,7 @@ const usersMiddleware = (store) => (next) => (action) => {
     }
     case CHECK_USER: {
       const authenticationToken = localStorage.getItem('Token');
+      console.log('mon token', authenticationToken);
       const currentUserId = localStorage.getItem('currentUserId');
       if (!authenticationToken || !currentUserId) {
         localStorage.clear();
@@ -62,8 +63,15 @@ const usersMiddleware = (store) => (next) => (action) => {
       axios.get(`http://orando.me/back/api/users/${currentUserId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
         .then((response) => {
           // console.log(response.data);
-          store.dispatch(saveUser(response.data));
-          store.dispatch(saveUserAuth(true));
+          if (response.status === 200) {
+            store.dispatch(saveUser(response.data));
+            store.dispatch(saveUserAuth(true));
+            console.log('reponse quand je checkuser', response);
+          }
+          else {
+            localStorage.clear();
+            store.dispatch(saveUserAuth(false));
+          }
         })
         .catch((error) => {
           console.log('error: ', error);
