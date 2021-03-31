@@ -5,6 +5,10 @@ import {
   saveWalks,
 } from 'src/actions/walks';
 
+import {
+  saveUser,
+} from 'src/actions/users';
+
 const walksMiddleware = (store) => (next) => (action) => {
   // console.log('on a intercepté une action dans walkMiddleware: ', action);
   switch (action.type) {
@@ -24,8 +28,22 @@ const walksMiddleware = (store) => (next) => (action) => {
       // console.log('il faut effacer une randonnée');
       axios.delete(`http://orando.me/back/api/walks/${action.walkId}`)
         .then((response) => {
-          console.log(response);
-          // store.dispatch(deleteWalkSuccess(walkId, walks));
+          // const walkId = response.data.id;
+           // console.log(response);
+          // const walks2 = store.getState().walksList.walks;
+          // console.log(typeof walks2);
+          // console.log('tableau des randos', walks2);
+          if (response.status === 200) {
+            const authenticationToken = localStorage.getItem('Token');
+            const currentUserId = localStorage.getItem('currentUserId');
+            axios.get(`http://orando.me/back/api/users/${currentUserId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
+              .then((response) => {
+                store.dispatch(saveUser(response.data));
+              })
+              .catch((error) => {
+                console.log('error: ', error);
+              });
+          }
         })
         .catch((error) => {
           console.log('error: ', error);

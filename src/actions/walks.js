@@ -2,6 +2,7 @@
 export const FETCH_WALKS = 'FETCH_WALKS';
 export const SAVE_WALKS = 'SAVE_WALKS';
 export const DELETE_WALK = 'DELETE_WALK';
+export const DELETE_WALK_SUCCESS = 'DELETE_WALK_SUCCESS';
 
 // === action creators
 export const fetchWalks = () => ({
