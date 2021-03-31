@@ -15,9 +15,9 @@ const mapStateToProps = (state) => ({
 // si on a besoin de dispatcher des actions vers le store (mettre à jour le state)
 const mapDispatchToProps = (dispatch) => ({
   // nom de la prop à remplir: fonction qui dispatch l'action
-  handleDelete: () => {
+  handleDelete: (walkId) => {
     // console.log('delete dans le container');
-    const action = deleteWalk();
+    const action = deleteWalk(walkId);
     dispatch(action);
   },
 });

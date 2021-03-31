@@ -13,7 +13,7 @@ const MyHikesSmall = ({
 }) => {
   const handleRemove = (evt) => {
     evt.preventDefault();
-    handleDelete();
+    handleDelete(id);
   };
   return (
     <div className="walk_small">
