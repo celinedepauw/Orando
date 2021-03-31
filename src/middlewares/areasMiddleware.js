@@ -7,11 +7,11 @@ const areasMiddleware = (store) => (next) => (action) => {
     case FETCH_AREAS:
       // console.log('il faut récupérer les régions');
       axios.get('http://orando.me/back/api/areas/')
-      .then((response) => {
+        .then((response) => {
           // console.log(response.data);
           store.dispatch(saveAreas(response.data));
         })
-      .catch((error) => {
+        .catch((error) => {
           console.log('error: ', error);
         });
       next(action);
