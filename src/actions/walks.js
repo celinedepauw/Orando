@@ -2,7 +2,7 @@
 export const FETCH_WALKS = 'FETCH_WALKS';
 export const SAVE_WALKS = 'SAVE_WALKS';
 export const DELETE_WALK = 'DELETE_WALK';
-export const SAVE_DELETE_WALK = 'SAVE_DELETE_WALK';
+export const DELETE_WALK_SUCCESS = 'DELETE_WALK_SUCCESS';
 
 // === action creators
 export const fetchWalks = () => ({
@@ -14,11 +14,7 @@ export const saveWalks = (walks) => ({
   walks: walks,
 });
 
-export const deleteWalk = () => ({
+export const deleteWalk = (walkId) => ({
   type: DELETE_WALK,
-});
-
-export const saveDeleteWalk = (walkId) => ({
-  type: SAVE_DELETE_WALK,
-  walkId,
+  walkId: walkId,
 });
