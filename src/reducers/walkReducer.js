@@ -1,9 +1,9 @@
-import { SAVE_WALKS, SAVE_DELETE_WALK } from 'src/actions/walks';
+import { SAVE_WALKS } from 'src/actions/walks';
 
 const initialState = {
   walks: [],
   loading: true,
-  walkId: null,
+  // walkId: null,
 };
 
 function walkReducer(state = initialState, action) {
@@ -13,11 +13,6 @@ function walkReducer(state = initialState, action) {
         ...state,
         walks: action.walks,
         loading: false,
-      };
-    case SAVE_DELETE_WALK:
-      return {
-        ...state,
-        walkId: action.walkId,
       };
     default:
       return state;

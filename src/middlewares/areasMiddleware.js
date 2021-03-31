@@ -14,10 +14,13 @@ const areasMiddleware = (store) => (next) => (action) => {
             localStorage.clear();
             store.dispatch(saveUserAuth(false));
           }
+      axios.get('http://orando.me/back/api/areas/')
+        .then((response) => {
+
           // console.log(response.data);
           store.dispatch(saveAreas(response.data));
         })
-      .catch((error) => {
+        .catch((error) => {
           console.log('error: ', error);
         });
       next(action);
