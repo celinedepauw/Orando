@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 // == Import
 import Header from 'src/components/Header';
+import List from 'src/components/List'
 import Page from 'src/containers/Page';
 import MobileNav from 'src/containers/MobileNav';
 import Footer from 'src/components/Footer';
@@ -20,7 +21,7 @@ const App = ({ loadAreasFromApi, loadWalksFromApi, checkUserAuth }) => {
   return (
     <div className="app">
       <Header />
-      <Page />
+      <List />
       <Footer />
       <MobileNav />
     </div>
