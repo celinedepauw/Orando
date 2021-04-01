@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
+import { Link } from 'react-router-dom';
 
 const MyHikesSmall = ({
   id,
@@ -22,7 +23,9 @@ const MyHikesSmall = ({
       <p className="walk_date"><Moment locale="fr" format="dddd DD MMMM YYYY HH:mm">{date}</Moment></p>
       <p className="walk_difficulty">{difficulty}</p>
       <p className="walk_duration">{duration} heure(s)</p>
-      <button type="button" className="walk_button_more_infos">Plus de détails</button>
+      <Link to={`/walks/${id}`}>
+        <button type="button" className="walk_button_more_infos">Plus de détails</button>
+      </Link>
       {// Bouton "voir les participants"
       // V1 : l'organisateur peut visualiser les participants à sa randonnée
       // V2 : l'organisateur pourra accepter ou refuser la participation d'un utilisateur

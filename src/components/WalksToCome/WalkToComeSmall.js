@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
+import { Link } from 'react-router-dom';
 
 const WalkToComeSmall = ({
+  id,
   title,
   date,
   area,
@@ -15,12 +17,15 @@ const WalkToComeSmall = ({
     <p className="walk_to_come_date"><Moment locale="fr" format="dddd DD MMMM YYYY HH:mm">{date}</Moment></p>
     <p className="walk_to_come_difficulty">{difficulty}</p>
     <p className="walk_to_come_duration">{duration}</p>
-    <button type="button" href="" className="walk_to_come_button_more_infos">En savoir plus</button>
+    <Link to={`/walks/${id}`}>
+      <button type="button" href="" className="walk_to_come_button_more_infos">En savoir plus</button>
+    </Link>
     <button type="button" className="walk_to_come_button_delete">Annuler ma participation</button>
   </div>
 );
 
 WalkToComeSmall.propTypes = {
+  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   area: PropTypes.object.isRequired,
