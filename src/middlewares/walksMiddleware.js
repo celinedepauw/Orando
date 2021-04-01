@@ -76,7 +76,7 @@ const walksMiddleware = (store) => (next) => (action) => {
           if (response.status === 201) {
             alert(response.data.message);
           }
-          console.log(response);
+          console.log('hello', response);
         })
         .catch((error) => {
           console.log(error);

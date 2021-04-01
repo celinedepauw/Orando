@@ -17,12 +17,12 @@ const MobileNav = ({ isLogged, handleLogout }) => (
     <Link to="/" className="mobilenav_home">
       <BiHomeHeart size={46} />
     </Link>
-    <Link to="/create_hiking" className="mobilenav_create">
+    <a href="http://orando.me/back/walk/create" className="mobilenav_create">
       <FaHiking size={46} />
       <BiPlusMedical size={23} className="mobilenav_plus" />
-    </Link>
+    </a>
     {!isLogged && (
-      <Link to="/authentification" className="mobilenav_connected" type="submit">
+      <Link to="/authentication" className="mobilenav_connected" type="submit">
         <RiLoginCircleLine size={46} />
       </Link>
     )}
