@@ -18,27 +18,31 @@
     padding: 1rem;
   }
 
-  .one_participant {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 10px;
-    background-color: vars.$regularGreen;
-  }
-  
-    .one_participant_image {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
+  .participants_list {
+
+    .oneParticipant {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      margin: 1rem;
+      border-radius: 10px;
+      background-color: vars.$regularGreen;
     }
     
-    .one_participant_nickname {
-      margin-left: 10px;
-    }
-
-    .one_participant_contact {
-      align-self: flex-end;
-    }
-
+      .one_participant_image {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+      
+      .one_participant_nickname {
+        margin-left: 10px;
+      }
+  
+      .one_participant_contact {
+        align-self: flex-end;
+      }
+  
+  }
+  
 }
