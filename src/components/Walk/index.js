@@ -14,6 +14,7 @@ const Walk = ({ walks, loading, handleParticipation }) => {
   const { id } = useParams();
 
   const walk = walks.find((item) => item.id == id);
+  const userId = localStorage.getItem('currentUserId');
 
   return (
     <div>
@@ -32,11 +33,16 @@ const Walk = ({ walks, loading, handleParticipation }) => {
           <div className="description">
             <p className="post-page"><BiInfoCircle size={30} /> {walk.description}</p>
             <div className="page-links">
-              <a className="link" href={`http://orando.me/back/profile/${walk.creator.id}/contact-user`}><BiEnvelope size={30} />Contacter {walk.creator.nickname} pour avoir plus d'informations !</a>
-              <button className="button-page" type="button" onClick={() => handleParticipation(id)}>Je souhaite participer !</button>
-              <a href={`http://orando.me/back/walk/edit/${id}`}>
-                <button className="button-edit" type="button">Modifier la randonnée</button>
-              </a>
+              {walk.creator.id == userId ? (
+                <a href={`http://orando.me/back/walk/edit/${id}`}>
+                  <button className="button-edit" type="button">Modifier la randonnée</button>
+                </a>
+              ) : (
+                <>
+                  <a className="link" href={`http://orando.me/back/profile/${walk.creator.id}/contact-user`}><BiEnvelope size={30} />Contacter {walk.creator.nickname} pour avoir plus d'informations !</a>
+                  <button className="button-page" type="button" onClick={() => handleParticipation(id)}>Je souhaite participer !</button>
+                </>
+              )}
             </div>
           </div>
         </article>
