@@ -31,9 +31,6 @@ const Page = () => (
       <Route path="/profile">
         <Profile />
       </Route>
-      <Route path="/profile">
-        <Profile />
-      </Route>
       <Route path="/incoming_walks">
         <WalksToCome />
       </Route>
