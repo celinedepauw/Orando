@@ -63,6 +63,7 @@ const walksMiddleware = (store) => (next) => (action) => {
     case PARTIPATE_WALK: {
       const authenticationToken = localStorage.getItem('Token');
       const currentUserId = localStorage.getItem('currentUserId');
+      console.log(action.walkId);
       axios.post('http://orando.me/back/api/participant', {
         user: currentUserId,
         walk: action.walkId,
@@ -72,6 +73,9 @@ const walksMiddleware = (store) => (next) => (action) => {
         },
       })
         .then((response) => {
+          if (response.status === 201) {
+            alert(response.data.message);
+          }
           console.log(response);
         })
         .catch((error) => {
