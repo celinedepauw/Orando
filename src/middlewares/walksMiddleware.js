@@ -3,6 +3,7 @@ import {
   FETCH_WALKS,
   DELETE_WALK,
   saveWalks,
+  PARTIPATE_WALK,
 } from 'src/actions/walks';
 import { saveUserAuth } from 'src/actions/users';
 
@@ -59,9 +60,28 @@ const walksMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     }
+    case PARTIPATE_WALK: {
+      const authenticationToken = localStorage.getItem('Token');
+      const currentUserId = localStorage.getItem('currentUserId');
+      axios.post('http://orando.me/back/api/participant', {
+        user: currentUserId,
+        walk: action.walkId,
+      }, {
+        headers: {
+          Authorization: `Bearer ${authenticationToken}`,
+        },
+      })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      next(action);
+      break;
+    }
     default:
       next(action);
-  
   }
 };
 export default walksMiddleware;
