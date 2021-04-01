@@ -1,0 +1,44 @@
+@use 'src/styles/vars';
+
+.participants {
+
+  .participants_walk_title {
+    text-align: center;
+    color: vars.$darkRed;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+  }
+
+  .participants_walk_name {
+    text-align: center;
+    color: vars.$regularRed;
+    font-style: italic;
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+
+  .one_participant {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+    background-color: vars.$regularGreen;
+  }
+  
+    .one_participant_image {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+    
+    .one_participant_nickname {
+      margin-left: 10px;
+    }
+
+    .one_participant_contact {
+      align-self: flex-end;
+    }
+
+}
