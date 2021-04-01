@@ -34,6 +34,9 @@ const Walk = ({ walks, loading, handleParticipation }) => {
             <div className="page-links">
               <a className="link" href={`http://orando.me/back/profile/${walk.creator.id}/contact-user`}><BiEnvelope size={30} />Contacter {walk.creator.nickname} pour avoir plus d'informations !</a>
               <button className="button-page" type="button" onClick={() => handleParticipation(id)}>Je souhaite participer !</button>
+              <a href={`http://orando.me/back/walk/edit/${id}`}>
+                <button className="button-edit" type="button">Modifier la randonnée</button>
+              </a>
             </div>
           </div>
         </article>
