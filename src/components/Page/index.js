@@ -22,7 +22,7 @@ const Page = () => (
       <Route path="/areas/:id">
         <Area />
       </Route>
-      <Route path="/Authentification">
+      <Route path="/authentication">
         <Authentification />
       </Route>
       <Route path="/account">
