@@ -8,7 +8,7 @@ import Moment from 'react-moment';
 
 import './walk.scss';
 
-const Walk = ({ walks, loading }) => {
+const Walk = ({ walks, loading, handleParticipation }) => {
   // console.log(walks);
 
   const { id } = useParams();
@@ -33,7 +33,7 @@ const Walk = ({ walks, loading }) => {
             <p className="post-page"><BiInfoCircle size={30} /> {walk.description}</p>
             <div className="page-links">
               <a className="link" href={`http://orando.me/back/profile/${walk.creator.id}/contact-user`}><BiEnvelope size={30} />Contacter {walk.creator.nickname} pour avoir plus d'informations !</a>
-              <button className="button-page" type="button">Je souhaite participer !</button>
+              <button className="button-page" type="button" onClick={() => handleParticipation(id)}>Je souhaite participer !</button>
             </div>
           </div>
         </article>
@@ -59,6 +59,7 @@ Walk.propTypes = {
       description: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
+  handleParticipation: PropTypes.func.isRequired,
 };
 
 export default Walk;
