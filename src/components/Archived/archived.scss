@@ -1,0 +1,54 @@
+@use 'src/styles/vars';
+
+.archived {
+  margin: 20px;
+
+  .archived_title {
+    text-align: center;
+    color: vars.$darkRed;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .archived_infos {
+    border: solid 1px grey;
+    border-radius: 10%;
+    width: 50%;
+    height: 20%;
+    text-align: center;
+    padding: 20px;
+
+    @media(min-width: vars.$breakpointTablet) {
+      width: 30%;
+    }
+  }
+
+  .archived_infos_title {
+    padding: 10px;
+  }
+
+  .archived_infos_area {
+    padding: 10px;
+  }
+
+  .archived_infos_date {
+    padding: 10px;
+  }
+
+  .archived_infos_time {
+    padding: 10px;
+  }
+
+  .archived_infos_level {
+    padding: 10px;
+  }
+
+  .archived_infos_button {
+    padding: 10px;
+    background-color: vars.$darkRed;
+    border: none;
+    border-radius: 10px;
+  }
+}
