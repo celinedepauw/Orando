@@ -6,7 +6,7 @@ import {
   PARTIPATE_WALK,
   CANCEL_PARTICIPATE,
 } from 'src/actions/walks';
-import { saveUserAuth } from 'src/actions/users';
+import { saveUserAuth, saveUser } from 'src/actions/users';
 
 
 const walksMiddleware = (store) => (next) => (action) => {
@@ -96,6 +96,16 @@ const walksMiddleware = (store) => (next) => (action) => {
         },
       })
         .then((response) => {
+          if (response.status === 200) {
+            alert(response.data.message);
+            axios.get(`https://orando.me/o/api/users/${currentUserId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
+              .then((response) => {
+                store.dispatch(saveUser(response.data));
+              })
+              .catch((error) => {
+                console.log('error: ', error);
+              });
+          }
           console.log('toto aimerait sa', response);
         })
         .catch((error) => {
