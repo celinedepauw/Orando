@@ -35,13 +35,18 @@
   .profile_container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     flex-direction: column;
     margin-left: 20px;
     font-size: 1.3rem;
     
+    .profile_picture {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      display: block;
+      margin: auto;
+    }
     
-
     .profile_pseudo {
       margin: 20px 50px 20px 50px;
       font-size: 1.7rem;
@@ -102,6 +107,8 @@
       
     }
   
+    
+
     .profile_description {
       margin: 20px 50px 20px 50px;
       font-size: 1.7rem;
