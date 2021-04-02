@@ -1,0 +1,78 @@
+@use 'src/styles/vars';
+
+.participants {
+
+  .participants_walk_title {
+    text-align: center;
+    color: vars.$darkRed;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+  }
+
+  .participants_walk_name {
+    text-align: center;
+    color: vars.$regularRed;
+    font-style: italic;
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+
+  .participants_walk_number {
+    text-align: center;
+    color: vars.$darkYellow;
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+
+  .participants_list {
+
+    @media(min-width: vars.$breakpointTablet) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .oneParticipant {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      margin: 1rem;
+      border-radius: 10px;
+      background-color: vars.$regularGreen;
+
+      @media(min-width: vars.$breakpointTablet) {
+        width: 45%;
+      }
+
+      @media(min-width: vars.$breakpointXLarge) {
+        width: 29%;
+      }
+    }
+    
+      .one_participant_image {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+      
+      .one_participant_nickname {
+        margin-left: 10px;
+      }
+  
+      .one_participant_contact {
+        align-self: flex-end;
+        color: vars.$regularYellow;
+
+        &:hover {
+          color: vars.$darkYellow;
+        }
+      }
+
+      .one_participant_creator {
+        align-self: flex-end;
+        color: vars.$regularYellow;
+      }
+  
+  }
+  
+}

@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { cancelParticipate } from 'src/actions/walks';
 
 import WalksToCome from 'src/components/WalksToCome';
 
@@ -14,6 +15,9 @@ const mapStateToProps = (state) => ({
 // if we need to update the state dispatching actions to the store
 const mapDispatchToProps = (dispatch) => ({
   // prop name: function that dispatch the action
+  handleCancelParticipation: (walkId) => {
+    dispatch(cancelParticipate(walkId));
+  },
 });
 
 // === création de l'assistant

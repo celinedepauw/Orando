@@ -17,7 +17,7 @@ const MobileNav = ({ isLogged, handleLogout }) => (
     <Link to="/" className="mobilenav_home">
       <BiHomeHeart size={46} />
     </Link>
-    <a href="http://orando.me/back/walk/create" className="mobilenav_create">
+    <a href="https://orando.me/o/walk/create" className="mobilenav_create">
       <FaHiking size={46} />
       <BiPlusMedical size={23} className="mobilenav_plus" />
     </a>
@@ -31,7 +31,7 @@ const MobileNav = ({ isLogged, handleLogout }) => (
         <Link to="/account" className="mobilenav_connected" type="submit">
           <IoMdPerson size={46} />
         </Link>
-        <a href="http://orando.me/back/logout" className="mobilenav_connected" type="submit" onClick={handleLogout}>
+        <a href="https://orando.me/o/logout" className="mobilenav_connected" type="submit" onClick={handleLogout}>
           <RiLogoutCircleRLine size={46} />
         </a>
       </>

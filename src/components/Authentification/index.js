@@ -43,7 +43,7 @@ const Authentification = ({
         <button type="submit" className="authentification_submit">Ok</button>
         <div className="authentification_inscription">
           <p className="authentification_text">Si vous n'avez pas encore de compte</p>
-          <a className="authentification_insciption_link" href="http://orando.me/back/register">
+          <a className="authentification_insciption_link" href="https://orando.me/o/register">
             <button type="button" className="authentification_insciption_button">Cliquez ici</button>
           </a>
         </div>

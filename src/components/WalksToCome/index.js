@@ -5,7 +5,7 @@ import WalkToComeSmall from 'src/components/WalksToCome/WalkToComeSmall';
 
 import './walksToCome.scss';
 
-const WalksToCome = ({ user, loading }) => {
+const WalksToCome = ({ user, loading, handleCancelParticipation }) => {
    console.log(user.incomingWalks);
   return (
     <>
@@ -15,7 +15,11 @@ const WalksToCome = ({ user, loading }) => {
         <h2 className="walks_to_come_title">Mes randonnées à venir</h2>
         <div className="walks_to_come_list">
           {user.incomingWalks.map((item) => (
-            <WalkToComeSmall key={item.walk.id} {...item.walk} />
+            <WalkToComeSmall
+              key={item.walk.id}
+              {...item.walk}
+              handleCancelParticipation={handleCancelParticipation}
+            />
           ))}
         </div>
       </main>
@@ -27,5 +31,6 @@ const WalksToCome = ({ user, loading }) => {
 WalksToCome.propTypes = {
   user: PropTypes.object.isRequired,
   loading: PropTypes.bool.isRequired,
+  handleCancelParticipation: PropTypes.func.isRequired,
 };
 export default WalksToCome;
