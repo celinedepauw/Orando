@@ -71,8 +71,14 @@ const walksMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           if (response.status === 201) {
             alert(response.data.message);
+            axios.get(`https://orando.me/o/api/users/${currentUserId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
+              .then((response) => {
+                store.dispatch(saveUser(response.data));
+              })
+              .catch((error) => {
+                console.log('error: ', error);
+              });
           }
-          console.log('hello', response);
         })
         .catch((error) => {
           console.log(error);
