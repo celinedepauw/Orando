@@ -2,7 +2,7 @@ import { SAVE_USER, UPDATE_AUTHENTIFICATION_FIELD, SAVE_USER_AUTH, LOG_OUT } fro
 
 const initialState = {
   user: {},
-  loading: true,
+  loadingUser: true,
   email: '',
   password: '',
   // indicate if the user is authenticated
@@ -15,7 +15,7 @@ function userReducer(state = initialState, action) {
       return {
         ...state,
         user: action.user,
-        loading: false,
+        loadingUser: false,
       };
     case UPDATE_AUTHENTIFICATION_FIELD:
       if (action.identifier === 'email') {

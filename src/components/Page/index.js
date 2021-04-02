@@ -21,6 +21,7 @@ const Page = () => (
     <Switch>
       <Route path="/archived_walks">
         <Archived />
+      </Route>
       <Route path="/participants/walks/:id">
         <Participants />
       </Route>
@@ -54,6 +55,5 @@ const Page = () => (
     </Switch>
   </div>
 );
-
 
 export default Page;

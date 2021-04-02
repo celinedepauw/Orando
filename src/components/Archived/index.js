@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import ArchivedSmall from 'src/containers/Archived/ArchivedSmall';
 import './archived.scss';
 
-const Archived = ({ user, loading }) => {
+const Archived = ({ user, loadingUser }) => {
   console.log(user);
 
   return (
     <>
-      {loading && <div>Chargement en cours...</div>}
-      {!loading && (
+      {loadingUser && <div>Chargement en cours...</div>}
+      {!loadingUser && (
       <div className="archived">
         <h2 className="archived_title">Randos passées</h2>
         <div className="archived_infos_list">
@@ -26,7 +26,7 @@ const Archived = ({ user, loading }) => {
 
 Archived.propTypes = {
   user: PropTypes.object.isRequired,
-  loading: PropTypes.bool.isRequired,
+  loadingUser: PropTypes.bool.isRequired,
 };
 
 export default Archived;

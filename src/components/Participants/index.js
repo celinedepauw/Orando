@@ -6,14 +6,14 @@ import Moment from 'react-moment';
 
 import './participants.scss';
 
-const Participants = ({ walks, loading }) => {
+const Participants = ({ walks, loadingWalk }) => {
   const { id } = useParams();
   const walk = walks.find((item) => item.id == id);
 
   return (
     <div>
-      {loading && <div>Chargement en cours...</div>}
-      {!loading && (
+      {loadingWalk && <div>Chargement en cours...</div>}
+      {!loadingWalk && (
         <>
           <div className="participants">
             <h2 className="participants_walk_title">Liste des participants inscrits à la randonnée</h2>
@@ -36,7 +36,7 @@ const Participants = ({ walks, loading }) => {
 };
 
 Participants.propTypes = {
-  loading: PropTypes.bool.isRequired,
+  loadingWalk: PropTypes.bool.isRequired,
   walks: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,

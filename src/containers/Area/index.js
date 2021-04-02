@@ -8,7 +8,7 @@ import Area from 'src/components/Area';
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
   areas: state.areasList.areas,
-  loading: state.walksList.loading,
+  loadingAreas: state.areasList.loadingAreas,
 });
 
 // === mapDispatchToProps

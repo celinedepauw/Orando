@@ -2,7 +2,7 @@ import { SAVE_WALKS } from 'src/actions/walks';
 
 const initialState = {
   walks: [],
-  loading: true,
+  loadingWalk: true,
   // walkId: null,
 };
 
@@ -12,7 +12,7 @@ function walkReducer(state = initialState, action) {
       return {
         ...state,
         walks: action.walks,
-        loading: false,
+        loadingWalk: false,
       };
     default:
       return state;

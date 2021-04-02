@@ -2,7 +2,7 @@ import { SAVE_AREAS } from 'src/actions/areas';
 
 const initialState = {
   areas: [],
-  loading: true,
+  loadingAreas: true,
 };
 
 function areaReducer(state = initialState, action) {
@@ -11,7 +11,7 @@ function areaReducer(state = initialState, action) {
       return {
         ...state,
         areas: action.areas,
-        loading: false,
+        loadingAreas: false,
       };
     default:
       return state;

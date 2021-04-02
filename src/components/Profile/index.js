@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 
 import './profile.scss';
 
-const Profile = ({ user, loading }) => {
+const Profile = ({ user, loadingUser }) => {
   const userDatas = user.user;
 
   return (
     <div className="profile">
-      {loading && <div>Chargement en cours...</div>}
-      {!loading && (
+      {loadingUser && <div>Chargement en cours...</div>}
+      {!loadingUser && (
         <>
           <Link
             to="/Account"
@@ -36,7 +36,7 @@ const Profile = ({ user, loading }) => {
 };
 
 Profile.propTypes = {
-  loading: PropTypes.bool.isRequired,
+  loadingUser: PropTypes.bool.isRequired,
   user: PropTypes.object.isRequired,
 };
 

@@ -9,7 +9,7 @@ import Walk from 'src/components/Walk';
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
   walks: state.walksList.walks,
-  loading: state.walksList.loading,
+  loadingWalk: state.walksList.loadingWalk,
 });
 
 // === mapDispatchToProps

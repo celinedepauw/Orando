@@ -8,7 +8,7 @@ import Moment from 'react-moment';
 
 import './walk.scss';
 
-const Walk = ({ walks, loading, handleParticipation }) => {
+const Walk = ({ walks, loadingWalk, handleParticipation }) => {
   // console.log(walks);
 
   const { id } = useParams();
@@ -18,8 +18,8 @@ const Walk = ({ walks, loading, handleParticipation }) => {
 
   return (
     <div>
-      {loading && <div>Chargement en cours...</div>}
-      {!loading && (
+      {loadingWalk && <div>Chargement en cours...</div>}
+      {!loadingWalk && (
         <article className="page">
           <h2 className="page-title">{walk.title}</h2>
           <p className="starting-point"><BiBeenHere size={30} /> Départ de : {walk.startingPoint}</p>
@@ -52,7 +52,7 @@ const Walk = ({ walks, loading, handleParticipation }) => {
 };
 
 Walk.propTypes = {
-  loading: PropTypes.bool.isRequired,
+  loadingWalk: PropTypes.bool.isRequired,
 
   walks: PropTypes.arrayOf(
     PropTypes.shape({

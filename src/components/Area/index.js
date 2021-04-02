@@ -6,14 +6,14 @@ import WalkSmall2 from 'src/components/Area/WalkSmall2';
 
 import './area.scss';
 
-const Area = ({ areas, loading }) => {
+const Area = ({ areas, loadingAreas }) => {
   const { id } = useParams();
   const area = areas.find((item) => item.id == id);
 
   return (
     <div>
-      {loading && <div>Chargement en cours...</div>}
-      {!loading && (
+      {loadingAreas && <div>Chargement en cours...</div>}
+      {!loadingAreas && (
         <main className="area">
           <h2 className="area_name">{area.name}</h2>
           <div className="area_walks_list">
@@ -28,7 +28,7 @@ const Area = ({ areas, loading }) => {
 };
 
 Area.propTypes = {
-  loading: PropTypes.bool.isRequired,
+  loadingAreas: PropTypes.bool.isRequired,
   areas: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
