@@ -25,7 +25,7 @@ export const participateWalk = (walkId) => ({
   walkId: walkId,
 });
 
-export const candelParticipate = (walkId) => ({
+export const cancelParticipate = (walkId) => ({
   type: CANCEL_PARTICIPATE,
   walkId: walkId,
 });

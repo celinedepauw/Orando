@@ -10,6 +10,7 @@ const WalkToComeSmall = ({
   area,
   difficulty,
   duration,
+  cancelParticipate,
 }) => (
   <div className="walk_to_come_small">
     <h3 className="walk_to_come_title">{title}</h3>
@@ -20,7 +21,7 @@ const WalkToComeSmall = ({
     <Link to={`/walks/${id}`}>
       <button type="button" href="" className="walk_to_come_button_more_infos">En savoir plus</button>
     </Link>
-    <button type="button" className="walk_to_come_button_delete">Annuler ma participation</button>
+    <button type="button" className="walk_to_come_button_delete" onClick={() => cancelParticipate(id)}>Annuler ma participation</button>
   </div>
 );
 
@@ -31,5 +32,6 @@ WalkToComeSmall.propTypes = {
   area: PropTypes.object.isRequired,
   difficulty: PropTypes.string.isRequired,
   duration: PropTypes.string.isRequired,
+  
 };
 export default WalkToComeSmall;

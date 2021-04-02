@@ -4,12 +4,10 @@ import {
   DELETE_WALK,
   saveWalks,
   PARTIPATE_WALK,
+  CANCEL_PARTICIPATE,
 } from 'src/actions/walks';
 import { saveUserAuth } from 'src/actions/users';
 
-import {
-  saveUser,
-} from 'src/actions/users';
 
 const walksMiddleware = (store) => (next) => (action) => {
   // console.log('on a intercepté une action dans walkMiddleware: ', action);
@@ -77,6 +75,28 @@ const walksMiddleware = (store) => (next) => (action) => {
             alert(response.data.message);
           }
           console.log('hello', response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      next(action);
+      break;
+    }
+    
+    case CANCEL_PARTICIPATE: {
+      const authenticationToken = localStorage.getItem('Token');
+      const currentUserId = localStorage.getItem('currentUserId');
+      axios.patch('https://orando.me/o/api/participant', {
+        user: currentUserId,
+        walk: action.walkId,
+        requestStatus: 2,
+      }, {
+        headers: {
+          Authorization: `Bearer ${authenticationToken}`,
+        },
+      })
+        .then((response) => {
+          console.log(response);
         })
         .catch((error) => {
           console.log(error);

@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 
+
 import WalkToComeSmall from 'src/components/WalksToCome/WalkToComeSmall';
 
 // === mapStateToProps
@@ -12,6 +13,7 @@ const mapStateToProps = (state) => ({
 // if we need to update the state dispatching actions to the store
 const mapDispatchToProps = (dispatch) => ({
   // prop name: function that dispatch the action
+
 });
 
 // === création de l'assistant
