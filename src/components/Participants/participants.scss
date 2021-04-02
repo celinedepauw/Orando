@@ -20,6 +20,11 @@
 
   .participants_list {
 
+    @media(min-width: vars.$breakpointTablet) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
     .oneParticipant {
       display: flex;
       flex-direction: column;
@@ -27,6 +32,14 @@
       margin: 1rem;
       border-radius: 10px;
       background-color: vars.$regularGreen;
+
+      @media(min-width: vars.$breakpointTablet) {
+        width: 45%;
+      }
+
+      @media(min-width: vars.$breakpointXLarge) {
+        width: 29%;
+      }
     }
     
       .one_participant_image {
@@ -41,6 +54,11 @@
   
       .one_participant_contact {
         align-self: flex-end;
+        color: vars.$regularYellow;
+
+        &:hover {
+          color: vars.$darkYellow;
+        }
       }
   
   }

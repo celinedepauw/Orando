@@ -10,6 +10,8 @@ const Participants = () => (
     <div className="participants_list">
       <OneParticipant />
       <OneParticipant />
+      <OneParticipant />
+      <OneParticipant />
     </div>
   </div>
 );
