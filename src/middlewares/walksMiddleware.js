@@ -4,12 +4,10 @@ import {
   DELETE_WALK,
   saveWalks,
   PARTIPATE_WALK,
+  CANCEL_PARTICIPATE,
 } from 'src/actions/walks';
-import { saveUserAuth } from 'src/actions/users';
+import { saveUserAuth, saveUser } from 'src/actions/users';
 
-import {
-  saveUser,
-} from 'src/actions/users';
 
 const walksMiddleware = (store) => (next) => (action) => {
   // console.log('on a intercepté une action dans walkMiddleware: ', action);
@@ -17,7 +15,7 @@ const walksMiddleware = (store) => (next) => (action) => {
     case FETCH_WALKS: {
       // console.log('il faut récupérer les randonnées');
       const authenticationToken = localStorage.getItem('Token');
-      axios.get('http://orando.me/back/api/walks', { headers: { Authorization: `Bearer ${authenticationToken}` } })
+      axios.get('https://orando.me/o/api/walks', { headers: { Authorization: `Bearer ${authenticationToken}` } })
       .then((response) => {
           // console.log(response.data);
           if (response.status === 401) {
@@ -34,7 +32,7 @@ const walksMiddleware = (store) => (next) => (action) => {
     }
     case DELETE_WALK: {
       // console.log('il faut effacer une randonnée');
-      axios.delete(`http://orando.me/back/api/walks/${action.walkId}`)
+      axios.delete(`https://orando.me/o/api/walks/${action.walkId}`)
         .then((response) => {
           // const walkId = response.data.id;
            // console.log(response);
@@ -45,7 +43,7 @@ const walksMiddleware = (store) => (next) => (action) => {
             alert('Votre randonnée a bien été supprimée !');
             const authenticationToken = localStorage.getItem('Token');
             const currentUserId = localStorage.getItem('currentUserId');
-            axios.get(`http://orando.me/back/api/users/${currentUserId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
+            axios.get(`https://orando.me/o/api/users/${currentUserId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
               .then((response) => {
                 store.dispatch(saveUser(response.data));
               })
@@ -64,7 +62,7 @@ const walksMiddleware = (store) => (next) => (action) => {
       const authenticationToken = localStorage.getItem('Token');
       const currentUserId = localStorage.getItem('currentUserId');
       console.log(action.walkId);
-      axios.post('http://orando.me/back/api/participant', {
+      axios.post('https://orando.me/o/api/participant', {
         user: currentUserId,
         walk: action.walkId,
       }, {
@@ -77,6 +75,38 @@ const walksMiddleware = (store) => (next) => (action) => {
             alert(response.data.message);
           }
           console.log('hello', response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      next(action);
+      break;
+    }
+    
+    case CANCEL_PARTICIPATE: {
+      const authenticationToken = localStorage.getItem('Token');
+      const currentUserId = localStorage.getItem('currentUserId');
+      axios.patch('https://orando.me/o/api/participant', {
+        user: currentUserId,
+        walk: action.walkId,
+        requestStatus: 2,
+      }, {
+        headers: {
+          Authorization: `Bearer ${authenticationToken}`,
+        },
+      })
+        .then((response) => {
+          if (response.status === 200) {
+            alert(response.data.message);
+            axios.get(`https://orando.me/o/api/users/${currentUserId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
+              .then((response) => {
+                store.dispatch(saveUser(response.data));
+              })
+              .catch((error) => {
+                console.log('error: ', error);
+              });
+          }
+          console.log('toto aimerait sa', response);
         })
         .catch((error) => {
           console.log(error);

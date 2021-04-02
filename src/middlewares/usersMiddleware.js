@@ -14,7 +14,7 @@ const usersMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case LOG_IN: {
       const { email, password } = store.getState().userInfo;
-      axios.post('http://orando.me/back/api/login_check', {
+      axios.post('https://orando.me/o/api/login_check', {
         username: email,
         password: password,
       })
@@ -29,7 +29,7 @@ const usersMiddleware = (store) => (next) => (action) => {
             localStorage.setItem('Token', authenticationToken);
             localStorage.setItem('currentUserId', currentUserId);
             // i send a request to get the user info at this time
-            axios.get(`http://orando.me/back/api/users/${currentUserId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
+            axios.get(`https://orando.me/o/api/users/${currentUserId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
               .then((response) => {
                 // console.log(response.data);
                 store.dispatch(saveUser(response.data));
@@ -60,7 +60,7 @@ const usersMiddleware = (store) => (next) => (action) => {
         next(action);
         break;
       }
-      axios.get(`http://orando.me/back/api/users/${currentUserId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
+      axios.get(`https://orando.me/o/api/users/${currentUserId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
         .then((response) => {
           // console.log(response.data);
           if (response.status === 200) {
