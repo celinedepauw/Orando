@@ -21,7 +21,7 @@ const App = ({ loadAreasFromApi, loadWalksFromApi, checkUserAuth }) => {
   return (
     <div className="app">
       <Header />
-      <Participants />
+      <Page />
       <Footer />
       <MobileNav />
     </div>

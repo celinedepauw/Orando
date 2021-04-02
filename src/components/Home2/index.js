@@ -20,7 +20,7 @@ const Home2 = ({ areas }) => (
     </div>
     <div className="home2_end">
       <p className="home2_go">A vous de jouer !</p>
-      <a href="http://orando.me/back/walk/create">
+      <a href="http://orando.me/o/walk/create">
         <button className="home2_button" type="button">Proposez une randonnée</button>
       </a>
     </div>
