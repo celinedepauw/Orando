@@ -5,7 +5,7 @@ import WalkToComeSmall from 'src/components/WalksToCome/WalkToComeSmall';
 
 import './walksToCome.scss';
 
-const WalksToCome = ({ user, loading, cancelParticipate }) => {
+const WalksToCome = ({ user, loading, handleCancelParticipation }) => {
    console.log(user.incomingWalks);
   return (
     <>
@@ -18,7 +18,7 @@ const WalksToCome = ({ user, loading, cancelParticipate }) => {
             <WalkToComeSmall
               key={item.walk.id}
               {...item.walk}
-              cancelParticipate={cancelParticipate}
+              handleCancelParticipation={handleCancelParticipation}
             />
           ))}
         </div>
@@ -31,6 +31,6 @@ const WalksToCome = ({ user, loading, cancelParticipate }) => {
 WalksToCome.propTypes = {
   user: PropTypes.object.isRequired,
   loading: PropTypes.bool.isRequired,
-  
+  handleCancelParticipation: PropTypes.func.isRequired,
 };
 export default WalksToCome;

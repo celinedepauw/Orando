@@ -96,7 +96,7 @@ const walksMiddleware = (store) => (next) => (action) => {
         },
       })
         .then((response) => {
-          console.log(response);
+          console.log('toto aimerait sa', response);
         })
         .catch((error) => {
           console.log(error);
