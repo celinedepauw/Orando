@@ -21,7 +21,11 @@ const Participants = ({ walks, loading }) => {
             <p className="participants_walk_number"> {walk.participants.length} participant(s)</p>
             <div className="participants_list">
               {walk.participants.map((participant) => (
-                <OneParticipant key={participant.user.id} {...participant.user} />
+                <OneParticipant
+                  key={participant.user.id}
+                  {...participant.user}
+                  creator={walk.creator}
+                />
               ))}
             </div>
           </div>
