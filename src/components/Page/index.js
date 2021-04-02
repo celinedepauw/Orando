@@ -11,11 +11,15 @@ import WalksToCome from 'src/containers/WalksToCome';
 import MyHikes from 'src/containers/MyHikes';
 import Authentification from 'src/containers/Authentification';
 import AboutUs from 'src/components/AboutUs';
+import Participants from 'src/containers/Participants';
 
 
 const Page = () => (
   <div className="page">
     <Switch>
+      <Route path="/participants/walks/:id">
+        <Participants />
+      </Route>
       <Route path="/walks/:id">
         <Walk />
       </Route>

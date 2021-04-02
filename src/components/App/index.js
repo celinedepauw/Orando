@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 // == Import
 import Header from 'src/containers/Header';
-import Participants from 'src/components/Participants';
+import Participants from 'src/containers/Participants';
 import Page from 'src/containers/Page';
 import MobileNav from 'src/containers/MobileNav';
 import Footer from 'src/components/Footer';

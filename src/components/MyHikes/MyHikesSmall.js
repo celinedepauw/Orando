@@ -30,7 +30,9 @@ const MyHikesSmall = ({
       // V1 : l'organisateur peut visualiser les participants à sa randonnée
       // V2 : l'organisateur pourra accepter ou refuser la participation d'un utilisateur
       }
-      <button type="button" className="walk_button_attendees">Voir les participants</button>
+      <Link to={`/participants/walks/${id}`}>
+        <button type="button" className="walk_button_attendees">Voir les participants</button>
+      </Link>
       <form onSubmit={handleRemove}>
         <button type="submit" className="walk_button_delete">Annuler cette randonnée</button>
       </form>
