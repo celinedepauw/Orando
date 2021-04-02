@@ -34,12 +34,12 @@ const Walk = ({ walks, loading, handleParticipation }) => {
             <p className="post-page"><BiInfoCircle size={30} /> {walk.description}</p>
             <div className="page-links">
               {walk.creator.id == userId ? (
-                <a href={`http://orando.me/back/walk/edit/${id}`}>
+                <a href={`https://orando.me/o/walk/edit/${id}`}>
                   <button className="button-edit" type="button">Modifier la randonnée</button>
                 </a>
               ) : (
                 <>
-                  <a className="link" href={`http://orando.me/back/profile/${walk.creator.id}/contact-user`}><BiEnvelope size={30} />Contacter {walk.creator.nickname} pour avoir plus d'informations !</a>
+                  <a className="link" href={`https://orando.me/o/profile/${walk.creator.id}/contact-user`}><BiEnvelope size={30} />Contacter {walk.creator.nickname} pour avoir plus d'informations !</a>
                   <button className="button-page" type="button" onClick={() => handleParticipation(id)}>Je souhaite participer !</button>
                 </>
               )}

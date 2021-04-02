@@ -12,14 +12,14 @@ const NavTop = ({ handleLogout, isLogged }) => {
   return (
     <nav className="header_nav">
       <Link to="/" className="header_nav_item"><BiHomeHeart size={25} />Accueil</Link>
-      <a href="http://orando.me/o/walk/create" className="header_nav_item"><FaHiking size={25} /><BiPlus size={25} />Créer une randonnée</a>
+      <a href="https://orando.me/o/walk/create" className="header_nav_item"><FaHiking size={25} /><BiPlus size={25} />Créer une randonnée</a>
       {!isLogged && (
         <Link to="/authentication" className="header_nav_item"><ImEnter size={25} />Connexion</Link>
       )}
       {isLogged && (
         <>
           <Link to="/account" className="header_nav_item"><IoMdPerson size={25} />Mon Compte</Link>
-          <a href="http://orando.me/o/logout" className="header_nav_item" type="submit" onClick={handleLogout}><BiXCircle size={25} />Déconnexion</a>
+          <a href="https://orando.me/o/logout" className="header_nav_item" type="submit" onClick={handleLogout}><BiXCircle size={25} />Déconnexion</a>
         </>
       )}
     </nav>
