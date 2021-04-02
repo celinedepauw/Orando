@@ -15,6 +15,7 @@ const walksMiddleware = (store) => (next) => (action) => {
       // console.log('il faut récupérer les randonnées');
       const authenticationToken = localStorage.getItem('Token');
       axios.get('https://orando.me/o/api/walks', { headers: { Authorization: `Bearer ${authenticationToken}` } })
+
         .then((response) => {
           // console.log(response.data);
           if (response.status === 401) {
@@ -31,8 +32,10 @@ const walksMiddleware = (store) => (next) => (action) => {
     }
     case DELETE_WALK: {
       // console.log('il faut effacer une randonnée');
+
       const authenticationToken = localStorage.getItem('Token');
       axios.delete(`https://orando.me/o/api/walks/${action.walkId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
+
         .then((response) => {
           // const walkId = response.data.id;
           // console.log(response);

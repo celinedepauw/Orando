@@ -21,6 +21,9 @@ const Account = () => (
       <Link to="/my_hikes" className="account_myhikes">
         Mes randonnées organisées
       </Link>
+      <Link to="/archived_walks" className="account_archived">
+        Mes randonnées passées
+      </Link>
     </div>
   </div>
 );
