@@ -1,40 +1,60 @@
 @use 'src/styles/vars';
 
 .archived {
-  margin: 20px;
+  min-height: 100vh;
 
   .archived_title {
     text-align: center;
     color: vars.$darkRed;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
     padding: 1rem;
-    margin-bottom: 20px;
-  }
-
-  .archived_infos {
-    border: solid 1px grey;
-    border-radius: 10%;
-    width: 50%;
-    height: 20%;
-    text-align: center;
-    padding: 20px;
 
     @media(min-width: vars.$breakpointTablet) {
-      width: 30%;
+      font-size: 3rem;
+    }
+
+    @media(min-width: vars.$breakpointDesktop) {
+      font-size: 4rem;
     }
   }
 
+  .archived_infos_list {
+    @media(min-width: vars.$breakpointTablet) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+
+  .archived_infos {
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1rem;
+    margin : 1rem;
+  
+        @media(min-width: vars.$breakpointTablet) {
+          width: 29%;
+        }
+  
+        @media(min-width: vars.$breakpointXLarge) {
+          width: 22%;
+        }
+
   .archived_infos_title {
     padding: 10px;
+    color: vars.$regularYellow;
   }
 
   .archived_infos_area {
     padding: 10px;
+    color: vars.$regularRed;
   }
 
   .archived_infos_date {
     padding: 10px;
+    color: vars.$darkGreen;
   }
 
   .archived_infos_time {
@@ -50,5 +70,7 @@
     background-color: vars.$darkRed;
     border: none;
     border-radius: 10px;
+    }
   }
+}
 }

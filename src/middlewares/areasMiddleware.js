@@ -6,7 +6,7 @@ const areasMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_AREAS:
       // console.log('il faut récupérer les régions');
-      axios.get('http://orando.me/back/api/areas/')
+      axios.get('https://orando.me/o/api/areas/')
         .then((response) => {
           // console.log(response.data);
           store.dispatch(saveAreas(response.data));

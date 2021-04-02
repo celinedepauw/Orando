@@ -34,8 +34,6 @@
         padding: 1rem;
         margin : 1rem;
         display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
         justify-content: space-between;
   
         @media(min-width: vars.$breakpointTablet) {

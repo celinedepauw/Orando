@@ -54,5 +54,16 @@
       border: 1px solid vars.$darkRed;
       border-radius: 10px;
     }
+
+    .account_archived {
+      text-align: center;
+      font-size: 2rem;
+      margin: 20px 50px 20px 50px;
+      padding: 4rem;
+      background: linear-gradient(to bottom right, rgba(165, 42, 42, 0.801), rgba(165, 40, 40, 0.671));
+      color: white;
+      border: 1px solid rgba(165, 42, 42, 0.589);
+      border-radius: 10px;
+    }
   }
 }
