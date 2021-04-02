@@ -19,9 +19,6 @@ import Participants from 'src/containers/Participants';
 const Page = () => (
   <div className="page">
     <Switch>
-      <Route path="/archived_walks">
-        <Archived />
-      </Route>
       <Route path="/participants/walks/:id">
         <Participants />
       </Route>
@@ -33,6 +30,9 @@ const Page = () => (
       </Route>
       <Route path="/authentication">
         <Authentification />
+      </Route>
+      <Route path="/archived_walks">
+        <Archived />
       </Route>
       <Route path="/account">
         <Account />
