@@ -18,6 +18,13 @@
     padding: 1rem;
   }
 
+  .participants_walk_number {
+    text-align: center;
+    color: vars.$darkYellow;
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+
   .participants_list {
 
     @media(min-width: vars.$breakpointTablet) {
