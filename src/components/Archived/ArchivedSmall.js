@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
 
 const ArchivedSmall = ({
@@ -9,22 +10,18 @@ const ArchivedSmall = ({
   area,
   difficulty,
   duration,
-}) => {
-  console.log();
-
-  return (
-    <div className="archived_infos">
-      <h3 className="archived_infos_title">{title}</h3>
-      <p className="archived_infos_area">{area.name}</p>
-      <p className="archived_infos_date">{date}</p>
-      <p className="archived_infos_time">{duration} heures</p>
-      <p className="archived_infos_level">{difficulty}</p>
-      <Link to={`/walks/${id}`}>
-        <button className="archived_infos_button" type="submit">Voir détails</button>
-      </Link>
-    </div>
-  );
-};
+}) => (
+  <div className="archived_infos">
+    <h3 className="archived_infos_title">{title}</h3>
+    <p className="archived_infos_area">{area.name}</p>
+    <p className="archived_infos_date"><Moment locale="fr" format="dddd DD MMMM YYYY HH:mm">{date}</Moment></p>
+    <p className="archived_infos_time">{duration} heures</p>
+    <p className="archived_infos_level">{difficulty}</p>
+    <Link to={`/walks/${id}`}>
+      <button className="archived_infos_button" type="button">Voir détails</button>
+    </Link>
+  </div>
+);
 
 ArchivedSmall.propTypes = {
   id: PropTypes.number.isRequired,
