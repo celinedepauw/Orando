@@ -10,7 +10,7 @@ const Home2 = ({ areas }) => (
     <h2 className="home2_title">Explorez toutes les randonnées disponibles dans votre région !</h2>
     <div className="home_areas_list">
       {areas.map((area) => (
-        <AreaSmall key={area.id} {...area} />
+        <AreaSmall key={area.id} {...area} numberOfWalks={area.walks.length}/>
       ))}
     </div>
     <div className="home2_resume">
