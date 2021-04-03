@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const AreaSmall = ({ id, name, numberOfWalks }) => (
-  <Link to={`/areas/${id}`} className="home_area">
-    <div>
+  <Link to={`/areas/${id}`} className="areasmall">
+    <div className="areasmall_list">
       <h3 className="home_area_name">{name}</h3>
-      <p>{numberOfWalks} randonnée(s)</p>
+      {numberOfWalks === 0 ? <p className="home_area_noWalk">Pas encore de randonnée...</p> : <p className="home_area_number">{numberOfWalks}</p>}
     </div>
   </Link>
 );
