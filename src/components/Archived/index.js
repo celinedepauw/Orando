@@ -12,7 +12,7 @@ const Archived = ({ user, loadingUser }) => {
       {loadingUser && <div>Chargement en cours...</div>}
       {!loadingUser && (
       <div className="archived">
-        <h2 className="archived_title">Randos passées</h2>
+        <h2 className="archived_title">{user.archivedWalks.length} randonnée(s) passée(s)</h2>
         <div className="archived_infos_list">
           {user.archivedWalks.map((item) => (
             <ArchivedSmall key={item.walk.id} {...item.walk} />
