@@ -17,37 +17,40 @@ const Walk = ({ walks, loadingWalk, handleParticipation }) => {
   const userId = localStorage.getItem('currentUserId');
 
   return (
-    <div>
+    <>
       {loadingWalk && <div>Chargement en cours...</div>}
       {!loadingWalk && (
-        <article className="page">
-          <h2 className="page-title">{walk.title}</h2>
-          <p className="starting-point"><BiBeenHere size={30} /> Départ de : {walk.startingPoint}</p>
-          <p className="end-point"><BiDirections size={30} />Arrivée à : {walk.endPoint}</p>
-          <p className="date">Date : <Moment locale="fr" format="dddd DD MMMM YYYY HH:mm">{walk.date}</Moment></p>
-          <p className="difficulty">Difficulté : {walk.difficulty}</p>
-          <p className="duration">Durée : {walk.duration}</p>
-          <p className="elevation">Dénivelé : {walk.elevation}</p>
-          <p className="maxNbPersons">Nombre de personnes max : {walk.maxNbPersons}</p>
-          <p className="area">Lieu : {walk.area.name}</p>
-          <div className="description">
-            <p className="post-page"><BiInfoCircle size={30} /> {walk.description}</p>
-            <div className="page-links">
-              {walk.creator.id == userId ? (
-                <a href={`https://orando.me/o/walk/edit/${id}`}>
-                  <button className="button-edit" type="button">Modifier la randonnée</button>
-                </a>
-              ) : (
-                <>
-                  <a className="link" href={`https://orando.me/o/profile/${walk.creator.id}/contact-user`}><BiEnvelope size={30} />Contacter {walk.creator.nickname} pour avoir plus d'informations !</a>
-                  <button className="button-page" type="button" onClick={() => handleParticipation(id)}>Je souhaite participer !</button>
-                </>
-              )}
-            </div>
+        <div className="walk">
+          <h2 className="walk_title">{walk.title}</h2>
+          <div>
+            {walk.tags.map((tag) => (
+              <p key={tag.name}>{tag.name}</p>
+            ))}
           </div>
-        </article>
+          <p className="walk_starting_point"><BiBeenHere size={30} /> Départ de : {walk.startingPoint}</p>
+          <p className="walk_end_point"><BiDirections size={30} />Arrivée à : {walk.endPoint}</p>
+          <p className="walk_date">Date : <Moment locale="fr" format="dddd DD MMMM YYYY HH:mm">{walk.date}</Moment></p>
+          <p className="walk_difficulty">Difficulté : {walk.difficulty}</p>
+          <p className="walk_duration">Durée : {walk.duration}</p>
+          <p className="walk_elevation">Dénivelé : {walk.elevation}</p>
+          <p className="walk_maxNbPersons">Nombre de personnes max : {walk.maxNbPersons}</p>
+          <p className="walk_area">Lieu : {walk.area.name}</p>
+          <p className="walk_description"><BiInfoCircle size={30} /> {walk.description}</p>
+          <div className="walk-links">
+            {walk.creator.id == userId ? (
+              <a href={`https://orando.me/o/walk/edit/${id}`}>
+                <button className="walk_button_edit" type="button">Modifier la randonnée</button>
+              </a>
+            ) : (
+              <>
+                <a className="walk_contact_link" href={`https://orando.me/o/profile/${walk.creator.id}/contact-user`}><BiEnvelope size={30} />Contacter {walk.creator.nickname} pour avoir plus d'informations !</a>
+                <button className="walk_moreInfos_button" type="button" onClick={() => handleParticipation(id)}>Je souhaite participer !</button>
+              </>
+            )}
+          </div>
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

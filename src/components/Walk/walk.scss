@@ -1,9 +1,9 @@
 @use 'src/styles/vars';
 
-.page {
+.walk {
   margin: 10px;
 
-  .page-title {
+  .walk_title {
     text-align: center;
     font-size: 2rem;
     padding: 20px;
@@ -11,21 +11,57 @@
     width: 50%;
     margin: auto;
     color: vars.$darkRed;
-
-    @media(min-width: vars.$breakpointTablet) {
-    }
-    
   }
 
-  .description {
+  .walk_starting_point {
+    padding: 1rem;
+  }
 
+  .walk_end_point {
+    padding: 1rem;
+  }
 
-    .page-links {
-      margin: 10px;
+  .walk_date {
+    padding: 1rem;
+  }
+
+  .walk_difficulty {
+    padding: 1rem;
+  }
+
+  .walk_duration {
+    padding: 1rem;
+  }
+
+  .walk_elevation {
+    padding: 1rem;
+  }
+
+  .walk_maxNbPersons {
+    padding: 1rem;
+  }
+
+  .walk_area {
+    padding: 1rem;
+  }
+  .walk_description {
+    padding: 1rem;
+  }
+
+  .walk-links {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
 
-      .button-page {
+      .walk_button_edit {
+        padding: 1rem;
+      }
+
+      .walk_contact_link {
+        padding: 1rem;
+      }
+
+      .walk_moreInfos_button {
         margin-bottom: 10px;
         margin-right: 10px;
         padding: 1rem;
@@ -33,48 +69,5 @@
         border: none;
         border-radius: 10px;
       }
-  
-      .link {
-        margin: 10px ;
-      }
     }
-  }
-
-  p {
-    margin: 10px;
-    padding: 20px;
-  }
-  .post-page {
-    padding: 20px;
-    
-  }
-
-  .button-comment {
-    margin: 20px;
-  }
-
-  .comment {
-    display: block;
-    justify-content: space-around;
-    margin-left: 20px;
-
-    .comment-icons {
-      margin: 10px;
-      padding: 20px;
-      width: 0.5rem;
-
-    }
-    
-  }
-  .post-comment {
-    padding-top: 40px;
-    padding-bottom: 5px;
-    padding-left: 2px;
-  }
-  .write-comment {
-    border: grey solid 1px;
-    padding-bottom: 100px;
-  }
-
- 
 }
