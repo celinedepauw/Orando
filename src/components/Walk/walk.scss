@@ -6,11 +6,36 @@
   .walk_title {
     text-align: center;
     font-size: 2rem;
-    padding: 20px;
-    margin: 10px;
-    width: 50%;
-    margin: auto;
+    padding: 1rem;
     color: vars.$darkRed;
+  }
+
+  .walk_area {
+    padding: 1rem;
+    color: vars.$regularRed;
+    font-style: italic;
+    text-align: center;
+  }
+
+  .walk_date {
+    padding: 1rem;
+    text-align: center;
+    color: vars.$darkGreen;
+    font-style: italic;
+  }
+
+  .walk_tags_list {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+    .walk_tag {
+      margin: 0.5rem;
+      padding: 0.5rem;
+      background-color: vars.$darkGreen;
+      color: white;
+      border-radius: 10px;
+    }
   }
 
   .walk_starting_point {
@@ -21,9 +46,7 @@
     padding: 1rem;
   }
 
-  .walk_date {
-    padding: 1rem;
-  }
+  
 
   .walk_difficulty {
     padding: 1rem;
@@ -41,9 +64,6 @@
     padding: 1rem;
   }
 
-  .walk_area {
-    padding: 1rem;
-  }
   .walk_description {
     padding: 1rem;
   }

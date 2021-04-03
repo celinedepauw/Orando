@@ -22,19 +22,19 @@ const Walk = ({ walks, loadingWalk, handleParticipation }) => {
       {!loadingWalk && (
         <div className="walk">
           <h2 className="walk_title">{walk.title}</h2>
-          <div>
+          <p className="walk_area">Région : {walk.area.name}</p>
+          <p className="walk_date">Le <Moment locale="fr" format="dddd DD MMMM YYYY HH:mm">{walk.date}</Moment></p>
+          <div className="walk_tags_list">
             {walk.tags.map((tag) => (
-              <p key={tag.name}>{tag.name}</p>
+              <p key={tag.name} className="walk_tag">{tag.name}</p>
             ))}
           </div>
           <p className="walk_starting_point"><BiBeenHere size={30} /> Départ de : {walk.startingPoint}</p>
           <p className="walk_end_point"><BiDirections size={30} />Arrivée à : {walk.endPoint}</p>
-          <p className="walk_date">Date : <Moment locale="fr" format="dddd DD MMMM YYYY HH:mm">{walk.date}</Moment></p>
           <p className="walk_difficulty">Difficulté : {walk.difficulty}</p>
-          <p className="walk_duration">Durée : {walk.duration}</p>
-          <p className="walk_elevation">Dénivelé : {walk.elevation}</p>
+          <p className="walk_duration">Durée : {walk.duration} heure(s)</p>
+          <p className="walk_elevation">Dénivelé : {walk.elevation} mètres</p>
           <p className="walk_maxNbPersons">Nombre de personnes max : {walk.maxNbPersons}</p>
-          <p className="walk_area">Lieu : {walk.area.name}</p>
           <p className="walk_description"><BiInfoCircle size={30} /> {walk.description}</p>
           <div className="walk-links">
             {walk.creator.id == userId ? (
