@@ -32,6 +32,19 @@
         font-size: 3.2rem;
       }
 
+      .area_add_walk_button {
+        padding: 1rem;
+      background-color: vars.$regularRed;
+      color: white;
+      border: none;
+      border-radius: 10px;
+
+      &:hover {
+        background-color: vars.$darkRed;
+        transform: scale(1.5);
+      }
+      }
+
       .area_numberOfWalks {
         font-weight: bold;
       }
