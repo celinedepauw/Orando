@@ -12,7 +12,7 @@ const WalksToCome = ({ user, loadingUser, handleCancelParticipation }) => {
       {loadingUser && <div>Chargement en cours...</div>}
       {!loadingUser && (
       <main className="walks_to_come">
-        <h2 className="walks_to_come_title">Mes randonnées à venir</h2>
+        <h2 className="walks_to_come_title">{user.incomingWalks.length} randonnée(s) à venir</h2>
         <div className="walks_to_come_list">
           {user.incomingWalks.map((item) => (
             <WalkToComeSmall
