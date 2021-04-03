@@ -16,6 +16,7 @@ const Area = ({ areas, loadingAreas }) => {
       {!loadingAreas && (
         <main className="area">
           <h2 className="area_name">{area.name}</h2>
+          <h3 className="area_walks"><span className="area_numberOfWalks">{area.walks.length} </span>randonnées auront bientôt lieu près de chez vous !</h3>
           <div className="area_walks_list">
             {area.walks.map((item) => (
               <WalkSmall2 key={item.id} {...item} />
