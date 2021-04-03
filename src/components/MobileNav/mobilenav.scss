@@ -15,24 +15,28 @@
   }
 
   .mobilenav_home {
-    border: none;
-    background-color: vars.$darkGreen;
-    color: vars.$darkYellow;
+    max-width: 60px;
+    
   }
 
   .mobilenav_create {
-    border: none;
-    background-color: vars.$darkGreen;
-    color: vars.$darkYellow;
-
-    .mobilenav_plus {
-      margin-bottom: 1rem;
-    }
+    max-width: 50px;
+    margin-top: 8.5px;
   }
 
+  .mobilenav_login {
+    margin-top: 8px;
+    max-width: 50px;
+  }
   .mobilenav_connected {
+    margin-top: 8px;
+    max-width: 50px;
+  }
+
+  .mobilenav_logout {
     border: none;
     background-color: vars.$darkGreen;
     color: vars.$darkYellow;
+    margin-top: 8px;
   }
 }
