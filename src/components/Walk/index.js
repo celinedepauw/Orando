@@ -38,7 +38,7 @@ const Walk = ({ walks, loadingWalk, handleParticipation }) => {
           <p className="walk_description"><BiInfoCircle size={30} /> {walk.description}</p>
           <div className="walk-links">
             {walk.creator.id == userId ? (
-              <a href={`https://orando.me/o/walk/edit/${id}`}>
+              <a className="walk_edit_link" href={`https://orando.me/o/walk/edit/${id}`}>
                 <button className="walk_button_edit" type="button">Modifier la randonnée</button>
               </a>
             ) : (

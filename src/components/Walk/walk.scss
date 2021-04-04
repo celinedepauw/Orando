@@ -73,10 +73,20 @@
       flex-wrap: wrap;
       justify-content: space-between;
 
-      .walk_button_edit {
-        padding: 1rem;
-      }
+      .walk_edit_link {
+        text-align: center;
+        width: 100%;
 
+        .walk_button_edit {
+          margin-bottom: 10px;
+          margin-right: 10px;
+          padding: 1rem;
+          background-color: vars.$regularRed;
+          border: none;
+          border-radius: 10px;
+        }
+      }
+      
       .walk_contact_link {
         padding: 1rem;
       }
