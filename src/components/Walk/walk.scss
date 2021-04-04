@@ -26,7 +26,7 @@
 
   .walk_tags_list {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
 
     .walk_tag {

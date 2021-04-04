@@ -22,7 +22,7 @@ const Walk = ({ walks, loadingWalk, handleParticipation }) => {
       {!loadingWalk && (
         <div className="walk">
           <h2 className="walk_title">{walk.title}</h2>
-          <p className="walk_area">Région : {walk.area.name}</p>
+          <p className="walk_area">{walk.area.name}</p>
           <p className="walk_date">Le <Moment locale="fr" format="dddd DD MMMM YYYY HH:mm">{walk.date}</Moment></p>
           <div className="walk_tags_list">
             {walk.tags.map((tag) => (
@@ -56,22 +56,31 @@ const Walk = ({ walks, loadingWalk, handleParticipation }) => {
 
 Walk.propTypes = {
   loadingWalk: PropTypes.bool.isRequired,
-
   walks: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       startingPoint: PropTypes.string.isRequired,
-      endPoint: PropTypes.string.isRequired,
+      endPoint: PropTypes.string,
       date: PropTypes.string.isRequired,
       difficulty: PropTypes.string.isRequired,
       duration: PropTypes.string.isRequired,
-      elevation: PropTypes.number.isRequired,
-      maxNbPersons: PropTypes.number.isRequired,
+      elevation: PropTypes.number,
+      maxNbPersons: PropTypes.number,
       area: PropTypes.object.isRequired,
       description: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
   handleParticipation: PropTypes.func.isRequired,
+};
+
+Walk.funcdefaultProps = {
+  walks: [
+    {
+      endPoint: '',
+      elevation: null,
+      maxNbPersons: null,
+    },
+  ],
 };
 
 export default Walk;
