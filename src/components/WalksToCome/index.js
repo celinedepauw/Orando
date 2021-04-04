@@ -5,28 +5,25 @@ import WalkToComeSmall from 'src/components/WalksToCome/WalkToComeSmall';
 
 import './walksToCome.scss';
 
-const WalksToCome = ({ user, loadingUser, handleCancelParticipation }) => {
-   console.log(user.incomingWalks);
-  return (
-    <>
-      {loadingUser && <div>Chargement en cours...</div>}
-      {!loadingUser && (
-      <main className="walks_to_come">
-        <h2 className="walks_to_come_title">{user.incomingWalks.length} randonnée(s) à venir</h2>
-        <div className="walks_to_come_list">
-          {user.incomingWalks.map((item) => (
-            <WalkToComeSmall
-              key={item.walk.id}
-              {...item.walk}
-              handleCancelParticipation={handleCancelParticipation}
-            />
-          ))}
-        </div>
-      </main>
-      )}
-    </>
-  );
-};
+const WalksToCome = ({ user, loadingUser, handleCancelParticipation }) => (
+  <>
+    {loadingUser && <div>Chargement en cours...</div>}
+    {!loadingUser && (
+    <main className="walks_to_come">
+      <h2 className="walks_to_come_title">{user.incomingWalks.length} randonnée(s) à venir</h2>
+      <div className="walks_to_come_list">
+        {user.incomingWalks.map((item) => (
+          <WalkToComeSmall
+            key={item.walk.id}
+            {...item.walk}
+            handleCancelParticipation={handleCancelParticipation}
+          />
+        ))}
+      </div>
+    </main>
+    )}
+  </>
+);
 
 WalksToCome.propTypes = {
   user: PropTypes.object.isRequired,

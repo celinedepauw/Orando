@@ -5,12 +5,10 @@ import MyHikesSmall from 'src/containers/MyHikes/MyHikesSmall';
 
 import './myHikes.scss';
 
-const MyHikes = ({ user, loadingUser }) => {
- console.log(user);
-  return (
-    <>
-      {loadingUser && <div>Chargement en cours...</div>}
-      {!loadingUser && (
+const MyHikes = ({ user, loadingUser }) => (
+  <>
+    {loadingUser && <div>Chargement en cours...</div>}
+    {!loadingUser && (
       <main className="walks_user">
         <h2 className="walks_user_title">{user.user.walks.length} randonnée(s) organisée(s)</h2>
         <div className="walks_user_list">
@@ -20,10 +18,9 @@ const MyHikes = ({ user, loadingUser }) => {
           ))}
         </div>
       </main>
-      )}
-    </>
-  );
-};
+    )}
+  </>
+);
 MyHikes.propTypes = {
   user: PropTypes.object.isRequired,
   loadingUser: PropTypes.bool.isRequired,

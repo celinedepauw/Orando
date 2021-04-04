@@ -4,13 +4,10 @@ import PropTypes from 'prop-types';
 import ArchivedSmall from 'src/containers/Archived/ArchivedSmall';
 import './archived.scss';
 
-const Archived = ({ user, loadingUser }) => {
-  console.log(user);
-
-  return (
-    <>
-      {loadingUser && <div>Chargement en cours...</div>}
-      {!loadingUser && (
+const Archived = ({ user, loadingUser }) => (
+  <>
+    {loadingUser && <div>Chargement en cours...</div>}
+    {!loadingUser && (
       <div className="archived">
         <h2 className="archived_title">{user.archivedWalks.length} randonnée(s) passée(s)</h2>
         <div className="archived_infos_list">
@@ -19,10 +16,9 @@ const Archived = ({ user, loadingUser }) => {
           ))}
         </div>
       </div>
-      )};
-    </>
-  );
-};
+    )};
+  </>
+);
 
 Archived.propTypes = {
   user: PropTypes.object.isRequired,
