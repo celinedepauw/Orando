@@ -35,7 +35,7 @@ const Walk = ({ walks, loadingWalk, handleParticipation }) => {
           <p className="walk_duration">Durée : {walk.duration} heure(s)</p>
           {walk.elevation ? <p className="walk_elevation">Dénivelé : {walk.elevation} mètres</p> : <p className="walk_elevation">Dénivelé non renseigné</p>}
           {walk.maxNbPersons ? <p className="walk_maxNbPersons">Nombre limite de participants : {walk.maxNbPersons}</p> : <p className="walk_maxNbPersons">Pas de limite dans le nombre de participants</p>}
-          <p className="walk_description"><BiInfoCircle size={30} /> {walk.description}</p>
+          <p className="walk_description"><BiInfoCircle size={30} />Description / Infos pratiques : <br /> {walk.description}</p>
           <div className="walk-links">
             {walk.creator.id == userId ? (
               <a className="walk_edit_link" href={`https://orando.me/o/walk/edit/${id}`}>

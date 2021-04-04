@@ -71,33 +71,52 @@
   .walk-links {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: space-around;
 
       .walk_edit_link {
         text-align: center;
         width: 100%;
 
         .walk_button_edit {
+          color: white;
+          font-size: 1.2rem;;
           margin-bottom: 10px;
           margin-right: 10px;
           padding: 1rem;
           background-color: vars.$regularRed;
           border: none;
           border-radius: 10px;
-        }
+
+          &:hover {
+            background-color: vars.$darkRed;
+            transform: scale(1.5);
+          }
+        } 
       }
       
       .walk_contact_link {
         padding: 1rem;
+        color: vars.$regularGreen;
+
+        &:hover {
+          text-decoration: underline overline vars.$darkGreen;
+          font-weight: bold;
+        }
       }
 
       .walk_moreInfos_button {
+        color: white;
         margin-bottom: 10px;
         margin-right: 10px;
         padding: 1rem;
         background-color: vars.$regularRed;
         border: none;
         border-radius: 10px;
+
+        &:hover {
+          background-color: vars.$darkRed;
+          transform: scale(1.5);
+        }
       }
     }
 }
