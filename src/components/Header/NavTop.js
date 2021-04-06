@@ -3,29 +3,25 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import homeLogo from 'src/assets/images/home.png';
 import createLogo from 'src/assets/images/create.png';
+import connect from 'src/assets/images/enter.png';
+import disconnect from 'src/assets/images/logout.png';
+import avatar from 'src/assets/images/054-hiker.png';
 
-import { BiXCircle } from 'react-icons/bi';
-import { IoMdPerson } from 'react-icons/io';
-import { ImEnter } from 'react-icons/im';
-
-const NavTop = ({ handleLogout, isLogged }) => {
-  console.log(isLogged);
-  return (
-    <nav className="header_nav">
-      <Link to="/" className="header_nav_item"><img className="header_nav_home_logo" src={homeLogo} alt="" />Accueil</Link>
-      <a href="https://orando.me/o/walk/create" className="header_nav_item"><img className="header_nav_create_logo" src={createLogo} alt="" />Créer une randonnée</a>
-      {!isLogged && (
-        <Link to="/authentication" className="header_nav_item"><ImEnter size={25} />Connexion</Link>
-      )}
-      {isLogged && (
-        <>
-          <Link to="/account" className="header_nav_item"><IoMdPerson size={25} />Mon Compte</Link>
-          <a href="https://orando.me/o/logout" className="header_nav_item" type="submit" onClick={handleLogout}><BiXCircle size={25} />Déconnexion</a>
-        </>
-      )}
-    </nav>
-  );
-};
+const NavTop = ({ handleLogout, isLogged }) => (
+  <nav className="header_nav">
+    <Link to="/" className="header_nav_item"><img className="header_nav_home_logo" src={homeLogo} alt="logo-orando" />Accueil</Link>
+    <a href="https://orando.me/o/walk/create" className="header_nav_item"><img className="header_nav_create_logo" src={createLogo} alt="logo-create-walk" />Créer une randonnée</a>
+    {!isLogged && (
+      <Link to="/authentication" className="header_nav_item"><img className="header_nav_home_connect" src={connect} alt="logo-connect" />Connexion</Link>
+    )}
+    {isLogged && (
+      <>
+        <Link to="/account" className="header_nav_item"><img className="header_nav_home_avatar" src={avatar} alt="logo-avatar" />Mon Compte</Link>
+        <a href="https://orando.me/o/logout" className="header_nav_item" type="submit" onClick={handleLogout}><img className="header_nav_home_disconnect" src={disconnect} alt="logo-disconnect" />Déconnexion</a>
+      </>
+    )}
+  </nav>
+);
 
 NavTop.propTypes = {
   /** toggle between "connected" or "not connected" */
