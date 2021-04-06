@@ -4,6 +4,8 @@ import Account from 'src/components/Account';
 
 const mapStateToProps = (state) => ({
   isLogged: state.userInfo.isLogged,
+  user: state.userInfo.user,
+  loadingUser: state.userInfo.loadingUser,
 });
 
 const mapDispatchToProps = (dispatch) => ({

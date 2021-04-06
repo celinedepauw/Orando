@@ -22,7 +22,7 @@ const MyHikesSmall = ({
       <p className="walk_area">{area.name}</p>
       <p className="walk_date"><Moment locale="fr" format="dddd DD MMMM YYYY HH:mm">{date}</Moment></p>
       <p className="walk_difficulty">{difficulty}</p>
-      <p className="walk_duration">{duration} heure(s)</p>
+      <p className="walk_duration">{duration}</p>
       <Link to={`/walks/${id}`}>
         <button type="button" className="walk_button_more_infos">Plus de détails</button>
       </Link>

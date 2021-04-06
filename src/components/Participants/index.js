@@ -18,15 +18,19 @@ const Participants = ({ walks, loadingWalk }) => {
           <div className="participants">
             <h2 className="participants_walk_title">Liste des participants inscrits à la randonnée</h2>
             <h3 className="participants_walk_name">{walk.title}, le <Moment locale="fr" format="dddd DD MMMM YYYY HH:mm">{walk.date}</Moment></h3>
-            <p className="participants_walk_number"> {walk.participants.length} participant(s)</p>
+            {((walk.participants.length) - 1) === 0 ? <p className="participants_walk_number"> Aucun participant</p> : <p className="participants_walk_number"> {(walk.participants.length) - 1} participant(s)</p> }
             <div className="participants_list">
-              {walk.participants.map((participant) => (
-                <OneParticipant
-                  key={participant.user.id}
-                  {...participant.user}
-                  creator={walk.creator}
-                />
-              ))}
+              {walk.participants.map((participant) => {
+                if (participant.user.id !== walk.creator.id) {
+                  return (
+                    <OneParticipant
+                      key={participant.user.id}
+                      {...participant.user}
+                      creator={walk.creator}
+                    />
+                  );
+                }
+              })}
             </div>
           </div>
         </>

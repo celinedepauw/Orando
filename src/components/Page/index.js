@@ -5,7 +5,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import Home2 from 'src/containers/Home2';
 import Walk from 'src/containers/Walk';
 import Area from 'src/containers/Area';
-import Account from 'src/components/Account';
+import Account from 'src/containers/Account';
 import Profile from 'src/containers/Profile';
 import WalksToCome from 'src/containers/WalksToCome';
 import MyHikes from 'src/containers/MyHikes';

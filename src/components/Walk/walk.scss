@@ -1,80 +1,122 @@
 @use 'src/styles/vars';
 
-.page {
+.walk {
   margin: 10px;
 
-  .page-title {
+  .walk_title {
     text-align: center;
     font-size: 2rem;
-    padding: 20px;
-    margin: 10px;
-    width: 50%;
-    margin: auto;
+    padding: 1rem;
     color: vars.$darkRed;
-
-    @media(min-width: vars.$breakpointTablet) {
-    }
-    
   }
 
-  .description {
+  .walk_area {
+    padding: 1rem;
+    color: vars.$regularRed;
+    font-style: italic;
+    text-align: center;
+  }
 
+  .walk_date {
+    padding: 1rem;
+    text-align: center;
+    color: vars.$darkGreen;
+    font-style: italic;
+  }
 
-    .page-links {
-      margin: 10px;
+  .walk_tags_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .walk_tag {
+      margin: 0.5rem;
+      padding: 0.5rem;
+      background-color: vars.$darkGreen;
+      color: white;
+      border-radius: 10px;
+    }
+  }
+
+  .walk_starting_point {
+    padding: 1rem;
+  }
+
+  .walk_end_point {
+    padding: 1rem;
+  }
+
+  
+
+  .walk_difficulty {
+    padding: 1rem;
+  }
+
+  .walk_duration {
+    padding: 1rem;
+  }
+
+  .walk_elevation {
+    padding: 1rem;
+  }
+
+  .walk_maxNbPersons {
+    padding: 1rem;
+  }
+
+  .walk_description {
+    padding: 1rem;
+  }
+
+  .walk-links {
       display: flex;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      justify-content: space-around;
 
-      .button-page {
+      .walk_edit_link {
+        text-align: center;
+        width: 100%;
+
+        .walk_button_edit {
+          color: white;
+          font-size: 1.2rem;;
+          margin-bottom: 10px;
+          margin-right: 10px;
+          padding: 1rem;
+          background-color: vars.$regularRed;
+          border: none;
+          border-radius: 10px;
+
+          &:hover {
+            background-color: vars.$darkRed;
+            transform: scale(1.5);
+          }
+        } 
+      }
+      
+      .walk_contact_link {
+        padding: 1rem;
+        color: vars.$regularGreen;
+
+        &:hover {
+          text-decoration: underline overline vars.$darkGreen;
+          font-weight: bold;
+        }
+      }
+
+      .walk_moreInfos_button {
+        color: white;
         margin-bottom: 10px;
         margin-right: 10px;
         padding: 1rem;
         background-color: vars.$regularRed;
         border: none;
         border-radius: 10px;
-      }
-  
-      .link {
-        margin: 10px ;
+
+        &:hover {
+          background-color: vars.$darkRed;
+          transform: scale(1.5);
+        }
       }
     }
-  }
-
-  p {
-    margin: 10px;
-    padding: 20px;
-  }
-  .post-page {
-    padding: 20px;
-    
-  }
-
-  .button-comment {
-    margin: 20px;
-  }
-
-  .comment {
-    display: block;
-    justify-content: space-around;
-    margin-left: 20px;
-
-    .comment-icons {
-      margin: 10px;
-      padding: 20px;
-      width: 0.5rem;
-
-    }
-    
-  }
-  .post-comment {
-    padding-top: 40px;
-    padding-bottom: 5px;
-    padding-left: 2px;
-  }
-  .write-comment {
-    border: grey solid 1px;
-    padding-bottom: 100px;
-  }
-
- 
 }

@@ -14,7 +14,7 @@ const WalkSmall2 = ({
     <h3 className="area_walk_title">{title}</h3>
     <p className="area_walk_date"><Moment locale="fr" format="dddd DD MMMM YYYY HH:mm">{date}</Moment></p>
     <p className="area_walk_difficulty">{difficulty}</p>
-    <p className="area_walk_duration">{duration} heure(s)</p>
+    <p className="area_walk_duration">{duration}</p>
     <Link to={`/walks/${id}`} className="area_walk_more_infos">En savoir plus </Link>
   </div>
 );
