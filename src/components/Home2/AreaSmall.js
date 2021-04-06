@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const AreaSmall = ({ id, name, numberOfWalks }) => (
   <Link to={`/areas/${id}`} className="areasmall">
     <h3 className="home_area_name">{name}</h3>
-    {numberOfWalks === 0 ? <p className="home_area_noWalk">Pas encore de randonnée...</p> : <p className="home_area_number">{numberOfWalks} <span className="home_area_walk">randonnée(s)</span></p>}
+    {numberOfWalks === 0 ? <p className="home_area_noWalk">Pas encore de randonnée...</p> : <p className="home_area_number">{numberOfWalks} randonnée(s)</p>}
   </Link>
 );
 

@@ -19,7 +19,7 @@ const WalkToComeSmall = ({
     <p className="walk_to_come_difficulty">{difficulty}</p>
     <p className="walk_to_come_duration">{duration}</p>
     <Link to={`/walks/${id}`}>
-      <button type="button" href="" className="walk_to_come_button_more_infos">En savoir plus</button>
+      <button type="button" className="walk_to_come_button_more_infos">En savoir plus</button>
     </Link>
     <button type="button" className="walk_to_come_button_delete" onClick={() => handleCancelParticipation(id)}>Annuler ma participation</button>
   </div>
