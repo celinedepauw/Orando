@@ -24,7 +24,7 @@
     justify-content: space-evenly;
 
     @media(min-width: vars.$breakpointTablet) {
-      margin: 0 50px 50px 0;
+      margin: 0 150px 50px 0;
     }
   
     @media(min-width: vars.$breakpointDesktop) {
@@ -41,36 +41,45 @@
   }
 
   .profile_container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-
-
-    @media(min-width: vars.$breakpointTablet) {
-      flex-direction: row;
-    }
-  
-    @media(min-width: vars.$breakpointDesktop) {
-      flex-direction: row;
-    }
+    
     
 
     .profile_picture {
       width: 200px;
       height: 200px;
       border-radius: 50%;
+      box-shadow: 0px 10px 20px grey;
       display: block;
       margin: auto;
     }
-
-    .profile_pseudo {
-      display: block;
-      border-radius: 10px;
-      background: linear-gradient(to bottom right, vars.$darkGreen, #98b394);
-      padding: 10px;
-      margin: 20px 100px 20px 100px;
+    
+    .profile_container_informations {
       display: flex;
-      justify-content: center;
+      flex-wrap: wrap;
+      margin: 30px 30px 30px 30px;
+
+      .profile_pseudo {
+        display: block;
+        border-radius: 10px;
+        background: linear-gradient(to bottom right, vars.$darkGreen, #98b394);
+        box-shadow: 0px 10px 20px grey;
+        padding: 10px;
+        margin: 20px 75px 20px 75px;
+        display: flex;
+        justify-content: center;
+        font-size: 1.3em;
+
+        @media(min-width: vars.$breakpointTablet) {
+          font-size: 2em;
+          margin: 20px 100px 20px 100px;
+        }
+      
+        @media(min-width: vars.$breakpointDesktop) {
+          font-size: 2em;
+          margin: 50px 100px 20px 100px;
+        }
+      }
     }
+    
   }
 }

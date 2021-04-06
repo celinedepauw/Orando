@@ -26,16 +26,18 @@ const Profile = ({ user, loadingUser }) => {
             <div>
               <img className="profile_picture" alt="avatar" src={userDatas.picture !== null ? `https://orando.me/o/images/users/${userDatas.picture}` : bear} />
             </div>
-            <div className="profile_pseudo">
-              <h3>Pseudo: {userDatas.nickname}</h3>
-            </div>
-            <div className="profile_pseudo">Prénom: {userDatas.firstname}</div>
-            <div className="profile_pseudo">Nom: {userDatas.lastname}</div>
-            <div className="profile_pseudo">Date de naissance: {userDatas.dateOfBirth}</div>
-            <div className="profile_pseudo">Email: {userDatas.email}</div>
-            <div className="profile_pseudo">Région: {userDatas.area.name}</div>
-            <div className="profile_pseudo">
-              Description: {userDatas.description}
+            <div className="profile_container_informations">
+              <div className="profile_pseudo">
+                <h3>Pseudo: {userDatas.nickname}</h3>
+              </div>
+              <div className="profile_pseudo">Prénom: {userDatas.firstname}</div>
+              <div className="profile_pseudo">Nom: {userDatas.lastname}</div>
+              <div className="profile_pseudo">Date de naissance: {userDatas.dateOfBirth}</div>
+              <div className="profile_pseudo">Email: {userDatas.email}</div>
+              <div className="profile_pseudo">Région: {userDatas.area.name}</div>
+              <div className="profile_pseudo">
+                Description: {userDatas.description}
+              </div>
             </div>
           </div>
         </>
