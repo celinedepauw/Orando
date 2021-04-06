@@ -32,7 +32,7 @@ const Walk = ({ walks, loadingWalk, handleParticipation }) => {
           <p className="walk_starting_point"><BiBeenHere size={30} /> Départ de : {walk.startingPoint}</p>
           {walk.endPoint ? <p className="walk_end_point"><BiDirections size={30} />Arrivée à : {walk.endPoint}</p> : <p className="walk_end_point"><BiDirections size={30} />Cette randonnée est une boucle, le point d'arrivée est identique au point de départ</p>}
           <p className="walk_difficulty">Difficulté : {walk.difficulty}</p>
-          <p className="walk_duration">Durée : {walk.duration} heure(s)</p>
+          <p className="walk_duration">Durée : {walk.duration}</p>
           {walk.elevation ? <p className="walk_elevation">Dénivelé : {walk.elevation} mètres</p> : <p className="walk_elevation">Dénivelé non renseigné</p>}
           {walk.maxNbPersons ? <p className="walk_maxNbPersons">Nombre limite de participants : {walk.maxNbPersons}</p> : <p className="walk_maxNbPersons">Pas de limite dans le nombre de participants</p>}
           <p className="walk_description"><BiInfoCircle size={30} />Description / Infos pratiques : <br /> {walk.description}</p>
