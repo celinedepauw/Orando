@@ -44,6 +44,9 @@
 
       .header_nav {
         display: none;
+        background-color: vars.$darkRed;
+        border-radius: 30px;
+        padding: 0.5rem;
 
         @media(min-width: vars.$breakpointTablet) {
           display: flex;
@@ -51,7 +54,7 @@
         }
 
         .header_nav_item {
-          color: vars.$darkRed;
+          color: white;
           padding-right: 1rem;
           display: flex;
           align-items: center;
