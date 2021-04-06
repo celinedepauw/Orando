@@ -24,7 +24,7 @@ const Profile = ({ user, loadingUser }) => {
           </div>
           <div className="profile_container">
             <div>
-              <img className="profile_picture" alt="avatar" src={userDatas.picture !== null ? `https://orando.me/o/images/users/${userDatas.picture}` : bear} />
+              {userDatas.picture !== null ? <img className="profile_picture" alt="photography" src={`https://orando.me/o/images/users/${userDatas.picture}`} /> : <img className="profile_avatar" alt="avatar" src={bear} />}
             </div>
             <div className="profile_container_informations">
               <div className="profile_pseudo">
