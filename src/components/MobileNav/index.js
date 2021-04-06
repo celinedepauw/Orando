@@ -35,7 +35,7 @@ const MobileNav = ({ isLogged, handleLogout }) => (
     {isLogged && (
       <>
         <Link to="/account">
-          <img className="mobilenav_connected" src={hiker} alt="logged" />
+          <img className="mobilenav_connected" src={bear} alt="logged" />
         </Link>
         <a href="https://orando.me/o/logout" className="mobilenav_logout" type="submit" onClick={handleLogout}>
           <RiLogoutCircleRLine size={46} />
