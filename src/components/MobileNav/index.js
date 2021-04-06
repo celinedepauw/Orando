@@ -9,29 +9,35 @@ import { FaHiking } from 'react-icons/fa';
 // to connection - connected
 import { IoMdPerson } from 'react-icons/io';
 import { RiLogoutCircleRLine, RiLoginCircleLine } from 'react-icons/ri';
+import homeLogo from 'src/assets/icones/home.svg';
+import createLogo from 'src/assets/icones/create-hike.svg';
+import server from 'src/assets/icones/server.svg';
+import bear from 'src/assets/icones/bear.svg';
+import hiker from 'src/assets/icones/hiker.svg';
+import exit from 'src/assets/icones/exit.svg';
+import login from 'src/assets/icones/login.svg';
 
 import './mobilenav.scss';
 
 const MobileNav = ({ isLogged, handleLogout }) => (
   <nav className="mobilenav">
-    <Link to="/" className="mobilenav_home">
-      <BiHomeHeart size={46} />
+    <Link to="/">
+      <img src={homeLogo} alt="home logo" className="mobilenav_home" />
     </Link>
-    <a href="https://orando.me/o/walk/create" className="mobilenav_create">
-      <FaHiking size={46} />
-      <BiPlusMedical size={23} className="mobilenav_plus" />
+    <a href="https://orando.me/o/walk/create">
+      <img src={createLogo} alt="create hike" className="mobilenav_create" />
     </a>
     {!isLogged && (
-      <Link to="/authentication" className="mobilenav_connected" type="submit">
-        <RiLoginCircleLine size={46} />
+      <Link to="/authentication">
+        <img src={server} alt="login" className="mobilenav_login" />
       </Link>
     )}
     {isLogged && (
       <>
-        <Link to="/account" className="mobilenav_connected" type="submit">
-          <IoMdPerson size={46} />
+        <Link to="/account">
+          <img className="mobilenav_connected" src={bear} alt="logged" />
         </Link>
-        <a href="https://orando.me/o/logout" className="mobilenav_connected" type="submit" onClick={handleLogout}>
+        <a href="https://orando.me/o/logout" className="mobilenav_logout" type="submit" onClick={handleLogout}>
           <RiLogoutCircleRLine size={46} />
         </a>
       </>
