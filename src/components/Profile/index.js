@@ -27,7 +27,7 @@ const Profile = ({ user, loadingUser }) => {
             <div className="profile_lastname">Nom: {userDatas.lastname}</div>
             <div className="profile_date_of_birth">Date de naissance: {userDatas.dateOfBirth}</div>
             <div className="profile_email">Email: {userDatas.email}</div>
-            <div className="profile_area">Région: {userDatas.area}</div>
+            <div className="profile_area">Région: {userDatas.area.name}</div>
             <div className="profile_description">
               Description: {userDatas.description}
             </div>

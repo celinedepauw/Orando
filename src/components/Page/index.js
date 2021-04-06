@@ -13,8 +13,7 @@ import Authentification from 'src/containers/Authentification';
 import AboutUs from 'src/components/AboutUs';
 import Archived from 'src/containers/Archived';
 import Participants from 'src/containers/Participants';
-
-
+import Error from 'src/components/Error';
 
 const Page = () => (
   <div className="page">
@@ -49,8 +48,11 @@ const Page = () => (
       <Route path="/about_us">
         <AboutUs />
       </Route>
-      <Route path="/">
+      <Route exact path="/">
         <Home2 />
+      </Route>
+      <Route>
+        <Error />
       </Route>
     </Switch>
   </div>
