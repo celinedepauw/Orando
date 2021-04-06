@@ -25,9 +25,10 @@
 
     .areasmall {
       width: 41%;
+      min-height: 150px;
       text-align: center;
       border: 1px solid vars.$darkGreen;
-      border-radius: 10px;
+      border-radius: 30px;
       padding: 1rem;
       margin : 1rem;
       display: flex;
@@ -43,6 +44,7 @@
 
       @media(min-width: vars.$breakpointTablet) {
         width: 29%;
+        min-height: 200px;
         
       }
 
@@ -53,6 +55,7 @@
 
       @media(min-width: vars.$breakpointXLarge) {
         width: 15%;
+        min-height: 220px;;
         
       }
 
