@@ -24,6 +24,14 @@
     align-items: center;
     justify-content: space-evenly;
 
+    @media(min-width: vars.$breakpointTablet) {
+      margin: 0 150px 50px 0;
+    }
+  
+    @media(min-width: vars.$breakpointDesktop) {
+      margin: 0 300px 50px 0;
+    }
+
     .account_title {
       
     }
@@ -38,13 +46,14 @@
   .account_container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    width: 60%;
+    margin: 20px auto;
+    
     flex-direction: column;
 
     .account_profil {
-      text-align: center;
+      text-align: 20px center;
       font-size: 2rem;
-      margin: 20px 50px 20px 50px;
       padding: 4rem;
       background: linear-gradient(to bottom right, vars.$darkGreen, #98b394);
       color: white;
@@ -64,7 +73,6 @@
     .account_incomingwalks {
       text-align: center;
       font-size: 2rem;
-      margin: 20px 50px 20px 50px;
       padding: 4rem;
       background: linear-gradient(to bottom right, vars.$darkYellow, #fbc46d);
       color: white;
@@ -83,8 +91,7 @@
 
     .account_myhikes {
       text-align: center;
-      font-size: 2rem;
-      margin: 20px 50px 20px 50px;
+      font-size: 2rem
       padding: 4rem;
       background: linear-gradient(to bottom right, vars.$darkRed, #f29991);
       color: white;
@@ -104,7 +111,6 @@
     .account_archived {
       text-align: center;
       font-size: 2rem;
-      margin: 20px 50px 20px 50px;
       padding: 4rem;
       background: linear-gradient(to bottom right, vars.$darkYellow, #fbc46d);
       color: white;
