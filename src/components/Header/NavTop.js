@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import homeLogo from 'src/assets/images/home.png';
 import createLogo from 'src/assets/images/create.png';
-import connect from 'src/assets/images/enter.png';
-import disconnect from 'src/assets/images/logout.png';
+import connect from 'src/assets/images/login1.png';
+import disconnect from 'src/assets/images/logout1.png';
 import avatar from 'src/assets/images/054-hiker.png';
 
 const NavTop = ({ handleLogout, isLogged }) => (
