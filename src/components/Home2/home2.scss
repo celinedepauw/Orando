@@ -27,7 +27,6 @@
       width: 41%;
       min-height: 150px;
       text-align: center;
-      border: 1px solid vars.$darkGreen;
       border-radius: 30px;
       padding: 1rem;
       margin : 1rem;
@@ -35,7 +34,7 @@
       flex-wrap: wrap;
       flex-direction: column;
       justify-content: center;
-      background-color: vars.$lightYellow;
+      background-color: vars.$regularYellow;
 
       &:hover {
         transform: scale(1.1);
@@ -44,19 +43,16 @@
 
       @media(min-width: vars.$breakpointTablet) {
         width: 29%;
-        min-height: 200px;
-        
+        min-height: 200px; 
       }
 
       @media(min-width: vars.$breakpointDesktop) {
         width: 18%;
-       
       }
 
       @media(min-width: vars.$breakpointXLarge) {
         width: 15%;
-        min-height: 220px;;
-        
+        min-height: 220px;;        
       }
 
       .home_area_name {
@@ -72,20 +68,19 @@
       }
         
       .home_area_number {
-        font-size: 1.3rem;
         text-align: center;
-        color: white;
+        color: vars.$darkRed;
         font-weight: bold; 
-        border-radius: 50%;
-        background-color: vars.$regularRed;
-        padding: 8px;
-        width: 36px;
-        height: 36px;
+        animation-duration: 2s;
+        animation-name: flash;
+        animation-iteration-count: infinite;
+        transition: none;
 
-        .home_area_walk {
-          text-align: center;
-          color: vars.$regularRed;
-        }
+      @keyframes flash {
+        0%   { opacity:1; }
+        50%   {opacity:0; }
+        100% { opacity:1; }
+       }
       }
     }
   }
