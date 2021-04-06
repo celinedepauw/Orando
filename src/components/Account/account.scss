@@ -1,19 +1,37 @@
 @use 'src/styles/vars';
 
+
 .account {
-  background-color: vars.$lightYellow;
+  background: linear-gradient(#fee5e3, #fff);
+  margin: -15px;
   min-height: 100vh;
-  
-  .account_title {
-    text-align: center;
-    margin: 50px 50px 50px 50px;
+
+  .account_return {
+    width: 90px;
+    padding: 15px;
+  }
+
+  .account_title_margin {
+    margin: 0 50px 50px 0;
+    padding: 25px;
     color: white;
     font-weight: bold;
     font-size: 2.5rem;
-    padding: 0.5rem 0 0.5rem 0;
-    border: 2px solid vars.$darkRed;
-    background: linear-gradient(to bottom right, vars.$darkRed, vars.$regularRed);
+    background: linear-gradient(to bottom right, vars.$darkRed, #f29991);
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .account_title {
+      
+    }
+
+    .account_bee {
+      width: 60px;
+      
+      
+    }
   }
 
   .account_container {
@@ -27,10 +45,19 @@
       font-size: 2rem;
       margin: 20px 50px 20px 50px;
       padding: 4rem;
-      background: linear-gradient(to bottom right, vars.$darkGreen, vars.$regularGreen);
+      background: linear-gradient(to bottom right, vars.$darkGreen, #98b394);
       color: white;
-      border: 1px solid vars.$darkGreen;
       border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+
+      .account_profil_icon {
+        width: 60px;
+      }
+      .account_profil_title {
+
+      }
     }
 
     .account_incomingwalks {
@@ -38,10 +65,19 @@
       font-size: 2rem;
       margin: 20px 50px 20px 50px;
       padding: 4rem;
-      background: linear-gradient(to bottom right, vars.$darkYellow, vars.$regularYellow);
+      background: linear-gradient(to bottom right, vars.$darkYellow, #fbc46d);
       color: white;
-      border: 1px solid vars.$darkYellow;
       border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+
+      .account_incomingwalks_icon {
+        width: 60px;
+      }
+      .account_incomingwalks_title {
+
+      }
     }
 
     .account_myhikes {
@@ -49,10 +85,19 @@
       font-size: 2rem;
       margin: 20px 50px 20px 50px;
       padding: 4rem;
-      background: linear-gradient(to bottom right, vars.$darkRed, vars.$regularRed);
+      background: linear-gradient(to bottom right, vars.$darkRed, #f29991);
       color: white;
-      border: 1px solid vars.$darkRed;
       border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+
+      .account_myhikes_icon {
+        width: 60px;
+      }
+      .account_myhikes_title {
+
+      }
     }
 
     .account_archived {
@@ -60,10 +105,19 @@
       font-size: 2rem;
       margin: 20px 50px 20px 50px;
       padding: 4rem;
-      background: linear-gradient(to bottom right, rgba(165, 42, 42, 0.801), rgba(165, 40, 40, 0.671));
+      background: linear-gradient(to bottom right, vars.$darkYellow, #fbc46d);
       color: white;
-      border: 1px solid rgba(165, 42, 42, 0.589);
       border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+
+      .account_archived_icon {
+        width: 60px;
+      }
+      .account_archived_title {
+
+      }
     }
   }
 }

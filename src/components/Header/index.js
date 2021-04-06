@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import './header.scss';
 
 import logo from 'src/assets/images/logo.png';
-import image from 'src/assets/images/header.jpg';
+import image from 'src/assets/images/header_crop.jpg';
 
 // component
 const Header = ({ isLogged }) => (

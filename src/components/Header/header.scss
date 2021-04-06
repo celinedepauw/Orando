@@ -7,28 +7,11 @@
 
 .header {
   position: relative;
-  height: 300px;
-  overflow: hidden;
-
-  @media(min-width: vars.$breakpointTablet) {
-    height: 400px;
-  }
-
-  @media(min-width: vars.$breakpointDesktop) {
-    height: 700px;
-  }
+  
 
   .header_image {
     width: 100%;
-    margin-top: -20px;
-
-    @media(min-width: vars.$breakpointTablet) {
-      margin-top: -50px;
-    }
-
-    @media(min-width: vars.$breakpointDesktop) {
-      margin-top: -500px;
-    }
+    
   }
 
   .header_content {
@@ -49,6 +32,14 @@
         border-radius: 50%;
         background-color: vars.$lightYellow;
         opacity: 0.7;
+
+        @media(min-width: vars.$breakpointTablet) {
+          width: 20%;
+        }
+      
+        @media(min-width: vars.$breakpointDesktop) {
+          width: 40%;
+        }
       }
 
       .header_nav {
@@ -76,9 +67,13 @@
     
     
     .header_title {
-      font-size: 3em;
+      font-size: 4em;
+      font-weight: bold;
       color: vars.$darkYellow;
       text-align: center;
+      padding: 1rem 0 1rem 0;
+      text-shadow: 0.1em 0.1em 0.2em black;
+  
 
       @media(min-width: vars.$breakpointTablet) {
         font-size: 6em;
