@@ -21,6 +21,10 @@
 
     .walks_to_come_icon {
       width: 50px;
+
+      @media(min-width: vars.$breakpointTablet) {
+        width: 80px;
+      }
     }
     .walks_to_come_title {
       
