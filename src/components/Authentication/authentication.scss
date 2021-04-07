@@ -1,9 +1,12 @@
 @use 'src/styles/vars';
 
 .authentication {
-  max-width: 80%;
+  
   margin: auto;
   text-align: center;
+  background: linear-gradient(vars.$lightGreen, white);
+ 
+  min-height: 100vh;
 
   .authentication_form {
 
