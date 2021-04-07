@@ -1,15 +1,37 @@
 @use 'src/styles/vars';
 
 .walks_to_come {
+  background: linear-gradient(#fee5e3, #fff);
+  margin: -15px;
   min-height: 100vh;
+  padding: 15px;
 
-  .walks_to_come_title {
+  .walks_to_come_return_account {
+    width: 90px;
+    padding: 15px;
+    transform: rotateY(180deg);
+  }
+
+  .walks_to_come_title_content {
     text-align: center;
     color: vars.$darkRed;
     font-size: 2rem;
     font-weight: bold;
     padding: 1rem;
 
+    .walks_to_come_icon {
+      width: 50px;
+
+      @media(min-width: vars.$breakpointTablet) {
+        width: 80px;
+      }
+    }
+    .walks_to_come_title {
+      
+      
+  
+      
+    }
     @media(min-width: vars.$breakpointTablet) {
       font-size: 3rem;
     }
@@ -17,7 +39,9 @@
     @media(min-width: vars.$breakpointDesktop) {
       font-size: 4rem;
     }
+
   }
+  
 
   .walks_to_come_list {
 
@@ -30,7 +54,7 @@
       .walk_to_come_small {
         min-height: 280px;
         text-align: center;
-        border: 1px solid black;
+        background: linear-gradient(to bottom right, vars.$darkYellow, vars.$gradientYellow);
         border-radius: 10px;
         padding: 1rem;
         margin : 1rem;
@@ -46,44 +70,49 @@
         @media(min-width: vars.$breakpointXLarge) {
           width: 29%;
         }
-  
+        
+
         .walk_to_come_title {
-          font-size: 1.3rem;
-          color: vars.$darkYellow;
+          font-size: 1.7rem;
+          color: white;
           padding: 0.5rem;
+          font-weight: bold;
         }
   
         .walk_to_come_date {
           font-style: italic;
-          color: vars.$regularGreen;
+          color: vars.$darkGreen;
           padding: 0.5rem;   
         }
   
         .walk_to_come_area {
-          color: vars.$regularRed;
+          color: vars.$darkRed;
           font-weight: bold;
           padding: 0.5rem;
         }
   
         .walk_to_come_difficulty {
           padding: 0.5rem;
+          color: vars.$blackRed;
         }
   
         .walk_to_come_duration {
           padding: 0.5rem;
+          color: vars.$blackRed;
         }
   
         .walk_to_come_button_more_infos {
           padding: 0.5rem;
           margin: auto;
-          background-color: vars.$regularYellow;
+          background-color: vars.$darkYellow;
           border: none;
           border-radius: 10px;
           min-width: 60%;
           margin-bottom: 0.5rem;
+          color: vars.$blackRed;
 
           &:hover {
-            background-color: vars.$darkYellow;
+            background-color: vars.$blackYellow;
             transform: scale(1.1);
           }
         }
