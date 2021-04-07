@@ -1,14 +1,22 @@
 @use 'src/styles/vars';
 
 .walk {
-  margin: 10px;
-  background-color: vars.$lightRed;
+  background-color: vars.$lightYellow;
 
   .walk_title {
     text-align: center;
     font-size: 2rem;
+    font-weight: bold;
     padding: 1rem;
     color: vars.$darkRed;
+
+    @media(min-width: vars.$breakpointTablet) {
+      font-size: 3rem;
+    }
+
+    @media(min-width: vars.$breakpointDesktop) {
+      font-size: 4rem;
+    }
   }
 
   .walk_area {
@@ -26,6 +34,7 @@
   }
 
   .walk_tags_list {
+    margin: 1rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -88,82 +97,124 @@
   }
 
   .walk_starting_point {
+    margin: 1rem;
     padding: 1rem;
   }
 
   .walk_starting_icon {
-    width: 3%;
-    height: 3%;
+    width: 10%;
+    height: 10%;
     float: left;
     margin-right: 10px;
+
+    @media(min-width: vars.$breakpointTablet) {
+      width: 3%;
+      height: 3%;
+    }
   }
 
   .walk_end_point {
+    margin: 1rem;
     padding: 1rem;
   }
 
   .walk_endPoint_icon {
-    width: 3%;
-    height: 3%;
+    width: 10%;
+    height: 10%;
     float: left;
     margin-right: 10px;
+
+    @media(min-width: vars.$breakpointTablet) {
+      width: 3%;
+      height: 3%;
+    }
   }
 
 
   .walk_difficulty {
+    margin: 1rem;
     padding: 1rem;
   }
 
   .walk_difficulty_icon {
-    width: 3%;
-    height: 3%;
+    width: 10%;
+    height: 10%;
     float: left;
     margin-right: 10px;
+
+    @media(min-width: vars.$breakpointTablet) {
+      width: 3%;
+      height: 3%;
+    }
   }
 
   .walk_duration {
+    margin: 1rem;
     padding: 1rem;
   }
 
   .walk_duration_icon {
-    width: 3%;
-    height: 3%;
+    width: 10%;
+    height: 10%;
     float: left;
     margin-right: 10px;
+
+    @media(min-width: vars.$breakpointTablet) {
+      width: 3%;
+      height: 3%;
+    }
   }
 
   .walk_elevation {
+    margin: 1rem;
     padding: 1rem;
 
   }
 
   .walk_elevation_icon {
-    width: 3%;
-    height: 3%;
+    width: 10%;
+    height: 10%;
     float: left;
     margin-right: 10px;
+
+    @media(min-width: vars.$breakpointTablet) {
+      width: 3%;
+      height: 3%;
+    }
   }
 
   .walk_maxNbPersons {
+    margin: 1rem;
     padding: 1rem;
   }
 
   .walk_nbPersons_icon {
-    width: 3%;
-    height: 3%;
+    width: 10%;
+    height: 10%;
     float: left;
     margin-right: 10px;
+
+    @media(min-width: vars.$breakpointTablet) {
+      width: 3%;
+      height: 3%;
+    }
   }
 
   .walk_description {
+    margin: 1rem;
     padding: 1rem;
   }
 
   .walk_description_icon {
-    width: 3%;
-    height: 3%;
+    width: 10%;
+    height: 10%;
     float: left;
     margin-right: 10px;
+
+    @media(min-width: vars.$breakpointTablet) {
+      width: 3%;
+      height: 3%;
+    }
   }
 
   .walk-links {
