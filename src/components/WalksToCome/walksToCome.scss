@@ -1,7 +1,16 @@
 @use 'src/styles/vars';
 
 .walks_to_come {
+  background: linear-gradient(#fee5e3, #fff);
+  margin: -15px;
   min-height: 100vh;
+  padding: 15px;
+
+  .walks_to_come_return_account {
+    width: 90px;
+    padding: 15px;
+    transform: rotateY(180deg);
+  }
 
   .walks_to_come_title {
     text-align: center;
