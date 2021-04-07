@@ -36,5 +36,6 @@ WalkToComeSmall.propTypes = {
   difficulty: PropTypes.string.isRequired,
   duration: PropTypes.string.isRequired,
   handleCancelParticipation: PropTypes.func.isRequired,
+  creator: PropTypes.object.isRequired,
 };
 export default WalkToComeSmall;
