@@ -34,12 +34,6 @@
       flex-wrap: wrap;
       flex-direction: column;
       justify-content: center;
-      background-color: vars.$regularYellow;
-
-      &:hover {
-        transform: scale(1.1);
-        box-shadow: 5px 5px 5px vars.$darkGreen;
-      }
 
       @media(min-width: vars.$breakpointTablet) {
         width: 29%;
@@ -58,17 +52,21 @@
       .home_area_name {
         font-size: 1.3rem;
         padding-bottom: 0.5rem;
-        color: vars.$darkGreen;
+        color: white;
         font-weight: bold;
       }
   
       .home_area_noWalk {
         text-align: center;
-        color: vars.$regularGreen;
+        color: white;
+        font-style: italic;
       }
         
       .home_area_number {
         text-align: center;
+        border-radius: 10px;
+        background-color: white;
+        padding: 0.2rem;
         color: vars.$darkRed;
         font-weight: bold; 
         animation-duration: 2s;
@@ -81,6 +79,33 @@
         50%   {opacity:0; }
         100% { opacity:1; }
        }
+      }
+    }
+
+    .areasmall_yellow {
+      background-color: vars.$regularYellow;
+
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 5px 5px 5px vars.$darkYellow;
+      }
+    }
+
+    .areasmall_red {
+      background-color: vars.$regularRed;
+
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 5px 5px 5px vars.$darkRed;
+      }
+    }
+
+    .areasmall_green {
+      background-color: vars.$regularGreen;
+
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 5px 5px 5px vars.$darkGreen;
       }
     }
   }

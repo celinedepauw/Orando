@@ -10,19 +10,23 @@ const WalkToComeSmall = ({
   area,
   difficulty,
   duration,
+  creator,
   handleCancelParticipation,
-}) => (
-  <div className="walk_to_come_small">
-    <h3 className="walk_to_come_title">{title}</h3>
-    <p className="walk_to_come_area">{area.name}</p>
-    <p className="walk_to_come_date"><Moment locale="fr" format="dddd DD MMMM YYYY HH:mm">{date}</Moment></p>
-    <p className="walk_to_come_difficulty">{difficulty}</p>
-    <p className="walk_to_come_duration">{duration}</p>
-    <Link to={`/walks/${id}`} className="walk_to_come_button_more_infos">En savoir plus
-    </Link>
-    <button type="button" className="walk_to_come_button_delete" onClick={() => handleCancelParticipation(id)}>Annuler ma participation</button>
-  </div>
-);
+}) => {
+  const userId = localStorage.getItem('currentUserId');
+  return (
+    <div className="walk_to_come_small">
+      <h3 className="walk_to_come_title">{title}</h3>
+      <p className="walk_to_come_area">{area.name}</p>
+      <p className="walk_to_come_date"><Moment locale="fr" format="dddd DD MMMM YYYY HH:mm">{date}</Moment></p>
+      <p className="walk_to_come_difficulty">{difficulty}</p>
+      <p className="walk_to_come_duration">{duration}</p>
+      <Link to={`/walks/${id}`} className="walk_to_come_button_more_infos">En savoir plus
+      </Link>
+      {userId == creator.id ? <></> : <button type="button" className="walk_to_come_button_delete" onClick={() => handleCancelParticipation(id)}>Annuler ma participation</button> }
+    </div>
+  );
+};
 
 WalkToComeSmall.propTypes = {
   id: PropTypes.number.isRequired,

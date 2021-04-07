@@ -2,44 +2,43 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-// icons from https://react-icons.github.io/react-icons
-import { BiHomeHeart, BiPlusMedical } from 'react-icons/bi';
-// import { IoCreate } from 'react-icons/io';
-import { FaHiking } from 'react-icons/fa';
-// to connection - connected
-import { IoMdPerson } from 'react-icons/io';
-import { RiLogoutCircleRLine, RiLoginCircleLine } from 'react-icons/ri';
+// logo to redirect to home
 import homeLogo from 'src/assets/icones/home.svg';
+// logo to create a hike
 import createLogo from 'src/assets/icones/create-hike.svg';
-import server from 'src/assets/icones/server.svg';
-import bear from 'src/assets/icones/bear.svg';
+// logo account
 import hiker from 'src/assets/icones/hiker.svg';
-import exit from 'src/assets/icones/exit.svg';
+// logo to disconnect
+import exit_2 from 'src/assets/icones/exit_2.svg';
+// to connection - connected
 import login from 'src/assets/icones/login.svg';
-import lock from 'src/assets/icones/lock.svg';
-
 import './mobilenav.scss';
 
 const MobileNav = ({ isLogged, handleLogout }) => (
   <nav className="mobilenav">
-    <Link to="/">
+    <Link to="/" className="mobilenav_home_content">
       <img src={homeLogo} alt="home logo" className="mobilenav_home" />
+      <p className="mobilenav_home_text">Accueil</p>
     </Link>
-    <a href="https://orando.me/o/walk/create">
+    <a href="https://orando.me/o/walk/create" className="mobilenav_create_content">
       <img src={createLogo} alt="create hike" className="mobilenav_create" />
+      <p className="mobilenav_create_text">Créer</p>
     </a>
     {!isLogged && (
-      <Link to="/authentication">
-        <img src={lock} alt="login" className="mobilenav_login" />
+      <Link to="/authentication" className="mobilenav_login_content">
+        <img src={login} alt="login" className="mobilenav_login" />
+        <p className="mobilenav_login_text">Connexion</p>
       </Link>
     )}
     {isLogged && (
       <>
-        <Link to="/account">
-          <img className="mobilenav_connected" src={bear} alt="logged" />
+        <Link to="/account" className="mobilenav_connected_content">
+          <img className="mobilenav_connected" src={hiker} alt="logged" />
+          <p className="mobilenav_connected_text">Mon compte</p>
         </Link>
-        <a href="https://orando.me/o/logout" className="mobilenav_logout" type="submit" onClick={handleLogout}>
-          <RiLogoutCircleRLine size={46} />
+        <a href="https://orando.me/o/logout" className="mobilenav_logout_content" type="submit" onClick={handleLogout}>
+          <img className="mobilenav_logout" src={exit_2} alt="logged" />
+          <p className="mobilenav_logout_text">Deconnexion</p>
         </a>
       </>
     )}

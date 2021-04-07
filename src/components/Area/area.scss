@@ -22,7 +22,7 @@
 
   .area_walks {
       text-align: center;
-      color: vars.$regularRed;
+      color: vars.$regularYellow;
       font-size: 1.2rem;
       padding: 1rem;
   
@@ -36,15 +36,16 @@
 
       .area_add_walk_button {
         padding: 1rem;
-      background-color: vars.$regularRed;
-      color: white;
-      border: none;
-      border-radius: 10px;
+        margin-top: 1rem;
+        background-color: vars.$regularGreen;
+        color: white;
+        border: none;
+        border-radius: 10px;
 
-      &:hover {
-        background-color: vars.$darkRed;
-        transform: scale(1.5);
-      }
+        &:hover {
+          box-shadow: 5px 5px 5px vars.$darkGreen;
+          transform: scale(1.1);
+        }
       }
 
       .area_numberOfWalks {
