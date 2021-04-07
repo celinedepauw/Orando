@@ -1,0 +1,12 @@
+@use 'src/styles/vars';
+
+.loader {
+  margin-right: 20px;
+  text-align: center;
+  
+  img {
+    text-align: center;
+    width: 100px;
+    height: 100px;
+  }
+}

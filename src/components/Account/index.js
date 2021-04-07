@@ -8,13 +8,13 @@ import boot from 'src/assets/icones/boot.svg';
 import footprints from 'src/assets/icones/footprints.svg';
 import pickaxe from 'src/assets/icones/pickaxe.svg';
 
-
+import Loader from 'src/components/Loader';
 import './account.scss';
 
 // this component will be only static
 const Account = ({ user, loadingUser }) => (
   <div className="account">
-    {loadingUser && <div>Chargement en cours...</div>}
+    {loadingUser && <div><Loader /></div>}
     {!loadingUser && (
       <>
         <Link to="/">

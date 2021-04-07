@@ -4,6 +4,7 @@ import OneParticipant from 'src/components/Participants/OneParticipant';
 import { useParams } from 'react-router-dom';
 import Moment from 'react-moment';
 
+import Loader from 'src/components/Loader';
 import './participants.scss';
 
 const Participants = ({ walks, loadingWalk }) => {
@@ -12,7 +13,7 @@ const Participants = ({ walks, loadingWalk }) => {
 
   return (
     <div>
-      {loadingWalk && <div>Chargement en cours...</div>}
+      {loadingWalk && <div><Loader /></div>}
       {!loadingWalk && (
         <>
           <div className="participants">

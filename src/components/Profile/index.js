@@ -5,6 +5,7 @@ import sign from 'src/assets/icones/sign.svg';
 import hiker from 'src/assets/icones/hiker.svg';
 import bear from 'src/assets/icones/bear.svg';
 
+import Loader from 'src/components/Loader';
 import './profile.scss';
 
 const Profile = ({ user, loadingUser }) => {
@@ -12,7 +13,7 @@ const Profile = ({ user, loadingUser }) => {
 
   return (
     <div className="profile">
-      {loadingUser && <div>Chargement en cours...</div>}
+      {loadingUser && <div> <Loader /></div>}
       {!loadingUser && (
         <>
           <Link to="/account">

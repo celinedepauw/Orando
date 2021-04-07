@@ -3,10 +3,19 @@ import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import { BiBeenHere, BiDirections, BiEnvelope, BiInfoCircle } from 'react-icons/bi';
 import Moment from 'react-moment';
+import Loader from 'src/components/Loader';
 
 // import { IoIosStar, IoIosStarOutline } from "react-icons/io";
 
 import './walk.scss';
+
+import mountain from 'src/assets/icones/047-mountain.svg';
+import retour from 'src/assets/icones/retour.svg';
+import hiking from 'src/assets/icones/hiking.svg';
+import clock from 'src/assets/icones/clock.svg';
+import climbing from 'src/assets/icones/climbing.svg';
+import twoHikes from 'src/assets/icones/two_hikes.svg';
+import info from 'src/assets/icones/info.svg';
 
 const Walk = ({ walks, loadingWalk, handleParticipation }) => {
   // console.log(walks);
@@ -18,7 +27,7 @@ const Walk = ({ walks, loadingWalk, handleParticipation }) => {
 
   return (
     <>
-      {loadingWalk && <div>Chargement en cours...</div>}
+      {loadingWalk && <div> <Loader /> </div> }
       {!loadingWalk && (
         <div className="walk">
           <h2 className="walk_title">{walk.title}</h2>
@@ -29,13 +38,20 @@ const Walk = ({ walks, loadingWalk, handleParticipation }) => {
               <p key={tag.name} className="walk_tag">{tag.name}</p>
             ))}
           </div>
-          <p className="walk_starting_point"><BiBeenHere size={30} /> Départ de : {walk.startingPoint}</p>
-          {walk.endPoint ? <p className="walk_end_point"><BiDirections size={30} />Arrivée à : {walk.endPoint}</p> : <p className="walk_end_point"><BiDirections size={30} />Cette randonnée est une boucle, le point d'arrivée est identique au point de départ</p>}
+          <img src={mountain} alt="clock" className="walk_starting_icon" />
+          <p className="walk_starting_point"> Départ de : {walk.startingPoint}</p>
+          <img src={retour} alt="clock" className="walk_endPoint_icon" />
+          {walk.endPoint ? <p className="walk_end_point"> Arrivée à : {walk.endPoint}</p> : <p className="walk_end_point"> Cette randonnée est une boucle, le point d'arrivée est identique au point de départ</p>}
+          <img src={climbing} alt="climbing" className="walk_difficulty_icon" />
           <p className="walk_difficulty">Difficulté : {walk.difficulty}</p>
+          <img src={clock} alt="clock" className="walk_duration_icon" />
           <p className="walk_duration">Durée : {walk.duration}</p>
-          {walk.elevation ? <p className="walk_elevation">Dénivelé : {walk.elevation} mètres</p> : <p className="walk_elevation">Dénivelé non renseigné</p>}
+          <img src={hiking} alt="hiking" className="walk_elevation_icon" />
+          {walk.elevation ? <p className="walk_elevation"> Dénivelé : {walk.elevation} mètres</p> : <p className="walk_elevation">Dénivelé non renseigné</p>}
+          <img src={twoHikes} alt="icones_number_persons" className="walk_nbPersons_icon" />
           {walk.maxNbPersons ? <p className="walk_maxNbPersons">Nombre limite de participants : {walk.maxNbPersons}</p> : <p className="walk_maxNbPersons">Pas de limite dans le nombre de participants</p>}
-          <p className="walk_description"><BiInfoCircle size={30} />Description / Infos pratiques : <br /> {walk.description}</p>
+          <img src={info} alt="icones_info" className="walk_description_icon" />
+          <p className="walk_description"> Description / Infos pratiques : <br /> {walk.description}</p>
           <div className="walk-links">
             {walk.creator.id == userId ? (
               <a className="walk_edit_link" href={`https://orando.me/o/walk/edit/${id}`}>
