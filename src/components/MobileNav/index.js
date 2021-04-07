@@ -9,10 +9,8 @@ import createLogo from 'src/assets/icones/create-hike.svg';
 // logo account
 import hiker from 'src/assets/icones/hiker.svg';
 // logo to disconnect
-import disconnect from 'src/assets/images/logout1.png';
 import exit_2 from 'src/assets/icones/exit_2.svg';
 // to connection - connected
-import connect from 'src/assets/images/login1.png';
 import login from 'src/assets/icones/login.svg';
 import './mobilenav.scss';
 
