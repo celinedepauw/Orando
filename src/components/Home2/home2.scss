@@ -24,17 +24,17 @@
       justify-content: center;
 
     .areasmall {
-      width: 45%;
-      height: 150px;
+      width: 41%;
+      min-height: 150px;
       text-align: center;
-      border: 1px solid vars.$darkGreen;
-      border-radius: 50%;
-      margin : 0.5rem;
+      border-radius: 30px;
+      padding: 1rem;
+      margin : 1rem;
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
       justify-content: center;
-      background-color: vars.$lightYellow;
+      background-color: vars.$regularYellow;
 
       &:hover {
         transform: scale(1.1);
@@ -43,54 +43,44 @@
 
       @media(min-width: vars.$breakpointTablet) {
         width: 29%;
-        height: 210px;
+        min-height: 200px; 
       }
 
       @media(min-width: vars.$breakpointDesktop) {
         width: 18%;
-        height: 210px;
       }
 
       @media(min-width: vars.$breakpointXLarge) {
         width: 15%;
-        height: 240px;
+        min-height: 220px;;        
       }
 
-      .areasmall_list {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-items: center;
-
-        .home_area_name {
-          font-size: 1.3rem;
-          padding: 1rem;
-          color: vars.$darkGreen;
-          font-weight: bold;
-        }
+      .home_area_name {
+        font-size: 1.3rem;
+        padding-bottom: 0.5rem;
+        color: vars.$darkGreen;
+        font-weight: bold;
+      }
   
-        .home_area_noWalk {
-          text-align: center;
-          color: vars.$regularGreen;
-        }
-        
-        .home_area_number {
-          font-size: 1.3rem;
-          text-align: center;
-          color: white;
-          font-weight: bold; 
-          border-radius: 50%;
-          background-color: vars.$regularRed;
-          padding: 8px;
-          width: 36px;
-          height: 36px;
-        }
+      .home_area_noWalk {
+        text-align: center;
+        color: vars.$regularGreen;
       }
-      
-      .home_area_walks {
-      color: vars.$regularRed;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
+        
+      .home_area_number {
+        text-align: center;
+        color: vars.$darkRed;
+        font-weight: bold; 
+        animation-duration: 2s;
+        animation-name: flash;
+        animation-iteration-count: infinite;
+        transition: none;
+
+      @keyframes flash {
+        0%   { opacity:1; }
+        50%   {opacity:0; }
+        100% { opacity:1; }
+       }
       }
     }
   }

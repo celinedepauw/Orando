@@ -8,10 +8,9 @@
 .header {
   position: relative;
   
-
   .header_image {
     width: 100%;
-    
+    max-height: 550px;  
   }
 
   .header_content {
@@ -25,7 +24,7 @@
       flex-wrap: nowrap;
       justify-content: space-between;
       align-items: center;
-      margin: 3%;
+      margin: 2%;
 
       .header_logo {
         width: 15%;
@@ -44,6 +43,9 @@
 
       .header_nav {
         display: none;
+        background-color: vars.$darkRed;
+        border-radius: 30px;
+        padding: 0.5rem;
 
         @media(min-width: vars.$breakpointTablet) {
           display: flex;
@@ -51,7 +53,7 @@
         }
 
         .header_nav_item {
-          color: vars.$darkRed;
+          color: white;
           padding-right: 1rem;
           display: flex;
           align-items: center;
@@ -67,12 +69,22 @@
           .header_nav_create_logo {
             width: 25px;
           }
+
+          .header_nav_home_connect {
+            width: 25px;
+          }
+
+          .header_nav_home_avatar {
+            width: 25px;
+          }
+
+          .header_nav_home_disconnect {
+            width: 25px;
+          }
         }
 
       }
     }
-
-    
     
     .header_title {
       font-size: 4em;

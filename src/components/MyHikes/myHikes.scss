@@ -39,11 +39,11 @@
         justify-content: space-between;
   
         @media(min-width: vars.$breakpointTablet) {
-          width: 29%;
+          width: 45%;
         }
   
         @media(min-width: vars.$breakpointXLarge) {
-          width: 22%;
+          width: 29%;
         }
   
         .walk_title {
@@ -78,6 +78,7 @@
           background-color: vars.$regularYellow;
           border: none;
           border-radius: 10px;
+          min-width: 60%;
 
           &:hover {
             background-color: vars.$darkYellow;
@@ -91,17 +92,20 @@
           background-color: vars.$regularGreen;
           border: none;
           border-radius: 10px;
+          min-width: 60%;
           
           &:hover {
             background-color: vars.$darkGreen;
             transform: scale(1.1);
           }
         }
+
         .walk_button_delete {
             padding: 0.5rem;
             background-color: vars.$regularRed;
             border: none;
             border-radius: 10px;
+            min-width: 60%;
             
             &:hover {
               background-color: vars.$darkRed;

@@ -1,0 +1,67 @@
+@use 'src/styles/vars';
+
+.authentication {
+  max-width: 80%;
+  margin: auto;
+  text-align: center;
+
+  .authentication_form {
+
+    .authentication_submit {
+      padding: 0.5rem;
+      color: white;
+      font-weight: bold;
+      background-color: vars.$regularGreen;
+      border: none;
+      border-radius: 10px;
+      display: block;
+      margin: auto;
+      margin-bottom: 2rem;
+      min-width: 50%;
+      font-size: 1.2rem;
+
+      &:hover {
+        box-shadow: 5px 5px 5px vars.$darkGreen;
+        transform: scale(1.1);
+      }
+
+      .authentication_submit_picture {
+        width: 40px;
+      }
+    }
+
+    .authentication_inscription {
+
+      .authentication_text {
+        color: vars.$darkYellow;
+        margin-bottom: 0.5rem;
+      }
+
+      .authentication_insciption_link {
+        
+        .authentication_inscription_button {
+        padding: 0.5rem;
+        background-color: vars.$regularYellow;
+        border: none;
+        border-radius: 10px;
+        display: block;
+        margin: auto;
+        margin-bottom: 2rem;
+        min-width: 50%;
+        color: white;
+        font-weight: bold;
+        font-size: 1.2rem;
+
+          &:hover {
+            box-shadow: 5px 5px 5px vars.$darkYellow;
+            transform: scale(1.1);
+          }
+
+          .authentication_inscription_picture {
+            width: 40px;
+          }
+        }
+      }
+    }
+  }
+}

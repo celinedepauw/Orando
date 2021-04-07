@@ -9,7 +9,7 @@ import Account from 'src/containers/Account';
 import Profile from 'src/containers/Profile';
 import WalksToCome from 'src/containers/WalksToCome';
 import MyHikes from 'src/containers/MyHikes';
-import Authentification from 'src/containers/Authentification';
+import Authentication from 'src/containers/Authentication';
 import AboutUs from 'src/components/AboutUs';
 import Archived from 'src/containers/Archived';
 import Participants from 'src/containers/Participants';
@@ -28,7 +28,7 @@ const Page = () => (
         <Area />
       </Route>
       <Route path="/authentication">
-        <Authentification />
+        <Authentication />
       </Route>
       <Route path="/archived_walks">
         <Archived />

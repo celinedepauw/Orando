@@ -1,7 +1,7 @@
 // === action types
 export const FETCH_USER = 'FETCH_USER';
 export const SAVE_USER = 'SAVE_USER';
-export const UPDATE_AUTHENTIFICATION_FIELD = 'UPDATE_AUTHENTIFICATION_FIELD';
+export const UPDATE_AUTHENTICATION_FIELD = 'UPDATE_AUTHENTICATION_FIELD';
 export const SUBMIT_LOGIN = 'SUBMIT_LOGIN';
 export const LOG_IN = 'LOG_IN';
 export const LOG_OUT = 'LOG_OUT';
@@ -24,8 +24,8 @@ export const saveUserAuth = (isLogged) => ({
   isLogged,
 });
 
-export const updateAuthentificationField = (identifier, newValue) => ({
-  type: UPDATE_AUTHENTIFICATION_FIELD,
+export const updateAuthenticationField = (identifier, newValue) => ({
+  type: UPDATE_AUTHENTICATION_FIELD,
   identifier: identifier,
   value: newValue,
 });

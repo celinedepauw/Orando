@@ -28,6 +28,7 @@
     }
 
       .walk_to_come_small {
+        min-height: 280px;
         text-align: center;
         border: 1px solid black;
         border-radius: 10px;
@@ -39,11 +40,11 @@
         justify-content: space-between;
   
         @media(min-width: vars.$breakpointTablet) {
-          width: 29%;
+          width: 45%;
         }
   
         @media(min-width: vars.$breakpointXLarge) {
-          width: 22%;
+          width: 29%;
         }
   
         .walk_to_come_title {
@@ -74,10 +75,12 @@
   
         .walk_to_come_button_more_infos {
           padding: 0.5rem;
-          margin-bottom: 0.5rem;
+          margin: auto;
           background-color: vars.$regularYellow;
           border: none;
           border-radius: 10px;
+          min-width: 60%;
+          margin-bottom: 0.5rem;
 
           &:hover {
             background-color: vars.$darkYellow;
@@ -90,6 +93,8 @@
           background-color: vars.$regularRed;
           border: none;
           border-radius: 10px;
+          min-width: 60%;
+          margin: auto;
           
           &:hover {
             background-color: vars.$darkRed;
