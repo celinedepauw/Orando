@@ -9,7 +9,7 @@ import createLogo from 'src/assets/icones/create-hike.svg';
 // logo account
 import hiker from 'src/assets/icones/hiker.svg';
 // logo to disconnect
-import exit_2 from 'src/assets/icones/exit_2.svg';
+import exit2 from 'src/assets/icones/exit2.svg';
 // to connection - connected
 import login from 'src/assets/icones/login.svg';
 import './mobilenav.scss';
@@ -37,7 +37,7 @@ const MobileNav = ({ isLogged, handleLogout }) => (
           <p className="mobilenav_connected_text">Mon compte</p>
         </Link>
         <a href="https://orando.me/o/logout" className="mobilenav_logout_content" type="submit" onClick={handleLogout}>
-          <img className="mobilenav_logout" src={exit_2} alt="logged" />
+          <img className="mobilenav_logout" src={exit2} alt="logged" />
           <p className="mobilenav_logout_text">Deconnexion</p>
         </a>
       </>

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import homeLogo from 'src/assets/images/home.png';
 import createLogo from 'src/assets/images/create.png';
 import connect from 'src/assets/images/login1.png';
-import disconnect from 'src/assets/images/logout1.png';
+import exit2 from 'src/assets/icones/exit2.svg';
 import avatar from 'src/assets/images/054-hiker.png';
 
 const NavTop = ({ handleLogout, isLogged }) => (
@@ -17,7 +17,7 @@ const NavTop = ({ handleLogout, isLogged }) => (
     {isLogged && (
       <>
         <Link to="/account" className="header_nav_item"><img className="header_nav_home_avatar" src={avatar} alt="logo-avatar" />Mon Compte</Link>
-        <a href="https://orando.me/o/logout" className="header_nav_item" type="submit" onClick={handleLogout}><img className="header_nav_home_disconnect" src={disconnect} alt="logo-disconnect" />Déconnexion</a>
+        <a href="https://orando.me/o/logout" className="header_nav_item" type="submit" onClick={handleLogout}><img className="header_nav_home_disconnect" src={exit2} alt="logo-disconnect" />Déconnexion</a>
       </>
     )}
   </nav>
