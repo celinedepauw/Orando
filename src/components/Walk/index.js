@@ -35,7 +35,7 @@ const Walk = ({ walks, loadingWalk, handleParticipation }) => {
           <p className="walk_date">Le <Moment locale="fr" format="dddd DD MMMM YYYY HH:mm">{walk.date}</Moment></p>
           <div className="walk_tags_list">
             {walk.tags.map((tag) => (
-              <p key={tag.name} className="walk_tag">{tag.name}</p>
+              <p key={tag.name} className={`walk_tag_${tag.color}`}>{tag.name}</p>
             ))}
           </div>
           <img src={mountain} alt="clock" className="walk_starting_icon" />
