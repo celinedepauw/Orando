@@ -1,12 +1,8 @@
 @use 'src/styles/vars';
 
 .field {
-  margin: 2rem 0;
+  margin: 2rem;
   position: relative;
-
-  &:not(:last-child) {
-    margin-bottom: 3.4rem;
-  }
 
   .label {
     display: block;
@@ -14,15 +10,16 @@
     left: 0;
     top: 0;
     margin-top: -1.4em;
+    color: vars.$darkGreen;
   }
 
   .input {
     padding: 0.8rem;
     border-radius: 5px;
     width: 100%;
-    border: 2px solid black;
+    border: 2px solid vars.$darkGreen;
     font-size: 1.2em;
-    
+    background-color: vars.$lightYellow;
     
     &:focus {
       border-color: vars.$darkRed;

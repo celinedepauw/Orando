@@ -3,11 +3,14 @@ import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import Field from 'src/components/Field';
+import welcome from 'src/assets/images/hiker.png';
+import register from 'src/assets/images/route.png';
+import './authentication.scss';
 
-const Authentification = ({
+const Authentication = ({
   email,
   password,
-  updateAuthentificationField,
+  updateAuthenticationField,
   handleLogin,
   isLogged,
 }) => {
@@ -17,8 +20,8 @@ const Authentification = ({
   };
   if (isLogged) return <Redirect to="/" />;
   return (
-    <div className="authentification" onSubmit={handleSubmit}>
-      <form className="authentification_form">
+    <div className="authentication" onSubmit={handleSubmit}>
+      <form className="authentication_form">
         <Field
           identifier="email"
           placeholder="toto@oclock.io"
@@ -26,7 +29,7 @@ const Authentification = ({
           value={email}
           changeField={(identifier, newValue) => {
             console.log(`changeField sur email : identifier=${identifier}, newValue=${newValue}`);
-            updateAuthentificationField(identifier, newValue);
+            updateAuthenticationField(identifier, newValue);
           }}
         />
         <Field
@@ -37,14 +40,14 @@ const Authentification = ({
           value={password}
           changeField={(identifier, newValue) => {
             console.log(`changeField sur password : identifier=${identifier}, newValue=${newValue}`);
-            updateAuthentificationField(identifier, newValue);
+            updateAuthenticationField(identifier, newValue);
           }}
         />
-        <button type="submit" className="authentification_submit">Ok</button>
-        <div className="authentification_inscription">
-          <p className="authentification_text">Si vous n'avez pas encore de compte</p>
-          <a className="authentification_insciption_link" href="https://orando.me/o/register">
-            <button type="button" className="authentification_insciption_button">Cliquez ici</button>
+        <button type="submit" className="authentication_submit">Welcome <img className="authentication_submit_picture" src={welcome} alt="logo-welcome" /></button>
+        <div className="authentication_inscription">
+          <p className="authentication_text">Si vous n'avez pas encore de compte</p>
+          <a className="authentication_insciption_link" href="https://orando.me/o/register">
+            <button type="button" className="authentication_inscription_button">Cliquez ici <img className="authentication_inscription_picture" src={register} alt="logo-welcome" /></button>
           </a>
         </div>
       </form>
@@ -52,12 +55,12 @@ const Authentification = ({
   );
 };
 
-Authentification.propTypes = {
+Authentication.propTypes = {
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
-  updateAuthentificationField: PropTypes.func.isRequired,
+  updateAuthenticationField: PropTypes.func.isRequired,
   handleLogin: PropTypes.func.isRequired,
   isLogged: PropTypes.bool.isRequired,
 };
 
-export default Authentification;
+export default Authentication;

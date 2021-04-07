@@ -1,4 +1,4 @@
-import { SAVE_USER, UPDATE_AUTHENTIFICATION_FIELD, SAVE_USER_AUTH, LOG_OUT } from 'src/actions/users';
+import { SAVE_USER, UPDATE_AUTHENTICATION_FIELD, SAVE_USER_AUTH, LOG_OUT } from 'src/actions/users';
 
 const initialState = {
   user: {},
@@ -17,7 +17,7 @@ function userReducer(state = initialState, action) {
         user: action.user,
         loadingUser: false,
       };
-    case UPDATE_AUTHENTIFICATION_FIELD:
+    case UPDATE_AUTHENTICATION_FIELD:
       if (action.identifier === 'email') {
         return {
           ...state,

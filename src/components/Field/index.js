@@ -21,6 +21,12 @@ const Field = ({
 
   return (
     <div className="field">
+      <label
+        className="label"
+        htmlFor={identifier}
+      >
+        {label}
+      </label>
       <input
         className="input"
         id={identifier}
@@ -30,12 +36,6 @@ const Field = ({
         value={value}
         onChange={handleChange}
       />
-      <label
-        className="label"
-        htmlFor={identifier}
-      >
-        {label}
-      </label>
     </div>
   );
 };

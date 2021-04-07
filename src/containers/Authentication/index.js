@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 
 // on importe le composant de présentation
-import Authentification from 'src/components/Authentification';
+import Authentication from 'src/components/Authentication';
 
-import { updateAuthentificationField, logIn } from 'src/actions/users';
+import { updateAuthenticationField, logIn } from 'src/actions/users';
 
 // === mapStateToProps
 // si on a besoin de lire des informations dans le state
@@ -18,9 +18,9 @@ const mapStateToProps = (state) => ({
 // si on a besoin de dispatcher des actions vers le store (mettre à jour le state)
 const mapDispatchToProps = (dispatch) => ({
   // nom de la prop à remplir: fonction qui dispatch l'action
-  updateAuthentificationField: (identifier, newValue) => {
+  updateAuthenticationField: (identifier, newValue) => {
     // console.log(`changeField: identifier=${identifier}, newValue=${newValue}`);
-    const action = updateAuthentificationField(identifier, newValue);
+    const action = updateAuthenticationField(identifier, newValue);
     dispatch(action);
   },
   handleLogin: () => {
@@ -32,4 +32,4 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 // === création de l'assistant
-export default connect(mapStateToProps, mapDispatchToProps)(Authentification);
+export default connect(mapStateToProps, mapDispatchToProps)(Authentication);
