@@ -45,14 +45,12 @@
 
   .account_container {
     display: flex;
-    flex-wrap: wrap;
     width: 60%;
-    margin: 20px auto;
-    
+    margin: 50px auto;
     flex-direction: column;
 
     .account_profil {
-      text-align: 20px center;
+      margin-top: 20px;
       font-size: 2rem;
       padding: 4rem;
       background: linear-gradient(to bottom right, vars.$darkGreen, #98b394);
@@ -71,6 +69,7 @@
     }
 
     .account_incomingwalks {
+      margin-top: 20px;
       text-align: center;
       font-size: 2rem;
       padding: 4rem;
@@ -90,6 +89,7 @@
     }
 
     .account_myhikes {
+      margin-top: 20px;
       text-align: center;
       font-size: 2rem;
       padding: 4rem;
@@ -109,10 +109,11 @@
     }
 
     .account_archived {
+      margin-top: 20px;
       text-align: center;
       font-size: 2rem;
       padding: 4rem;
-      background: linear-gradient(to bottom right, vars.$darkYellow, #fbc46d);
+      background: linear-gradient(to bottom right, #6b3431, #e1645f);
       color: white;
       border-radius: 10px;
       display: flex;
