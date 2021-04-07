@@ -1,4 +1,4 @@
-@use 'src/styles/vars';
+ @use 'src/styles/vars';
 
 
 .mobilenav {
@@ -9,26 +9,71 @@
   justify-content: space-around;
   background-color: vars.$darkGreen;
   padding: 1rem 0 1rem 0;
+  color: vars.$darkYellow;
 
   @media(min-width: vars.$breakpointTablet) {
     display: none;
   }
 
-  .mobilenav_home {
-    max-width: 60px;
-    
-  }
+  .mobilenav_home_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-  .mobilenav_create {
-    max-width: 50px;
-    margin-top: 8.5px;
-    
-  }
+    .mobilenav_home {
+      max-width: 60px;
+      align-self: center;
+      display: block;
+      
+    }
 
-  .mobilenav_login {
-    margin-top: 8px;
-    max-width: 50px;
+    .mobilenav_home_text {
+      align-self: center;
+      display: block;
+    }
+
   }
+  
+
+  .mobilenav_create_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .mobilenav_create {
+      align-self: center;
+      display: block;
+      max-width: 50px;
+      margin-top: 8.5px; 
+    }
+
+    .mobilenav_create_text {
+      align-self: center;
+      display: block;
+    }
+
+  }
+  
+
+  .mobilenav_login_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+
+    .mobilenav_login {
+      align-self: center;
+      display: block;
+      margin-top: 8px;
+      width: 50px;
+  
+    }
+    .mobilenav_login_text {
+      align-self: center;
+      display: block;
+    }
+  }
+  
   .mobilenav_connected {
     margin-top: 8px;
     max-width: 50px;
@@ -38,6 +83,6 @@
     border: none;
     background-color: vars.$darkGreen;
     color: vars.$darkYellow;
-    margin-top: 8px;
+    
   }
 }
