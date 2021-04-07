@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import MyHikesSmall from 'src/containers/MyHikes/MyHikesSmall';
 
+import Loader from 'src/components/Loader';
 import './myHikes.scss';
 
 const MyHikes = ({ user, loadingUser }) => (
   <>
-    {loadingUser && <div>Chargement en cours...</div>}
+    {loadingUser && <div> <Loader /> </div>}
     {!loadingUser && (
       <main className="walks_user">
         <h2 className="walks_user_title">{user.user.walks.length} randonnée(s) organisée(s)</h2>

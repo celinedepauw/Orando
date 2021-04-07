@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import Loader from 'src/components/Loader';
 import ArchivedSmall from 'src/containers/Archived/ArchivedSmall';
 import './archived.scss';
 
 const Archived = ({ user, loadingUser }) => (
   <>
-    {loadingUser && <div>Chargement en cours...</div>}
+    {loadingUser && <div><Loader /></div>}
     {!loadingUser && (
       <div className="archived">
         <h2 className="archived_title">{user.archivedWalks.length} randonnée(s) passée(s)</h2>

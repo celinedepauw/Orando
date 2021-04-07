@@ -2,6 +2,7 @@
 
 .walk {
   margin: 10px;
+  background-color: vars.$lightRed;
 
   .walk_title {
     text-align: center;
@@ -42,30 +43,79 @@
     padding: 1rem;
   }
 
+  .walk_starting_icon {
+    width: 3%;
+    height: 3%;
+    float: left;
+    margin-right: 10px;
+  }
+
   .walk_end_point {
     padding: 1rem;
   }
 
-  
+  .walk_endPoint_icon {
+    width: 3%;
+    height: 3%;
+    float: left;
+    margin-right: 10px;
+  }
+
 
   .walk_difficulty {
     padding: 1rem;
+  }
+
+  .walk_difficulty_icon {
+    width: 3%;
+    height: 3%;
+    float: left;
+    margin-right: 10px;
   }
 
   .walk_duration {
     padding: 1rem;
   }
 
+  .walk_duration_icon {
+    width: 3%;
+    height: 3%;
+    float: left;
+    margin-right: 10px;
+  }
+
   .walk_elevation {
     padding: 1rem;
+
+  }
+
+  .walk_elevation_icon {
+    width: 3%;
+    height: 3%;
+    float: left;
+    margin-right: 10px;
   }
 
   .walk_maxNbPersons {
     padding: 1rem;
   }
 
+  .walk_nbPersons_icon {
+    width: 3%;
+    height: 3%;
+    float: left;
+    margin-right: 10px;
+  }
+
   .walk_description {
     padding: 1rem;
+  }
+
+  .walk_description_icon {
+    width: 3%;
+    height: 3%;
+    float: left;
+    margin-right: 10px;
   }
 
   .walk-links {

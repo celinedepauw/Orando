@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 
 import WalkSmall2 from 'src/components/Area/WalkSmall2';
-
+import Loader from 'src/components/Loader';
 import './area.scss';
 
 const Area = ({ areas, loadingAreas }) => {
@@ -12,7 +12,7 @@ const Area = ({ areas, loadingAreas }) => {
 
   return (
     <div>
-      {loadingAreas && <div>Chargement en cours...</div>}
+      {loadingAreas && <div><Loader /></div>}
       {!loadingAreas && (
         <main className="area">
           <h2 className="area_name">{area.name}</h2>

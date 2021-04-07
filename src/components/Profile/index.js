@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import Loader from 'src/components/Loader';
 import './profile.scss';
 
 const Profile = ({ user, loadingUser }) => {
@@ -9,7 +10,7 @@ const Profile = ({ user, loadingUser }) => {
 
   return (
     <div className="profile">
-      {loadingUser && <div>Chargement en cours...</div>}
+      {loadingUser && <div> <Loader /></div>}
       {!loadingUser && (
         <>
           <Link

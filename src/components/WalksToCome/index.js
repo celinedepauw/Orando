@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 
 import WalkToComeSmall from 'src/components/WalksToCome/WalkToComeSmall';
 
+import Loader from 'src/components/Loader';
 import './walksToCome.scss';
 
 const WalksToCome = ({ user, loadingUser, handleCancelParticipation }) => (
   <>
-    {loadingUser && <div>Chargement en cours...</div>}
+    {loadingUser && <div><Loader /></div>}
     {!loadingUser && (
     <main className="walks_to_come">
       <h2 className="walks_to_come_title">{user.incomingWalks.length} randonnée(s) à venir</h2>
