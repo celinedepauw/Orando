@@ -34,13 +34,13 @@ const MobileNav = ({ isLogged, handleLogout }) => (
     )}
     {isLogged && (
       <>
-        <Link to="/account">
+        <Link to="/account" className="mobilenav_connected_content">
           <img className="mobilenav_connected" src={hiker} alt="logged" />
-          <p>Mon compte</p>
+          <p className="mobilenav_connected_text">Mon compte</p>
         </Link>
-        <a href="https://orando.me/o/logout" className="mobilenav_logout" type="submit" onClick={handleLogout}>
-          <img className="mobilenav_connected" src={exit_2} alt="logged" />
-          <p>Deconnexion</p>
+        <a href="https://orando.me/o/logout" className="mobilenav_logout_content" type="submit" onClick={handleLogout}>
+          <img className="mobilenav_logout" src={exit_2} alt="logged" />
+          <p className="mobilenav_logout_text">Deconnexion</p>
         </a>
       </>
     )}

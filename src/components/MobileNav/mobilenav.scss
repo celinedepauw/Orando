@@ -21,7 +21,7 @@
     justify-content: center;
 
     .mobilenav_home {
-      max-width: 60px;
+      max-width: 50px;
       align-self: center;
       display: block;
       
@@ -44,7 +44,7 @@
       align-self: center;
       display: block;
       max-width: 50px;
-      margin-top: 8.5px; 
+       
     }
 
     .mobilenav_create_text {
@@ -64,7 +64,6 @@
     .mobilenav_login {
       align-self: center;
       display: block;
-      margin-top: 8px;
       width: 50px;
   
     }
@@ -74,15 +73,44 @@
     }
   }
   
-  .mobilenav_connected {
-    margin-top: 8px;
-    max-width: 50px;
-  }
+  .mobilenav_connected_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-  .mobilenav_logout {
-    border: none;
-    background-color: vars.$darkGreen;
-    color: vars.$darkYellow;
-    
+    .mobilenav_connected {
+      align-self: center;
+      display: block;
+      
+      max-width: 50px;
+    }
+
+    .mobilenav_connected_text {
+      align-self: center;
+      display: block;
+    }
+
   }
+  
+
+  .mobilenav_logout_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .mobilenav_logout {
+      align-self: center;
+      display: block;
+      
+      max-width: 50px;
+      
+    }
+
+    .mobilenav_logout_text {
+      align-self: center;
+      display: block;
+
+    }
+  }
+  
 }
