@@ -1,47 +1,77 @@
 @use 'src/styles/vars';
 
+
 .footer {
-  width: 70%;
+  width: 80%;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  justify-content: space-between;
   background-color: vars.$regularGreen;
   border-radius: 10px;
   padding: 1rem;
   margin: 20px auto 100px auto;
+  align-items: center;
+  color: #6b3431;
 
   @media(min-width: vars.$breakpointTablet) {
-    width: 100%;
-    font-size: 1.6rem;
+    width: 90%;
+    font-size: 1.5rem;
     margin-bottom: 0;
     
   }
-  .icon {
-    width: 50px;
+
+  .footer_icon_left {
+    .icon_left {
+      width: 30px;
+
+      @media(min-width: vars.$breakpointTablet) {
+        width: 50px;
+        
+      }
+      
+    }
   }
-  
+
   .footer_link {
-    color: vars.$darkYellow;
+    display: flex;
+    width: 60%;
     
-  }
-    
+    flex-direction: column;
+    align-items: center;
+
+    @media(min-width: vars.$breakpointTablet) {
+      width: 80%;
+      flex-direction: row;
+      justify-content: space-evenly;
+      
+    }
+
     .footer_instructions_link {
       display: block;
-      text-align: center;
       margin: 5px;
-     
-      
+
     }
     .footer_informations_link {
       display: block;
-      text-align: center;
       margin: 5px;
-      
+
     }
+
     .footer_contact_link {
       display: block;
-      text-align: center;
       margin: 5px;
-    
+
     }
   }
+
+  .footer_icon_right {
+
+    .icon_right {
+      width: 30px;
+      @media(min-width: vars.$breakpointTablet) {
+        width: 50px;
+        
+      }
+      
+    }
+  }
+}
