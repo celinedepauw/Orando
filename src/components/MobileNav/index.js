@@ -16,6 +16,7 @@ import bear from 'src/assets/icones/bear.svg';
 import hiker from 'src/assets/icones/hiker.svg';
 import exit from 'src/assets/icones/exit.svg';
 import login from 'src/assets/icones/login.svg';
+import lock from 'src/assets/icones/lock.svg';
 
 import './mobilenav.scss';
 
@@ -29,7 +30,7 @@ const MobileNav = ({ isLogged, handleLogout }) => (
     </a>
     {!isLogged && (
       <Link to="/authentication">
-        <img src={server} alt="login" className="mobilenav_login" />
+        <img src={lock} alt="login" className="mobilenav_login" />
       </Link>
     )}
     {isLogged && (

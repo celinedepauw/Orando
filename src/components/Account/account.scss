@@ -5,6 +5,7 @@
   background: linear-gradient(#fee5e3, #fff);
   margin: -15px;
   min-height: 100vh;
+  
 
   .account_return {
     width: 90px;
@@ -13,19 +14,20 @@
   }
 
   .account_title_margin {
-    margin: 0 50px 50px 0;
-    padding: 25px;
+    width: 70%;
+    margin: 70px auto;
+    padding: 4rem 0;
     color: white;
     font-weight: bold;
-    font-size: 2.5rem;
     background: linear-gradient(to bottom right, vars.$darkRed, #f29991);
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 
+
     .account_title {
-      
+      font-size: 2rem;
     }
 
     .account_bee {
@@ -37,24 +39,42 @@
 
   .account_container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    width: 60%;
+    margin: auto;
     flex-direction: column;
 
     .account_profil {
-      text-align: center;
-      font-size: 2rem;
-      margin: 20px 50px 20px 50px;
-      padding: 4rem;
+      
+      font-size: 1.7rem;
+      padding: 4rem 1rem;
+      margin: 30px 0;
       background: linear-gradient(to bottom right, vars.$darkGreen, #98b394);
       color: white;
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: space-evenly;
+      box-shadow: 0px 10px 20px grey;
+
+      @media(min-width: vars.$breakpointTablet) {
+        font-size: 2rem;
+       
+      }
+    
+
+      &:hover {
+        transform: scale(1.1);
+        opacity: 0.5;
+        box-shadow: 10px 10px 20px grey;
+      }
 
       .account_profil_icon {
-        width: 60px;
+        width: 50px;
+
+        @media(min-width: vars.$breakpointTablet) {
+          width: 60px;
+         
+        }
       }
       .account_profil_title {
 
@@ -62,19 +82,37 @@
     }
 
     .account_incomingwalks {
+      margin-top: 20px;
       text-align: center;
-      font-size: 2rem;
-      margin: 20px 50px 20px 50px;
-      padding: 4rem;
+      font-size: 1.7rem;
+      padding: 4rem 1rem;
+      margin: 30px 0;
       background: linear-gradient(to bottom right, vars.$darkYellow, #fbc46d);
       color: white;
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: space-evenly;
+      box-shadow: 0px 10px 20px grey;
+
+      @media(min-width: vars.$breakpointTablet) {
+        font-size: 2rem;
+       
+      }
+
+      &:hover {
+        transform: scale(1.1);
+        opacity: 0.5;
+        box-shadow: 10px 10px 20px grey;
+      }
 
       .account_incomingwalks_icon {
-        width: 60px;
+        width: 50px;
+
+        @media(min-width: vars.$breakpointTablet) {
+          width: 60px;
+         
+        }
       }
       .account_incomingwalks_title {
 
@@ -82,19 +120,37 @@
     }
 
     .account_myhikes {
+      margin-top: 20px;
       text-align: center;
-      font-size: 2rem;
-      margin: 20px 50px 20px 50px;
-      padding: 4rem;
+      font-size: 1.7rem;
+      padding: 4rem 1rem;
+      margin: 30px 0;
       background: linear-gradient(to bottom right, vars.$darkRed, #f29991);
       color: white;
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: space-evenly;
+      box-shadow: 0px 10px 20px grey;
+
+      @media(min-width: vars.$breakpointTablet) {
+        font-size: 2rem;
+       
+      }
+
+      &:hover {
+        transform: scale(1.1);
+        opacity: 0.5;
+        box-shadow: 10px 10px 20px grey;
+      }
 
       .account_myhikes_icon {
-        width: 60px;
+        width: 50px;
+
+        @media(min-width: vars.$breakpointTablet) {
+          width: 60px;
+         
+        }
       }
       .account_myhikes_title {
 
@@ -102,19 +158,37 @@
     }
 
     .account_archived {
+      margin-top: 20px;
       text-align: center;
-      font-size: 2rem;
-      margin: 20px 50px 20px 50px;
-      padding: 4rem;
-      background: linear-gradient(to bottom right, vars.$darkYellow, #fbc46d);
+      font-size: 1.7rem;
+      padding: 4rem 1rem;
+      margin: 30px 0;
+      background: linear-gradient(to bottom right, #6b3431, #e1645f);
       color: white;
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: space-evenly;
+      box-shadow: 0px 10px 20px grey;
+
+      @media(min-width: vars.$breakpointTablet) {
+        font-size: 2rem;
+       
+      }
+
+      &:hover {
+        transform: scale(1.1);
+        opacity: 0.5;
+        box-shadow: 10px 10px 20px grey;
+      }
 
       .account_archived_icon {
         width: 60px;
+
+        @media(min-width: vars.$breakpointTablet) {
+          width: 60px;
+         
+        }
       }
       .account_archived_title {
 

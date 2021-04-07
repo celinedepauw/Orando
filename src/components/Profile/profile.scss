@@ -1,124 +1,98 @@
 @use 'src/styles/vars';
 
 .profile {
-  background-color: vars.$lightRed;
+  background: linear-gradient(#fee5e3, #fff);
+  margin: -15px;
   min-height: 100vh;
 
-  .profil_back_account {
-    display: inline-block;
-    margin-left: 350px;
-    font-size: 1.7rem ;
-    border: 2px solid vars.$darkRed;
-    background: linear-gradient(to bottom right, vars.$darkRed, vars.$regularRed);
-    color: white;
-    border-radius: 10px;
-    padding: 0.5rem 0.2rem 0.5rem 0.2rem;
-    margin-top: 10px;
-    &:hover{
-      box-shadow: 0 0 20px vars.$regularRed;
-    }
-
+  .profile_return_account {
+    width: 90px;
+    padding: 15px;
+    transform: rotateY(180deg);
   }
 
-  .profile_title {
-    text-align: center;
-    margin: 30px 50px 50px 50px;
+  .profile_title_container {
+    width: 70%;
+    margin: 50px auto;
+    padding: 25px;
     color: white;
     font-weight: bold;
-    font-size: 2.5rem;
-    padding: 0.5rem 0 0.5rem 0;
-    border: 2px solid vars.$darkRed;
-    background: linear-gradient(to bottom right, vars.$darkRed, vars.$regularRed);
+    font-size: 2rem;
+    background: linear-gradient(to bottom right, vars.$darkRed, #f29991);
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    @media(min-width: vars.$breakpointTablet) {
+      font-size: 2.5em;
+     
+    }
+  
+    @media(min-width: vars.$breakpointDesktop) {
+      font-size: 2.5em;
+      
+    }
+
+    .profile_icon {
+      width: 60px;
+    }
+
+    .profile_title {
+
+    }
   }
 
   .profile_container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin-left: 20px;
-    font-size: 1.3rem;
     
+    
+
     .profile_picture {
       width: 200px;
       height: 200px;
       border-radius: 50%;
+      box-shadow: 0px 10px 20px grey;
       display: block;
+      margin: 20px auto;
+    }
+    .profile_avatar {
+      width: 150px;
+      border-radius: 50%;
+      box-shadow: 0px 10px 20px grey;
+      display: block;
+      margin: 20px auto;
+    }
+    
+    .profile_container_informations {
+      display: flex;
+      flex-direction: column;
       margin: auto;
-    }
-    
-    .profile_pseudo {
-      margin: 20px 50px 20px 50px;
-      font-size: 1.7rem;
-      padding: 0.5rem 0 0.5rem 0;
-      border: 2px solid vars.$lightRed;
-      border-radius: 10px;
-      box-shadow: 1px 1px 1px vars.$regularRed;
-      
-    }
-  
-    .profile_fistname {
-      margin: 20px 50px 20px 50px;
-      font-size: 1.7rem;
-      padding: 0.5rem 0 0.5rem 0;
-      border: 2px solid vars.$lightRed;
-      border-radius: 10px;
-      box-shadow: 1px 1px 1px vars.$regularRed;
-  
-    }
-  
-    .profile_lastname {
-      margin: 20px 50px 20px 50px;
-      font-size: 1.7rem;
-      padding: 0.5rem 0 0.5rem 0;
-      border: 2px solid vars.$lightRed;
-      border-radius: 10px;
-      box-shadow: 1px 1px 1px vars.$regularRed;
-      
-    }
-  
-    .profile_date_of_birth {
-      margin: 20px 50px 20px 50px;
-      font-size: 1.7rem;
-      padding: 0.5rem 0 0.5rem 0;
-      border: 2px solid vars.$lightRed;
-      border-radius: 10px;
-      box-shadow: 1px 1px 1px vars.$regularRed;
-      
-    }
-  
-    .profile_email { 
-      margin: 20px 50px 20px 50px;
-      font-size: 1.7rem;
-      padding: 0.5rem 0 0.5rem 0;
-      border: 2px solid vars.$lightRed;
-      border-radius: 10px;
-      box-shadow: 1px 1px 1px vars.$regularRed;
-      
-    }
-  
-    .profile_area {
-      margin: 20px 50px 20px 50px;
-      font-size: 1.7rem;
-      padding: 0.5rem 0 0.5rem 0;
-      border: 2px solid vars.$lightRed;
-      border-radius: 10px;
-      box-shadow: 1px 1px 1px vars.$regularRed;
-      
-    }
-  
-    
+      width: 60%;
 
-    .profile_description {
-      margin: 20px 50px 20px 50px;
-      font-size: 1.7rem;
-      padding: 0.5rem 0 0.5rem 0;
-      border: 2px solid vars.$lightRed;
-      border-radius: 10px;
-      box-shadow: 1px 1px 1px vars.$regularRed;
+      .profile_pseudo {
+        display: block;
+        border-radius: 10px;
+        background: linear-gradient(to bottom right, vars.$darkYellow, #fbc46d);
+        box-shadow: 0px 10px 20px grey;
+        padding: 10px;
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        font-size: 1.3em;
+        color: #6b3431;
+        
+
+        @media(min-width: vars.$breakpointTablet) {
+          font-size: 2em;
+         
+        }
       
+        @media(min-width: vars.$breakpointDesktop) {
+          font-size: 2em;
+          
+        }
+      }
     }
+    
   }
-
-  
 }

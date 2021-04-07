@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import sign from 'src/assets/icones/sign.svg';
+import hiker from 'src/assets/icones/hiker.svg';
+import bear from 'src/assets/icones/bear.svg';
 
 import './profile.scss';
 
@@ -12,24 +15,29 @@ const Profile = ({ user, loadingUser }) => {
       {loadingUser && <div>Chargement en cours...</div>}
       {!loadingUser && (
         <>
-          <Link
-            to="/Account"
-            className="profil_back_account"
-          >          Mon compte
+          <Link to="/account">
+            <img className="profile_return_account" src={sign} alt="retour" />
           </Link>
-          <h2 className="profile_title">Mon Profil</h2>
+          <div className="profile_title_container">
+            <img className="profile_icon" src={hiker} alt="account" />
+            <h2 className="profile_title">Mon profil</h2>
+          </div>
           <div className="profile_container">
             <div>
-              <img className="profile_picture" alt="avatar" src={`https://orando.me/o/images/users/${userDatas.picture}`} />
+              {userDatas.picture !== null ? <img className="profile_picture" alt="photography" src={`https://orando.me/o/images/users/${userDatas.picture}`} /> : <img className="profile_avatar" alt="avatar" src={bear} />}
             </div>
-            <div className="profile_pseudo">Pseudo: {userDatas.nickname}</div>
-            <div className="profile_fistname">Prénom: {userDatas.firstname}</div>
-            <div className="profile_lastname">Nom: {userDatas.lastname}</div>
-            <div className="profile_date_of_birth">Date de naissance: {userDatas.dateOfBirth}</div>
-            <div className="profile_email">Email: {userDatas.email}</div>
-            <div className="profile_area">Région: {userDatas.area.name}</div>
-            <div className="profile_description">
-              Description: {userDatas.description}
+            <div className="profile_container_informations">
+              <div className="profile_pseudo">
+                <h3>Pseudo: {userDatas.nickname}</h3>
+              </div>
+              <div className="profile_pseudo">Prénom: {userDatas.firstname}</div>
+              <div className="profile_pseudo">Nom: {userDatas.lastname}</div>
+              <div className="profile_pseudo">Date de naissance: {userDatas.dateOfBirth}</div>
+              <div className="profile_pseudo">Email: {userDatas.email}</div>
+              <div className="profile_pseudo">Région: {userDatas.area.name}</div>
+              <div className="profile_pseudo">
+                Description: {userDatas.description}
+              </div>
             </div>
           </div>
         </>
