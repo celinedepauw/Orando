@@ -39,7 +39,7 @@
       .walk_to_come_small {
         min-height: 280px;
         text-align: center;
-        border: 1px solid black;
+        background: linear-gradient(to bottom right, vars.$darkYellow, vars.$gradientYellow);
         border-radius: 10px;
         padding: 1rem;
         margin : 1rem;
@@ -57,42 +57,46 @@
         }
   
         .walk_to_come_title {
-          font-size: 1.3rem;
-          color: vars.$darkYellow;
+          font-size: 1.7rem;
+          color: white;
           padding: 0.5rem;
+          font-weight: bold;
         }
   
         .walk_to_come_date {
           font-style: italic;
-          color: vars.$regularGreen;
+          color: vars.$darkGreen;
           padding: 0.5rem;   
         }
   
         .walk_to_come_area {
-          color: vars.$regularRed;
+          color: vars.$darkRed;
           font-weight: bold;
           padding: 0.5rem;
         }
   
         .walk_to_come_difficulty {
           padding: 0.5rem;
+          color: vars.$blackRed;
         }
   
         .walk_to_come_duration {
           padding: 0.5rem;
+          color: vars.$blackRed;
         }
   
         .walk_to_come_button_more_infos {
           padding: 0.5rem;
           margin: auto;
-          background-color: vars.$regularYellow;
+          background-color: vars.$darkYellow;
           border: none;
           border-radius: 10px;
           min-width: 60%;
           margin-bottom: 0.5rem;
+          color: vars.$blackRed;
 
           &:hover {
-            background-color: vars.$darkYellow;
+            background-color: #c28a13;
             transform: scale(1.1);
           }
         }
