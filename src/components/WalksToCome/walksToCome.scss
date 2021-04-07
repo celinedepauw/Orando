@@ -108,7 +108,7 @@
           color: vars.$blackRed;
 
           &:hover {
-            background-color: #c28a13;
+            background-color: vars.$blackYellow;
             transform: scale(1.1);
           }
         }

@@ -43,4 +43,3 @@ WalksToCome.propTypes = {
 };
 export default WalksToCome;
 
-
