@@ -12,13 +12,22 @@
     transform: rotateY(180deg);
   }
 
-  .walks_to_come_title {
+  .walks_to_come_title_content {
     text-align: center;
     color: vars.$darkRed;
     font-size: 2rem;
     font-weight: bold;
     padding: 1rem;
 
+    .walks_to_come_icon {
+      width: 50px;
+    }
+    .walks_to_come_title {
+      
+      
+  
+      
+    }
     @media(min-width: vars.$breakpointTablet) {
       font-size: 3rem;
     }
@@ -26,7 +35,9 @@
     @media(min-width: vars.$breakpointDesktop) {
       font-size: 4rem;
     }
+
   }
+  
 
   .walks_to_come_list {
 
@@ -55,7 +66,8 @@
         @media(min-width: vars.$breakpointXLarge) {
           width: 29%;
         }
-  
+        
+
         .walk_to_come_title {
           font-size: 1.7rem;
           color: white;
