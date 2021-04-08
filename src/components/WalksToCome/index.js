@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import sign from 'src/assets/icones/sign.svg';
+import sign3 from 'src/assets/icones/sign3.svg';
 import boot from 'src/assets/icones/boot.svg';
 
 import WalkToComeSmall from 'src/components/WalksToCome/WalkToComeSmall';
@@ -15,7 +15,7 @@ const WalksToCome = ({ user, loadingUser, handleCancelParticipation }) => (
     {!loadingUser && (
       <main className="walks_to_come">
         <Link to="/account">
-          <img className="walks_to_come_return_account" src={sign} alt="retour" />
+          <img className="walks_to_come_return_account" src={sign3} alt="retour" />
         </Link>
         <div className="walks_to_come_title_content">
           <img className="walks_to_come_icon" src={boot} alt="icone" />
