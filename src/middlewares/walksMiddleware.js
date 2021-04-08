@@ -86,11 +86,11 @@ const walksMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.log(error);
+          alert('Votre participation a déjà été prise en compte');
         });
       next(action);
       break;
     }
-    
     case CANCEL_PARTICIPATE: {
       const authenticationToken = localStorage.getItem('Token');
       const currentUserId = localStorage.getItem('currentUserId');

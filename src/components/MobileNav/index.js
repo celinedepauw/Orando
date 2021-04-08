@@ -11,7 +11,7 @@ import hiker from 'src/assets/icones/hiker.svg';
 // logo to disconnect
 import exit2 from 'src/assets/icones/exit2.svg';
 // to connection - connected
-import login from 'src/assets/icones/login.svg';
+import login from 'src/assets/images/enter.svg';
 import './mobilenav.scss';
 
 const MobileNav = ({ isLogged, handleLogout }) => (

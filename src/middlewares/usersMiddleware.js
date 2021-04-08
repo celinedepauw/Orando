@@ -44,6 +44,7 @@ const usersMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.log(error);
+          alert('Mot de passe ou email incorrect, merci de ressaisir vos identifiants');
         });
       next(action);
       break;
