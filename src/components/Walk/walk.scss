@@ -1,7 +1,9 @@
 @use 'src/styles/vars';
 
 .walk {
-  background-color: vars.$lightYellow;
+  background: linear-gradient(vars.$lightYellow, white);
+  margin: -3px;
+  min-height: 100vh;
 
   .walk_title {
     text-align: center;
@@ -97,144 +99,225 @@
   }
 
   .walk_starting_point {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, vars.$darkYellow, vars.$gradientYellow);
+    box-shadow: 0px 5px 5px vars.$darkYellow;
+    padding: 0.5rem;
     margin: 1rem;
-    padding: 1rem;
-  }
 
-  .walk_starting_icon {
-    width: 10%;
-    height: 10%;
-    float: left;
-    margin-right: 10px;
-
-    @media(min-width: vars.$breakpointTablet) {
-      width: 3%;
-      height: 3%;
+    .walk_starting_point_icon {
+      width: 10%;
+      height: 10%;
+  
+      @media(min-width: vars.$breakpointDesktop) {
+        width: 3%;
+        height: 3%;
+      }
     }
+
+    .walk_starting_point_text {
+      padding-left: 0.5rem;
+     }
   }
 
   .walk_end_point {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, vars.$darkYellow, vars.$gradientYellow);
+    box-shadow: 0px 5px 5px vars.$darkYellow;
+    padding: 0.5rem;
     margin: 1rem;
-    padding: 1rem;
-  }
 
-  .walk_endPoint_icon {
-    width: 10%;
-    height: 10%;
-    float: left;
-    margin-right: 10px;
-
-    @media(min-width: vars.$breakpointTablet) {
-      width: 3%;
-      height: 3%;
+    .walk_end_point_icon {
+      width: 10%;
+      height: 10%;
+  
+      @media(min-width: vars.$breakpointDesktop) {
+        width: 3%;
+        height: 3%;
+      }
     }
+
+    .walk_end_point_text {
+      padding-left: 0.5rem;
+     }
   }
 
+  .walk_distance {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, vars.$darkYellow, vars.$gradientYellow);
+    box-shadow: 0px 5px 5px vars.$darkYellow;
+    padding: 0.5rem;
+    margin: 1rem;
+
+    .walk_distance_icon {
+      width: 10%;
+      height: 10%;
+  
+      @media(min-width: vars.$breakpointDesktop) {
+        width: 3%;
+        height: 3%;
+      }
+    }
+
+    .walk_distance_text {
+      padding-left: 0.5rem;
+     }
+  }
 
   .walk_difficulty {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, vars.$darkYellow, vars.$gradientYellow);
+    box-shadow: 0px 5px 5px vars.$darkYellow;
+    padding: 0.5rem;
     margin: 1rem;
-    padding: 1rem;
-  }
 
-  .walk_difficulty_icon {
-    width: 10%;
-    height: 10%;
-    float: left;
-    margin-right: 10px;
-
-    @media(min-width: vars.$breakpointTablet) {
-      width: 3%;
-      height: 3%;
+    .walk_difficulty_icon {
+      width: 10%;
+      height: 10%;
+  
+      @media(min-width: vars.$breakpointDesktop) {
+        width: 3%;
+        height: 3%;
+      }
     }
-  }
 
+    .walk_difficulty_text {
+      padding-left: 0.5rem;
+     }
+  }
+  
   .walk_duration {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, vars.$darkYellow, vars.$gradientYellow);
+    box-shadow: 0px 5px 5px vars.$darkYellow;
+    padding: 0.5rem;
     margin: 1rem;
-    padding: 1rem;
-  }
 
-  .walk_duration_icon {
-    width: 10%;
-    height: 10%;
-    float: left;
-    margin-right: 10px;
-
-    @media(min-width: vars.$breakpointTablet) {
-      width: 3%;
-      height: 3%;
+    .walk_duration_icon {
+      width: 10%;
+      height: 10%;
+  
+      @media(min-width: vars.$breakpointDesktop) {
+        width: 3%;
+        height: 3%;
+      }
     }
+
+    .walk_duration_text {
+      padding-left: 0.5rem;
+     }
   }
 
   .walk_elevation {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, vars.$darkYellow, vars.$gradientYellow);
+    box-shadow: 0px 5px 5px vars.$darkYellow;
+    padding: 0.5rem;
     margin: 1rem;
-    padding: 1rem;
 
-  }
-
-  .walk_elevation_icon {
-    width: 10%;
-    height: 10%;
-    float: left;
-    margin-right: 10px;
-
-    @media(min-width: vars.$breakpointTablet) {
-      width: 3%;
-      height: 3%;
+    .walk_elevation_icon {
+      width: 10%;
+      height: 10%;
+  
+      @media(min-width: vars.$breakpointDesktop) {
+        width: 3%;
+        height: 3%;
+      }
     }
+
+    .walk_elevation_text {
+      padding-left: 0.5rem;
+     }
   }
 
-  .walk_maxNbPersons {
+  .walk_nbPeople {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, vars.$darkYellow, vars.$gradientYellow);
+    box-shadow: 0px 5px 5px vars.$darkYellow;
+    padding: 0.5rem;
     margin: 1rem;
-    padding: 1rem;
-  }
 
-  .walk_nbPersons_icon {
-    width: 10%;
-    height: 10%;
-    float: left;
-    margin-right: 10px;
-
-    @media(min-width: vars.$breakpointTablet) {
-      width: 3%;
-      height: 3%;
+    .walk_nbPeople_icon {
+      width: 10%;
+      height: 10%;
+  
+      @media(min-width: vars.$breakpointDesktop) {
+        width: 3%;
+        height: 3%;
+      }
     }
+
+    .walk_nbPeople_text {
+      padding-left: 0.5rem;
+     }
   }
 
   .walk_description {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, vars.$darkYellow, vars.$gradientYellow);
+    box-shadow: 0px 5px 5px vars.$darkYellow;
+    padding: 0.5rem;
     margin: 1rem;
-    padding: 1rem;
-  }
 
-  .walk_description_icon {
-    width: 10%;
-    height: 10%;
-    float: left;
-    margin-right: 10px;
-
-    @media(min-width: vars.$breakpointTablet) {
-      width: 3%;
-      height: 3%;
+    .walk_description_icon {
+      width: 10%;
+      height: 10%;
+  
+      @media(min-width: vars.$breakpointDesktop) {
+        width: 3%;
+        height: 3%;
+      }
     }
-  }
 
+    .walk_description_text {
+      padding-left: 0.5rem;
+     }
+  }
+ 
   .walk-links {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
+      color: white;
+
+      @media(min-width: vars.$breakpointDesktop) {
+        flex-wrap: nowrap;
+      }
 
       .walk_edit_link {
         text-align: center;
-        width: 100%;
 
-        .walk_button_edit {
+        .walk_button_edit { 
           color: white;
-          font-size: 1.2rem;;
-          margin-bottom: 10px;
-          margin-right: 10px;
           padding: 1rem;
           background-color: vars.$regularRed;
           border: none;
           border-radius: 10px;
+          font-size: 1.1rem;
 
           &:hover {
             box-shadow: 5px 5px 5px vars.$darkRed;
@@ -243,29 +326,45 @@
         } 
       }
       
-      .walk_contact_link {
-        padding: 1rem;
-        color: vars.$regularGreen;
+      .walk_contact_link {      
+        padding: 1rem; 
+        background-color: vars.$regularGreen;
+        border: none;
+        border-radius: 10px;
+        text-align: center;
+        width: 100%;
+        margin: 0.5rem 1rem;
 
-        &:hover {
-          text-decoration: underline overline vars.$darkGreen;
-          font-weight: bold;
-        }
+          &:hover {
+            box-shadow: 5px 5px 5px vars.$darkGreen;
+            transform: scale(1.1);
+          }
+
+          @media(min-width: vars.$breakpointTablet) {
+            width: 30%;
+          }
       }
 
-      .walk_moreInfos_button {
+      .walk_participate_button {
         color: white;
-        margin-bottom: 10px;
-        margin-right: 10px;
         padding: 1rem;
         background-color: vars.$regularRed;
         border: none;
         border-radius: 10px;
+        font-size: 1.1rem;
+        width: 100%;
+        margin: 0.5rem 1rem;
 
         &:hover {
           box-shadow: 5px 5px 5px vars.$darkRed;
           transform: scale(1.1);
         }
+
+        @media(min-width: vars.$breakpointTablet) {
+          width: 30%;
+        }
+
+  
       }
     }
 }

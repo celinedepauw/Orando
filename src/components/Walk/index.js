@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
-import { BiBeenHere, BiDirections, BiEnvelope, BiInfoCircle } from 'react-icons/bi';
 import Moment from 'react-moment';
 import Loader from 'src/components/Loader';
 
@@ -16,6 +15,7 @@ import clock from 'src/assets/icones/clock.svg';
 import climbing from 'src/assets/icones/climbing.svg';
 import twoHikes from 'src/assets/icones/two_hikes.svg';
 import info from 'src/assets/icones/info.svg';
+import distance from 'src/assets/icones/012-map.svg';
 
 const Walk = ({ walks, loadingWalk, handleParticipation }) => {
   // console.log(walks);
@@ -38,20 +38,38 @@ const Walk = ({ walks, loadingWalk, handleParticipation }) => {
               <p key={tag.name} className={`walk_tag_${tag.color}`}>{tag.name}</p>
             ))}
           </div>
-          <img src={mountain} alt="clock" className="walk_starting_icon" />
-          <p className="walk_starting_point"> Départ de : {walk.startingPoint}</p>
-          <img src={retour} alt="clock" className="walk_endPoint_icon" />
-          {walk.endPoint ? <p className="walk_end_point"> Arrivée à : {walk.endPoint}</p> : <p className="walk_end_point"> Cette randonnée est une boucle, le point d'arrivée est identique au point de départ</p>}
-          <img src={climbing} alt="climbing" className="walk_difficulty_icon" />
-          <p className="walk_difficulty">Difficulté : {walk.difficulty}</p>
-          <img src={clock} alt="clock" className="walk_duration_icon" />
-          <p className="walk_duration">Durée : {walk.duration}</p>
-          <img src={hiking} alt="hiking" className="walk_elevation_icon" />
-          {walk.elevation ? <p className="walk_elevation"> Dénivelé : {walk.elevation} mètres</p> : <p className="walk_elevation">Dénivelé non renseigné</p>}
-          <img src={twoHikes} alt="icones_number_persons" className="walk_nbPersons_icon" />
-          {walk.maxNbPersons ? <p className="walk_maxNbPersons">Nombre limite de participants : {walk.maxNbPersons}</p> : <p className="walk_maxNbPersons">Pas de limite dans le nombre de participants</p>}
-          <img src={info} alt="icones_info" className="walk_description_icon" />
-          <p className="walk_description"> Description / Infos pratiques : <br /> {walk.description}</p>
+          <div className="walk_starting_point">
+            <img src={mountain} alt="starting-point" className="walk_starting_point_icon" />
+            <p className="walk_starting_point_text"> Départ de : {walk.startingPoint}</p>
+          </div>
+          <div className="walk_end_point">
+            <img src={retour} alt="end-point" className="walk_end_point_icon" />
+            {walk.endPoint ? <p className="walk_end_point_text"> Arrivée à : {walk.endPoint}</p> : <p className="walk_end_point_text"> Cette randonnée est une boucle</p>}
+          </div>
+          <div className="walk_distance">
+            <img src={distance} alt="distance" className="walk_distance_icon" />
+            <p className="walk_distance_text">Distance : {walk.kilometre} kms</p>
+          </div>
+          <div className="walk_difficulty">
+            <img src={climbing} alt="difficulty" className="walk_difficulty_icon" />
+            <p className="walk_difficulty_text">Niveau de difficulté : {walk.difficulty}</p>
+          </div>
+          <div className="walk_duration">
+            <img src={clock} alt="duration" className="walk_duration_icon" />
+            <p className="walk_duration_text">Durée : {walk.duration}</p>
+          </div>
+          <div className="walk_elevation">
+            <img src={hiking} alt="elevation" className="walk_elevation_icon" />
+            {walk.elevation ? <p className="walk_elevation_text"> Dénivelé : {walk.elevation} mètres</p> : <p className="walk_elevation_text">Dénivelé non renseigné</p>}
+          </div>
+          <div className="walk_nbPeople">
+            <img src={twoHikes} alt="number-people" className="walk_nbPeople_icon" />
+            {walk.maxNbPersons ? <p className="walk_maxNbPeople_text">Nombre limite de participants : {walk.maxNbPersons}</p> : <p className="walk_maxNbPeople_text">Pas de limite dans le nombre de participants</p>}
+          </div>
+          <div className="walk_description">
+            <img src={info} alt="description" className="walk_description_icon" />
+            <p className="walk_description_text"> Description / Infos pratiques : <br /> {walk.description}</p>
+          </div>
           <div className="walk-links">
             {walk.creator.id == userId ? (
               <a className="walk_edit_link" href={`https://orando.me/o/walk/edit/${id}`}>
@@ -59,8 +77,8 @@ const Walk = ({ walks, loadingWalk, handleParticipation }) => {
               </a>
             ) : (
               <>
-                <a className="walk_contact_link" href={`https://orando.me/o/profile/${walk.creator.id}/contact-user`}><BiEnvelope size={30} />Contacter {walk.creator.nickname} pour avoir plus d'informations !</a>
-                <button className="walk_moreInfos_button" type="button" onClick={() => handleParticipation(id)}>Je souhaite participer !</button>
+                <a className="walk_contact_link" href={`https://orando.me/o/profile/${walk.creator.id}/contact-user`}>Contacter {walk.creator.nickname} pour avoir plus d'informations !</a>
+                <button className="walk_participate_button" type="button" onClick={() => handleParticipation(id)}>Je souhaite participer !</button>
               </>
             )}
           </div>
