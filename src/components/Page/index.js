@@ -18,34 +18,37 @@ import Error from 'src/components/Error';
 const Page = () => (
   <div className="page">
     <Switch>
-      <Route path="/participants/walks/:id">
+      <Route exact path="/participants/walks/:id">
         <Participants />
       </Route>
-      <Route path="/walks/:id">
+      <Route exact path="/walks/:id">
         <Walk />
       </Route>
-      <Route path="/areas/:id">
+      <Route exact path="/areas/:id">
         <Area />
       </Route>
-      <Route path="/authentication">
+      <Route exact path="/authentication">
         <Authentication />
       </Route>
-      <Route path="/archived_walks">
+      <Route exact path="/archived_walks">
         <Archived />
       </Route>
-      <Route path="/account">
+      <Route exact path="/account">
         <Account />
       </Route>
-      <Route path="/profile">
+      <Route exact path="/profile">
         <Profile />
       </Route>
-      <Route path="/incoming_walks">
+      <Route exact path="/incoming_walks">
         <WalksToCome />
       </Route>
-      <Route path="/my_hikes">
+      <Route exact path="/my_hikes/:id">
         <MyHikes />
       </Route>
-      <Route path="/about_us">
+      <Route exact path="/my_hikes/">
+        <MyHikes />
+      </Route>
+      <Route exact path="/about_us">
         <AboutUs />
       </Route>
       <Route exact path="/">

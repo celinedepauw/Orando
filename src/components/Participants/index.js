@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import OneParticipant from 'src/components/Participants/OneParticipant';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import sign3 from 'src/assets/icones/sign3.svg';
 import Moment from 'react-moment';
 
 import Loader from 'src/components/Loader';
@@ -17,6 +18,9 @@ const Participants = ({ walks, loadingWalk }) => {
       {!loadingWalk && (
         <>
           <div className="participants">
+            <Link to={`/my_hikes/${id}`}>
+              <img className="participants_return" src={sign3} alt="retour" />
+            </Link>
             <h2 className="participants_walk_title">Liste des participants inscrits à la randonnée</h2>
             <h3 className="participants_walk_name">{walk.title}, le <Moment locale="fr" format="dddd DD MMMM YYYY HH:mm">{walk.date}</Moment></h3>
             {((walk.participants.length) - 1) === 0 ? <p className="participants_walk_number"> Aucun participant</p> : <p className="participants_walk_number"> {(walk.participants.length) - 1} participant(s)</p> }
