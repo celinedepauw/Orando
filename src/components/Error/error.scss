@@ -8,13 +8,38 @@
 
 
   .error_title {
-    font-size: 3rem;
+    font-size: 2rem;
     margin: 20px;
     text-align: center;
+
+    @media (min-width: vars.$breakpointTablet) {
+      font-size: 3rem;
+      
+    }
+
+    @media (min-width: vars.$breakpointDesktop) {
+      font-size: 3rem;
+      
+    }
   }
 
   .error_contain {
     margin: 20px;
     font-size: 2rem;
+  }
+
+  .error_image {
+    width: 70%;
+
+    @media (min-width: vars.$breakpointTablet) {
+      width: 30%;
+      height: 30%;
+    }
+
+    @media (min-width: vars.$breakpointDesktop) {
+      width: 40%;
+      height: 40%;
+      
+    }
   }
 }
