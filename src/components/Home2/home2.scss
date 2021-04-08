@@ -10,7 +10,7 @@
     color: vars.$darkRed;
     font-size: 2rem;
     font-weight: bold;
-    padding: 1rem;
+    padding: 3rem;
 
     @media(min-width: vars.$breakpointTablet) {
       font-size: 3rem;
@@ -144,6 +144,7 @@
       padding: 1rem;
       background-color: vars.$regularGreen;
       color: white;
+      font-weight: bold;
       border: none;
       border-radius: 10px;
 

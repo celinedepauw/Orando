@@ -21,7 +21,7 @@ const WalkToComeSmall = ({
       <p className="walk_to_come_date"><Moment locale="fr" format="dddd DD MMMM YYYY HH:mm">{date}</Moment></p>
       <p className="walk_to_come_difficulty">{difficulty}</p>
       <p className="walk_to_come_duration">{duration}</p>
-      <Link to={`/walks/${id}`} className="walk_to_come_button_more_infos">En savoir plus
+      <Link to={`/walks/${id}`} className="walk_to_come_button_more_infos">Plus de détails
       </Link>
       {userId == creator.id ? <></> : <button type="button" className="walk_to_come_button_delete" onClick={() => handleCancelParticipation(id)}>Annuler ma participation</button> }
     </div>

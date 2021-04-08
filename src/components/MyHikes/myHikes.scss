@@ -107,7 +107,7 @@
           min-width: 60%;
 
           &:hover {
-            background-color: vars.$darkYellow;
+            box-shadow: 5px 5px 5px vars.$darkYellow;
             transform: scale(1.1);
           }
         }
@@ -122,7 +122,7 @@
           min-width: 60%;
           
           &:hover {
-            background-color: vars.$darkGreen;
+            box-shadow: 5px 5px 5px vars.$darkGreen;
             transform: scale(1.1);
           }
         }
@@ -136,7 +136,7 @@
             min-width: 60%;
             
             &:hover {
-              background-color: vars.$darkRed;
+              box-shadow: 5px 5px 5px vars.$darkRed;
               transform: scale(1.1);
             }
           }

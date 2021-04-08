@@ -27,10 +27,7 @@
       }
     }
     .walks_to_come_title {
-      
-      
-  
-      
+       
     }
     @media(min-width: vars.$breakpointTablet) {
       font-size: 3rem;
@@ -112,7 +109,7 @@
           color: vars.$blackRed;
 
           &:hover {
-            background-color: vars.$blackYellow;
+            box-shadow: 5px 5px 5px vars.$blackYellow;
             transform: scale(1.1);
           }
         }
@@ -126,7 +123,7 @@
           margin: auto;
           
           &:hover {
-            background-color: vars.$darkRed;
+            box-shadow: 5px 5px 5px vars.$darkRed;
             transform: scale(1.1);
           }
         }

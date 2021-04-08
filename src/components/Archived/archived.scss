@@ -53,18 +53,23 @@
   
 
   .archived_infos {
+    min-height: 280px;
     text-align: center;
     background: linear-gradient(to bottom right, #6b3431, #e1645f);
     border-radius: 10px;
     padding: 1rem;
     margin : 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
   
         @media(min-width: vars.$breakpointTablet) {
-          width: 29%;
+          width: 45%;
         }
   
         @media(min-width: vars.$breakpointXLarge) {
-          width: 22%;
+          width: 29%;
         }
 
   .archived_infos_title {
@@ -91,16 +96,23 @@
   }
 
   .archived_infos_level {
-    padding: 10px;
+    padding: 0.5rem;
     color: white;
   }
 
   .archived_infos_button {
-    padding: 10px;
+    padding: 0.5rem;
     background-color: vars.$darkRed;
     border: none;
     border-radius: 10px;
     color: vars.$blackRed;
+    min-width: 60%;
+    margin: auto;
+
+    &:hover {
+      box-shadow: 5px 5px 5px vars.$blackRed;
+      transform: scale(1.1);
+    }
     }
   }
 }
