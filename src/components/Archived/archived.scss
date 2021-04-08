@@ -1,15 +1,37 @@
 @use 'src/styles/vars';
 
 .archived {
+  background: linear-gradient(#fee5e3, #fff);
+  margin: -15px;
   min-height: 100vh;
+  padding: 15px;
 
-  .archived_title {
+  .archived_return_account {
+    width: 90px;
+    padding: 15px;
+    transform: rotateY(180deg);
+  }
+
+
+  .archived_title_content {
     text-align: center;
     color: vars.$darkRed;
     font-size: 2rem;
     font-weight: bold;
     padding: 1rem;
 
+    .archived_icon {
+      width: 50px;
+
+      @media(min-width: vars.$breakpointTablet) {
+        width: 80px;
+      }
+    }
+    .archived_title {
+      
+  
+      
+    }
     @media(min-width: vars.$breakpointTablet) {
       font-size: 3rem;
     }
@@ -17,7 +39,10 @@
     @media(min-width: vars.$breakpointDesktop) {
       font-size: 4rem;
     }
+
   }
+
+  
 
   .archived_infos_list {
     @media(min-width: vars.$breakpointTablet) {
@@ -29,7 +54,7 @@
 
   .archived_infos {
     text-align: center;
-    border: 1px solid black;
+    background: linear-gradient(to bottom right, #6b3431, #e1645f);
     border-radius: 10px;
     padding: 1rem;
     margin : 1rem;
@@ -43,8 +68,10 @@
         }
 
   .archived_infos_title {
-    padding: 10px;
-    color: vars.$regularYellow;
+    font-size: 1.7rem;
+    color: white;
+    padding: 0.5rem;
+    font-weight: bold;
   }
 
   .archived_infos_area {
@@ -54,15 +81,18 @@
 
   .archived_infos_date {
     padding: 10px;
-    color: vars.$darkGreen;
+    color: vars.$regularGreen;
   }
 
   .archived_infos_time {
     padding: 10px;
+    color: vars.$blackRed;
+    
   }
 
   .archived_infos_level {
     padding: 10px;
+    color: white;
   }
 
   .archived_infos_button {
@@ -70,6 +100,7 @@
     background-color: vars.$darkRed;
     border: none;
     border-radius: 10px;
+    color: vars.$blackRed;
     }
   }
 }
