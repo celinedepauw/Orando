@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import sign from 'src/assets/icones/sign.svg';
+import sign3 from 'src/assets/icones/sign3.svg';
 import hiker from 'src/assets/icones/hiker.svg';
 import bear from 'src/assets/icones/bear.svg';
 
@@ -17,7 +17,7 @@ const Profile = ({ user, loadingUser }) => {
       {!loadingUser && (
         <>
           <Link to="/account">
-            <img className="profile_return_account" src={sign} alt="retour" />
+            <img className="profile_return_account" src={sign3} alt="retour" />
           </Link>
           <div className="profile_title_container">
             <img className="profile_icon" src={hiker} alt="account" />
