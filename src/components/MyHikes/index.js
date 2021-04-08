@@ -21,7 +21,6 @@ const MyHikes = ({ user, loadingUser }) => (
           <h2 className="walks_user_title">{user.user.walks.length} randonnée(s) organisée(s)</h2>
         </div>
         <div className="walks_user_list">
-          {console.log(user.user.walks)}
           {user.user.walks.map((item) => (
             <MyHikesSmall key={item.id} {...item} />
           ))}
