@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import homeLogo from 'src/assets/images/home.png';
 import createLogo from 'src/assets/images/create.png';
-import connect from 'src/assets/images/login1.png';
+import connect from 'src/assets/images/enter.svg';
 import exit2 from 'src/assets/icones/exit2.svg';
 import avatar from 'src/assets/images/054-hiker.png';
 

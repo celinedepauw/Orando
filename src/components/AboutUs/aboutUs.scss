@@ -18,12 +18,20 @@
     flex-wrap: wrap;
     margin: 1rem;
 
+    @media(min-width: vars.$breakpointTablet) {
+      width: 29%;
+    }
+
+    @media(min-width: vars.$breakpointDesktop) {
+      
+    }
+
     .about_us_person {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       background: linear-gradient(to bottom right, vars.$darkYellow, #fbc46d);
-      margin: 1rem;
+      margin: 0.5rem;
       border-radius: 20px;
       color: vars.$blackRed;
 
@@ -42,14 +50,15 @@
       }
   
       .about_us_image {
-        height: 200px;
-        width: 200px;
-        border-radius: 20px;
+        height: 240px;
+        width: 240px;
+        border-radius: 50px;
         padding: 1rem;
       }
     
       .about_us_text{
         padding: 1rem;
+        font-size: 1.5rem;
         text-align: justify;
       }
     } 

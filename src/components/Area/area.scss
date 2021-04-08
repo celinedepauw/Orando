@@ -108,10 +108,11 @@
 
       .area_walk_more_infos {
         background-color: #da9f41;
-        border-radius: 10%;
+        border-radius: 10px;
         padding: 0.5rem;
-        margin-left: 80px;
-        margin-right: 80px;
+        margin-left: 4rem;
+        margin-right: 4rem;
+        margin-bottom: 1rem;
         color: #6B3431;
         font-weight: bold;
         
@@ -119,6 +120,20 @@
           color: #6B3431;
           font-weight: bold;
           transform: scale(1.2);
+        }
+      }
+
+      .area_walk_creator {
+        background-color: vars.$regularGreen;
+        border-radius: 10px;
+        padding: 0.5rem;
+        margin-left: 4rem;
+        margin-right: 4rem;
+        color: vars.$blackRed;
+        font-weight: bold;
+
+        .area_walk_creator_picture {
+          width: 40px;
         }
       }
     }
