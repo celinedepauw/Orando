@@ -6,6 +6,8 @@
   margin: -15px;
   min-height: 100vh;
 
+  
+
   .about_us_title {
     text-align: center;
     font-size: 3rem;
@@ -20,11 +22,13 @@
 
     @media(min-width: vars.$breakpointTablet) {
       width: 29%;
-    }
-
-    @media(min-width: vars.$breakpointDesktop) {
       
     }
+
+    @media(min-width: vars.$breakpointXLarge) {
+      flex-wrap: nowrap;
+    }
+
 
     .about_us_person {
       display: flex;
@@ -63,5 +67,4 @@
       }
     } 
   }
-
 }
