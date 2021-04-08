@@ -34,9 +34,9 @@
   .footer_link {
     display: flex;
     width: 60%;
-    
     flex-direction: column;
     align-items: center;
+    
 
     @media(min-width: vars.$breakpointTablet) {
       width: 80%;
@@ -49,17 +49,27 @@
       display: block;
       margin: 5px;
 
+      &:hover {
+        transform: scale(1.1);
+      }
+
     }
     .footer_informations_link {
       display: block;
       margin: 5px;
 
+      &:hover {
+        transform: scale(1.1);
+      }
     }
 
     .footer_contact_link {
       display: block;
       margin: 5px;
 
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 
