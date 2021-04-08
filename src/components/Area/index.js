@@ -20,7 +20,7 @@ const Area = ({ areas, loadingAreas }) => {
             <img className="area_home_return" src={sign3} alt="retour" />
           </Link>
           <h2 className="area_name">{area.name}</h2>
-            {area.walks.length === 0 ? <h3 className="area_walks">Il n'y a pas encore de randonnées organisées pour cette région, n'hésitez pas à proposez la votre !<button className="area_add_walk_button" type="button">Proposer une randonnée</button></h3> : <h3 className="area_walks">Bientôt <span className="area_numberOfWalks">{area.walks.length} </span>randonnée(s) près de chez vous !</h3>}
+            {area.walks.length === 0 ? <><h3 className="area_walks">Il n'y a pas encore de randonnées organisées pour cette région, n'hésitez pas à proposer la votre !</h3><button className="area_add_walk_button" type="button">Proposer une randonnée</button></> : <h3 className="area_walks">Bientôt <span className="area_numberOfWalks">{area.walks.length} </span>randonnée(s) près de chez vous !</h3>}
           <div className="area_walks_list">
             {area.walks.map((item) => (
               <WalkSmall2 key={item.id} {...item} />

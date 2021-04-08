@@ -49,7 +49,7 @@ const Walk = ({ walks, loadingWalk, handleParticipation }) => {
             </div>
             <div className="walk_distance">
               <img src={distance} alt="distance" className="walk_distance_icon" />
-              <p className="walk_distance_text">Distance : {walk.kilometre} kms</p>
+              {walk.kilometre ? <p className="walk_distance_text">Distance : {walk.kilometre} kms</p> : <p className="walk_distance_text">Distance non renseignée</p>}
             </div>
             <div className="walk_difficulty">
               <img src={climbing} alt="difficulty" className="walk_difficulty_icon" />

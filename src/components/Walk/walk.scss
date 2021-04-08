@@ -107,14 +107,19 @@
     box-shadow: 0px 5px 5px vars.$darkYellow;
     padding: 0.5rem;
     margin: 1rem;
+    
+    @media(min-width: vars.$breakpointTablet) {
+      width: 70%;
+      margin: 1rem auto;
+    }
 
     .walk_starting_point_icon {
       width: 10%;
       height: 10%;
-  
+
       @media(min-width: vars.$breakpointDesktop) {
-        width: 3%;
-        height: 3%;
+        width: 5%;
+        height: 5%;
       }
     }
 
@@ -133,13 +138,18 @@
     padding: 0.5rem;
     margin: 1rem;
 
+    @media(min-width: vars.$breakpointTablet) {
+      width: 70%;
+      margin: 1rem auto;
+    }
+
     .walk_end_point_icon {
       width: 10%;
       height: 10%;
   
       @media(min-width: vars.$breakpointDesktop) {
-        width: 3%;
-        height: 3%;
+        width: 5%;
+        height: 5%;
       }
     }
 
@@ -158,13 +168,18 @@
     padding: 0.5rem;
     margin: 1rem;
 
+    @media(min-width: vars.$breakpointTablet) {
+      width: 70%;
+      margin: 1rem auto;
+    }
+
     .walk_distance_icon {
       width: 10%;
       height: 10%;
   
       @media(min-width: vars.$breakpointDesktop) {
-        width: 3%;
-        height: 3%;
+        width: 5%;
+        height: 5%;
       }
     }
 
@@ -183,13 +198,18 @@
     padding: 0.5rem;
     margin: 1rem;
 
+    @media(min-width: vars.$breakpointTablet) {
+      width: 70%;
+      margin: 1rem auto;
+    }
+
     .walk_difficulty_icon {
       width: 10%;
       height: 10%;
   
       @media(min-width: vars.$breakpointDesktop) {
-        width: 3%;
-        height: 3%;
+        width: 5%;
+        height: 5%;
       }
     }
 
@@ -208,13 +228,18 @@
     padding: 0.5rem;
     margin: 1rem;
 
+    @media(min-width: vars.$breakpointTablet) {
+      width: 70%;
+      margin: 1rem auto;
+    }
+
     .walk_duration_icon {
       width: 10%;
       height: 10%;
   
       @media(min-width: vars.$breakpointDesktop) {
-        width: 3%;
-        height: 3%;
+        width: 5%;
+        height: 5%;
       }
     }
 
@@ -233,13 +258,18 @@
     padding: 0.5rem;
     margin: 1rem;
 
+    @media(min-width: vars.$breakpointTablet) {
+      width: 70%;
+      margin: 1rem auto;
+    }
+
     .walk_elevation_icon {
       width: 10%;
       height: 10%;
   
       @media(min-width: vars.$breakpointDesktop) {
-        width: 3%;
-        height: 3%;
+        width: 5%;
+        height: 5%;
       }
     }
 
@@ -258,13 +288,18 @@
     padding: 0.5rem;
     margin: 1rem;
 
+    @media(min-width: vars.$breakpointTablet) {
+      width: 70%;
+      margin: 1rem auto;
+    }
+
     .walk_nbPeople_icon {
       width: 10%;
       height: 10%;
   
       @media(min-width: vars.$breakpointDesktop) {
-        width: 3%;
-        height: 3%;
+        width: 5%;
+        height: 5%;
       }
     }
 
@@ -283,13 +318,18 @@
     padding: 0.5rem;
     margin: 1rem;
 
+    @media(min-width: vars.$breakpointTablet) {
+      width: 70%;
+      margin: 1rem auto;
+    }
+
     .walk_description_icon {
       width: 10%;
       height: 10%;
   
       @media(min-width: vars.$breakpointDesktop) {
-        width: 3%;
-        height: 3%;
+        width: 5%;
+        height: 5%;
       }
     }
 
@@ -313,6 +353,7 @@
 
         .walk_button_edit { 
           color: white;
+          font-weight: bold;
           padding: 1rem;
           background-color: vars.$regularRed;
           border: none;

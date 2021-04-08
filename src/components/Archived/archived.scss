@@ -96,16 +96,23 @@
   }
 
   .archived_infos_level {
-    padding: 10px;
+    padding: 0.5rem;
     color: white;
   }
 
   .archived_infos_button {
-    padding: 10px;
+    padding: 0.5rem;
     background-color: vars.$darkRed;
     border: none;
     border-radius: 10px;
     color: vars.$blackRed;
+    min-width: 60%;
+    margin: auto;
+
+    &:hover {
+      box-shadow: 5px 5px 5px vars.$blackRed;
+      transform: scale(1.1);
+    }
     }
   }
 }

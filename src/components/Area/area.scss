@@ -16,7 +16,6 @@
       font-size: 2rem;
       font-weight: bold;
       padding: 1rem;
-      
   
       @media(min-width: vars.$breakpointTablet) {
         font-size: 3rem;
@@ -31,7 +30,7 @@
       text-align: center;
       color: vars.$regularYellow;
       font-size: 1.2rem;
-      padding: 1rem;
+      padding: 2rem;
   
       @media(min-width: vars.$breakpointTablet) {
         font-size: 2.2rem;
@@ -41,23 +40,31 @@
         font-size: 3.2rem;
       }
 
-      .area_add_walk_button {
-        padding: 1rem;
-        margin-top: 1rem;
-        background-color: vars.$regularGreen;
-        color: white;
-        border: none;
-        border-radius: 10px;
-
-        &:hover {
-          box-shadow: 5px 5px 5px vars.$darkGreen;
-          transform: scale(1.1);
-        }
-      }
-
       .area_numberOfWalks {
         font-weight: bold;
       }
+  }
+
+  .area_add_walk_button {
+    padding: 1rem;
+    background-color: vars.$regularGreen;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    display: block;
+    width: 90%;
+    margin: auto;
+
+    @media(min-width: vars.$breakpointTablet) {
+     width: 50%;
+    }
+    
+
+    &:hover {
+      box-shadow: 5px 5px 5px vars.$darkGreen;
+      transform: scale(1.1);
+    }
   }
   
   .area_walks_list {
