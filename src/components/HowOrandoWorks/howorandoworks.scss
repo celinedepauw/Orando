@@ -1,0 +1,33 @@
+@use 'src/styles/vars';
+
+
+.howWorks {
+  background: linear-gradient(#fff0da, #fff);
+  margin: -15px;
+  min-height: 100vh;
+  padding: 15px;
+
+  .howWorks_title_content {
+    width: 70%;
+    margin: 50px auto;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, vars.$darkYellow, #fbc46d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+  
+
+    .howWorks_title_icon {
+      width: 60px;
+      margin-right: 20px;
+    }
+
+    .howWorks_title {
+
+    }
+  }
+}
