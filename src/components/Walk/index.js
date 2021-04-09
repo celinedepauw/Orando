@@ -79,7 +79,7 @@ const Walk = ({ walks, loadingWalk, handleParticipation }) => {
               </a>
             ) : (
               <>
-                <a className="walk_contact_link" href={`https://orando.me/o/profile/${walk.creator.id}/contact-user`}>Contacter {walk.creator.nickname} pour avoir plus d'informations !</a>
+                <a className="walk_contact_link" href={`https://orando.me/o/profile/${walk.creator.id}/contact-user`}>Contacter <span className="walk_contact_link_nickname">{walk.creator.nickname}</span> pour avoir plus d'informations !</a>
                 { userId ? <button className="walk_participate_button" type="button" onClick={() => handleParticipation(id)}>Je souhaite participer !</button> : <Link to="/authentication" className="walk_participate_button">Je souhaite participer !</Link>}
               </>
             )}
