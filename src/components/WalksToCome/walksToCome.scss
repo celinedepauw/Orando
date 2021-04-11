@@ -121,6 +121,7 @@
           border-radius: 10px;
           min-width: 60%;
           margin: auto;
+          color: vars.$darkRed;
           
           &:hover {
             box-shadow: 5px 5px 5px vars.$darkRed;
