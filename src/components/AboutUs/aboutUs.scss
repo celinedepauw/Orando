@@ -15,15 +15,25 @@
   }
 
   .about_us_team {
-    margin: 1rem;
-
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
     .about_us_person {
       border-radius: 10px;
       padding: 1rem;
-      margin-bottom: 1rem;
+      margin: 0.5rem;
       text-align: center;
       background: linear-gradient(to bottom right, vars.$darkGreen, vars.$lightGreen);
+      width: 100%;
+
+      @media(min-width: vars.$breakpointTablet) {
+        width: 45%;
+      }
+
+      @media(min-width: vars.$breakpointXLarge) {
+        width: 18%;
+      }
 
       .about_us_name {
         font-size: 1.8rem;
