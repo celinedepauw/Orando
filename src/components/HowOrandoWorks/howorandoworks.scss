@@ -19,6 +19,10 @@
     font-size: 1.5rem;
     font-weight: bold;
     padding: 1rem;
+
+    @media(min-width: vars.$breakpointDesktop) {
+      font-size: 2rem;
+    }
   
 
     .howWorks_title_icon {
@@ -40,6 +44,16 @@
     font-size: 1rem;
     padding: 1rem;
 
+    @media(min-width: vars.$breakpointTablet) {
+      flex-wrap: nowrap;
+      font-size: 1.5rem;
+     
+    }
+
+    @media(min-width: vars.$breakpointDesktop) {
+      width: 60%;
+    }
+
     .howWorks_select-area_text {
       display: flex;
       width: 100%;
@@ -49,12 +63,22 @@
       border: 1px solid #ffd292;
       color: vars.$blackRed;
       padding: 1rem;
+
+      @media(min-width: vars.$breakpointTablet) {
+        width: 50%;
+       
+      }
       
     }
 
     .howWorks_select-area_photo {
       width: 100%;
       border-radius: 10px;
+
+      @media(min-width: vars.$breakpointTablet) {
+        width: 50%;
+       
+      }
 
     }
     
