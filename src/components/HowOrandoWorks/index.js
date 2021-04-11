@@ -15,7 +15,7 @@ const HowOrandoWorks = () => (
     </div>
     <div className="howWorks_select-area">
       <p className="howWorks_select-area_text">
-        Dès la page d'acceuil, accèdez à la liste des régions vous proposant une ou plusieurs randonnée(s).
+        Dès la page d'acceuil, accèdez à la liste des régions vous proposant une ou plusieurs randonnée(s).<br/>
         Il vous suffit de cliquer sur la région qui vous interesse.
       </p>
       <img className="howWorks_select-area_photo" src={image1} alt="illustration explication" />
@@ -28,15 +28,15 @@ const HowOrandoWorks = () => (
     </div>
     <div className="howWorks_select-area">
       <p className="howWorks_select-area_text">
-        Vous avez ainsi accès au détail de la randonnée proposée: point de départ, niveau de difficulté etc.
-        Et en bas de page, vous avez la possibilité de participer à cette randonnée.
+        Vous avez ainsi accès au détail de la randonnée proposée: point de départ, niveau de difficulté etc.<br/>
+        En bas de page, vous avez la possibilité de participer à cette randonnée.
       </p>
       <img className="howWorks_select-area_photo" src={image3} alt="illustration explication" />
     </div>
     <div className="howWorks_select-area">
       <p className="howWorks_select-area_text">
-        Vous pouvez consulter cette même randonnée directement dans votre compte dans "randonnées à venir".
-        Vous aurez même la possibilité d'annuler votre participation.
+        Vous pouvez consulter cette même randonnée directement dans votre compte dans "randonnées à venir".<br/>
+        Vous avez même la possibilité d'annuler votre participation.
       </p>
       <img className="howWorks_select-area_photo" src={image4} alt="illustration explication" />
     </div>
