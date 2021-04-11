@@ -20,6 +20,11 @@
     font-weight: bold;
     padding: 1rem;
 
+    @media(min-width: vars.$breakpointTablet) {
+      font-size: 2rem;
+     
+    }
+
     @media(min-width: vars.$breakpointDesktop) {
       font-size: 2rem;
     }
@@ -61,12 +66,14 @@
       margin-bottom: 0.5rem;
       border-radius: 10px;
       align-items: center;
-      border: 1px solid #ffd292;
+      border: 2px solid #ffd292;
       color: vars.$blackRed;
       padding: 1rem;
 
       @media(min-width: vars.$breakpointTablet) {
         width: 50%;
+        margin-right: 0.5rem;
+        margin-bottom: 0;
        
       }
       
