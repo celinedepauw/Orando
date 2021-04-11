@@ -69,6 +69,7 @@
       border: 2px solid #ffd292;
       color: vars.$blackRed;
       padding: 1rem;
+      box-shadow: 0px 10px 20px grey;
 
       @media(min-width: vars.$breakpointTablet) {
         width: 50%;
@@ -82,6 +83,7 @@
     .howWorks_select-area_photo {
       width: 100%;
       border-radius: 10px;
+      box-shadow: 0px 10px 20px grey;
 
       @media(min-width: vars.$breakpointTablet) {
         width: 50%;
