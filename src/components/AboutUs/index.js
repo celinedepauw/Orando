@@ -11,6 +11,8 @@ import celine from 'src/assets/images/celine.jpg';
 import alex from 'src/assets/images/alexandrine.png';
 import berenice from 'src/assets/images/berenice.jpg';
 
+import linkedin from 'src/assets/images/linkedin.png';
+
 import './aboutUs.scss';
 
 const AboutUs = () => (
@@ -25,6 +27,7 @@ const AboutUs = () => (
         </p>
         <img className="about_us_image" src={celine} alt="profile" />
         <p className="about_us_text">Toujours partante pour de nouvelles aventures, elle aime sortir des sentiers battus.</p>
+        <a href="https://www.linkedin.com/in/celinedepauw/"><img className="about_us_linkedin" src={linkedin} alt="linkedin" /></a>
       </div>
       <div className="about_us_person">
         <h3 className="about_us_name">Alexandrine Heutte</h3>
@@ -34,6 +37,7 @@ const AboutUs = () => (
         </p>
         <img className="about_us_image" src={alex} alt="profile" />
         <p className="about_us_text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <a href="https://www.linkedin.com/in/alexandrine-heutte-71830a10a/"><img className="about_us_linkedin" src={linkedin} alt="linkedin" /></a>
       </div>
       <div className="about_us_person">
         <h3 className="about_us_name">Jean-Baptiste Lafont</h3>
@@ -43,6 +47,7 @@ const AboutUs = () => (
         </p>
         <img className="about_us_image" src={jb} alt="profile" />
         <p className="about_us_text">Il est tombé dans la photo en trébuchant... Depuis, il immortalise ses balades... mais en regardant où il met les pieds.</p>
+        <a href="https://www.linkedin.com/in/berenice-sae/"><img className="about_us_linkedin" src={linkedin} alt="linkedin" /></a>
       </div>
       <div className="about_us_person">
         <h3 className="about_us_name">Bérénice Saé</h3>
@@ -52,6 +57,7 @@ const AboutUs = () => (
         </p>
         <img className="about_us_image" src={berenice} alt="profile" />
         <p className="about_us_text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <img className="about_us_linkedin" src={linkedin} alt="linkedin" />
       </div>
       <div className="about_us_person">
         <h3 className="about_us_name">Pierre-Yves Loukakou</h3>
@@ -61,6 +67,7 @@ const AboutUs = () => (
         </p>
         <img className="about_us_image" src={jb} alt="profile" />
         <p className="about_us_text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <img className="about_us_linkedin" src={linkedin} alt="linkedin" />
       </div>
     </div>
   </div>
