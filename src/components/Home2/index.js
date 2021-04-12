@@ -14,9 +14,9 @@ const Home2 = ({ areas }) => (
       ))}
     </div>
     <div className="home2_resume">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque autem tempore nemo veritatis incidunt, repellendus cumque iusto non porro voluptatum corporis sapiente maiores magni rem! Vel eveniet numquam odit atque?
-    Libero nisi maxime, amet nesciunt labore incidunt nulla quo velit autem. Nostrum nihil placeat quam. Consequatur molestiae, ut inventore quibusdam voluptatibus, laudantium ipsum debitis aspernatur facere esse, odio at explicabo.
-    Dignissimos harum itaque eaque molestiae veritatis consequuntur ut culpa suscipit recusandae magnam assumenda, dolorem ad reprehenderit aperiam repellat officiis modi numquam delectus est tempore animi dolorum? Adipisci ducimus suscipit quidem?
+      Vous ne trouvez pas votre bonheur parmi les randonnées proposées ? Ce n'est pas grave !
+      En cliquant sur le bouton ci-dessous (Proposez une randonnée) vous serez redirigé
+      vers la page de création d'une randonnée, il n'y a plus qu'à ! Bonne balade sur notre site !!
     </div>
     <div className="home2_end">
       <p className="home2_go">A vous de jouer !</p>
