@@ -44,28 +44,6 @@
         font-weight: bold;
       }
   }
-
-  .area_add_walk_button {
-    padding: 1rem;
-    background-color: vars.$regularGreen;
-    font-weight: bold;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    display: block;
-    width: 90%;
-    margin: auto;
-
-    @media(min-width: vars.$breakpointTablet) {
-     width: 40%;
-    }
-    
-
-    &:hover {
-      box-shadow: 5px 5px 5px vars.$darkGreen;
-      transform: scale(1.1);
-    }
-  }
   
   .area_walks_list {
 
@@ -149,6 +127,28 @@
           width: 40px;
         }
       }
+    }
+  }
+
+  .area_add_walk_button {
+    padding: 1rem;
+    background-color: vars.$regularGreen;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    display: block;
+    width: 90%;
+    margin: auto;
+
+    @media(min-width: vars.$breakpointTablet) {
+     width: 40%;
+    }
+    
+
+    &:hover {
+      box-shadow: 5px 5px 5px vars.$darkGreen;
+      transform: scale(1.1);
     }
   }
 }

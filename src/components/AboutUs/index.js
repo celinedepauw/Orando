@@ -67,7 +67,7 @@ const AboutUs = () => (
           <img className="about_us_avatar" src={pyAvatar} alt="profile-avatar" />
         </p>
         <img className="about_us_image" src={jb} alt="profile" />
-        <p className="about_us_text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p className="about_us_text">Le randonnneur urbain ascendant Symfoniste.</p>
         <img className="about_us_linkedin" src={linkedin} alt="linkedin" />
       </div>
     </div>
