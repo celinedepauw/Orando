@@ -14,6 +14,7 @@ import AboutUs from 'src/components/AboutUs';
 import Archived from 'src/containers/Archived';
 import Participants from 'src/containers/Participants';
 import Error from 'src/components/Error';
+import HowOrandoWorks from 'src/components/HowOrandoWorks';
 
 const Page = () => (
   <div className="page">
@@ -47,6 +48,9 @@ const Page = () => (
       </Route>
       <Route exact path="/my_hikes/">
         <MyHikes />
+      </Route>
+      <Route exact path="/how_works">
+        <HowOrandoWorks />
       </Route>
       <Route exact path="/about_us">
         <AboutUs />

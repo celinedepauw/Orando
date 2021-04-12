@@ -1,0 +1,96 @@
+@use 'src/styles/vars';
+
+
+.howWorks {
+  background: linear-gradient(#fff0da, #fff);
+  margin-top: -15px;
+  min-height: 100vh;
+  padding: 15px;
+
+  .howWorks_title_content {
+    width: 70%;
+    margin: 50px auto;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, vars.$darkYellow, #ffe1b6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem;
+
+    @media(min-width: vars.$breakpointTablet) {
+      font-size: 2rem;
+     
+    }
+
+    @media(min-width: vars.$breakpointDesktop) {
+      font-size: 2rem;
+    }
+  
+
+    .howWorks_title_icon {
+      width: 60px;
+      margin-right: 20px;
+    }
+
+    .howWorks_title {
+
+    }
+  }
+
+  .howWorks_select-area {
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 1rem;
+    line-height: 1.6;
+
+    @media(min-width: vars.$breakpointTablet) {
+      flex-wrap: nowrap;
+      font-size: 1.5rem;
+     
+    }
+
+    @media(min-width: vars.$breakpointDesktop) {
+      width: 60%;
+    }
+
+    .howWorks_select-area_text {
+      display: flex;
+      width: 100%;
+      margin-bottom: 0.5rem;
+      border-radius: 10px;
+      align-items: center;
+      border: 2px solid #ffd292;
+      color: vars.$blackRed;
+      padding: 1rem;
+      box-shadow: 0px 10px 20px grey;
+
+      @media(min-width: vars.$breakpointTablet) {
+        width: 50%;
+        margin-right: 0.5rem;
+        margin-bottom: 0;
+       
+      }
+      
+    }
+
+    .howWorks_select-area_photo {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0px 10px 20px grey;
+
+      @media(min-width: vars.$breakpointTablet) {
+        width: 50%;
+       
+      }
+
+    }
+    
+  }
+}

@@ -22,7 +22,9 @@ const Footer = () => (
       <img className="icon_left" src={leaf} alt="icone" />
     </div>
     <div className="footer_link">
-      <a href="" className="footer_instructions_link">Fonctionnement</a>
+      <Link to="/how_works" className="footer_instructions_link">
+        Fonctionnement
+      </Link>
       <Link to="/about_us" className="footer_informations_link">
         Qui sommes-nous
       </Link>
