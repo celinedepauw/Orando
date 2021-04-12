@@ -26,7 +26,7 @@ const AboutUs = () => (
           <img className="about_us_avatar" src={celineAvatar} alt="profile-avatar" />
         </p>
         <img className="about_us_image" src={celine} alt="profile" />
-        <p className="about_us_text">Toujours partante pour de nouvelles aventures, elle aime sortir des sentiers battus.</p>
+        <p className="about_us_text">Toujours partante pour de nouvelles aventures, elle aime sortir des sentiers battus et n'abandonne jamais avant d'avoir atteint le sommet.</p>
         <a href="https://www.linkedin.com/in/celinedepauw/"><img className="about_us_linkedin" src={linkedin} alt="linkedin" /></a>
       </div>
       <div className="about_us_person">
@@ -36,7 +36,8 @@ const AboutUs = () => (
           <img className="about_us_avatar" src={alexAvatar} alt="profile-avatar" />
         </p>
         <img className="about_us_image" src={alex} alt="profile" />
-        <p className="about_us_text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p className="about_us_text">Aime prendre les chemins que personne n'emprunte. Part dans de longues quêtes de chocolat, à l'aide de son stetson et de son fouet, à travers le tumulte de la ville et en sort victorieuse avec du milka.
+        </p>
         <a href="https://www.linkedin.com/in/alexandrine-heutte-71830a10a/"><img className="about_us_linkedin" src={linkedin} alt="linkedin" /></a>
       </div>
       <div className="about_us_person">
