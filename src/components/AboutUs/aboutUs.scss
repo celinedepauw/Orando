@@ -3,10 +3,9 @@
 
 .about_us {
   background: linear-gradient(#fee5e3, #fff);
-  margin: -15px;
+  margin-top: -15px;
   min-height: 100vh;
-
-  
+  color: vars.$blackRed;
 
   .about_us_title {
     text-align: center;
@@ -18,52 +17,63 @@
   .about_us_team {
     display: flex;
     flex-wrap: wrap;
-    margin: 1rem;
-
-    @media(min-width: vars.$breakpointTablet) {
-      width: 29%;
-      
-    }
-
-    @media(min-width: vars.$breakpointXLarge) {
-      flex-wrap: nowrap;
-    }
-
+    justify-content: center;
 
     .about_us_person {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      background: linear-gradient(to bottom right, vars.$darkYellow, #fbc46d);
+      border-radius: 10px;
+      padding: 1rem;
       margin: 0.5rem;
-      border-radius: 20px;
-      color: vars.$blackRed;
+      text-align: center;
+      background: linear-gradient(to bottom right, vars.$darkGreen, vars.$lightGreen);
+      width: 100%;
 
-      .about_us_role {
-        padding: 1rem;
-        width: 100%;
-        text-align: center;
-        font-weight: bold;
-        font-size: 1.5rem;
+      @media(min-width: vars.$breakpointTablet) {
+        width: 45%;
+      }
+
+      @media(min-width: vars.$breakpointXLarge) {
+        width: 18%;
       }
 
       .about_us_name {
-        width: 100%;
-        text-align: center;
-        font-size: 1.2rem;
+        font-size: 1.8rem;
+      }
+
+      .about_us_role {
+       font-size: 1.3rem;
+       font-weight: bold;
+       padding: 0.5rem;
+      }
+
+      .about_us_nickname{
+        font-weight: bold;
+        color: white;
+
+        .about_us_avatar {
+          width: 30px;
+          padding-left: 0.5rem;
+        }
       }
   
       .about_us_image {
-        height: 240px;
-        width: 240px;
-        border-radius: 50px;
-        padding: 1rem;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        padding: 0.5rem;
       }
-    
-      .about_us_text{
-        padding: 1rem;
-        font-size: 1.5rem;
-        text-align: justify;
+
+      .about_us_text {
+        font-style: italic;
+        padding: 0.5rem;
+      }
+
+      .about_us_linkedin {
+        width: 30px;
+        
+        &:hover {
+          transform: scale(1.1);
+          box-shadow: 3px 3px 3px grey;
+        }
       }
     } 
   }

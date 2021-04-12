@@ -74,6 +74,12 @@
 
         &:hover {
           box-shadow: 5px 5px 5px vars.$darkYellow;
+          transform: scale(1.1);
+        }
+
+        .one_participant_nickname {
+          font-weight: bold;
+          color: vars.$blackRed;
         }
       }
   }

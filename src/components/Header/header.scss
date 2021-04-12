@@ -10,7 +10,7 @@
   
   .header_image {
     width: 100%;
-    max-height: 550px;  
+    max-height: 550px; 
   }
 
   .header_content {
@@ -31,6 +31,11 @@
         border-radius: 50%;
         background-color: vars.$lightYellow;
         opacity: 0.7;
+
+        &:hover {
+          box-shadow: 5px 5px 5px grey;
+          transform: scale(1.1);
+        }
 
         @media(min-width: vars.$breakpointTablet) {
           width: 20%;
