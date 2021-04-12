@@ -58,7 +58,7 @@ const AboutUs = () => (
           <img className="about_us_avatar" src={bereniceAvatar} alt="profile-avatar" />
         </p>
         <img className="about_us_image" src={berenice} alt="profile" />
-        <p className="about_us_text">Aime randonner sur des chemins escarpés qui mènent vers de lointaines contrées, en quête de paysages où elle serait émerveillée par toute cette nature et sa beauté.
+        <p className="about_us_text">Aime randonner sur des chemins escarpés qui la mèneront vers de lointaines contrées, en quête de paysages où elle sera émerveillée par la nature et sa beauté.
         </p>
         <img className="about_us_linkedin" src={linkedin} alt="linkedin" />
       </div>
