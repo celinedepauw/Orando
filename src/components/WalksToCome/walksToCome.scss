@@ -114,6 +114,19 @@
           }
         }
 
+        .walk_to_come_creator {
+          background-color: vars.$regularGreen;
+          border-radius: 10px;
+          padding: 0.5rem;
+          min-width: 60%;
+          margin: auto;
+          color: vars.$blackRed;
+
+          .walk_to_come_creator_picture {
+            width: 40px;
+          }
+        }
+
         .walk_to_come_button_delete {
           padding: 0.5rem;
           background-color: vars.$regularRed;
@@ -121,7 +134,7 @@
           border-radius: 10px;
           min-width: 60%;
           margin: auto;
-          color: vars.$darkRed;
+          color: vars.$blackRed;
           
           &:hover {
             box-shadow: 5px 5px 5px vars.$darkRed;

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
+import award from 'src/assets/icones/058-award.svg';
 
 const WalkToComeSmall = ({
   id,
@@ -23,7 +24,7 @@ const WalkToComeSmall = ({
       <p className="walk_to_come_duration">{duration}</p>
       <Link to={`/walks/${id}`} className="walk_to_come_button_more_infos">Plus de détails
       </Link>
-      {userId == creator.id ? <></> : <button type="button" className="walk_to_come_button_delete" onClick={() => handleCancelParticipation(id)}>Annuler ma participation</button> }
+      {userId == creator.id ? <p className="walk_to_come_creator"><img className="walk_to_come_creator_picture" src={award} alt="logo-creator" />Je suis l'organisateur</p> : <button type="button" className="walk_to_come_button_delete" onClick={() => handleCancelParticipation(id)}>Annuler ma participation</button> }
     </div>
   );
 };
