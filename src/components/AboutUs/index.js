@@ -10,6 +10,7 @@ import jb from 'src/assets/images/jb.jpg';
 import celine from 'src/assets/images/celine.jpg';
 import alex from 'src/assets/images/alexandrine.png';
 import berenice from 'src/assets/images/berenice.jpg';
+import py from 'src/assets/images/pierre-yves.jpg';
 
 import linkedin from 'src/assets/images/linkedin.png';
 
@@ -66,7 +67,7 @@ const AboutUs = () => (
         <p className="about_us_nickname">Le Cascadeur
           <img className="about_us_avatar" src={pyAvatar} alt="profile-avatar" />
         </p>
-        <img className="about_us_image" src={jb} alt="profile" />
+        <img className="about_us_image" src={py} alt="profile" />
         <p className="about_us_text">Le randonnneur urbain ascendant Symfoniste.</p>
         <img className="about_us_linkedin" src={linkedin} alt="linkedin" />
       </div>
