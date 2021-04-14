@@ -7,6 +7,7 @@ import Header from 'src/containers/Header';
 import Page from 'src/containers/Page';
 import MobileNav from 'src/containers/MobileNav';
 import Footer from 'src/components/Footer';
+import CreateWalk from 'src/components/CreateWalk';
 import './styles.scss';
 
 // == Composant
@@ -20,7 +21,7 @@ const App = ({ loadAreasFromApi, loadWalksFromApi, checkUserAuth }) => {
   return (
     <div className="app">
       <Header />
-      <Page />
+      <CreateWalk />
       <Footer />
       <MobileNav />
     </div>
