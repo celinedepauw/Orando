@@ -15,9 +15,12 @@ const CreateWalk = () => (
       <Field
         label="Titre *"
       />
-      <Field
-        label="Région *"
-      />
+      <select className="createWalk_area_choice">
+        <option value="auvergne">Auvergne</option>
+        <option value="bourgogne">Bourgogne</option>
+        <option value="paca">PACA</option>
+      </select>
+
       <Field
         label="Thème (choix multiple possible) *"
       />
