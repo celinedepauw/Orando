@@ -5,6 +5,11 @@ import SignUp from 'src/components/SignUp';
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
   isLogged: state.userInfo.isLogged,
+  email: state.userInfo.email,
+  password: state.userInfo.password,
+  alias: state.userInfo.alias,
+  lastname: state.userInfo.lastname,
+  firstname: state.userInfo.firstname,
 });
 
 // === mapDispatchToProps

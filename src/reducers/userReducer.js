@@ -5,6 +5,9 @@ const initialState = {
   loadingUser: true,
   email: '',
   password: '',
+  alias: '',
+  lastname: '',
+  firstname: '',
   // indicate if the user is authenticated
   isLogged: false,
 };
