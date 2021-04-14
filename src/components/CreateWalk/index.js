@@ -12,18 +12,42 @@ const CreateWalk = () => (
     </div>
     <p className="createWalk_asterisk">(*) Champs obligatoires</p>
     <form className="createWalk_form">
-      <Field />
-      <Field />
-      <Field />
-      <Field />
-      <Field />
-      <Field />
-      <Field />
-      <Field />
-      <Field />
-      <Field />
-      <Field />
-      <Field />
+      <Field
+        label="Titre *"
+      />
+      <Field
+        label="Région *"
+      />
+      <Field
+        label="Thème (choix multiple possible) *"
+      />
+      <Field
+        label="Point de départ *"
+      />
+      <Field
+        label="Point d'arrivée (si différent du point de départ)"
+      />
+      <Field
+        label="Date et heure de départ *"
+      />
+      <Field
+        label="Durée approximative *"
+      />
+      <Field
+        label="Nombre de kilomètres"
+      />
+      <Field
+        label="Niveau de difficulté *"
+      />
+      <Field
+        label="Dénivelé (en mètres)"
+      />
+      <Field
+        label="Nombre de personnes maximum"
+      />
+      <Field
+        label="Description / Infos pratiques *"
+      />
       <button type="submit" className="createWalk_submit">Valider</button>
     </form>
   </main>
