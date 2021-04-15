@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import Field from 'src/components/Field';
+import welcome from 'src/assets/images/hiker.png';
 
 import './signup.scss';
 
@@ -78,6 +79,7 @@ const SignUp = ({
             console.log(`changeField sur password : identifier=${identifier}, newValue=${newValue}`);
           }}
         />
+        <button type="submit" className="signUp_form_submit">Welcome <img className="signUp_form_submit_picture" src={welcome} alt="logo-welcome" /></button>
       </form>
     </main>
   );

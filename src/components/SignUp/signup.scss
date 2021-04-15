@@ -1,1 +1,36 @@
 @use 'src/styles/vars';
+
+
+.signUp {
+
+  .signUp_form {
+    
+    .signUp_form_submit {
+
+      padding: 0.5rem;
+      color: white;
+      font-weight: bold;
+      background-color: vars.$regularGreen;
+      border: none;
+      border-radius: 10px;
+      display: block;
+      margin: auto;
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
+      width: 60%;
+
+      @media(min-width: vars.$breakpointTablet) {
+        width: 40%;
+      }
+
+      &:hover {
+        box-shadow: 5px 5px 5px vars.$darkGreen;
+        transform: scale(1.1);
+      }
+
+      .signUp_form_submit_picture {
+        width: 40px;
+      }
+    }
+  }
+}

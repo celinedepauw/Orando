@@ -47,6 +47,7 @@ export const checkUser = () => ({
   type: CHECK_USER,
 });
 
+// action creator used to sign up form
 export const signUp = () => ({
   type: SIGN_UP,
 });
