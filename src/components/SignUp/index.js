@@ -90,7 +90,11 @@ SignUp.propTypes = {
   lastname: PropTypes.string.isRequired,
   firstname: PropTypes.string.isRequired,
   isLogged: PropTypes.bool.isRequired,
-  
+  picture: PropTypes.string,
+};
+
+SignUp.defaultProps = {
+  picture: null,
 };
 
 export default SignUp;

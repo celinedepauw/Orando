@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import Field from 'src/components/Field';
 import welcome from 'src/assets/images/hiker.png';
@@ -46,9 +47,9 @@ const Authentication = ({
         <button type="submit" className="authentication_submit">Welcome <img className="authentication_submit_picture" src={welcome} alt="logo-welcome" /></button>
         <div className="authentication_inscription">
           <p className="authentication_text">Si vous n'avez pas encore de compte</p>
-          <a className="authentication_insciption_link" href="https://orando.me/o/register">
+          <Link className="authentication_insciption_link" to="/register">
             <button type="button" className="authentication_inscription_button">Cliquez ici <img className="authentication_inscription_picture" src={register} alt="logo-welcome" /></button>
-          </a>
+          </Link>
         </div>
       </form>
     </div>

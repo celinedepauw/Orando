@@ -15,6 +15,7 @@ import Archived from 'src/containers/Archived';
 import Participants from 'src/containers/Participants';
 import Error from 'src/components/Error';
 import HowOrandoWorks from 'src/components/HowOrandoWorks';
+import SignUp from 'src/containers/SignUp';
 
 const Page = () => (
   <div className="page">
@@ -27,6 +28,9 @@ const Page = () => (
       </Route>
       <Route exact path="/areas/:id">
         <Area />
+      </Route>
+      <Route exact path="/register">
+        <SignUp />
       </Route>
       <Route exact path="/authentication">
         <Authentication />

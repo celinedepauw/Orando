@@ -7,6 +7,7 @@ export const LOG_IN = 'LOG_IN';
 export const LOG_OUT = 'LOG_OUT';
 export const SAVE_USER_AUTH = 'SAVE_USER_AUTH';
 export const CHECK_USER = 'CHECK_USER';
+export const SIGN_UP = 'SIGN_UP';
 
 
 // === action creators
@@ -44,4 +45,8 @@ export const logOut = () => ({
 
 export const checkUser = () => ({
   type: CHECK_USER,
+});
+
+export const signUp = () => ({
+  type: SIGN_UP,
 });
