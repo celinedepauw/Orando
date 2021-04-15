@@ -14,6 +14,7 @@ const SignUp = ({
   password,
   lastname,
   firstname,
+  picture,
 }) => {
   console.log('toto');
   if (isLogged) return <Redirect to="/authentication" />;
@@ -67,6 +68,16 @@ const SignUp = ({
             console.log(`changeField sur password : identifier=${identifier}, newValue=${newValue}`);
           }}
         />
+        <Field
+          identifier="picture"
+          placeholder=""
+          label="Photo de profile"
+          type="file"
+          value={picture}
+          changeField={(identifier, newValue) => {
+            console.log(`changeField sur password : identifier=${identifier}, newValue=${newValue}`);
+          }}
+        />
       </form>
     </main>
   );
@@ -79,6 +90,7 @@ SignUp.propTypes = {
   lastname: PropTypes.string.isRequired,
   firstname: PropTypes.string.isRequired,
   isLogged: PropTypes.bool.isRequired,
+  
 };
 
 export default SignUp;

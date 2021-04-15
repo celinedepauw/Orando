@@ -8,6 +8,7 @@ const initialState = {
   alias: '',
   lastname: '',
   firstname: '',
+  picture: null,
   // indicate if the user is authenticated
   isLogged: false,
 };
