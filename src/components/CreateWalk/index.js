@@ -120,8 +120,10 @@ const CreateWalk = ({ areas, tags }) => {
         <Field
           label="Nombre de kilomètres"
         />
-        <Select className="createWalk_difficulty" options={difficulties} placeholder="Niveau de difficulté..." />
-
+        <div className="createWalk_difficulty">
+          <p className="createWalk_difficulty_label">Niveau de difficulté</p>
+          <Select className="createWalk_difficulty_select" options={difficulties} placeholder="Niveau de difficulté..." />
+        </div>
         <Field
           label="Dénivelé (en mètres)"
         />

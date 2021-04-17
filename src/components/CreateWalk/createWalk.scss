@@ -92,7 +92,7 @@
      
 
       .createWalk_hour_label {
-        width: 100%;
+      
       }
       
       .createWalk_hour_select {
@@ -113,6 +113,14 @@
 
     .createWalk_difficulty {
       width: 90%;
+
+      .createWalk_difficulty_label {
+        padding-bottom: 1rem;
+      }
+
+      .createWalk_difficulty_select {
+
+      }
     }
 
     .createWalk_submit {
