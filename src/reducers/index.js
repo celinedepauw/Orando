@@ -4,6 +4,7 @@ import { combineReducers } from 'redux';
 import walkReducer from './walkReducer';
 import userReducer from './userReducer';
 import areaReducer from './areaReducer';
+import tagReducer from './tagReducer';
 
 // le reducer principal, qui regroupe les autres
 // combineReducers prend en argument un objet qui indique un nom pour
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   walksList: walkReducer,
   userInfo: userReducer,
   areasList: areaReducer,
+  tagsList: tagReducer,
 });
 
 export default rootReducer;

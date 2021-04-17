@@ -6,23 +6,21 @@ import Select from 'react-select';
 
 import './createWalk.scss';
 
-const CreateWalk = ({ areas }) => {
-  const areasList = areas.map((item) => (
+const CreateWalk = ({ areas, tags }) => {
+  console.log(tags);
+  const areasList = areas.map((area) => (
     {
-      value: item.name,
-      label: item.name,
+      value: area.name,
+      label: area.name,
     }
   ));
 
-  const tags = [
-    { value: 'animaux-bienvenus', label: 'Animaux bienvenus' },
-    { value: 'velo', label: 'A vélo' },
-    { value: 'bord-de-mer', label: 'Bord de mer' },
-    { value: 'en-famille', label: 'En Famille' },
-    { value: 'montagne', label: 'Montagne' },
-    { value: 'nocturne', label: 'Nocturne' },
-    { value: 'urbaine', label: 'Urbaine' },
-  ];
+  const tagsList = tags.map((tag) => (
+    {
+      value: tag.name,
+      label: tag.name,
+    }
+  ));
 
   const difficulties = [
     { value: 'facile', label: 'Facile' },
@@ -43,7 +41,7 @@ const CreateWalk = ({ areas }) => {
         />
         <Select className="createWalk_area" options={areasList} placeholder="Région..." />
 
-        <Select className="createWalk_tag" options={tags} placeholder="Thème(s)..." isMulti />
+        <Select className="createWalk_tag" options={tagsList} placeholder="Thème(s)..." isMulti />
 
         <Field
           label="Point de départ *"
@@ -78,9 +76,17 @@ const CreateWalk = ({ areas }) => {
 };
 
 CreateWalk.propTypes = {
+  loadingTags: PropTypes.bool.isRequired,
   areas: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
+  tags: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
 };

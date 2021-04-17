@@ -3,7 +3,6 @@ import { SAVE_WALKS } from 'src/actions/walks';
 const initialState = {
   walks: [],
   loadingWalk: true,
-  // walkId: null,
 };
 
 function walkReducer(state = initialState, action) {
