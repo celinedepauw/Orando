@@ -7,7 +7,6 @@ import Select from 'react-select';
 import './createWalk.scss';
 
 const CreateWalk = ({ areas, tags }) => {
-  console.log(tags);
   const areasList = areas.map((area) => (
     {
       value: area.name,
@@ -21,6 +20,53 @@ const CreateWalk = ({ areas, tags }) => {
       label: tag.name,
     }
   ));
+
+  const days = [
+    { value: '01', label: '01' },
+    { value: '02', label: '02' },
+    { value: '03', label: '03' },
+    { value: '04', label: '04' },
+    { value: '05', label: '05' },
+    { value: '06', label: '06' },
+    { value: '07', label: '07' },
+    { value: '08', label: '08' },
+  ];
+
+  const months = [
+    { value: 'janvier', label: 'janvier' },
+    { value: 'février', label: 'février' },
+    { value: 'mars', label: 'mars' },
+    { value: 'avril', label: 'avril' },
+    { value: 'mai', label: 'mai' },
+    { value: 'juin', label: 'juin' },
+    { value: 'juillet', label: 'juillet' },
+    { value: 'aout', label: 'août' },
+    { value: 'septembre', label: 'septembre' },
+    { value: 'octobre', label: 'octobre' },
+    { value: 'novembre', label: 'novembre' },
+    { value: 'decembre', label: 'decembre' },
+  ];
+
+  const years = [
+    { value: '2021', label: '2021' },
+    { value: '2022', label: '2022' },
+    { value: '2023', label: '2023' },
+  ];
+
+  const hours = [
+    { value: '01', label: '01' },
+    { value: '02', label: '02' },
+    { value: '03', label: '03' },
+    { value: '04', label: '04' },
+    { value: '05', label: '05' },
+  ];
+
+  const minutes = [
+    { value: '00', label: '00' },
+    { value: '15', label: '15' },
+    { value: '30', label: '30' },
+    { value: '45', label: '45' },
+  ];
 
   const difficulties = [
     { value: 'facile', label: 'Facile' },
@@ -49,9 +95,15 @@ const CreateWalk = ({ areas, tags }) => {
         <Field
           label="Point d'arrivée (si différent du point de départ)"
         />
-        <Field
-          label="Date et heure de départ *"
-        />
+        <div className="createWalk_date">
+          <Select className="createWalk_day" options={days} placeholder="Jour..." />
+          <Select className="createWalk_month" options={months} placeholder="Mois..." />
+          <Select className="createWalk_year" options={years} placeholder="Année..." />
+        </div>
+        <div className="createWalk_hour">
+          <Select className="createWalk_hours" options={hours} placeholder="Heure..." />
+          <Select className="createWalk_minutes" options={minutes} placeholder="Minutes..." />
+        </div>
         <Field
           label="Durée approximative (en heures) *"
         />
@@ -76,7 +128,6 @@ const CreateWalk = ({ areas, tags }) => {
 };
 
 CreateWalk.propTypes = {
-  loadingTags: PropTypes.bool.isRequired,
   areas: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
