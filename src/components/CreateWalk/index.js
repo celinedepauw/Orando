@@ -85,10 +85,14 @@ const CreateWalk = ({ areas, tags }) => {
         <Field
           label="Titre *"
         />
-        <Select className="createWalk_area" options={areasList} placeholder="Région..." />
-
-        <Select className="createWalk_tag" options={tagsList} placeholder="Thème(s)..." isMulti />
-
+        <div className="createWalk_area">
+          <p className="createWalk_area_label">Région *</p>
+          <Select className="createWalk_area_select" options={areasList} placeholder="Région" />
+        </div>
+        <div className="createWalk_tag">
+          <p className="createWalk_tag_label">Thème (choix multiple possible)</p>
+          <Select className="createWalk_tag_select" options={tagsList} placeholder="Thème(s)" isMulti />
+        </div>
         <Field
           label="Point de départ *"
         />
@@ -96,13 +100,19 @@ const CreateWalk = ({ areas, tags }) => {
           label="Point d'arrivée (si différent du point de départ)"
         />
         <div className="createWalk_date">
-          <Select className="createWalk_day" options={days} placeholder="Jour..." />
-          <Select className="createWalk_month" options={months} placeholder="Mois..." />
-          <Select className="createWalk_year" options={years} placeholder="Année..." />
+          <p className="createWalk_date_label">Date</p>
+          <div className="createWalk_date_select">
+            <Select className="createWalk_day" options={days} placeholder="Jour..." />
+            <Select className="createWalk_month" options={months} placeholder="Mois..." />
+            <Select className="createWalk_year" options={years} placeholder="Année..." />
+          </div>
         </div>
         <div className="createWalk_hour">
-          <Select className="createWalk_hours" options={hours} placeholder="Heure..." />
-          <Select className="createWalk_minutes" options={minutes} placeholder="Minutes..." />
+          <p className="createWalk_hour_label">Heure du départ</p>
+          <div className="createWalk_hour_select">
+            <Select className="createWalk_hours" options={hours} placeholder="Heure..." />
+            <Select className="createWalk_minutes" options={minutes} placeholder="Minutes..." />
+          </div>
         </div>
         <Field
           label="Durée approximative (en heures) *"
