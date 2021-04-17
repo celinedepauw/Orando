@@ -59,58 +59,6 @@
       }
     }
 
-    .createWalk_date {
-      width: 90%;
-      margin-bottom: 1rem;
-   
-      .createWalk_date_label {
-        padding-bottom: 1rem;
-      }
-
-      .createWalk_date_select {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: center;
-
-        .createWalk_day {
-          width: 25%;
-        }
-  
-        .createWalk_month {
-          margin: 0rem 0.5rem;
-          width: 50%;
-        }
-  
-        .createWalk_year {
-          width: 25%;
-        }
-      }
-    }
-
-    .createWalk_hour {
-      width: 90%;
-     
-
-      .createWalk_hour_label {
-      
-      }
-      
-      .createWalk_hour_select {
-        display: flex;
-        justify-content: center;
-        margin-top: 1rem;
-
-        .createWalk_hours {
-          width: 50%;
-          margin-right: 0.5rem;
-        }
-  
-        .createWalk_minutes {
-          width: 50%;
-        }
-      }  
-    }
-
     .createWalk_difficulty {
       width: 90%;
 

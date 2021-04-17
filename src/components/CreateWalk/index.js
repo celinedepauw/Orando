@@ -99,21 +99,16 @@ const CreateWalk = ({ areas, tags }) => {
         <Field
           label="Point d'arrivée (si différent du point de départ)"
         />
-        <div className="createWalk_date">
-          <p className="createWalk_date_label">Date *</p>
-          <div className="createWalk_date_select">
-            <Select className="createWalk_day" options={days} placeholder="Jour..." />
-            <Select className="createWalk_month" options={months} placeholder="Mois..." />
-            <Select className="createWalk_year" options={years} placeholder="Année..." />
-          </div>
-        </div>
-        <div className="createWalk_hour">
-          <p className="createWalk_hour_label">Heure du départ *</p>
-          <div className="createWalk_hour_select">
-            <Select className="createWalk_hours" options={hours} placeholder="Heure..." />
-            <Select className="createWalk_minutes" options={minutes} placeholder="Minutes..." />
-          </div>
-        </div>
+        <Field
+          label="Date *"
+          type="date"
+          required
+        />
+        <Field
+          label="Heure du départ *"
+          type="time"
+          required
+        />
         <Field
           label="Durée approximative (en heures) *"
         />
