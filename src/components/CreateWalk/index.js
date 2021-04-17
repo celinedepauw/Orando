@@ -1,14 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import createLogo from 'src/assets/images/create.png';
 import Field from 'src/components/Field';
 import Select from 'react-select';
 
 import './createWalk.scss';
 
-const CreateWalk = () => {
-  const areas = [
-    { value: 'auvergne', label: 'Auvergne' },
-    { value: 'bourgogne', label: 'Bourgogne' },
+const CreateWalk = ({ areas }) => {
+   console.log(areas);
+
+  const areas2 = [
+    { value: 'auvergne', label: 'auvergne' },
+    { value: 'bourgogne', label: 'bourgogne' },
     { value: 'PACA', label: 'PACA' },
   ];
 
@@ -35,7 +38,7 @@ const CreateWalk = () => {
         <Field
           label="Titre *"
         />
-        <Select className="createWalk_area" options={areas} placeholder="Région..." />
+        <Select className="createWalk_area" options={areas2} placeholder="Région..." />
 
         <Select className="createWalk_tag" options={tags} placeholder="Thème(s)..." isMulti />
 
@@ -69,6 +72,14 @@ const CreateWalk = () => {
       </form>
     </main>
   );
+};
+
+CreateWalk.propTypes = {
+  areas: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    }).isRequired,
+  ).isRequired,
 };
 
 export default CreateWalk;
