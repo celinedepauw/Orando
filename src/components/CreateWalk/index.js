@@ -15,9 +15,13 @@ const CreateWalk = ({ areas }) => {
   ));
 
   const tags = [
+    { value: 'animaux-bienvenus', label: 'Animaux bienvenus' },
+    { value: 'velo', label: 'A vélo' },
+    { value: 'bord-de-mer', label: 'Bord de mer' },
     { value: 'en-famille', label: 'En Famille' },
-    { value: 'urbaine', label: 'Urbaine' },
     { value: 'montagne', label: 'Montagne' },
+    { value: 'nocturne', label: 'Nocturne' },
+    { value: 'urbaine', label: 'Urbaine' },
   ];
 
   const difficulties = [
