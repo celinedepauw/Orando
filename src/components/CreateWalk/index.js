@@ -100,7 +100,7 @@ const CreateWalk = ({ areas, tags }) => {
           label="Point d'arrivée (si différent du point de départ)"
         />
         <div className="createWalk_date">
-          <p className="createWalk_date_label">Date</p>
+          <p className="createWalk_date_label">Date *</p>
           <div className="createWalk_date_select">
             <Select className="createWalk_day" options={days} placeholder="Jour..." />
             <Select className="createWalk_month" options={months} placeholder="Mois..." />
@@ -108,7 +108,7 @@ const CreateWalk = ({ areas, tags }) => {
           </div>
         </div>
         <div className="createWalk_hour">
-          <p className="createWalk_hour_label">Heure du départ</p>
+          <p className="createWalk_hour_label">Heure du départ *</p>
           <div className="createWalk_hour_select">
             <Select className="createWalk_hours" options={hours} placeholder="Heure..." />
             <Select className="createWalk_minutes" options={minutes} placeholder="Minutes..." />
@@ -121,7 +121,7 @@ const CreateWalk = ({ areas, tags }) => {
           label="Nombre de kilomètres"
         />
         <div className="createWalk_difficulty">
-          <p className="createWalk_difficulty_label">Niveau de difficulté</p>
+          <p className="createWalk_difficulty_label">Niveau de difficulté *</p>
           <Select className="createWalk_difficulty_select" options={difficulties} placeholder="Niveau de difficulté..." />
         </div>
         <Field
