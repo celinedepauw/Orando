@@ -7,13 +7,12 @@ import Select from 'react-select';
 import './createWalk.scss';
 
 const CreateWalk = ({ areas }) => {
-   console.log(areas);
-
-  const areas2 = [
-    { value: 'auvergne', label: 'auvergne' },
-    { value: 'bourgogne', label: 'bourgogne' },
-    { value: 'PACA', label: 'PACA' },
-  ];
+  const areasList = areas.map((item) => (
+    {
+      value: item.name,
+      label: item.name,
+    }
+  ));
 
   const tags = [
     { value: 'en-famille', label: 'En Famille' },
@@ -38,7 +37,7 @@ const CreateWalk = ({ areas }) => {
         <Field
           label="Titre *"
         />
-        <Select className="createWalk_area" options={areas2} placeholder="Région..." />
+        <Select className="createWalk_area" options={areasList} placeholder="Région..." />
 
         <Select className="createWalk_tag" options={tags} placeholder="Thème(s)..." isMulti />
 
