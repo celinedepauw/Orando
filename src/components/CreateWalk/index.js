@@ -6,11 +6,24 @@ import Select from 'react-select';
 import './createWalk.scss';
 
 const CreateWalk = () => {
-  const options = [
+  const areas = [
     { value: 'auvergne', label: 'Auvergne' },
     { value: 'bourgogne', label: 'Bourgogne' },
     { value: 'PACA', label: 'PACA' },
   ];
+
+  const tags = [
+    { value: 'en-famille', label: 'En Famille' },
+    { value: 'urbaine', label: 'Urbaine' },
+    { value: 'montagne', label: 'Montagne' },
+  ];
+
+  const difficulties = [
+    { value: 'facile', label: 'Facile' },
+    { value: 'moyen', label: 'Moyen' },
+    { value: 'difficile', label: 'Difficile' },
+  ];
+
   return (
     <main className="createWalk">
       <div className="createWalk_title">
@@ -22,11 +35,10 @@ const CreateWalk = () => {
         <Field
           label="Titre *"
         />
-        <Select options={options} />
+        <Select className="createWalk_area" options={areas} placeholder="Région..." />
 
-        <Field
-          label="Thème (choix multiple possible) *"
-        />
+        <Select className="createWalk_tag" options={tags} placeholder="Thème(s)..." isMulti />
+
         <Field
           label="Point de départ *"
         />
@@ -37,14 +49,13 @@ const CreateWalk = () => {
           label="Date et heure de départ *"
         />
         <Field
-          label="Durée approximative *"
+          label="Durée approximative (en heures) *"
         />
         <Field
           label="Nombre de kilomètres"
         />
-        <Field
-          label="Niveau de difficulté *"
-        />
+        <Select className="createWalk_difficulty" options={difficulties} placeholder="Niveau de difficulté..." />
+
         <Field
           label="Dénivelé (en mètres)"
         />

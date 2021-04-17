@@ -35,7 +35,17 @@
     justify-content: center;
 
     .createWalk_area {
-      width: 100%;
+      width: 90%; 
+      margin-bottom: 1rem;
+      border: none;
+    }
+
+    .createWalk_tag {
+      width: 90%;
+    }
+
+    .createWalk_difficulty {
+      width: 90%;
     }
 
     .createWalk_submit {
