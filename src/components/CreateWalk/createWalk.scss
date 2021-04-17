@@ -38,6 +38,10 @@
       width: 90%; 
       margin-bottom: 1rem;
 
+      @media(min-width: vars.$breakpointTablet) {
+        width: 60%;
+      }
+
       .createWalk_area_label {
         padding-bottom: 1rem;
       }
@@ -50,6 +54,10 @@
     .createWalk_tag {
       width: 90%;
 
+      @media(min-width: vars.$breakpointTablet) {
+        width: 60%;
+      }
+
       .createWalk_tag_label {
         padding-bottom: 1rem;
       }
@@ -61,6 +69,10 @@
 
     .createWalk_difficulty {
       width: 90%;
+
+      @media(min-width: vars.$breakpointTablet) {
+        width: 60%;
+      }
 
       .createWalk_difficulty_label {
         padding-bottom: 1rem;

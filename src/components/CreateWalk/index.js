@@ -55,7 +55,6 @@ const CreateWalk = ({ areas, tags }) => {
         <Field
           label="Date et heure du départ *"
           type="datetime-local"
-          required
         />
         <Field
           label="Durée approximative (en heures) *"
