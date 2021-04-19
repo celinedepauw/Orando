@@ -17,6 +17,7 @@ const mapStateToProps = (state) => ({
   walkDate: state.walksList.walkDate,
   walkDuration: state.walksList.walkDuration,
   walkDistance: state.walksList.walkDistance,
+  walkDifficulty: state.walksList.walkDifficulty,
   walkElevation: state.walksList.walkElevation,
   walkNumberPeople: state.walksList.walkNumberPeople,
   walkDescription: state.walksList.walkDescription,

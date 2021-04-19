@@ -153,7 +153,7 @@ const CreateWalk = ({
             label="Niveau de difficulté *"
             identifier="walkDifficulty"
             manageChange={(identifier, newValue) => {
-              console.log(`manageChange sur area : identifier=${identifier}, newValue=${newValue}`);
+              console.log(`manageChange sur difficulté: identifier=${identifier}, newValue=${newValue}`);
             }}
           />
         </div>
