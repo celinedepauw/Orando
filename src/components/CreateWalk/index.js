@@ -7,7 +7,12 @@ import SelectField from 'src/components/CreateWalk/select';
 
 import './createWalk.scss';
 
-const CreateWalk = ({ areas, tags }) => {
+const CreateWalk = ({
+  areas,
+  tags,
+  walkTitle,
+  updateCreateWalkField,
+}) => {
   const areasList = areas.map((area) => (
     {
       value: area.id,
@@ -37,7 +42,14 @@ const CreateWalk = ({ areas, tags }) => {
       <p className="createWalk_asterisk">(*) Champs obligatoires</p>
       <form className="createWalk_form">
         <Field
+          identifier="walkTitle"
+          placeholder="titre de la randonée"
           label="Titre *"
+          value={walkTitle}
+          changeField={(identifier, newValue) => {
+            console.log(`changeField sur titre : identifier=${identifier}, newValue=${newValue}`);
+            updateCreateWalkField(identifier, newValue);
+          }}
         />
         <div className="createWalk_area">
           <SelectField
@@ -124,6 +136,8 @@ CreateWalk.propTypes = {
       name: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
+  walkTitle: PropTypes.string.isRequired,
+  updateCreateWalkField: PropTypes.func.isRequired,
 };
 
 export default CreateWalk;

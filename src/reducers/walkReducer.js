@@ -1,21 +1,9 @@
-import { SAVE_WALKS } from 'src/actions/walks';
+import { SAVE_WALKS, UPDATE_CREATE_WALK_FIELD } from 'src/actions/walks';
 
 const initialState = {
   walks: [],
   loadingWalk: true,
-  walk: {
-    walkTitle: '',
-    walkAreaId: null,
-    walkTags: [],
-    walkStartingPoint: '',
-    walkEndPoint: '',
-    walkDate: '',
-    walkDuration: null,
-    walkDescription: '',
-    walkDistance: null,
-    walkDifficulty: '',
-    walkElevation: null,
-  },
+  walkTitle: '',
 };
 
 function walkReducer(state = initialState, action) {
@@ -26,6 +14,12 @@ function walkReducer(state = initialState, action) {
         walks: action.walks,
         loadingWalk: false,
       };
+    case UPDATE_CREATE_WALK_FIELD:
+      return {
+        ...state,
+        walkTitle: action.value,
+      };
+
     default:
       return state;
   }
