@@ -2,8 +2,10 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+
 import Field from 'src/components/Field';
 import welcome from 'src/assets/images/hiker.png';
+import SelectField from 'src/components/SignUp/select';
 
 import './signup.scss';
 
@@ -16,13 +18,28 @@ const SignUp = ({
   lastname,
   firstname,
   picture,
+  areas,
 }) => {
+  const areasListSelect = areas.map((area) => (
+    {
+      value: area.id,
+      label: area.name,
+    }
+  ));
   console.log('toto');
   if (isLogged) return <Redirect to="/authentication" />;
   return (
     <main className="signUp">
       <form className="signUp_form">
-        <h2>select avec librairie?</h2>
+        <SelectField
+          label="votre région"
+          identifier="area"
+          options={areasListSelect}
+          placeholder="selectionner votre région"
+          manageChange={(identifier, newValue) => {
+            console.log(`manageChange sur area : identifier=${identifier}, newValue=${newValue}`);
+          }}
+        />
         <Field
           identifier="email"
           placeholder="toto@oclock.io"
@@ -86,6 +103,12 @@ const SignUp = ({
 };
  
 SignUp.propTypes = {
+  areas: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   alias: PropTypes.string.isRequired,

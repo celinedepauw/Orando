@@ -11,6 +11,7 @@ const mapStateToProps = (state) => ({
   lastname: state.userInfo.lastname,
   firstname: state.userInfo.firstname,
   picture: state.userInfo.picture,
+  areas: state.areasList.areas,
 });
 
 // === mapDispatchToProps
