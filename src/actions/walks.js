@@ -6,6 +6,7 @@ export const PARTIPATE_WALK = 'PARTIPATE_WALK';
 export const CANCEL_PARTICIPATE = 'CANCEL_PARTICIPATE';
 export const CREATE_WALK = 'CREATE_WALK';
 export const UPDATE_CREATE_WALK_FIELD = 'UPDATE_CREATE_WALK_FIELD';
+export const UPDATE_CREATE_WALK_SELECT = 'UPDATE_CREATE_WALK_SELECT';
 
 // === action creators
 export const fetchWalks = () => ({
@@ -58,6 +59,12 @@ export const createWalk = (
 
 export const updateCreateWalkField = (identifier, newValue) => ({
   type: UPDATE_CREATE_WALK_FIELD,
+  identifier: identifier,
+  value: newValue,
+});
+
+export const updateCreateWalkSelect = (identifier, newValue) => ({
+  type: UPDATE_CREATE_WALK_SELECT,
   identifier: identifier,
   value: newValue,
 });

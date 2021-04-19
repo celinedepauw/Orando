@@ -11,6 +11,7 @@ const CreateWalk = ({
   areas,
   tags,
   walkTitle,
+  walkAreaId,
   walkStartingPoint,
   walkEndPoint,
   walkDate,
@@ -20,6 +21,7 @@ const CreateWalk = ({
   walkNumberPeople,
   walkDescription,
   updateCreateWalkField,
+  updateCreateWalkSelect,
 }) => {
   const areasList = areas.map((area) => (
     {
@@ -63,11 +65,13 @@ const CreateWalk = ({
           <SelectField
             className="createWalk_area_select"
             label="Région *"
-            identifier="walkArea"
+            identifier="walkAreaId"
             options={areasList}
+            value={walkAreaId}
             placeholder="Choix de la région"
             manageChange={(identifier, newValue) => {
               console.log(`manageChange sur area : identifier=${identifier}, newValue=${newValue}`);
+              updateCreateWalkSelect(identifier, newValue);
             }}
           />
         </div>
@@ -76,7 +80,7 @@ const CreateWalk = ({
           <Select
             className="createWalk_tag_select"
             label="Thème (choix multiple possible)"
-            identifier="tags"
+            identifier="walkTags"
             options={tagsList}
             placeholder="Thème(s)"
             isMulti
@@ -147,7 +151,7 @@ const CreateWalk = ({
             options={difficulties}
             placeholder="Niveau de difficulté..."
             label="Niveau de difficulté *"
-            identifier="difficulty"
+            identifier="walkDifficulty"
             manageChange={(identifier, newValue) => {
               console.log(`manageChange sur area : identifier=${identifier}, newValue=${newValue}`);
             }}
@@ -205,6 +209,7 @@ CreateWalk.propTypes = {
     }).isRequired,
   ).isRequired,
   walkTitle: PropTypes.string.isRequired,
+  walkAreaId: PropTypes.string.isRequired,
   walkStartingPoint: PropTypes.string.isRequired,
   walkEndPoint: PropTypes.string.isRequired,
   walkDate: PropTypes.string.isRequired,
@@ -214,6 +219,7 @@ CreateWalk.propTypes = {
   walkNumberPeople: PropTypes.string.isRequired,
   walkDescription: PropTypes.string.isRequired,
   updateCreateWalkField: PropTypes.func.isRequired,
+  updateCreateWalkSelect: PropTypes.func.isRequired,
 };
 
 export default CreateWalk;
