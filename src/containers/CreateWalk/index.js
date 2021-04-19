@@ -12,6 +12,14 @@ const mapStateToProps = (state) => ({
   areas: state.areasList.areas,
   tags: state.tagsList.tags,
   walkTitle: state.walksList.walkTitle,
+  walkStartingPoint: state.walksList.walkStartingPoint,
+  walkEndPoint: state.walksList.walkEndPoint,
+  walkDate: state.walksList.walkDate,
+  walkDuration: state.walksList.walkDuration,
+  walkDistance: state.walksList.walkDistance,
+  walkElevation: state.walksList.walkElevation,
+  walkNumberPeople: state.walksList.walkNumberPeople,
+  walkDescription: state.walksList.walkDescription,
 });
 
 // === mapDispatchToProps

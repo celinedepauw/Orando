@@ -11,6 +11,14 @@ const CreateWalk = ({
   areas,
   tags,
   walkTitle,
+  walkStartingPoint,
+  walkEndPoint,
+  walkDate,
+  walkDuration,
+  walkDistance,
+  walkElevation,
+  walkNumberPeople,
+  walkDescription,
   updateCreateWalkField,
 }) => {
   const areasList = areas.map((area) => (
@@ -55,7 +63,7 @@ const CreateWalk = ({
           <SelectField
             className="createWalk_area_select"
             label="Région *"
-            identifier="area"
+            identifier="walkArea"
             options={areasList}
             placeholder="Choix de la région"
             manageChange={(identifier, newValue) => {
@@ -81,20 +89,57 @@ const CreateWalk = ({
           />
         </div>
         <Field
+          identifier="walkStartingPoint"
+          placeholder="point de départ"
           label="Point de départ *"
+          value={walkStartingPoint}
+          changeField={(identifier, newValue) => {
+            console.log(`changeField sur point de départ : identifier=${identifier}, newValue=${newValue}`);
+            updateCreateWalkField(identifier, newValue);
+          }}
         />
         <Field
+          identifier="walkEndPoint"
+          placeholder="point d'arrivée"
           label="Point d'arrivée (si différent du point de départ)"
+          value={walkEndPoint}
+          changeField={(identifier, newValue) => {
+            console.log(`changeField sur point d'arrivée : identifier=${identifier}, newValue=${newValue}`);
+            updateCreateWalkField(identifier, newValue);
+          }}
         />
         <Field
+          identifier="walkDate"
+          placeholder="date et heure"
           label="Date et heure du départ *"
           type="datetime-local"
+          value={walkDate}
+          changeField={(identifier, newValue) => {
+            console.log(`changeField sur date : identifier=${identifier}, newValue=${newValue}`);
+            updateCreateWalkField(identifier, newValue);
+          }}
         />
         <Field
+          identifier="walkDuration"
+          placeholder="durée"
           label="Durée approximative (en heures) *"
+          type="number"
+          value={walkDuration}
+          changeField={(identifier, newValue) => {
+            console.log(`changeField sur durée : identifier=${identifier}, newValue=${newValue}`);
+            updateCreateWalkField(identifier, newValue);
+          }}
         />
         <Field
+          identifier="walkDistance"
+          placeholder="distance en kms"
           label="Nombre de kilomètres"
+          type="number"
+          value={walkDistance}
+          changeField={(identifier, newValue) => {
+            console.log(`changeField sur distance : identifier=${identifier}, newValue=${newValue}`);
+            updateCreateWalkField(identifier, newValue);
+          }}
         />
         <div className="createWalk_difficulty">
           <SelectField
@@ -109,13 +154,36 @@ const CreateWalk = ({
           />
         </div>
         <Field
+          identifier="walkElevation"
+          placeholder="dénivelé"
           label="Dénivelé (en mètres)"
+          type="number"
+          value={walkElevation}
+          changeField={(identifier, newValue) => {
+            console.log(`changeField sur dénivelé : identifier=${identifier}, newValue=${newValue}`);
+            updateCreateWalkField(identifier, newValue);
+          }}
         />
         <Field
+          identifier="walkNumberPeople"
+          placeholder="dénivelé"
           label="Nombre de personnes maximum"
+          type="number"
+          value={walkNumberPeople}
+          changeField={(identifier, newValue) => {
+            console.log(`changeField sur durée : identifier=${identifier}, newValue=${newValue}`);
+            updateCreateWalkField(identifier, newValue);
+          }}
         />
         <Field
+          identifier="walkDescription"
+          placeholder="description"
           label="Description / Infos pratiques *"
+          value={walkDescription}
+          changeField={(identifier, newValue) => {
+            console.log(`changeField sur description : identifier=${identifier}, newValue=${newValue}`);
+            updateCreateWalkField(identifier, newValue);
+          }}
         />
         <button type="submit" className="createWalk_submit">Valider</button>
       </form>
@@ -137,6 +205,14 @@ CreateWalk.propTypes = {
     }).isRequired,
   ).isRequired,
   walkTitle: PropTypes.string.isRequired,
+  walkStartingPoint: PropTypes.string.isRequired,
+  walkEndPoint: PropTypes.string.isRequired,
+  walkDate: PropTypes.string.isRequired,
+  walkDuration: PropTypes.string.isRequired,
+  walkDistance: PropTypes.string.isRequired,
+  walkElevation: PropTypes.string.isRequired,
+  walkNumberPeople: PropTypes.string.isRequired,
+  walkDescription: PropTypes.string.isRequired,
   updateCreateWalkField: PropTypes.func.isRequired,
 };
 
