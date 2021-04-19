@@ -3,20 +3,21 @@ import PropTypes from 'prop-types';
 import createLogo from 'src/assets/images/create.png';
 import Field from 'src/components/Field';
 import Select from 'react-select';
+import SelectField from 'src/components/CreateWalk/select';
 
 import './createWalk.scss';
 
 const CreateWalk = ({ areas, tags }) => {
   const areasList = areas.map((area) => (
     {
-      value: area.name,
+      value: area.id,
       label: area.name,
     }
   ));
 
   const tagsList = tags.map((tag) => (
     {
-      value: tag.name,
+      value: tag.id,
       label: tag.name,
     }
   ));
@@ -39,12 +40,33 @@ const CreateWalk = ({ areas, tags }) => {
           label="Titre *"
         />
         <div className="createWalk_area">
-          <p className="createWalk_area_label">Région *</p>
-          <Select className="createWalk_area_select" options={areasList} placeholder="Région" />
+          <SelectField
+            className="createWalk_area_select"
+            label="Région *"
+            identifier="area"
+            options={areasList}
+            placeholder="Choix de la région"
+            manageChange={(identifier, newValue) => {
+              console.log(`manageChange sur area : identifier=${identifier}, newValue=${newValue}`);
+            }}
+          />
         </div>
         <div className="createWalk_tag">
           <p className="createWalk_tag_label">Thème (choix multiple possible)</p>
-          <Select className="createWalk_tag_select" options={tagsList} placeholder="Thème(s)" isMulti />
+          <Select
+            className="createWalk_tag_select"
+            label="Thème (choix multiple possible)"
+            identifier="tags"
+            options={tagsList}
+            placeholder="Thème(s)"
+            isMulti
+            onChange={(selectedTags) => {
+              console.log(selectedTags);
+              selectedTags.map((tag) => (
+                console.log(tag.value)
+              ));
+            }}
+          />
         </div>
         <Field
           label="Point de départ *"
@@ -63,8 +85,16 @@ const CreateWalk = ({ areas, tags }) => {
           label="Nombre de kilomètres"
         />
         <div className="createWalk_difficulty">
-          <p className="createWalk_difficulty_label">Niveau de difficulté *</p>
-          <Select className="createWalk_difficulty_select" options={difficulties} placeholder="Niveau de difficulté..." />
+          <SelectField
+            className="createWalk_difficulty_select"
+            options={difficulties}
+            placeholder="Niveau de difficulté..."
+            label="Niveau de difficulté *"
+            identifier="difficulty"
+            manageChange={(identifier, newValue) => {
+              console.log(`manageChange sur area : identifier=${identifier}, newValue=${newValue}`);
+            }}
+          />
         </div>
         <Field
           label="Dénivelé (en mètres)"
