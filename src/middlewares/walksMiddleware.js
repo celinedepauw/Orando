@@ -5,6 +5,7 @@ import {
   saveWalks,
   PARTIPATE_WALK,
   CANCEL_PARTICIPATE,
+  CREATE_WALK,
 } from 'src/actions/walks';
 import { saveUserAuth, saveUser } from 'src/actions/users';
 
@@ -118,6 +119,52 @@ const walksMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.log(error);
+        });
+      next(action);
+      break;
+    }
+    case CREATE_WALK: {
+      const authenticationToken = localStorage.getItem('Token');
+      const currentUserId = localStorage.getItem('currentUserId');
+      const {
+        walkTitle,
+        walkAreaId,
+        walkTags,
+        walkStartingPoint,
+        walkEndPoint,
+        walkDate,
+        walkDuration,
+        walkDescription,
+        walkDistance,
+        walkDifficulty,
+        walkElevation,
+        walkNumberPeople,
+      } = store.getState().walksList;
+      console.log('tags : ', walkTags);
+      axios.post('https://orando.me/o/api/walks', {
+        title: walkTitle,
+        area: walkAreaId,
+        creator: currentUserId,
+        tags: [walkTags],
+        startingPoint: walkStartingPoint,
+        endPoint: walkEndPoint,
+        date: walkDate,
+        duration: walkDuration,
+        description: walkDescription,
+        kilometre: Number(walkDistance),
+        difficulty: walkDifficulty,
+        elevation: Number(walkElevation),
+        maxNbPersons: Number(walkNumberPeople),
+      }, {
+        headers: {
+          Authorization: `Bearer ${authenticationToken}`,
+        },
+      })
+        .then((response) => {
+          console.log('réponse après envoi pour création', response.data);
+        })
+        .catch((error) => {
+          console.log('error: ', error);
         });
       next(action);
       break;

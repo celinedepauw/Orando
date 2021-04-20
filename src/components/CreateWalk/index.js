@@ -22,6 +22,7 @@ const CreateWalk = ({
   walkDescription,
   updateCreateWalkField,
   updateCreateWalkSelect,
+  handleCreate,
 }) => {
   const areasList = areas.map((area) => (
     {
@@ -38,11 +39,15 @@ const CreateWalk = ({
   ));
 
   const difficulties = [
-    { value: 'facile', label: 'Facile' },
-    { value: 'moyen', label: 'Moyen' },
-    { value: 'difficile', label: 'Difficile' },
+    { value: 'Facile', label: 'Facile' },
+    { value: 'Moyen', label: 'Moyen' },
+    { value: 'Difficile', label: 'Difficile' },
   ];
 
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    handleCreate();
+  };
   return (
     <main className="createWalk">
       <div className="createWalk_title">
@@ -50,7 +55,7 @@ const CreateWalk = ({
         <h2 className="createWalk_title_text">Ma nouvelle randonnée</h2>
       </div>
       <p className="createWalk_asterisk">(*) Champs obligatoires</p>
-      <form className="createWalk_form">
+      <form className="createWalk_form" onSubmit={handleSubmit}>
         <Field
           identifier="walkTitle"
           placeholder="titre de la randonée"
@@ -128,7 +133,6 @@ const CreateWalk = ({
           identifier="walkDuration"
           placeholder="durée"
           label="Durée approximative (en heures) *"
-          type="number"
           value={walkDuration}
           changeField={(identifier, newValue) => {
             console.log(`changeField sur durée : identifier=${identifier}, newValue=${newValue}`);
@@ -172,7 +176,7 @@ const CreateWalk = ({
         />
         <Field
           identifier="walkNumberPeople"
-          placeholder="dénivelé"
+          placeholder="nombre de personnes"
           label="Nombre de personnes maximum"
           type="number"
           value={walkNumberPeople}
@@ -211,7 +215,10 @@ CreateWalk.propTypes = {
     }).isRequired,
   ).isRequired,
   walkTitle: PropTypes.string.isRequired,
-  walkAreaId: PropTypes.string.isRequired,
+  walkAreaId: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
   walkStartingPoint: PropTypes.string.isRequired,
   walkEndPoint: PropTypes.string.isRequired,
   walkDate: PropTypes.string.isRequired,
@@ -222,6 +229,7 @@ CreateWalk.propTypes = {
   walkDescription: PropTypes.string.isRequired,
   updateCreateWalkField: PropTypes.func.isRequired,
   updateCreateWalkSelect: PropTypes.func.isRequired,
+  handleCreate: PropTypes.func.isRequired,
 };
 
 export default CreateWalk;
