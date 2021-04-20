@@ -85,6 +85,12 @@ function walkReducer(state = initialState, action) {
           walkAreaId: action.value,
         };
       }
+      if (action.identifier === 'walkDifficulty') {
+        return {
+          ...state,
+          walkDifficulty: action.value,
+        };
+      }
       return {
         ...state,
       };

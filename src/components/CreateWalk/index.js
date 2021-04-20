@@ -154,6 +154,7 @@ const CreateWalk = ({
             identifier="walkDifficulty"
             manageChange={(identifier, newValue) => {
               console.log(`manageChange sur difficulté: identifier=${identifier}, newValue=${newValue}`);
+              updateCreateWalkSelect(identifier, newValue);
             }}
           />
         </div>
