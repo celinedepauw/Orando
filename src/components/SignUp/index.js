@@ -19,6 +19,7 @@ const SignUp = ({
   firstname,
   picture,
   areas,
+  updateSignUp,
 }) => {
   const areasListSelect = areas.map((area) => (
     {
@@ -37,6 +38,7 @@ const SignUp = ({
           options={areasListSelect}
           placeholder="selectionner votre région"
           manageChange={(identifier, newValue) => {
+            updateSignUp(identifier, newValue);
             console.log(`manageChange sur area : identifier=${identifier}, newValue=${newValue}`);
           }}
         />
@@ -46,6 +48,7 @@ const SignUp = ({
           label="Adress e-mail"
           value={email}
           changeField={(identifier, newValue) => {
+            updateSignUp(identifier, newValue);
             console.log(`changeField sur email : identifier=${identifier}, newValue=${newValue}`);
           }}
         />
@@ -55,6 +58,7 @@ const SignUp = ({
           label="Pseudo"
           value={alias}
           changeField={(identifier, newValue) => {
+            updateSignUp(identifier, newValue);
             console.log(`changeField sur pseudo : identifier=${identifier}, newValue=${newValue}`);
           }}
         />
@@ -64,6 +68,7 @@ const SignUp = ({
           label="Nom"
           value={lastname}
           changeField={(identifier, newValue) => {
+            updateSignUp(identifier, newValue);
             console.log(`changeField sur nom : identifier=${identifier}, newValue=${newValue}`);
           }}
         />
@@ -73,6 +78,7 @@ const SignUp = ({
           label="Prénom"
           value={firstname}
           changeField={(identifier, newValue) => {
+            updateSignUp(identifier, newValue);
             console.log(`changeField sur prénom : identifier=${identifier}, newValue=${newValue}`);
           }}
         />
@@ -83,6 +89,7 @@ const SignUp = ({
           type="password"
           value={password}
           changeField={(identifier, newValue) => {
+            updateSignUp(identifier, newValue);
             console.log(`changeField sur password : identifier=${identifier}, newValue=${newValue}`);
           }}
         />
@@ -93,6 +100,7 @@ const SignUp = ({
           type="file"
           value={picture}
           changeField={(identifier, newValue) => {
+            updateSignUp(identifier, newValue);
             console.log(`changeField sur password : identifier=${identifier}, newValue=${newValue}`);
           }}
         />

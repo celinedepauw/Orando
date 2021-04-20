@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { updateSignUp } from 'src/actions/users';
 
 import SignUp from 'src/components/SignUp';
 
@@ -18,6 +19,10 @@ const mapStateToProps = (state) => ({
 // si on a besoin de dispatcher des actions vers le store (mettre à jour le state)
 const mapDispatchToProps = (dispatch) => ({
   // nom de la prop à remplir: fonction qui dispatch l'action
+  updateSignUp: (identifier, newValue) => {
+    const action = updateSignUp(identifier, newValue);
+    dispatch(action);
+  },
 
 });
 
