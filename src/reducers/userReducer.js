@@ -81,7 +81,7 @@ function userReducer(state = initialState, action) {
 
       return {
         ...state,
-        userArea: action.value,
+        userArea: action.identifier,
       };
 
     default:
