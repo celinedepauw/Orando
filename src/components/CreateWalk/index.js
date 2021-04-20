@@ -87,7 +87,8 @@ const CreateWalk = ({
             onChange={(selectedTags) => {
               console.log(selectedTags);
               selectedTags.map((tag) => (
-                console.log(tag.value)
+                // console.log(tag.value)
+                updateCreateWalkSelect('walkTags', tag.value)
               ));
             }}
           />

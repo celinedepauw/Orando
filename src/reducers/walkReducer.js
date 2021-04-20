@@ -91,6 +91,13 @@ function walkReducer(state = initialState, action) {
           walkDifficulty: action.value,
         };
       }
+      if (action.identifier === 'walkTags') {
+        // const selectedTags = [...state.walkTags, action.value];
+        return {
+          ...state,
+          walkTags: action.value,
+        };
+      }
       return {
         ...state,
       };
