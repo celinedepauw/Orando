@@ -220,16 +220,23 @@ CreateWalk.propTypes = {
     PropTypes.number,
   ]).isRequired,
   walkStartingPoint: PropTypes.string.isRequired,
-  walkEndPoint: PropTypes.string.isRequired,
+  walkEndPoint: PropTypes.string,
   walkDate: PropTypes.string.isRequired,
   walkDuration: PropTypes.string.isRequired,
-  walkDistance: PropTypes.string.isRequired,
-  walkElevation: PropTypes.string.isRequired,
-  walkNumberPeople: PropTypes.string.isRequired,
+  walkDistance: PropTypes.string,
+  walkElevation: PropTypes.string,
+  walkNumberPeople: PropTypes.string,
   walkDescription: PropTypes.string.isRequired,
   updateCreateWalkField: PropTypes.func.isRequired,
   updateCreateWalkSelect: PropTypes.func.isRequired,
   handleCreate: PropTypes.func.isRequired,
+};
+
+CreateWalk.defaultProps = {
+  walkEndPoint: '',
+  walkDistance: null,
+  walkElevation: null,
+  walkNumberPeople: null,
 };
 
 export default CreateWalk;
