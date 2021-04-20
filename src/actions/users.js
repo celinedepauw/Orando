@@ -7,7 +7,8 @@ export const LOG_IN = 'LOG_IN';
 export const LOG_OUT = 'LOG_OUT';
 export const SAVE_USER_AUTH = 'SAVE_USER_AUTH';
 export const CHECK_USER = 'CHECK_USER';
-export const SIGN_UP = 'SIGN_UP';
+export const UPDATE_SIGN_UP = 'UPDATE_SIGN_UP';
+
 
 
 // === action creators
@@ -48,6 +49,8 @@ export const checkUser = () => ({
 });
 
 // action creator used to sign up form
-export const signUp = () => ({
-  type: SIGN_UP,
+export const updateSignUp = (identifier, newValue) => ({
+  type: UPDATE_SIGN_UP,
+  identifier: identifier,
+  value: newValue,
 });
