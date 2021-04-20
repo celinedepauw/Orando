@@ -11,7 +11,7 @@ const SelectField = ({
 }) => {
   const handleChange = (evt) => {
     console.log(evt.value);
-    manageChange(evt.value, evt.label);
+    manageChange(identifier, evt.value);
   };
 
   return (

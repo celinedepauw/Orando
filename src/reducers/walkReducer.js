@@ -79,10 +79,10 @@ function walkReducer(state = initialState, action) {
         walkDescription: action.value,
       };
     case UPDATE_CREATE_WALK_SELECT:
-      if (action.identifier === 'Facile' || action.identifier === 'Difficile' || action.identifier === 'Moyen') {
+      if (action.identifier === 'walkAreaId') {
         return {
           ...state,
-          walkDifficulty: action.value,
+          walkAreaId: action.value,
         };
       }
       return {
