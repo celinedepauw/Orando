@@ -140,7 +140,6 @@ const walksMiddleware = (store) => (next) => (action) => {
         walkElevation,
         walkNumberPeople,
       } = store.getState().walksList;
-      console.log('tags : ', walkTags);
       axios.post('https://orando.me/o/api/walks', {
         title: walkTitle,
         area: walkAreaId,
@@ -161,7 +160,17 @@ const walksMiddleware = (store) => (next) => (action) => {
         },
       })
         .then((response) => {
-          console.log('réponse après envoi pour création', response.data);
+          // console.log('réponse après envoi pour création', response.data);
+          if (response.data[0] === 201) {
+            alert('Votre randonnée a été créée avec succès !');
+            axios.get(`https://orando.me/o/api/users/${currentUserId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
+              .then((response) => {
+                store.dispatch(saveUser(response.data));
+              })
+              .catch((error) => {
+                console.log('error: ', error);
+              });
+          }
         })
         .catch((error) => {
           console.log('error: ', error);
