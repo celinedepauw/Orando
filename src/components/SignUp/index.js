@@ -19,7 +19,9 @@ const SignUp = ({
   firstname,
   picture,
   areas,
+  userArea,
   updateSignUp,
+  handleSignUp,
 }) => {
   const areasListSelect = areas.map((area) => (
     {
@@ -27,15 +29,20 @@ const SignUp = ({
       label: area.name,
     }
   ));
+  const handleSubmitSignUp = (evt) => {
+    evt.preventDefault();
+    handleSignUp();
+  }
   console.log('toto');
   if (isLogged) return <Redirect to="/authentication" />;
   return (
-    <main className="signUp">
+    <main className="signUp" onSubmit={handleSubmitSignUp}>
       <form className="signUp_form">
         <SelectField
           label="votre région"
-          identifier="area"
+          identifier="userArea"
           options={areasListSelect}
+          value={userArea}
           placeholder="selectionner votre région"
           manageChange={(identifier, newValue) => {
             updateSignUp(identifier, newValue);
@@ -117,6 +124,10 @@ SignUp.propTypes = {
       name: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
+  userArea: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   alias: PropTypes.string.isRequired,
@@ -124,6 +135,8 @@ SignUp.propTypes = {
   firstname: PropTypes.string.isRequired,
   isLogged: PropTypes.bool.isRequired,
   picture: PropTypes.string,
+  updateSignUp: PropTypes.func.isRequired,
+  handleSignUp: PropTypes.func.isRequired,
 };
 
 SignUp.defaultProps = {

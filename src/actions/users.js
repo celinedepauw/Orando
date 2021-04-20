@@ -8,6 +8,7 @@ export const LOG_OUT = 'LOG_OUT';
 export const SAVE_USER_AUTH = 'SAVE_USER_AUTH';
 export const CHECK_USER = 'CHECK_USER';
 export const UPDATE_SIGN_UP = 'UPDATE_SIGN_UP';
+export const SUBMIT_SIGN_UP = 'SUBMIT_SIGN_UP';
 
 
 
@@ -53,4 +54,23 @@ export const updateSignUp = (identifier, newValue) => ({
   type: UPDATE_SIGN_UP,
   identifier: identifier,
   value: newValue,
+});
+
+export const submitSignUp = (
+  email,
+  alias,
+  password,
+  lastname,
+  firstname,
+  picture,
+  userArea,
+) => ({
+  type: SUBMIT_SIGN_UP,
+  email: email,
+  alias: alias,
+  password: password,
+  lastname: lastname,
+  firstname: firstname,
+  picture: picture,
+  userArea: userArea,
 });

@@ -9,6 +9,7 @@ const initialState = {
   lastname: '',
   firstname: '',
   picture: '',
+  userArea: '',
   // indicate if the user is authenticated
   isLogged: false,
 };
@@ -80,7 +81,7 @@ function userReducer(state = initialState, action) {
 
       return {
         ...state,
-        area: action.value,
+        userArea: action.value,
       };
 
     default:

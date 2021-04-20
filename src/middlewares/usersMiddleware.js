@@ -6,6 +6,7 @@ import {
   saveUserAuth,
   CHECK_USER,
   LOG_OUT,
+  SUBMIT_SIGN_UP,
 } from 'src/actions/users';
 
 
@@ -86,6 +87,37 @@ const usersMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     }
+    case SUBMIT_SIGN_UP: {
+      const {
+        email,
+        alias,
+        password,
+        lastname,
+        firstname,
+        picture,
+        userArea,
+      } = store.getState().userInfo;
+      console.log(userArea);
+      const bodyFormData = new FormData();
+      bodyFormData.append('email', email);
+      bodyFormData.append('nickname', alias);
+      bodyFormData.append('firstname', firstname);
+      bodyFormData.append('lastname', lastname);
+      bodyFormData.append('password', password);
+      bodyFormData.append('area', userArea);
+      bodyFormData.append('picture', picture);
+
+      axios.post('https://orando.me/o/api/users',
+        bodyFormData,
+        { headers: { 'Content-Type': 'multipart/form-data' } })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log('error: ', error);
+        });
+    }
+    
     default:
       next(action);
   }
