@@ -144,7 +144,7 @@ const walksMiddleware = (store) => (next) => (action) => {
         title: walkTitle,
         area: walkAreaId,
         creator: currentUserId,
-        tags: [walkTags],
+        tags: walkTags,
         startingPoint: walkStartingPoint,
         endPoint: walkEndPoint,
         date: walkDate,
