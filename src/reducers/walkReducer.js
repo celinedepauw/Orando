@@ -50,12 +50,6 @@ function walkReducer(state = initialState, action) {
           walkDate: action.value,
         };
       }
-      if (action.identifier === 'walkDuration') {
-        return {
-          ...state,
-          walkDuration: action.value,
-        };
-      }
       if (action.identifier === 'walkDistance') {
         return {
           ...state,
@@ -89,6 +83,12 @@ function walkReducer(state = initialState, action) {
         return {
           ...state,
           walkDifficulty: action.value,
+        };
+      }
+      if (action.identifier === 'walkDuration') {
+        return {
+          ...state,
+          walkDuration: action.value,
         };
       }
       if (action.identifier === 'walkTags') {

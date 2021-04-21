@@ -44,6 +44,19 @@ const CreateWalk = ({
     { value: 'Difficile', label: 'Difficile' },
   ];
 
+  const durations = [
+    { value: '1 heure', label: '1 heure' },
+    { value: '1 heure 30', label: '1 heure 30' },
+    { value: '2 heures', label: '2 heures' },
+    { value: '2 heures 30', label: '2 heures 30' },
+    { value: '3 heures', label: '3 heures' },
+    { value: '3 heures 30', label: '3 heures 30' },
+    { value: '4 heures', label: '4 heures' },
+    { value: '4 heures 30', label: '4 heures 30' },
+    { value: '5 heures', label: '5 heures' },
+    { value: 'plus de 5 heures', label: 'plus de 5 heures' },
+  ];
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
     handleCreate();
@@ -129,14 +142,15 @@ const CreateWalk = ({
             updateCreateWalkField(identifier, newValue);
           }}
         />
-        <Field
+        <SelectField
           identifier="walkDuration"
           placeholder="durée"
-          label="Durée approximative (en heures) *"
+          label="Durée approximative *"
           value={walkDuration}
-          changeField={(identifier, newValue) => {
+          options={durations}
+          manageChange={(identifier, newValue) => {
             console.log(`changeField sur durée : identifier=${identifier}, newValue=${newValue}`);
-            updateCreateWalkField(identifier, newValue);
+            updateCreateWalkSelect(identifier, newValue);
           }}
         />
         <Field
@@ -153,10 +167,10 @@ const CreateWalk = ({
         <div className="createWalk_difficulty">
           <SelectField
             className="createWalk_difficulty_select"
-            options={difficulties}
-            placeholder="Niveau de difficulté..."
             label="Niveau de difficulté *"
             identifier="walkDifficulty"
+            options={difficulties}
+            placeholder="Niveau de difficulté"
             manageChange={(identifier, newValue) => {
               console.log(`manageChange sur difficulté: identifier=${identifier}, newValue=${newValue}`);
               updateCreateWalkSelect(identifier, newValue);
@@ -181,7 +195,7 @@ const CreateWalk = ({
           type="number"
           value={walkNumberPeople}
           changeField={(identifier, newValue) => {
-            console.log(`changeField sur durée : identifier=${identifier}, newValue=${newValue}`);
+            console.log(`changeField sur nb de participants : identifier=${identifier}, newValue=${newValue}`);
             updateCreateWalkField(identifier, newValue);
           }}
         />
