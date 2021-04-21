@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
-import { updateSignUp } from 'src/actions/users';
+import { updateSignUp, updateAvatar, submitSignUp } from 'src/actions/users';
 
 import SignUp from 'src/components/SignUp';
-import { submitSignUp } from '../../actions/users';
 
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
@@ -27,6 +26,10 @@ const mapDispatchToProps = (dispatch) => ({
   },
   handleSignUp: () => {
     dispatch(submitSignUp());
+  },
+  updateAvatar: (file) => {
+    const action = updateAvatar(file);
+    dispatch(action);
   },
 
 });

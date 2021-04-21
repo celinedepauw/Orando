@@ -1,4 +1,4 @@
-import { SAVE_USER, UPDATE_AUTHENTICATION_FIELD, SAVE_USER_AUTH, UPDATE_SIGN_UP } from 'src/actions/users';
+import { SAVE_USER, UPDATE_AUTHENTICATION_FIELD, SAVE_USER_AUTH, UPDATE_SIGN_UP, UPDATE_AVATAR } from 'src/actions/users';
 
 const initialState = {
   user: {},
@@ -72,16 +72,15 @@ function userReducer(state = initialState, action) {
           firstname: action.value,
         };
       }
-      if (action.identifier === 'picture') {
-        return {
-          ...state,
-          picture: action.value,
-        };
-      }
 
       return {
         ...state,
         userArea: action.identifier,
+      };
+    case UPDATE_AVATAR:
+      return {
+        ...state,
+        picture: action.file,
       };
 
     default:

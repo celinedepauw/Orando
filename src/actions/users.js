@@ -9,7 +9,7 @@ export const SAVE_USER_AUTH = 'SAVE_USER_AUTH';
 export const CHECK_USER = 'CHECK_USER';
 export const UPDATE_SIGN_UP = 'UPDATE_SIGN_UP';
 export const SUBMIT_SIGN_UP = 'SUBMIT_SIGN_UP';
-
+export const UPDATE_AVATAR = 'UPDATE_AVATAR';
 
 
 // === action creators
@@ -54,6 +54,11 @@ export const updateSignUp = (identifier, newValue) => ({
   type: UPDATE_SIGN_UP,
   identifier: identifier,
   value: newValue,
+});
+
+export const updateAvatar = (file) => ({
+  type: UPDATE_AVATAR,
+  file: file,
 });
 
 export const submitSignUp = (

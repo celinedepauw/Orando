@@ -97,7 +97,7 @@ const usersMiddleware = (store) => (next) => (action) => {
         picture,
         userArea,
       } = store.getState().userInfo;
-      console.log(userArea);
+      console.log('que devient la photo', picture);
       const bodyFormData = new FormData();
       bodyFormData.append('email', email);
       bodyFormData.append('nickname', alias);

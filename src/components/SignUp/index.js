@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import Field from 'src/components/Field';
 import welcome from 'src/assets/images/hiker.png';
 import SelectField from 'src/components/SignUp/select';
+import InputPicture from 'src/components/SignUp/inputPicture';
 
 import './signup.scss';
 
@@ -22,6 +23,8 @@ const SignUp = ({
   userArea,
   updateSignUp,
   handleSignUp,
+  updateAvatar,
+
 }) => {
   const areasListSelect = areas.map((area) => (
     {
@@ -100,15 +103,14 @@ const SignUp = ({
             console.log(`changeField sur password : identifier=${identifier}, newValue=${newValue}`);
           }}
         />
-        <Field
+        <InputPicture
           identifier="picture"
           placeholder=""
           label="Photo de profile"
-          type="file"
-          value={picture}
-          changeField={(identifier, newValue) => {
-            updateSignUp(identifier, newValue);
-            console.log(`changeField sur password : identifier=${identifier}, newValue=${newValue}`);
+          file={picture}
+          manageChangePicture={(file) => {
+            updateAvatar(file);
+            console.log(`updateAvatar sur picture : file=${file}`);
           }}
         />
         <button type="submit" className="signUp_form_submit">Welcome <img className="signUp_form_submit_picture" src={welcome} alt="logo-welcome" /></button>
@@ -134,13 +136,12 @@ SignUp.propTypes = {
   lastname: PropTypes.string.isRequired,
   firstname: PropTypes.string.isRequired,
   isLogged: PropTypes.bool.isRequired,
-  picture: PropTypes.string,
+  updateAvatar: PropTypes.func.isRequired,
   updateSignUp: PropTypes.func.isRequired,
   handleSignUp: PropTypes.func.isRequired,
+
 };
 
-SignUp.defaultProps = {
-  picture: null,
-};
+
 
 export default SignUp;
