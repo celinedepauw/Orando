@@ -140,41 +140,53 @@ const walksMiddleware = (store) => (next) => (action) => {
         walkElevation,
         walkNumberPeople,
       } = store.getState().walksList;
-      axios.post('https://orando.me/o/api/walks', {
-        title: walkTitle,
-        area: walkAreaId,
-        creator: currentUserId,
-        tags: walkTags,
-        startingPoint: walkStartingPoint,
-        endPoint: walkEndPoint,
-        date: walkDate,
-        duration: walkDuration,
-        description: walkDescription,
-        kilometre: Number(walkDistance),
-        difficulty: walkDifficulty,
-        elevation: Number(walkElevation),
-        maxNbPersons: Number(walkNumberPeople),
-      }, {
-        headers: {
-          Authorization: `Bearer ${authenticationToken}`,
-        },
-      })
-        .then((response) => {
-          // console.log('réponse après envoi pour création', response.data);
-          if (response.data[0] === 201) {
-            alert('Votre randonnée a été créée avec succès !');
-            axios.get(`https://orando.me/o/api/users/${currentUserId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
-              .then((response) => {
-                store.dispatch(saveUser(response.data));
-              })
-              .catch((error) => {
-                console.log('error: ', error);
-              });
-          }
+      if (
+        walkTitle
+        && walkAreaId
+        && walkStartingPoint
+        && walkDate
+        && walkDuration
+        && walkDescription
+        && walkDifficulty) {
+        axios.post('https://orando.me/o/api/walks', {
+          title: walkTitle,
+          area: walkAreaId,
+          creator: currentUserId,
+          tags: walkTags,
+          startingPoint: walkStartingPoint,
+          endPoint: walkEndPoint,
+          date: walkDate,
+          duration: walkDuration,
+          description: walkDescription,
+          kilometre: Number(walkDistance),
+          difficulty: walkDifficulty,
+          elevation: Number(walkElevation),
+          maxNbPersons: Number(walkNumberPeople),
+        }, {
+          headers: {
+            Authorization: `Bearer ${authenticationToken}`,
+          },
         })
-        .catch((error) => {
-          console.log('error: ', error);
-        });
+          .then((response) => {
+            // console.log('réponse après envoi pour création', response.data);
+            if (response.data[0] === 201) {
+              alert('Votre randonnée a été créée avec succès !');
+              axios.get(`https://orando.me/o/api/users/${currentUserId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
+                .then((response) => {
+                  store.dispatch(saveUser(response.data));
+                })
+                .catch((error) => {
+                  console.log('error: ', error);
+                });
+            }
+          })
+          .catch((error) => {
+            console.log('error: ', error);
+          }); // FIN REQUETE AXIOS
+      } // fin du if
+      else {
+        alert('veuillez saisir tous les champs obligatoires avant de valider');
+      } // fin else
       next(action);
       break;
     }
