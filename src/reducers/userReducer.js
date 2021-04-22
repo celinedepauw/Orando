@@ -1,4 +1,4 @@
-import { SAVE_USER, UPDATE_AUTHENTICATION_FIELD, SAVE_USER_AUTH, UPDATE_SIGN_UP, UPDATE_AVATAR } from 'src/actions/users';
+import { SAVE_USER, UPDATE_AUTHENTICATION_FIELD, SAVE_USER_AUTH, UPDATE_SIGN_UP, UPDATE_AVATAR, SAVE_USER_CREATE } from 'src/actions/users';
 
 const initialState = {
   user: {},
@@ -10,6 +10,7 @@ const initialState = {
   firstname: '',
   picture: '',
   userArea: '',
+  isSuccess: false,
   // indicate if the user is authenticated
   isLogged: false,
 };
@@ -81,6 +82,13 @@ function userReducer(state = initialState, action) {
       return {
         ...state,
         picture: action.file,
+      };
+    case SAVE_USER_CREATE:
+      return {
+        ...state,
+        isSuccess: true,
+        email: '',
+        password: '',
       };
 
     default:

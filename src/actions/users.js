@@ -10,6 +10,7 @@ export const CHECK_USER = 'CHECK_USER';
 export const UPDATE_SIGN_UP = 'UPDATE_SIGN_UP';
 export const SUBMIT_SIGN_UP = 'SUBMIT_SIGN_UP';
 export const UPDATE_AVATAR = 'UPDATE_AVATAR';
+export const SAVE_USER_CREATE = 'SAVE_USER_CREATE';
 
 
 // === action creators
@@ -78,4 +79,9 @@ export const submitSignUp = (
   firstname: firstname,
   picture: picture,
   userArea: userArea,
+});
+
+export const saveUserCreate = (isSuccess) => ({
+  type: SAVE_USER_CREATE,
+  isSuccess,
 });

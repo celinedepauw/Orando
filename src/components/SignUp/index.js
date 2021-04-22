@@ -12,7 +12,6 @@ import './signup.scss';
 
 
 const SignUp = ({
-  isLogged,
   email,
   alias,
   password,
@@ -24,6 +23,7 @@ const SignUp = ({
   updateSignUp,
   handleSignUp,
   updateAvatar,
+  isSuccess,
 
 }) => {
   const areasListSelect = areas.map((area) => (
@@ -37,7 +37,7 @@ const SignUp = ({
     handleSignUp();
   }
   console.log('toto');
-  if (isLogged) return <Redirect to="/authentication" />;
+  if (isSuccess) return <Redirect to="/authentication" />;
   return (
     <main className="signUp" onSubmit={handleSubmitSignUp}>
       <form className="signUp_form">
@@ -139,7 +139,7 @@ SignUp.propTypes = {
   updateAvatar: PropTypes.func.isRequired,
   updateSignUp: PropTypes.func.isRequired,
   handleSignUp: PropTypes.func.isRequired,
-
+  isSuccess: PropTypes.bool.isRequired,
 };
 
 

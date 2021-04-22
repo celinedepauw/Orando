@@ -7,6 +7,7 @@ import {
   CHECK_USER,
   LOG_OUT,
   SUBMIT_SIGN_UP,
+  saveUserCreate,
 } from 'src/actions/users';
 
 
@@ -84,6 +85,7 @@ const usersMiddleware = (store) => (next) => (action) => {
     case LOG_OUT: {
       localStorage.clear();
       store.dispatch(saveUserAuth(false));
+      store.dispatch(saveUserCreate(true));
       next(action);
       break;
     }
@@ -111,7 +113,10 @@ const usersMiddleware = (store) => (next) => (action) => {
         bodyFormData,
         { headers: { 'Content-Type': 'multipart/form-data' } })
         .then((response) => {
-          console.log(response);
+          console.log('reponse après création', response.status);
+          if (response.status === 201) {
+            store.dispatch(saveUserCreate(true));
+          }
         })
         .catch((error) => {
           console.log('error: ', error);
