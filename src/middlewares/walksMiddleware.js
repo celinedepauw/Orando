@@ -3,6 +3,7 @@ import {
   FETCH_WALKS,
   DELETE_WALK,
   saveWalks,
+  fetchWalks,
   PARTIPATE_WALK,
   CANCEL_PARTICIPATE,
   CREATE_WALK,
@@ -174,6 +175,7 @@ const walksMiddleware = (store) => (next) => (action) => {
               axios.get(`https://orando.me/o/api/users/${currentUserId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
                 .then((response) => {
                   store.dispatch(saveUser(response.data));
+                  store.dispatch(fetchWalks());
                 })
                 .catch((error) => {
                   console.log('error: ', error);
