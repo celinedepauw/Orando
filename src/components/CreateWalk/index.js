@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
+
 import createLogo from 'src/assets/images/create.png';
 import Field from 'src/components/Field';
 import Select from 'react-select';
@@ -23,6 +25,7 @@ const CreateWalk = ({
   updateCreateWalkField,
   updateCreateWalkSelect,
   handleCreate,
+  isCreated,
 }) => {
   const areasList = areas.map((area) => (
     {
@@ -61,6 +64,8 @@ const CreateWalk = ({
     evt.preventDefault();
     handleCreate();
   };
+  console.log('isCreated : ', isCreated);
+  if (isCreated) return <Redirect to="/my_hikes/" />;
   return (
     <main className="createWalk">
       <div className="createWalk_title">
@@ -244,6 +249,7 @@ CreateWalk.propTypes = {
   updateCreateWalkField: PropTypes.func.isRequired,
   updateCreateWalkSelect: PropTypes.func.isRequired,
   handleCreate: PropTypes.func.isRequired,
+  isCreated: PropTypes.bool.isRequired,
 };
 
 CreateWalk.defaultProps = {

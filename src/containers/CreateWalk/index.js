@@ -23,6 +23,7 @@ const mapStateToProps = (state) => ({
   walkElevation: state.walksList.walkElevation,
   walkNumberPeople: state.walksList.walkNumberPeople,
   walkDescription: state.walksList.walkDescription,
+  isCreated: state.walksList.isCreated,
 });
 
 // === mapDispatchToProps
