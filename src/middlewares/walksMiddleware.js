@@ -73,6 +73,7 @@ const walksMiddleware = (store) => (next) => (action) => {
         },
       })
         .then((response) => {
+          console.log('toto aime le chocolat', response);
           if (response.status === 201) {
             alert(response.data.message);
             axios.get(`https://orando.me/o/api/users/${currentUserId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
@@ -85,9 +86,10 @@ const walksMiddleware = (store) => (next) => (action) => {
           }
         })
         .catch((error) => {
-          console.log(error);
+          console.log(`error: ${error.response.data.message}`);
           alert('Votre participation a déjà été prise en compte');
         });
+    
       next(action);
       break;
     }

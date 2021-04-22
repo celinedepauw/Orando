@@ -118,11 +118,10 @@ const usersMiddleware = (store) => (next) => (action) => {
             store.dispatch(saveUserCreate(true));
           }
         })
-        .catch((error) => {
-          console.log('error: ', error);
+        .catch((errors) => {
+          console.log('error: ', errors);
         });
     }
-    
     default:
       next(action);
   }

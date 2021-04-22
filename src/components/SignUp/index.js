@@ -56,6 +56,7 @@ const SignUp = ({
           identifier="email"
           placeholder="toto@oclock.io"
           label="Adress e-mail"
+          type="email"
           value={email}
           changeField={(identifier, newValue) => {
             updateSignUp(identifier, newValue);
