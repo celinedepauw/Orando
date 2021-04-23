@@ -103,10 +103,10 @@ function walkReducer(state = initialState, action) {
         };
       }
       if (action.identifier === 'walkTags') {
-        // const selectedTags = [...state.walkTags, action.value];
+        const selectedTags = [...state.walkTags, action.value];
         return {
           ...state,
-          walkTags: action.value,
+          walkTags: selectedTags,
         };
       }
       return {

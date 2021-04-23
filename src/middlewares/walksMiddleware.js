@@ -188,26 +188,8 @@ const walksMiddleware = (store) => (next) => (action) => {
             console.log('error: ', error);
           }); // end of AXIOS request
       } // end of if
-      else if (!walkTitle) {
-        alert('veuillez saisir le titre de la randonnée avant de valider');
-      }
-      else if (!walkAreaId) {
-        alert('veuillez saisir la région de la randonnée avant de valider');
-      }
-      else if (!walkStartingPoint) {
-        alert('veuillez saisir le point de départ de la randonnée avant de valider');
-      }
-      else if (!walkDate) {
-        alert('veuillez saisir la date et l\'heure de la randonnée avant de valider');
-      }
-      else if (!walkDuration) {
-        alert('veuillez saisir la durée de la randonnée avant de valider');
-      }
-      else if (!walkDescription) {
-        alert('veuillez saisir la description et infos pratiques de la randonnée avant de valider');
-      }
-      else if (!walkDifficulty) {
-        alert('veuillez saisir le niveau de difficulté de la randonnée avant de valider');
+      else {
+        alert('Veuillez saisir tous les champs obligatoires avant de valider');
       }
       next(action);
       break;
