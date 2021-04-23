@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
+import Moment from 'react-moment';
 
 import createLogo from 'src/assets/images/create.png';
 import Field from 'src/components/Field';
@@ -60,12 +61,17 @@ const CreateWalk = ({
     { value: 'plus de 5 heures', label: 'plus de 5 heures' },
   ];
 
+  const date = Date();
+  
   const handleSubmit = (evt) => {
     evt.preventDefault();
     handleCreate();
   };
+
   console.log('isCreated : ', isCreated);
+
   if (isCreated) return <Redirect to="/my_hikes/" />;
+
   return (
     <main className="createWalk">
       <div className="createWalk_title">
@@ -73,6 +79,8 @@ const CreateWalk = ({
         <h2 className="createWalk_title_text">Ma nouvelle randonnée</h2>
       </div>
       <p className="createWalk_asterisk">(*) Champs obligatoires</p>
+      <p>{date}</p>
+      <p>{}</p>
       <form className="createWalk_form" onSubmit={handleSubmit}>
         <Field
           identifier="walkTitle"
@@ -141,9 +149,11 @@ const CreateWalk = ({
           placeholder="date et heure"
           label="Date et heure du départ *"
           type="datetime-local"
+          min="2021-04-23T00:00"
           value={walkDate}
           changeField={(identifier, newValue) => {
             console.log(`changeField sur date : identifier=${identifier}, newValue=${newValue}`);
+            console.log('heure', goodDate);
             updateCreateWalkField(identifier, newValue);
           }}
         />

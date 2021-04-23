@@ -177,7 +177,7 @@ const walksMiddleware = (store) => (next) => (action) => {
                 .then((response) => {
                   store.dispatch(saveUser(response.data));
                   store.dispatch(fetchWalks());
-                  store.dispatch(saveCreatedWalk(true));
+                  // store.dispatch(saveCreatedWalk(true));
                 })
                 .catch((error) => {
                   console.log('error: ', error);
