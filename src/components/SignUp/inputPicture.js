@@ -18,14 +18,14 @@ const InputPicture = ({
   return (
     <div className="inputPicture">
       <label
-        className="label"
+        className="inputPicture_label"
         htmlFor={identifier}
       >
         {label}
 
       </label>
       <input
-        className="input_picture"
+        className="inputPicture_field"
         id={identifier}
         type="file"
         placeholder={placeholder}

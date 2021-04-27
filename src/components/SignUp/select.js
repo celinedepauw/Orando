@@ -18,9 +18,9 @@ const SelectField = ({
   };
 
   return (
-    <div className="select">
+    <div className="select_field">
       <label
-        className="label"
+        className="select_field_label"
         htmlFor={identifier}
       >
         {label}
@@ -29,7 +29,7 @@ const SelectField = ({
       <Select
         options={options}
         placeholder={placeholder}
-        className="select_input"
+        className="select_field_input"
         onChange={handleChange}
       />
     </div>

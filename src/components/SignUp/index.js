@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 
 
 import Field from 'src/components/Field';
-import welcome from 'src/assets/images/hiker.png';
+import signup from 'src/assets/icones/signup.svg';
 import SelectField from 'src/components/SignUp/select';
 import InputPicture from 'src/components/SignUp/inputPicture';
+
 
 import './signup.scss';
 
@@ -42,11 +43,11 @@ const SignUp = ({
     <main className="signUp" onSubmit={handleSubmitSignUp}>
       <form className="signUp_form">
         <SelectField
-          label="votre région"
+          label="Région"
           identifier="userArea"
           options={areasListSelect}
           value={userArea}
-          placeholder="selectionner votre région"
+          placeholder="selectionnez votre région"
           manageChange={(identifier, newValue) => {
             updateSignUp(identifier, newValue);
             console.log(`manageChange sur area : identifier=${identifier}, newValue=${newValue}`);
@@ -55,7 +56,7 @@ const SignUp = ({
         <Field
           identifier="email"
           placeholder="toto@oclock.io"
-          label="Adress e-mail"
+          label="Adresse e-mail"
           type="email"
           value={email}
           changeField={(identifier, newValue) => {
@@ -65,7 +66,7 @@ const SignUp = ({
         />
         <Field
           identifier="alias"
-          placeholder="toto-natureLover"
+          placeholder="toto-passion-nature"
           label="Pseudo"
           value={alias}
           changeField={(identifier, newValue) => {
@@ -107,14 +108,14 @@ const SignUp = ({
         <InputPicture
           identifier="picture"
           placeholder=""
-          label="Photo de profile"
+          label="Photo de profil"
           file={picture}
           manageChangePicture={(file) => {
             updateAvatar(file);
             console.log(`updateAvatar sur picture : file=${file}`);
           }}
         />
-        <button type="submit" className="signUp_form_submit">Welcome <img className="signUp_form_submit_picture" src={welcome} alt="logo-welcome" /></button>
+        <button type="submit" className="signUp_form_submit">C'est partie pour l'aventure <img className="signUp_form_submit_picture" src={signup} alt="logo-welcome" /></button>
       </form>
     </main>
   );
@@ -136,13 +137,15 @@ SignUp.propTypes = {
   alias: PropTypes.string.isRequired,
   lastname: PropTypes.string.isRequired,
   firstname: PropTypes.string.isRequired,
-  isLogged: PropTypes.bool.isRequired,
   updateAvatar: PropTypes.func.isRequired,
   updateSignUp: PropTypes.func.isRequired,
   handleSignUp: PropTypes.func.isRequired,
   isSuccess: PropTypes.bool.isRequired,
+  picture: PropTypes.object,
 };
 
-
+SignUp.defaultProps = {
+  picture: '',
+};
 
 export default SignUp;
