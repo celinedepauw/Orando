@@ -109,7 +109,7 @@ const usersMiddleware = (store) => (next) => (action) => {
       bodyFormData.append('area', userArea);
       bodyFormData.append('picture', picture);
 
-      axios.post('https://orando.me/o/api/users',
+      axios.post('https://orando.me/o/api/register',
         bodyFormData,
         { headers: { 'Content-Type': 'multipart/form-data' } })
         .then((response) => {
