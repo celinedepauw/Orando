@@ -66,7 +66,7 @@ const SignUp = ({
         />
         <Field
           identifier="alias"
-          placeholder="toto-passion-nature"
+          placeholder="pseudo"
           label="Pseudo"
           value={alias}
           changeField={(identifier, newValue) => {
@@ -76,7 +76,7 @@ const SignUp = ({
         />
         <Field
           identifier="lastname"
-          placeholder="Toto"
+          placeholder="Nom"
           label="Nom"
           value={lastname}
           changeField={(identifier, newValue) => {
@@ -86,7 +86,7 @@ const SignUp = ({
         />
         <Field
           identifier="firstname"
-          placeholder="Orando"
+          placeholder="Prénom"
           label="Prénom"
           value={firstname}
           changeField={(identifier, newValue) => {
