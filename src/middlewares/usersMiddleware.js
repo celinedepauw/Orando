@@ -6,6 +6,8 @@ import {
   saveUserAuth,
   CHECK_USER,
   LOG_OUT,
+  SUBMIT_SIGN_UP,
+  saveUserCreate,
 } from 'src/actions/users';
 
 
@@ -83,8 +85,42 @@ const usersMiddleware = (store) => (next) => (action) => {
     case LOG_OUT: {
       localStorage.clear();
       store.dispatch(saveUserAuth(false));
+      store.dispatch(saveUserCreate(true));
       next(action);
       break;
+    }
+    case SUBMIT_SIGN_UP: {
+      const {
+        email,
+        alias,
+        password,
+        lastname,
+        firstname,
+        picture,
+        userArea,
+      } = store.getState().userInfo;
+      console.log('que devient la photo', picture);
+      const bodyFormData = new FormData();
+      bodyFormData.append('email', email);
+      bodyFormData.append('nickname', alias);
+      bodyFormData.append('firstname', firstname);
+      bodyFormData.append('lastname', lastname);
+      bodyFormData.append('password', password);
+      bodyFormData.append('area', userArea);
+      bodyFormData.append('picture', picture);
+
+      axios.post('https://orando.me/o/api/users',
+        bodyFormData,
+        { headers: { 'Content-Type': 'multipart/form-data' } })
+        .then((response) => {
+          console.log('reponse après création', response.status);
+          if (response.status === 201) {
+            store.dispatch(saveUserCreate(true));
+          }
+        })
+        .catch((errors) => {
+          console.log('error: ', errors);
+        });
     }
     default:
       next(action);

@@ -7,6 +7,10 @@ export const LOG_IN = 'LOG_IN';
 export const LOG_OUT = 'LOG_OUT';
 export const SAVE_USER_AUTH = 'SAVE_USER_AUTH';
 export const CHECK_USER = 'CHECK_USER';
+export const UPDATE_SIGN_UP = 'UPDATE_SIGN_UP';
+export const SUBMIT_SIGN_UP = 'SUBMIT_SIGN_UP';
+export const UPDATE_AVATAR = 'UPDATE_AVATAR';
+export const SAVE_USER_CREATE = 'SAVE_USER_CREATE';
 
 
 // === action creators
@@ -44,4 +48,40 @@ export const logOut = () => ({
 
 export const checkUser = () => ({
   type: CHECK_USER,
+});
+
+// action creator used to sign up form
+export const updateSignUp = (identifier, newValue) => ({
+  type: UPDATE_SIGN_UP,
+  identifier: identifier,
+  value: newValue,
+});
+
+export const updateAvatar = (file) => ({
+  type: UPDATE_AVATAR,
+  file: file,
+});
+
+export const submitSignUp = (
+  email,
+  alias,
+  password,
+  lastname,
+  firstname,
+  picture,
+  userArea,
+) => ({
+  type: SUBMIT_SIGN_UP,
+  email: email,
+  alias: alias,
+  password: password,
+  lastname: lastname,
+  firstname: firstname,
+  picture: picture,
+  userArea: userArea,
+});
+
+export const saveUserCreate = (isSuccess) => ({
+  type: SAVE_USER_CREATE,
+  isSuccess,
 });
