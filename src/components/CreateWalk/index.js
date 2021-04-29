@@ -62,7 +62,7 @@ const CreateWalk = ({
   ];
 
   const date = Date();
-  
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
     handleCreate();
@@ -80,7 +80,6 @@ const CreateWalk = ({
       </div>
       <p className="createWalk_asterisk">(*) Champs obligatoires</p>
       <p>{date}</p>
-      <p>{}</p>
       <form className="createWalk_form" onSubmit={handleSubmit}>
         <Field
           identifier="walkTitle"
@@ -149,11 +148,11 @@ const CreateWalk = ({
           placeholder="date et heure"
           label="Date et heure du départ *"
           type="datetime-local"
-          min="2021-04-23T00:00"
+          // min="2021-04-23T00:00"
           value={walkDate}
           changeField={(identifier, newValue) => {
-            console.log(`changeField sur date : identifier=${identifier}, newValue=${newValue}`);
-            console.log('heure', goodDate);
+            // console.log(`changeField sur date : identifier=${identifier}, newValue=${newValue}`);
+            // console.log('heure', goodDate);
             updateCreateWalkField(identifier, newValue);
           }}
         />
