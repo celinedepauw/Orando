@@ -83,7 +83,7 @@ const CreateWalk = ({
       <form className="createWalk_form" onSubmit={handleSubmit}>
         <Field
           identifier="walkTitle"
-          placeholder="titre de la randonée"
+          placeholder="titre de la randonnée"
           label="Titre *"
           value={walkTitle}
           changeField={(identifier, newValue) => {
@@ -148,7 +148,7 @@ const CreateWalk = ({
           placeholder="date et heure"
           label="Date et heure du départ *"
           type="datetime-local"
-          // min="2021-04-23T00:00"
+          min="2021-04-23T00:00"
           value={walkDate}
           changeField={(identifier, newValue) => {
             // console.log(`changeField sur date : identifier=${identifier}, newValue=${newValue}`);

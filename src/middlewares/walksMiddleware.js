@@ -170,8 +170,8 @@ const walksMiddleware = (store) => (next) => (action) => {
           },
         })
           .then((response) => {
-            // console.log('réponse après envoi pour création', response.data);
-            if (response.data[0] === 201) {
+            // console.log('réponse après envoi pour création', response);
+            if (response.status === 201) {
               alert('Votre randonnée a été créée avec succès !');
               axios.get(`https://orando.me/o/api/users/${currentUserId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
                 .then((response) => {
