@@ -58,6 +58,7 @@ const EditWalk = ({
     { value: '5 heures', label: '5 heures' },
     { value: 'plus de 5 heures', label: 'plus de 5 heures' },
   ];
+
   return (
     <main className="editWalk">
       <div className="editWalk_title">
@@ -208,6 +209,7 @@ const EditWalk = ({
             updateCreateWalkField(identifier, newValue);
           }}
         />
+        <button type="submit" className="editWalk_submit">Modifier</button>
       </form>
     </main>
   );
