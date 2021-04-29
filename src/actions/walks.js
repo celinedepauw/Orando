@@ -6,6 +6,7 @@ export const PARTIPATE_WALK = 'PARTIPATE_WALK';
 export const CANCEL_PARTICIPATE = 'CANCEL_PARTICIPATE';
 export const CREATE_WALK = 'CREATE_WALK';
 export const SAVE_CREATED_WALK = 'SAVE_CREATED_WALK';
+export const EDIT_WALK = 'EDIT_WALK';
 export const UPDATE_CREATE_WALK_FIELD = 'UPDATE_CREATE_WALK_FIELD';
 export const UPDATE_CREATE_WALK_SELECT = 'UPDATE_CREATE_WALK_SELECT';
 
@@ -35,6 +36,35 @@ export const participateWalk = (walkId) => ({
 });
 
 export const createWalk = (
+  walkTitle,
+  walkAreaId,
+  walkTags,
+  walkStartingPoint,
+  walkEndPoint,
+  walkDate,
+  walkDuration,
+  walkDescription,
+  walkDistance,
+  walkDifficulty,
+  walkElevation,
+  walkNumberPeople,
+) => ({
+  type: CREATE_WALK,
+  walkTitle: walkTitle,
+  walkAreaId: walkAreaId,
+  walkTags: walkTags,
+  walkStartingPoint: walkStartingPoint,
+  walkEndPoint: walkEndPoint,
+  walkDate: walkDate,
+  walkDuration: walkDuration,
+  walkDescription: walkDescription,
+  walkDistance: walkDistance,
+  walkDifficulty: walkDifficulty,
+  walkElevation: walkElevation,
+  walkNumberPeople: walkNumberPeople,
+});
+
+export const editWalk = (
   walkTitle,
   walkAreaId,
   walkTags,

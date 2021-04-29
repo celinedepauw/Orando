@@ -23,7 +23,7 @@ const EditWalk = ({
   walkDescription,
   updateCreateWalkField,
   updateCreateWalkSelect,
-  handleCreate,
+  handleEdit,
   isCreated,
 }) => {
   const areasList = areas.map((area) => (
@@ -59,6 +59,11 @@ const EditWalk = ({
     { value: 'plus de 5 heures', label: 'plus de 5 heures' },
   ];
 
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    handleEdit();
+  };
+
   return (
     <main className="editWalk">
       <div className="editWalk_title">
@@ -66,7 +71,7 @@ const EditWalk = ({
         <h2 className="editWalk_title_text">Modification de ma randonnée</h2>
       </div>
       <p className="editWalk_asterisk">(*) Champs obligatoires</p>
-      <form className="editWalk_form">
+      <form className="editWalk_form" onSubmit={handleSubmit}>
         <Field
           identifier="editTitle"
           placeholder="titre de la randonnée"
@@ -243,7 +248,7 @@ EditWalk.propTypes = {
   walkDescription: PropTypes.string.isRequired,
   updateCreateWalkField: PropTypes.func.isRequired,
   updateCreateWalkSelect: PropTypes.func.isRequired,
-  handleCreate: PropTypes.func.isRequired,
+  handleEdit: PropTypes.func.isRequired,
   isCreated: PropTypes.bool.isRequired,
 };
 
