@@ -42,7 +42,7 @@ const Profile = ({ user, loadingUser }) => {
               </div>
             </div>
           </div>
-          <Link to="/update_profil">
+          <Link to="/update_profile">
             <button type="button" className="profile_udpate_button">
               <h4 className="profile_update_button_text">Modification</h4>
               <img className="profile_update_button_icon" src={fire} alt="icone du bouton" />
