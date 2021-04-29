@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useParams } from 'react-router-dom';
+import Loader from 'src/components/Loader';
 
 import editLogo from 'src/assets/images/create.png';
 import Field from 'src/components/Field';
@@ -11,6 +13,8 @@ import './editWalk.scss';
 const EditWalk = ({
   areas,
   tags,
+  walks,
+  loadingWalk,
   walkTitle,
   walkAreaId,
   walkStartingPoint,
@@ -21,11 +25,15 @@ const EditWalk = ({
   walkElevation,
   walkNumberPeople,
   walkDescription,
-  updateCreateWalkField,
-  updateCreateWalkSelect,
+  updateWalkField,
+  updateWalkSelect,
   handleEdit,
-  isCreated,
 }) => {
+  const { id } = useParams();
+
+  const walk = walks.find((item) => item.id == id);
+  const userId = localStorage.getItem('currentUserId');
+
   const areasList = areas.map((area) => (
     {
       value: area.id,
@@ -65,162 +73,168 @@ const EditWalk = ({
   };
 
   return (
-    <main className="editWalk">
-      <div className="editWalk_title">
-        <img className="editWalk_create_logo" src={editLogo} alt="logo-edit-walk" />
-        <h2 className="editWalk_title_text">Modification de ma randonnée</h2>
-      </div>
-      <p className="editWalk_asterisk">(*) Champs obligatoires</p>
-      <form className="editWalk_form" onSubmit={handleSubmit}>
-        <Field
-          identifier="editTitle"
-          placeholder="titre de la randonnée"
-          label="Titre *"
-          value={walkTitle}
-          changeField={(identifier, newValue) => {
-            console.log(`changeField sur titre : identifier=${identifier}, newValue=${newValue}`);
-            updateCreateWalkField(identifier, newValue);
-          }}
-        />
-        <div className="editWalk_area">
-          <SelectField
-            className="editWalk_area_select"
-            label="Région *"
-            identifier="walkAreaId"
-            options={areasList}
-            value={walkAreaId}
-            placeholder="Choix de la région"
-            manageChange={(identifier, newValue) => {
-              console.log(`manageChange sur area : identifier=${identifier}, newValue=${newValue}`);
-              updateCreateWalkSelect(identifier, newValue);
+    <>
+      {loadingWalk && <div> <Loader /> </div> }
+      {!loadingWalk && (
+      <main className="editWalk">
+        <div className="editWalk_title">
+          <img className="editWalk_create_logo" src={editLogo} alt="logo-edit-walk" />
+          <h2 className="editWalk_title_text">Modification de ma randonnée</h2>
+        </div>
+        <p className="editWalk_asterisk">(*) Champs obligatoires</p>
+        <form className="editWalk_form" onSubmit={handleSubmit}>
+          <Field
+            identifier="walkTitle"
+            placeholder={walk.title}
+            label="Titre *"
+            value={walkTitle}
+            changeField={(identifier, newValue) => {
+              console.log(`changeField sur titre : identifier=${identifier}, newValue=${newValue}`);
+              updateWalkField(identifier, newValue);
             }}
           />
-        </div>
-        <div className="editWalk_tag">
-          <p className="editWalk_tag_label">Thème (choix multiple possible)</p>
-          <Select
-            className="editWalk_tag_select"
-            label="Thème (choix multiple possible)"
-            identifier="walkTags"
-            options={tagsList}
-            placeholder="Thème(s)"
-            isMulti
-            onChange={(selectedTags) => {
-              console.log(selectedTags);
-              selectedTags.map((tag) => (
-                // console.log(tag.value)
-                updateCreateWalkSelect('walkTags', tag.value)
-              ));
+          <div className="editWalk_area">
+            <SelectField
+              className="editWalk_area_select"
+              label="Région *"
+              identifier="walkAreaId"
+              options={areasList}
+              value={walk.area.id}
+              placeholder={walk.area.name}
+              manageChange={(identifier, newValue) => {
+                console.log(`manageChange sur area : identifier=${identifier}, newValue=${newValue}`);
+                updateWalkSelect(identifier, newValue);
+              }}
+            />
+          </div>
+          <div className="editWalk_tag">
+            <p className="editWalk_tag_label">Thème (choix multiple possible)</p>
+            <Select
+              className="editWalk_tag_select"
+              label="Thème (choix multiple possible)"
+              identifier="walkTags"
+              options={tagsList}
+              placeholder=""
+              isMulti
+              onChange={(selectedTags) => {
+                console.log(selectedTags);
+                selectedTags.map((tag) => (
+                  // console.log(tag.value)
+                  updateWalkSelect('walkTags', tag.value)
+                ));
+              }}
+            />
+          </div>
+          <Field
+            identifier="walkStartingPoint"
+            placeholder={walk.startingPoint}
+            label="Point de départ *"
+            value={walkStartingPoint}
+            changeField={(identifier, newValue) => {
+              console.log(`changeField sur point de départ : identifier=${identifier}, newValue=${newValue}`);
+              updateWalkField(identifier, newValue);
             }}
           />
-        </div>
-        <Field
-          identifier="walkStartingPoint"
-          placeholder="point de départ"
-          label="Point de départ *"
-          value={walkStartingPoint}
-          changeField={(identifier, newValue) => {
-            console.log(`changeField sur point de départ : identifier=${identifier}, newValue=${newValue}`);
-            updateCreateWalkField(identifier, newValue);
-          }}
-        />
-        <Field
-          identifier="walkEndPoint"
-          placeholder="point d'arrivée"
-          label="Point d'arrivée (si différent du point de départ)"
-          value={walkEndPoint}
-          changeField={(identifier, newValue) => {
-            console.log(`changeField sur point d'arrivée : identifier=${identifier}, newValue=${newValue}`);
-            updateCreateWalkField(identifier, newValue);
-          }}
-        />
-        <Field
-          identifier="walkDate"
-          placeholder="date et heure"
-          label="Date et heure du départ *"
-          type="datetime-local"
-          min="2021-04-23T00:00"
-          value={walkDate}
-          changeField={(identifier, newValue) => {
+          <Field
+            identifier="walkEndPoint"
+            placeholder={walk.endPoint}
+            label="Point d'arrivée (si différent du point de départ)"
+            value={walkEndPoint}
+            changeField={(identifier, newValue) => {
+              console.log(`changeField sur point d'arrivée : identifier=${identifier}, newValue=${newValue}`);
+              updateWalkField(identifier, newValue);
+            }}
+          />
+          <Field
+            identifier="walkDate"
+            placeholder={walk.date}
+            label="Date et heure du départ *"
+            type="datetime-local"
+            min="2021-04-23T00:00"
+            value={walkDate}
+            changeField={(identifier, newValue) => {
             // console.log(`changeField sur date : identifier=${identifier}, newValue=${newValue}`);
-            // console.log('heure', goodDate);
-            updateCreateWalkField(identifier, newValue);
-          }}
-        />
-        <SelectField
-          identifier="walkDuration"
-          placeholder="durée"
-          label="Durée approximative *"
-          value={walkDuration}
-          options={durations}
-          manageChange={(identifier, newValue) => {
-            console.log(`changeField sur durée : identifier=${identifier}, newValue=${newValue}`);
-            updateCreateWalkSelect(identifier, newValue);
-          }}
-        />
-        <Field
-          identifier="walkDistance"
-          placeholder="distance en kms"
-          label="Nombre de kilomètres"
-          type="number"
-          value={walkDistance}
-          changeField={(identifier, newValue) => {
-            console.log(`changeField sur distance : identifier=${identifier}, newValue=${newValue}`);
-            updateCreateWalkField(identifier, newValue);
-          }}
-        />
-        <div className="editWalk_difficulty">
-          <SelectField
-            className="editWalk_difficulty_select"
-            label="Niveau de difficulté *"
-            identifier="walkDifficulty"
-            options={difficulties}
-            placeholder="Niveau de difficulté"
-            manageChange={(identifier, newValue) => {
-              console.log(`manageChange sur difficulté: identifier=${identifier}, newValue=${newValue}`);
-              updateCreateWalkSelect(identifier, newValue);
+              // console.log('heure', goodDate);
+              updateWalkField(identifier, newValue);
             }}
           />
-        </div>
-        <Field
-          identifier="walkElevation"
-          placeholder="dénivelé"
-          label="Dénivelé (en mètres)"
-          type="number"
-          value={walkElevation}
-          changeField={(identifier, newValue) => {
-            console.log(`changeField sur dénivelé : identifier=${identifier}, newValue=${newValue}`);
-            updateCreateWalkField(identifier, newValue);
-          }}
-        />
-        <Field
-          identifier="walkNumberPeople"
-          placeholder="nombre de personnes"
-          label="Nombre de personnes maximum"
-          type="number"
-          value={walkNumberPeople}
-          changeField={(identifier, newValue) => {
-            console.log(`changeField sur nb de participants : identifier=${identifier}, newValue=${newValue}`);
-            updateCreateWalkField(identifier, newValue);
-          }}
-        />
-        <Field
-          identifier="walkDescription"
-          placeholder="description"
-          label="Description / Infos pratiques *"
-          value={walkDescription}
-          changeField={(identifier, newValue) => {
-            console.log(`changeField sur description : identifier=${identifier}, newValue=${newValue}`);
-            updateCreateWalkField(identifier, newValue);
-          }}
-        />
-        <button type="submit" className="editWalk_submit">Modifier</button>
-      </form>
-    </main>
+          <SelectField
+            identifier="walkDuration"
+            placeholder={walk.duration}
+            label="Durée approximative *"
+            value={walkDuration}
+            options={durations}
+            manageChange={(identifier, newValue) => {
+              console.log(`changeField sur durée : identifier=${identifier}, newValue=${newValue}`);
+              updateWalkSelect(identifier, newValue);
+            }}
+          />
+          <Field
+            identifier="walkDistance"
+            placeholder={walk.kilometre}
+            label="Nombre de kilomètres"
+            type="number"
+            value={walkDistance}
+            changeField={(identifier, newValue) => {
+              console.log(`changeField sur distance : identifier=${identifier}, newValue=${newValue}`);
+              updateWalkField(identifier, newValue);
+            }}
+          />
+          <div className="editWalk_difficulty">
+            <SelectField
+              className="editWalk_difficulty_select"
+              label="Niveau de difficulté *"
+              identifier="walkDifficulty"
+              options={difficulties}
+              placeholder={walk.difficulty}
+              manageChange={(identifier, newValue) => {
+                console.log(`manageChange sur difficulté: identifier=${identifier}, newValue=${newValue}`);
+                updateWalkSelect(identifier, newValue);
+              }}
+            />
+          </div>
+          <Field
+            identifier="walkElevation"
+            placeholder={walk.elevation}
+            label="Dénivelé (en mètres)"
+            type="number"
+            value={walkElevation}
+            changeField={(identifier, newValue) => {
+              console.log(`changeField sur dénivelé : identifier=${identifier}, newValue=${newValue}`);
+              updateWalkField(identifier, newValue);
+            }}
+          />
+          <Field
+            identifier="walkNumberPeople"
+            placeholder={walk.maxNbPersons}
+            label="Nombre de personnes maximum"
+            type="number"
+            value={walkNumberPeople}
+            changeField={(identifier, newValue) => {
+              console.log(`changeField sur nb de participants : identifier=${identifier}, newValue=${newValue}`);
+              updateWalkField(identifier, newValue);
+            }}
+          />
+          <Field
+            identifier="walkDescription"
+            placeholder={walk.description}
+            label="Description / Infos pratiques *"
+            value={walkDescription}
+            changeField={(identifier, newValue) => {
+              console.log(`changeField sur description : identifier=${identifier}, newValue=${newValue}`);
+              updateWalkField(identifier, newValue);
+            }}
+          />
+          <button type="submit" className="editWalk_submit">Modifier</button>
+        </form>
+      </main>
+      )}
+    </>
   );
 };
 
 EditWalk.propTypes = {
+  loadingWalk: PropTypes.bool.isRequired,
   areas: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -233,29 +247,30 @@ EditWalk.propTypes = {
       name: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
-  walkTitle: PropTypes.string.isRequired,
-  walkAreaId: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]).isRequired,
-  walkStartingPoint: PropTypes.string.isRequired,
-  walkEndPoint: PropTypes.string,
-  walkDate: PropTypes.string.isRequired,
-  walkDuration: PropTypes.string.isRequired,
-  walkDistance: PropTypes.string,
-  walkElevation: PropTypes.string,
-  walkNumberPeople: PropTypes.string,
-  walkDescription: PropTypes.string.isRequired,
-  updateCreateWalkField: PropTypes.func.isRequired,
-  updateCreateWalkSelect: PropTypes.func.isRequired,
+  walks: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      startingPoint: PropTypes.string.isRequired,
+      endPoint: PropTypes.string,
+      date: PropTypes.string.isRequired,
+      difficulty: PropTypes.string.isRequired,
+      duration: PropTypes.string.isRequired,
+      distance: PropTypes.string,
+      elevation: PropTypes.number,
+      maxNbPersons: PropTypes.number,
+      area: PropTypes.object.isRequired,
+      description: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
+  updateWalkField: PropTypes.func.isRequired,
+  updateWalkSelect: PropTypes.func.isRequired,
   handleEdit: PropTypes.func.isRequired,
-  isCreated: PropTypes.bool.isRequired,
 };
 
 EditWalk.defaultProps = {
-  walkEndPoint: '',
-  walkDistance: null,
-  walkElevation: null,
-  walkNumberPeople: null,
+  endPoint: '',
+  distance: null,
+  elevation: null,
+  maxNbPersons: null,
 };
 export default EditWalk;

@@ -17,7 +17,7 @@ import CreateWalk from 'src/containers/CreateWalk';
 import Error from 'src/components/Error';
 import HowOrandoWorks from 'src/components/HowOrandoWorks';
 import SignUp from 'src/containers/SignUp';
-import EditWalk from 'src/components/EditWalk';
+import EditWalk from 'src/containers/EditWalk';
 
 const Page = () => (
   <div className="page">
@@ -58,7 +58,7 @@ const Page = () => (
       <Route exact path="/create">
         <CreateWalk />
       </Route>
-      <Route exact path="/edit">
+      <Route exact path="/edit/:id">
         <EditWalk />
       </Route>
       <Route exact path="/how_works">

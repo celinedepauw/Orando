@@ -74,9 +74,9 @@ const Walk = ({ walks, loadingWalk, handleParticipation }) => {
           </div>
           <div className="walk-links">
             {walk.creator.id == userId ? (
-              <a className="walk_edit_link" href={`https://orando.me/o/walk/edit/${id}`}>
+              <Link to={`/edit/${id}`} className="walk_edit_link">
                 <button className="walk_button_edit" type="button">Modifier la randonnée</button>
-              </a>
+              </Link>
             ) : (
               <>
                 <a className="walk_contact_link" href={`https://orando.me/o/profile/${walk.creator.id}/contact-user`}>Contacter <span className="walk_contact_link_nickname">{walk.creator.nickname}</span> pour avoir plus d'informations !</a>
