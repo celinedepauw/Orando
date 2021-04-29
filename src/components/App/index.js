@@ -7,7 +7,7 @@ import Header from 'src/containers/Header';
 import Page from 'src/containers/Page';
 import MobileNav from 'src/containers/MobileNav';
 import Footer from 'src/components/Footer';
-import EditWalk from 'src/components/EditWalk';
+import EditWalk from 'src/containers/EditWalk';
 import './styles.scss';
 
 // == Composant
