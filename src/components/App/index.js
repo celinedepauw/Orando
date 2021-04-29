@@ -7,6 +7,7 @@ import Header from 'src/containers/Header';
 import Page from 'src/containers/Page';
 import MobileNav from 'src/containers/MobileNav';
 import Footer from 'src/components/Footer';
+import EditWalk from 'src/components/EditWalk';
 import './styles.scss';
 
 // == Composant
@@ -26,7 +27,7 @@ const App = ({
   return (
     <div className="app">
       <Header />
-      <Page />
+      <EditWalk />
       <Footer />
       <MobileNav />
     </div>
