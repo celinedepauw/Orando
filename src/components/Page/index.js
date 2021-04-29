@@ -13,6 +13,7 @@ import Authentication from 'src/containers/Authentication';
 import AboutUs from 'src/components/AboutUs';
 import Archived from 'src/containers/Archived';
 import Participants from 'src/containers/Participants';
+import CreateWalk from 'src/containers/CreateWalk';
 import Error from 'src/components/Error';
 import HowOrandoWorks from 'src/components/HowOrandoWorks';
 import SignUp from 'src/containers/SignUp';
@@ -52,6 +53,9 @@ const Page = () => (
       </Route>
       <Route exact path="/my_hikes/">
         <MyHikes />
+      </Route>
+      <Route exact path="/create">
+        <CreateWalk />
       </Route>
       <Route exact path="/how_works">
         <HowOrandoWorks />

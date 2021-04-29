@@ -12,6 +12,7 @@ const Field = ({
   label,
   type,
   value,
+  min,
   changeField,
 }) => {
   const handleChange = (event) => {
@@ -34,6 +35,7 @@ const Field = ({
         name={identifier}
         type={type}
         value={value}
+        min={min}
         onChange={handleChange}
       />
     </div>
@@ -56,11 +58,13 @@ Field.propTypes = {
    * - new value
    */
   changeField: PropTypes.func.isRequired,
+  min: PropTypes.string,
 };
 
 Field.defaultProps = {
   type: 'text',
   value: '',
+  min: '',
 };
 
 export default Field;

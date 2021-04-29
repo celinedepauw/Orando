@@ -1,0 +1,92 @@
+@use 'src/styles/vars';
+
+.createWalk {
+  color: vars.$blackRed;
+  margin: 1rem;
+
+  .createWalk_title {
+    background: linear-gradient(to bottom right, vars.$regularGreen, vars.$darkGreen);
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    .createWalk_create_logo {
+      width: 50px;
+    }
+
+    .createWalk_title_text {
+      color: white;
+      font-weight: bold;
+      padding: 0.5rem;
+      font-size: 2rem;
+    }
+  }
+
+  .createWalk_asterisk {
+    padding: 0.5rem;
+  }
+
+  .createWalk_form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .createWalk_area {
+      width: 90%; 
+      margin-bottom: 1rem;
+
+      @media(min-width: vars.$breakpointTablet) {
+        width: 60%;
+      }
+
+      .createWalk_area_select {
+
+      }
+    }
+
+    .createWalk_tag {
+      width: 90%;
+
+      @media(min-width: vars.$breakpointTablet) {
+        width: 60%;
+      }
+
+      .createWalk_tag_label {
+        padding-bottom: 1rem;
+      }
+
+      .createWalk_tag_select {
+
+      }
+    }
+
+    .createWalk_difficulty {
+      width: 90%;
+
+      @media(min-width: vars.$breakpointTablet) {
+        width: 60%;
+      }
+
+      .createWalk_difficulty_select {
+
+      }
+    }
+
+    .createWalk_submit {
+      color: white;
+      font-weight: bold;
+      padding: 1rem;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(to bottom right, vars.$regularYellow, vars.$darkYellow);
+
+      &:hover {
+        box-shadow: 5px 5px 5px vars.$darkYellow;
+        transform: scale(1.1);
+      }
+    }
+  }
+}

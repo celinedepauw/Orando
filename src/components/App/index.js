@@ -10,10 +10,16 @@ import Footer from 'src/components/Footer';
 import './styles.scss';
 
 // == Composant
-const App = ({ loadAreasFromApi, loadWalksFromApi, checkUserAuth }) => {
+const App = ({
+  loadAreasFromApi,
+  loadWalksFromApi,
+  loadTagsFromApi,
+  checkUserAuth,
+}) => {
   useEffect(() => {
     loadAreasFromApi();
     loadWalksFromApi();
+    loadTagsFromApi();
     checkUserAuth();
   }, []);
 
@@ -30,6 +36,7 @@ const App = ({ loadAreasFromApi, loadWalksFromApi, checkUserAuth }) => {
 App.propTypes = {
   loadAreasFromApi: PropTypes.func.isRequired,
   loadWalksFromApi: PropTypes.func.isRequired,
+  loadTagsFromApi: PropTypes.func.isRequired,
   checkUserAuth: PropTypes.func.isRequired,
 };
 
