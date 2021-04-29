@@ -42,6 +42,9 @@ const Page = () => (
       <Route exact path="/account">
         <Account />
       </Route>
+      <Route exact path="/update_profile">
+        <Profile />
+      </Route>
       <Route exact path="/profile">
         <Profile />
       </Route>

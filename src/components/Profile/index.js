@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import sign3 from 'src/assets/icones/sign3.svg';
 import hiker from 'src/assets/icones/hiker.svg';
 import fox from 'src/assets/icones/fox.svg';
+import fire from 'src/assets/icones/fire.svg';
 
 import Loader from 'src/components/Loader';
 import './profile.scss';
@@ -41,6 +42,12 @@ const Profile = ({ user, loadingUser }) => {
               </div>
             </div>
           </div>
+          <Link to="/update_profil">
+            <button type="button" className="profile_udpate_button">
+              <h4 className="profile_update_button_text">Modification</h4>
+              <img className="profile_update_button_icon" src={fire} alt="icone du bouton" />
+            </button>
+          </Link>
         </>
       )}
     </div>
