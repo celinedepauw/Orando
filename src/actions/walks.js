@@ -66,34 +66,8 @@ export const createWalk = (
   walkNumberPeople: walkNumberPeople,
 });
 
-export const editWalk = (
-  walkTitle,
-  walkAreaId,
-  walkTags,
-  walkStartingPoint,
-  walkEndPoint,
-  walkDate,
-  walkDuration,
-  walkDescription,
-  walkDistance,
-  walkDifficulty,
-  walkElevation,
-  walkNumberPeople,
-  walkId,
-) => ({
+export const editWalk = (walkId) => ({
   type: EDIT_WALK,
-  walkTitle: walkTitle,
-  walkAreaId: walkAreaId,
-  walkTags: walkTags,
-  walkStartingPoint: walkStartingPoint,
-  walkEndPoint: walkEndPoint,
-  walkDate: walkDate,
-  walkDuration: walkDuration,
-  walkDescription: walkDescription,
-  walkDistance: walkDistance,
-  walkDifficulty: walkDifficulty,
-  walkElevation: walkElevation,
-  walkNumberPeople: walkNumberPeople,
   walkId: walkId,
 });
 

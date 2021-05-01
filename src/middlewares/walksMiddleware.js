@@ -200,7 +200,7 @@ const walksMiddleware = (store) => (next) => (action) => {
     case EDIT_WALK: {
       const authenticationToken = localStorage.getItem('Token');
       const currentUserId = localStorage.getItem('currentUserId');
-      console.log('id de la rando', action.walkId);
+      console.log('il faut modifier une randonnée', action.walkId);
       const {
         walkTitle,
         walkAreaId,
@@ -223,7 +223,7 @@ const walksMiddleware = (store) => (next) => (action) => {
         && walkDuration
         && walkDescription
         && walkDifficulty) {
-        axios.patch(`https://orando.me/o/api/walks/${walkId}`, {
+        axios.patch(`https://orando.me/o/api/walks/${action.walkId}`, {
           title: walkTitle,
           area: walkAreaId,
           creator: currentUserId,
@@ -244,8 +244,8 @@ const walksMiddleware = (store) => (next) => (action) => {
           },
         })
           .then((response) => {
-            // console.log('réponse après envoi pour création', response);
-            if (response.status === 201) {
+            // console.log('réponse après envoi pour modification', response);
+            if (response.status === 200) {
               alert('Votre randonnée a été modifiée avec succès !');
               axios.get(`https://orando.me/o/api/users/${currentUserId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
                 .then((response) => {
