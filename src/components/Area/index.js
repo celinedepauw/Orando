@@ -7,7 +7,7 @@ import WalkSmall2 from 'src/components/Area/WalkSmall2';
 import Loader from 'src/components/Loader';
 import './area.scss';
 
-const Area = ({ areas, loadingAreas }) => {
+const Area = ({ areas, loadingAreas, isLogged }) => {
   const { id } = useParams();
   const area = areas.find((item) => item.id == id);
 
@@ -26,7 +26,16 @@ const Area = ({ areas, loadingAreas }) => {
               <WalkSmall2 key={item.id} {...item} />
             ))}
           </div>
-          <Link to="/create"><button className="area_add_walk_button" type="button">Proposer une randonnée</button></Link>
+          {!isLogged && (
+            <Link to="/authentication">
+              <button className="area_add_walk_button" type="button">Proposer une randonnée</button>
+            </Link>
+          )}
+          {isLogged && (
+            <Link to="/create">
+              <button className="area_add_walk_button" type="button">Proposer une randonnée</button>
+            </Link>
+          )}
         </main>
       )}
     </div>
@@ -35,6 +44,7 @@ const Area = ({ areas, loadingAreas }) => {
 
 Area.propTypes = {
   loadingAreas: PropTypes.bool.isRequired,
+  isLogged: PropTypes.bool.isRequired,
   areas: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
