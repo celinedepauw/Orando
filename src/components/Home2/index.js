@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import AreaSmall from 'src/containers/Home2/areaSmall';
 
@@ -20,9 +21,9 @@ const Home2 = ({ areas }) => (
     </div>
     <div className="home2_end">
       <p className="home2_go">A vous de jouer !</p>
-      <a href="https://orando.me/o/walk/create">
+      <Link to="/create">
         <button className="home2_button" type="button">Proposez une randonnée</button>
-      </a>
+      </Link>
     </div>
   </main>
 );

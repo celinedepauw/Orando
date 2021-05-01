@@ -26,7 +26,7 @@ const Area = ({ areas, loadingAreas }) => {
               <WalkSmall2 key={item.id} {...item} />
             ))}
           </div>
-          <a href="https://orando.me/o/walk/create"><button className="area_add_walk_button" type="button">Proposer une randonnée</button></a>
+          <Link to="/create"><button className="area_add_walk_button" type="button">Proposer une randonnée</button></Link>
         </main>
       )}
     </div>

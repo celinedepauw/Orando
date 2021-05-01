@@ -79,6 +79,7 @@ export const editWalk = (
   walkDifficulty,
   walkElevation,
   walkNumberPeople,
+  walkId,
 ) => ({
   type: EDIT_WALK,
   walkTitle: walkTitle,
@@ -93,6 +94,7 @@ export const editWalk = (
   walkDifficulty: walkDifficulty,
   walkElevation: walkElevation,
   walkNumberPeople: walkNumberPeople,
+  walkId: walkId,
 });
 
 export const updateCreateWalkField = (identifier, newValue) => ({

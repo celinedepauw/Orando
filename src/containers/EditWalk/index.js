@@ -39,8 +39,8 @@ const mapDispatchToProps = (dispatch) => ({
     const action = updateWalkSelect(identifier, newValue);
     dispatch(action);
   },
-  handleEdit: () => {
-    const action = editWalk();
+  handleEdit: (walkId) => {
+    const action = editWalk(walkId);
     dispatch(action);
   },
 });

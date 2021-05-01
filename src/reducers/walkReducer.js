@@ -10,7 +10,6 @@ import {
 const initialState = {
   walks: [],
   loadingWalk: true,
-  walkId: '',
   walkTitle: '',
   walkAreaId: '',
   walkTags: [],

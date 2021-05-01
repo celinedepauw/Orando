@@ -32,7 +32,6 @@ const EditWalk = ({
   const { id } = useParams();
 
   const walk = walks.find((item) => item.id == id);
-  const userId = localStorage.getItem('currentUserId');
 
   const areasList = areas.map((area) => (
     {
@@ -69,7 +68,7 @@ const EditWalk = ({
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    handleEdit();
+    handleEdit(id);
   };
 
   return (
