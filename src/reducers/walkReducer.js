@@ -5,6 +5,7 @@ import {
   UPDATE_WALK_FIELD,
   UPDATE_WALK_SELECT,
   SAVE_CREATED_WALK,
+  EDIT_WALK,
 } from 'src/actions/walks';
 
 const initialState = {
@@ -27,6 +28,22 @@ const initialState = {
 
 function walkReducer(state = initialState, action) {
   switch (action.type) {
+    case EDIT_WALK:
+      return {
+        ...state,
+        walkTitle: '',
+        walkAreaId: '',
+        walkTags: [],
+        walkStartingPoint: '',
+        walkEndPoint: '',
+        walkDate: '',
+        walkDuration: '',
+        walkDistance: '',
+        walkDifficulty: '',
+        walkElevation: '',
+        walkNumberPeople: '',
+        walkDescription: '',
+      };
     case SAVE_WALKS:
       return {
         ...state,
