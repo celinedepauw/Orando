@@ -17,6 +17,7 @@ const CreateWalk = ({
   walkAreaId,
   walkStartingPoint,
   walkEndPoint,
+  walkTags,
   walkDate,
   walkDuration,
   walkDistance,
@@ -25,6 +26,7 @@ const CreateWalk = ({
   walkDescription,
   updateCreateWalkField,
   updateCreateWalkSelect,
+  updateTags,
   handleCreate,
   isCreated,
 }) => {
@@ -107,7 +109,21 @@ const CreateWalk = ({
         </div>
         <div className="createWalk_tag">
           <p className="createWalk_tag_label">Thème (choix multiple possible)</p>
-          <Select
+          {tags.map((tag) => (
+            <label>{tag.name}
+              <input
+                type="checkbox"
+                name={tag.name}
+                value={tag.id}
+                onChange={(theTag) => {
+                  // console.log(theTag.target.value);
+                  updateTags(theTag.target.value);
+                }}
+              />
+            </label>
+          ))}
+          {/* comments
+            <Select
             className="createWalk_tag_select"
             label="Thème (choix multiple possible)"
             identifier="walkTags"
@@ -122,6 +138,7 @@ const CreateWalk = ({
               ));
             }}
           />
+          */}
         </div>
         <Field
           identifier="walkStartingPoint"
@@ -258,6 +275,7 @@ CreateWalk.propTypes = {
   updateCreateWalkField: PropTypes.func.isRequired,
   updateCreateWalkSelect: PropTypes.func.isRequired,
   handleCreate: PropTypes.func.isRequired,
+  updateTags: PropTypes.func.isRequired,
   isCreated: PropTypes.bool.isRequired,
 };
 

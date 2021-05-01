@@ -11,6 +11,7 @@ export const UPDATE_CREATE_WALK_FIELD = 'UPDATE_CREATE_WALK_FIELD';
 export const UPDATE_CREATE_WALK_SELECT = 'UPDATE_CREATE_WALK_SELECT';
 export const UPDATE_WALK_FIELD = 'UPDATE_WALK_FIELD';
 export const UPDATE_WALK_SELECT = 'UPDATE_WALK_SELECT';
+export const UPDATE_TAGS = 'UPDATE_TAGS';
 
 // === action creators
 export const fetchWalks = () => ({
@@ -69,6 +70,11 @@ export const createWalk = (
 export const editWalk = (walkId) => ({
   type: EDIT_WALK,
   walkId: walkId,
+});
+
+export const updateTags = (tagId) => ({
+  type: UPDATE_TAGS,
+  value: tagId,
 });
 
 export const updateCreateWalkField = (identifier, newValue) => ({

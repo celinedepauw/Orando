@@ -4,7 +4,9 @@ import {
   UPDATE_CREATE_WALK_SELECT,
   UPDATE_WALK_FIELD,
   UPDATE_WALK_SELECT,
+  UPDATE_TAGS,
   SAVE_CREATED_WALK,
+  CREATE_WALK,
   EDIT_WALK,
 } from 'src/actions/walks';
 
@@ -44,6 +46,29 @@ function walkReducer(state = initialState, action) {
         walkNumberPeople: '',
         walkDescription: '',
       };
+    case CREATE_WALK:
+      return {
+        ...state,
+        walkTitle: '',
+        walkAreaId: '',
+        walkTags: [],
+        walkStartingPoint: '',
+        walkEndPoint: '',
+        walkDate: '',
+        walkDuration: '',
+        walkDistance: '',
+        walkDifficulty: '',
+        walkElevation: '',
+        walkNumberPeople: '',
+        walkDescription: '',
+      };
+    case UPDATE_TAGS: {
+      const theTags = [...state.walkTags, action.value];
+      return {
+        ...state,
+        walkTags: theTags,
+      };
+    }
     case SAVE_WALKS:
       return {
         ...state,
