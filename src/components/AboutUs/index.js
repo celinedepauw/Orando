@@ -49,7 +49,7 @@ const AboutUs = () => (
         </p>
         <img className="about_us_image" src={jb} alt="profile" />
         <p className="about_us_text">Il est tombé dans la photo en trébuchant... Depuis, il immortalise ses balades... mais en regardant où il met les pieds.</p>
-        <a href="https://www.linkedin.com/in/berenice-sae/"><img className="about_us_linkedin" src={linkedin} alt="linkedin" /></a>
+        <img className="about_us_linkedin" src={linkedin} alt="linkedin" />
       </div>
       <div className="about_us_person">
         <h3 className="about_us_name">Bérénice Saé</h3>
@@ -60,7 +60,7 @@ const AboutUs = () => (
         <img className="about_us_image" src={berenice} alt="profile" />
         <p className="about_us_text">Aime randonner sur des chemins escarpés qui la mèneront vers de lointaines contrées, en quête de paysages où elle sera émerveillée par la nature et sa beauté.
         </p>
-        <img className="about_us_linkedin" src={linkedin} alt="linkedin" />
+        <a href="https://www.linkedin.com/in/berenice-sae/"><img className="about_us_linkedin" src={linkedin} alt="linkedin" /></a>
       </div>
       <div className="about_us_person">
         <h3 className="about_us_name">Pierre-Yves Loukakou</h3>
