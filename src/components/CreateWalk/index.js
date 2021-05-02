@@ -193,6 +193,7 @@ const CreateWalk = ({
           placeholder="distance en kms"
           label="Nombre de kilomètres"
           type="number"
+          min="0"
           value={walkDistance}
           changeField={(identifier, newValue) => {
             console.log(`changeField sur distance : identifier=${identifier}, newValue=${newValue}`);
@@ -217,6 +218,7 @@ const CreateWalk = ({
           placeholder="dénivelé"
           label="Dénivelé (en mètres)"
           type="number"
+          min="0"
           value={walkElevation}
           changeField={(identifier, newValue) => {
             console.log(`changeField sur dénivelé : identifier=${identifier}, newValue=${newValue}`);
@@ -228,6 +230,7 @@ const CreateWalk = ({
           placeholder="nombre de personnes"
           label="Nombre de personnes maximum"
           type="number"
+          min="0"
           value={walkNumberPeople}
           changeField={(identifier, newValue) => {
             console.log(`changeField sur nb de participants : identifier=${identifier}, newValue=${newValue}`);
