@@ -196,6 +196,7 @@ const CreateWalk = ({
           placeholder="distance en kms"
           label="Nombre de kilomètres"
           type="text"
+          pattern="([1-9]?[0-9])|99"
           minLength="1"
           maxLength="2"
           value={walkDistance}
@@ -246,6 +247,7 @@ const CreateWalk = ({
           placeholder="description"
           label="Description / Infos pratiques *"
           value={walkDescription}
+          minLength="2"
           required
           changeField={(identifier, newValue) => {
             console.log(`changeField sur description : identifier=${identifier}, newValue=${newValue}`);
