@@ -37,8 +37,6 @@
     .createWalk_area {
       width: 100%; 
       margin-bottom: 1rem;
-
-      
     }
 
     .createWalk_tag {
@@ -73,12 +71,18 @@
     }
 
     .createWalk_submit {
+      width: 90%;
       color: white;
       font-weight: bold;
       padding: 1rem;
+      margin: 1rem 0rem;
       border: none;
       border-radius: 10px;
       background: linear-gradient(to bottom right, vars.$regularYellow, vars.$darkYellow);
+
+      @media(min-width: vars.$breakpointTablet) {
+        width: 60%;
+      }
 
       &:hover {
         box-shadow: 5px 5px 5px vars.$darkYellow;
