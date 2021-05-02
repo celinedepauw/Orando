@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-
+import { updateAvatar, updateSignUp } from 'src/actions/users';
 
 import UpdateProfile from 'src/components/UpdateProfile';
 
@@ -12,11 +12,24 @@ const mapStateToProps = (state) => ({
   loadingUser: state.userInfo.loadingUser,
   alias: state.userInfo.alias,
   picture: state.userInfo.picture,
+  userBirthDay: state.userInfo.userBirthDay,
+  userBirthMonth: state.userInfo.userBirthMonth,
+  userBirthYear: state.userInfo.userBirthYear,
+  areas: state.areasList.areas,
+  userArea: state.userInfo.userArea,
 });
 
 // === mapDispatchToProps
 // if we need to update the state dispatching actions to the store
 const mapDispatchToProps = (dispatch) => ({
+  updateAvatar: (file) => {
+    const action = updateAvatar(file);
+    dispatch(action);
+  },
+  updateSignUp: (identifier, newValue) => {
+    const action = updateSignUp(identifier, newValue);
+    dispatch(action);
+  },
 });
 
 // === création de l'assistant

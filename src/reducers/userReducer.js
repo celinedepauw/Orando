@@ -13,6 +13,9 @@ const initialState = {
   isSuccess: false,
   // indicate if the user is authenticated
   isLogged: false,
+  userBirthDay: '',
+  userBirthMonth: '',
+  userBirthYear: '',
 };
 
 function userReducer(state = initialState, action) {
