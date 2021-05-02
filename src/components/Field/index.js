@@ -14,6 +14,10 @@ const Field = ({
   value,
   min,
   changeField,
+  pattern,
+  minLength,
+  maxLength,
+  required,
 }) => {
   const handleChange = (event) => {
     const { value: inputValue, name } = event.target;
@@ -36,6 +40,10 @@ const Field = ({
         type={type}
         value={value}
         min={min}
+        pattern={pattern}
+        minLength={minLength}
+        maxLength={maxLength}
+        required={required}
         onChange={handleChange}
       />
     </div>

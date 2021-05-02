@@ -86,6 +86,7 @@ const CreateWalk = ({
           placeholder="titre de la randonnée"
           label="Titre *"
           value={walkTitle}
+          required
           changeField={(identifier, newValue) => {
             console.log(`changeField sur titre : identifier=${identifier}, newValue=${newValue}`);
             updateCreateWalkField(identifier, newValue);
@@ -146,6 +147,7 @@ const CreateWalk = ({
           placeholder="point de départ"
           label="Point de départ *"
           value={walkStartingPoint}
+          required
           changeField={(identifier, newValue) => {
             console.log(`changeField sur point de départ : identifier=${identifier}, newValue=${newValue}`);
             updateCreateWalkField(identifier, newValue);
@@ -167,6 +169,7 @@ const CreateWalk = ({
           label="Date et heure du départ *"
           type="datetime-local"
           min="2021-04-23T00:00"
+          required
           value={walkDate}
           changeField={(identifier, newValue) => {
             // console.log(`changeField sur date : identifier=${identifier}, newValue=${newValue}`);
@@ -192,8 +195,9 @@ const CreateWalk = ({
           identifier="walkDistance"
           placeholder="distance en kms"
           label="Nombre de kilomètres"
-          type="number"
-          min="0"
+          type="text"
+          minLength="1"
+          maxLength="2"
           value={walkDistance}
           changeField={(identifier, newValue) => {
             console.log(`changeField sur distance : identifier=${identifier}, newValue=${newValue}`);
@@ -242,6 +246,7 @@ const CreateWalk = ({
           placeholder="description"
           label="Description / Infos pratiques *"
           value={walkDescription}
+          required
           changeField={(identifier, newValue) => {
             console.log(`changeField sur description : identifier=${identifier}, newValue=${newValue}`);
             updateCreateWalkField(identifier, newValue);
