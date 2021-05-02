@@ -35,44 +35,41 @@
     justify-content: center;
 
     .createWalk_area {
-      width: 90%; 
+      width: 100%; 
       margin-bottom: 1rem;
 
-      @media(min-width: vars.$breakpointTablet) {
-        width: 60%;
-      }
-
-      .createWalk_area_select {
-
-      }
+      
     }
 
     .createWalk_tag {
+      margin: 0 auto 1rem auto;
       width: 90%;
 
       @media(min-width: vars.$breakpointTablet) {
         width: 60%;
       }
 
-      .createWalk_tag_label {
+      .createWalk_tag_title {
         padding-bottom: 1rem;
       }
 
-      .createWalk_tag_select {
+      .createWalk_tag_list {
+        display: flex;
+        flex-wrap: wrap;
 
+        .createWalk_tag_label {
+          width: 100%;
+          padding: 0.2rem 0rem;
+        }
       }
     }
 
     .createWalk_difficulty {
-      width: 90%;
+      width: 100%;
+    }
 
-      @media(min-width: vars.$breakpointTablet) {
-        width: 60%;
-      }
-
-      .createWalk_difficulty_select {
-
-      }
+    .createWalk_duration {
+      width: 100%;
     }
 
     .createWalk_submit {
