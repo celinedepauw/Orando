@@ -2,7 +2,10 @@
 
 .editWalk {
   color: vars.$blackRed;
-  margin: 1rem;
+  background: linear-gradient(vars.$lightYellow, white);
+  margin-top: -3px;
+  min-height: 100vh;
+  
 
   .editWalk_title {
     background: linear-gradient(to bottom right, vars.$regularGreen, vars.$darkGreen);
@@ -11,7 +14,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 1rem auto;
+    width: 90%;
 
+    @media(min-width: vars.$breakpointDesktop) {
+      width: 60%;
+    }
 
     .editWalk_create_logo {
       width: 50px;
@@ -27,6 +35,12 @@
 
   .editWalk_asterisk {
     padding: 0.5rem;
+    margin: 0 auto 1rem auto;
+    width: 90%;
+
+    @media(min-width: vars.$breakpointTablet) {
+      width: 60%;
+    }
   }
 
   .editWalk_form {
