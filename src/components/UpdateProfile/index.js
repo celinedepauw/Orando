@@ -7,6 +7,7 @@ import Field from 'src/components/Field';
 import SelectField from 'src/components/SignUp/select';
 import InputPicture from 'src/components/SignUp/inputPicture';
 import fox from 'src/assets/icones/fox.svg';
+import signup from 'src/assets/icones/signup.svg';
 
 import './updateprofile.scss';
 
@@ -17,21 +18,20 @@ const UpdateProfile = ({
   picture,
   updateAvatar,
   updateSignUp,
-  userBirthDay,
-  userBirthMonth,
-  userBirthYear,
   areas,
   userArea,
   lastname,
   firstname,
   alias,
   email,
+  dateOfBirth,
+  description,
+  submitUpdateProfile,
 
 }) => {
   const userDatas = user.user;
 
-  
-
+  /* finally not use this because i put an input type date instead my selectField
   const days = [];
   for (let i = 1; i <= 31; i++) {
     days.push({ value: i, label: i });
@@ -46,6 +46,7 @@ const UpdateProfile = ({
   for (let i = 1950; i <= 2003; i++) {
     years.push({ value: i, label: i });
   }
+  */
 
   const areasListSelect = areas.map((area) => (
     {
@@ -54,8 +55,12 @@ const UpdateProfile = ({
     }
   ));
 
+  const handleSubmitUpdateProfile = (evt) => {
+    evt.preventDefault();
+    submitUpdateProfile();
+  }
   return (
-    <main className="update_profil">
+    <main className="update_profil" onSubmit={handleSubmitUpdateProfile}>
       <form className="update_profil_form">
         <div>
           {userDatas.picture !== null ? <img className="profile_picture" alt="photography" src={`https://orando.me/o/uploads/profile/${userDatas.picture}`} /> : <img className="profile_avatar" alt="avatar" src={fox} />}
@@ -74,7 +79,7 @@ const UpdateProfile = ({
           identifier="alias"
           placeholder={userDatas.nickname}
           label="Pseudo"
-          value={userDatas.nickname}
+          value={alias}
           changeField={(identifier, newValue) => {
             updateSignUp(identifier, newValue);
             console.log(`changeField sur pseudo : identifier=${identifier}, newValue=${newValue}`);
@@ -100,41 +105,17 @@ const UpdateProfile = ({
             console.log(`changeField sur nom : identifier=${identifier}, newValue=${newValue}`);
           }}
         />
-        <div className="update_profil_form_birthdate">
-          <SelectField
-            label="Jour"
-            identifier="userBirthDay"
-            options={days}
-            value={userBirthDay}
-            placeholder="jour"
-            manageChange={(identifier, newValue) => {
-              updateSignUp(identifier, newValue);
-              console.log(`manageChange sur area : identifier=${identifier}, newValue=${newValue}`);
-            }}
-          />
-          <SelectField
-            label="Mois"
-            identifier="userBirthMonth"
-            options={months}
-            value={userBirthMonth}
-            placeholder="mois"
-            manageChange={(identifier, newValue) => {
-              updateSignUp(identifier, newValue);
-              console.log(`manageChange sur area : identifier=${identifier}, newValue=${newValue}`);
-            }}
-          />
-          <SelectField
-            label="Année"
-            identifier="userBirthYear"
-            options={years}
-            value={userBirthYear}
-            placeholder="année"
-            manageChange={(identifier, newValue) => {
-              updateSignUp(identifier, newValue);
-              console.log(`manageChange sur area : identifier=${identifier}, newValue=${newValue}`);
-            }}
-          />
-        </div>
+        <Field
+          identifier="dateOfBirth"
+          placeholder={userDatas.dateOfBirth}
+          label="date anniversaire"
+          type="date"
+          value={dateOfBirth}
+          changeField={(identifier, newValue) => {
+            updateSignUp(identifier, newValue);
+            console.log(`changeField sur nom : identifier=${identifier}, newValue=${newValue}`);
+          }}
+        />
         <Field
           identifier="email"
           placeholder={userDatas.email}
@@ -157,6 +138,18 @@ const UpdateProfile = ({
             console.log(`manageChange sur area : identifier=${identifier}, newValue=${newValue}`);
           }}
         />
+        <Field
+          identifier="description"
+          placeholder={userDatas.description}
+          label="Description"
+          type="description"
+          value={description}
+          changeField={(identifier, newValue) => {
+            updateSignUp(identifier, newValue);
+            console.log(`changeField sur email : identifier=${identifier}, newValue=${newValue}`);
+          }}
+        />
+        <button type="submit" className="update_profil_form_submit">Validation <img className="signUp_form_submit_picture" src={signup} alt="logo-welcome" /></button>
       </form>
     </main>
 
@@ -169,13 +162,11 @@ UpdateProfile.propTypes = {
   picture: PropTypes.object,
   updateAvatar: PropTypes.func.isRequired,
   updateSignUp: PropTypes.func.isRequired,
-  userBirthDay: PropTypes.number,
-  userBirthMonth: PropTypes.number,
-  userBirthYear: PropTypes.number,
   email: PropTypes.string.isRequired,
   alias: PropTypes.string.isRequired,
   lastname: PropTypes.string.isRequired,
   firstname: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
   areas: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -186,14 +177,10 @@ UpdateProfile.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]).isRequired,
-  
 };
 
 UpdateProfile.defaultProps = {
   picture: '',
-  userBirthDay: '',
-  userBirthMonth: '',
-  userBirthYear: '',
 };
 
 

@@ -13,9 +13,8 @@ const initialState = {
   isSuccess: false,
   // indicate if the user is authenticated
   isLogged: false,
-  userBirthDay: '',
-  userBirthMonth: '',
-  userBirthYear: '',
+  dateOfBirth: '',
+  description: '',
 };
 
 function userReducer(state = initialState, action) {
@@ -25,6 +24,14 @@ function userReducer(state = initialState, action) {
         ...state,
         user: action.user,
         alias: action.user.user.nickname,
+        email: action.user.user.email,
+        password: action.user.user.password,
+        lastname: action.user.user.lastname,
+        firstname: action.user.user.firstname,
+        picture: action.user.user.picture,
+        userArea: action.user.user.userArea,
+        dateOfBirth: action.user.user.dateOfBirth,
+        description: action.user.user.description,
         loadingUser: false,
       };
     case UPDATE_AUTHENTICATION_FIELD:
@@ -77,7 +84,18 @@ function userReducer(state = initialState, action) {
           firstname: action.value,
         };
       }
-
+      if (action.identifier === 'dateOfBirth') {
+        return {
+          ...state,
+          dateOfBirth: action.value,
+        };
+      }
+      if (action.identifier === 'description') {
+        return {
+          ...state,
+          description: action.value,
+        };
+      }
       return {
         ...state,
         userArea: action.identifier,

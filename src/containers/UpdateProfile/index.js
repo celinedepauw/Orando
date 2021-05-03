@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { updateAvatar, updateSignUp } from 'src/actions/users';
+import { updateAvatar, updateSignUp, submitUpdateProfile } from 'src/actions/users';
 
 import UpdateProfile from 'src/components/UpdateProfile';
 
@@ -12,14 +12,13 @@ const mapStateToProps = (state) => ({
   loadingUser: state.userInfo.loadingUser,
   alias: state.userInfo.alias,
   picture: state.userInfo.picture,
-  userBirthDay: state.userInfo.userBirthDay,
-  userBirthMonth: state.userInfo.userBirthMonth,
-  userBirthYear: state.userInfo.userBirthYear,
+  dateOfBirth: state.userInfo.dateOfBirth,
   areas: state.areasList.areas,
   userArea: state.userInfo.userArea,
   lastname: state.userInfo.lastname,
   firstname: state.userInfo.firstname,
   email: state.userInfo.email,
+  description: state.userInfo.description,
   
 });
 
@@ -34,6 +33,9 @@ const mapDispatchToProps = (dispatch) => ({
     const action = updateSignUp(identifier, newValue);
     dispatch(action);
   },
+  submitUpdateProfile: () => {
+    dispatch(submitUpdateProfile());
+  }
 });
 
 // === création de l'assistant
