@@ -27,6 +27,7 @@ const EditWalk = ({
   walkDescription,
   updateWalkField,
   updateWalkSelect,
+  updateTags,
   handleEdit,
 }) => {
   const { id } = useParams();
@@ -107,22 +108,23 @@ const EditWalk = ({
             />
           </div>
           <div className="editWalk_tag">
-            <p className="editWalk_tag_label">Thème (choix multiple possible)</p>
-            <Select
-              className="editWalk_tag_select"
-              label="Thème (choix multiple possible)"
-              identifier="walkTags"
-              options={tagsList}
-              placeholder=""
-              isMulti
-              onChange={(selectedTags) => {
-                console.log(selectedTags);
-                selectedTags.map((tag) => (
-                  // console.log(tag.value)
-                  updateWalkSelect('walkTags', tag.value)
-                ));
-              }}
-            />
+            <p className="editWalk_tag_title">Thème (choix multiple possible)</p>
+            <div className="editWalk_tag_list">
+              {tags.map((tag) => (
+                <label className="editWalk_tag_label" key={tag.id}>{tag.name}
+                  <input
+                    className="editWalk_tag_checkbox"
+                    type="checkbox"
+                    name={tag.name}
+                    value={tag.id}
+                    onChange={(theTag) => {
+                      // console.log(theTag.target.value);
+                      updateTags(theTag.target.value);
+                    }}
+                  />
+                </label>
+              ))}
+            </div>
           </div>
           <Field
             identifier="walkStartingPoint"
@@ -157,17 +159,19 @@ const EditWalk = ({
               updateWalkField(identifier, newValue);
             }}
           />
-          <SelectField
-            identifier="walkDuration"
-            placeholder={walk.duration}
-            label="Durée approximative *"
-            value={walkDuration}
-            options={durations}
-            manageChange={(identifier, newValue) => {
-              console.log(`changeField sur durée : identifier=${identifier}, newValue=${newValue}`);
-              updateWalkSelect(identifier, newValue);
-            }}
-          />
+          <div className="editWalk_duration">
+            <SelectField
+              identifier="walkDuration"
+              placeholder={walk.duration}
+              label="Durée approximative *"
+              value={walkDuration}
+              options={durations}
+              manageChange={(identifier, newValue) => {
+                console.log(`changeField sur durée : identifier=${identifier}, newValue=${newValue}`);
+                updateWalkSelect(identifier, newValue);
+              }}
+            />
+          </div>
           <Field
             identifier="walkDistance"
             placeholder={walk.kilometre}
@@ -261,15 +265,24 @@ EditWalk.propTypes = {
       description: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
+  walkStartingPoint: PropTypes.string.isRequired,
+  walkEndPoint: PropTypes.string,
+  walkDate: PropTypes.string.isRequired,
+  walkDuration: PropTypes.string.isRequired,
+  walkDistance: PropTypes.string,
+  walkElevation: PropTypes.string,
+  walkNumberPeople: PropTypes.string,
+  walkDescription: PropTypes.string.isRequired,
   updateWalkField: PropTypes.func.isRequired,
   updateWalkSelect: PropTypes.func.isRequired,
+  updateTags: PropTypes.func.isRequired,
   handleEdit: PropTypes.func.isRequired,
 };
 
 EditWalk.defaultProps = {
-  endPoint: '',
-  distance: null,
-  elevation: null,
-  maxNbPersons: null,
+  walkEndPoint: '',
+  walkDistance: null,
+  walkElevation: null,
+  walkNumberPeople: null,
 };
 export default EditWalk;
