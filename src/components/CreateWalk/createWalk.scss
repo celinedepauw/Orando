@@ -11,7 +11,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto 1rem auto;
+    width: 90%;
 
+    @media(min-width: vars.$breakpointDesktop) {
+      width: 60%;
+    }
 
     .createWalk_create_logo {
       width: 50px;
@@ -27,6 +32,14 @@
 
   .createWalk_asterisk {
     padding: 0.5rem;
+    display: block;
+    margin: 0 auto 1rem auto;
+    width: 90%;
+
+    @media(min-width: vars.$breakpointTablet) {
+      width: 60%;
+    }
+  
   }
 
   .createWalk_form {
