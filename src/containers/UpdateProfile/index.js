@@ -17,6 +17,10 @@ const mapStateToProps = (state) => ({
   userBirthYear: state.userInfo.userBirthYear,
   areas: state.areasList.areas,
   userArea: state.userInfo.userArea,
+  lastname: state.userInfo.lastname,
+  firstname: state.userInfo.firstname,
+  email: state.userInfo.email,
+  
 });
 
 // === mapDispatchToProps

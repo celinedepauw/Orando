@@ -22,8 +22,15 @@ const UpdateProfile = ({
   userBirthYear,
   areas,
   userArea,
+  lastname,
+  firstname,
+  alias,
+  email,
+
 }) => {
   const userDatas = user.user;
+
+  
 
   const days = [];
   for (let i = 1; i <= 31; i++) {
@@ -77,7 +84,7 @@ const UpdateProfile = ({
           identifier="firstname"
           placeholder={userDatas.firstname}
           label="Prénom"
-          value={userDatas.firstname}
+          value={firstname}
           changeField={(identifier, newValue) => {
             updateSignUp(identifier, newValue);
             console.log(`changeField sur prénom : identifier=${identifier}, newValue=${newValue}`);
@@ -87,7 +94,7 @@ const UpdateProfile = ({
           identifier="lastname"
           placeholder={userDatas.lastname}
           label="Nom"
-          value={userDatas.lastname}
+          value={lastname}
           changeField={(identifier, newValue) => {
             updateSignUp(identifier, newValue);
             console.log(`changeField sur nom : identifier=${identifier}, newValue=${newValue}`);
@@ -133,7 +140,7 @@ const UpdateProfile = ({
           placeholder={userDatas.email}
           label="Adresse e-mail"
           type="email"
-          value={userDatas.email}
+          value={email}
           changeField={(identifier, newValue) => {
             updateSignUp(identifier, newValue);
             console.log(`changeField sur email : identifier=${identifier}, newValue=${newValue}`);
@@ -165,6 +172,10 @@ UpdateProfile.propTypes = {
   userBirthDay: PropTypes.number,
   userBirthMonth: PropTypes.number,
   userBirthYear: PropTypes.number,
+  email: PropTypes.string.isRequired,
+  alias: PropTypes.string.isRequired,
+  lastname: PropTypes.string.isRequired,
+  firstname: PropTypes.string.isRequired,
   areas: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -175,6 +186,7 @@ UpdateProfile.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]).isRequired,
+  
 };
 
 UpdateProfile.defaultProps = {

@@ -24,6 +24,7 @@ function userReducer(state = initialState, action) {
       return {
         ...state,
         user: action.user,
+        alias: action.user.user.nickname,
         loadingUser: false,
       };
     case UPDATE_AUTHENTICATION_FIELD:
