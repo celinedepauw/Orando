@@ -6,7 +6,7 @@ import Loader from 'src/components/Loader';
 import editLogo from 'src/assets/images/create.png';
 import Field from 'src/components/Field';
 import Select from 'react-select';
-import SelectField from 'src/components/CreateWalk/select';
+import SelectField from 'src/components/SelectField';
 
 import './editWalk.scss';
 

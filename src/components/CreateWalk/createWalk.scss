@@ -1,8 +1,10 @@
 @use 'src/styles/vars';
 
 .createWalk {
+  background: linear-gradient(vars.$lightYellow, white);
+  margin-top: -3px;
+  min-height: 100vh;
   color: vars.$blackRed;
-  margin: 1rem;
 
   .createWalk_title {
     background: linear-gradient(to bottom right, vars.$regularGreen, vars.$darkGreen);
@@ -11,7 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto 1rem auto;
+    margin: 1rem auto;
     width: 90%;
 
     @media(min-width: vars.$breakpointDesktop) {
