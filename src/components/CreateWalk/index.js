@@ -117,7 +117,7 @@ const CreateWalk = ({
                   name={tag.name}
                   value={tag.id}
                   onChange={(theTag) => {
-                    // console.log(theTag.target.value);
+                   console.log('tags', theTag.target.value);
                     updateTags(theTag.target.value);
                   }}
                 />
@@ -168,7 +168,7 @@ const CreateWalk = ({
           placeholder="date et heure"
           label="Date et heure du départ *"
           type="datetime-local"
-          min="2021-04-23T00:00"
+          min="2021-05-03T00:00"
           required
           value={walkDate}
           changeField={(identifier, newValue) => {

@@ -88,6 +88,7 @@ const EditWalk = ({
             placeholder={walk.title}
             label="Titre *"
             value={walkTitle}
+            required
             changeField={(identifier, newValue) => {
               console.log(`changeField sur titre : identifier=${identifier}, newValue=${newValue}`);
               updateWalkField(identifier, newValue);
@@ -118,7 +119,8 @@ const EditWalk = ({
                     name={tag.name}
                     value={tag.id}
                     onChange={(theTag) => {
-                      // console.log(theTag.target.value);
+                      // console.log(theTag.target.name);
+                      // console.log(theTag.target.checked);
                       updateTags(theTag.target.value);
                     }}
                   />
@@ -131,6 +133,7 @@ const EditWalk = ({
             placeholder={walk.startingPoint}
             label="Point de départ *"
             value={walkStartingPoint}
+            required
             changeField={(identifier, newValue) => {
               console.log(`changeField sur point de départ : identifier=${identifier}, newValue=${newValue}`);
               updateWalkField(identifier, newValue);
@@ -151,8 +154,9 @@ const EditWalk = ({
             placeholder={walk.date}
             label="Date et heure du départ *"
             type="datetime-local"
-            min="2021-04-23T00:00"
+            min="2021-05-03T00:00"
             value={walkDate}
+            required
             changeField={(identifier, newValue) => {
             // console.log(`changeField sur date : identifier=${identifier}, newValue=${newValue}`);
               // console.log('heure', goodDate);
@@ -176,7 +180,10 @@ const EditWalk = ({
             identifier="walkDistance"
             placeholder={walk.kilometre}
             label="Nombre de kilomètres"
-            type="number"
+            type="text"
+            pattern="([1-9]?[0-9])|99"
+            minLength="1"
+            maxLength="2"
             value={walkDistance}
             changeField={(identifier, newValue) => {
               console.log(`changeField sur distance : identifier=${identifier}, newValue=${newValue}`);
@@ -200,7 +207,9 @@ const EditWalk = ({
             identifier="walkElevation"
             placeholder={walk.elevation}
             label="Dénivelé (en mètres)"
-            type="number"
+            type="text"
+            pattern="([1-9]?[0-9])|2000"
+            minLength="3"
             value={walkElevation}
             changeField={(identifier, newValue) => {
               console.log(`changeField sur dénivelé : identifier=${identifier}, newValue=${newValue}`);
@@ -210,8 +219,9 @@ const EditWalk = ({
           <Field
             identifier="walkNumberPeople"
             placeholder={walk.maxNbPersons}
-            label="Nombre de personnes maximum"
-            type="number"
+            label="Nombre de personnes maximum (jusqu'à 30 personnes)"
+            type="text"
+            pattern="([1-9]?[0-9])|30"
             value={walkNumberPeople}
             changeField={(identifier, newValue) => {
               console.log(`changeField sur nb de participants : identifier=${identifier}, newValue=${newValue}`);
@@ -222,12 +232,28 @@ const EditWalk = ({
             identifier="walkDescription"
             placeholder={walk.description}
             label="Description / Infos pratiques *"
+            required
+            minLength="2"
+            type="text"
             value={walkDescription}
             changeField={(identifier, newValue) => {
-              console.log(`changeField sur description : identifier=${identifier}, newValue=${newValue}`);
               updateWalkField(identifier, newValue);
             }}
           />
+          { /* test to have a textarea instead of a Field, need to have a controlled field
+            <textarea
+            identifier="walkDescription"
+            placeholder={walk.description}
+            label="Description / Infos pratiques *"
+            required
+            minLength="2"
+            rows="5"
+            value={walkDescription}
+            changeField={(identifier, newValue) => {
+              updateWalkField(identifier, newValue);
+            }}
+          />
+         */ }
           <button type="submit" className="editWalk_submit">Modifier</button>
         </form>
       </main>
@@ -265,6 +291,8 @@ EditWalk.propTypes = {
       description: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
+  walkTitle: PropTypes.string.isRequired,
+  walkAreaId: PropTypes.number.isRequired,
   walkStartingPoint: PropTypes.string.isRequired,
   walkEndPoint: PropTypes.string,
   walkDate: PropTypes.string.isRequired,
