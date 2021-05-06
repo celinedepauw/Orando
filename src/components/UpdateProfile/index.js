@@ -47,6 +47,7 @@ const UpdateProfile = ({
     years.push({ value: i, label: i });
   }
   */
+ 
 
   const areasListSelect = areas.map((area) => (
     {
@@ -54,7 +55,7 @@ const UpdateProfile = ({
       label: area.name,
     }
   ));
-
+  console.log('userarea', userArea);
   const handleSubmitUpdateProfile = (evt) => {
     evt.preventDefault();
     submitUpdateProfile();
@@ -129,7 +130,7 @@ const UpdateProfile = ({
         />
         <SelectField
           label="Région"
-          identifier={userDatas.area.name}
+          identifier="userArea"
           options={areasListSelect}
           value={userArea}
           placeholder={userDatas.area.name}
