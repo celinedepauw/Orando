@@ -29,7 +29,7 @@ function userReducer(state = initialState, action) {
         lastname: action.user.user.lastname,
         firstname: action.user.user.firstname,
         picture: action.user.user.picture,
-        userArea: action.user.user.userArea,
+        userArea: action.user.user.area.id,
         dateOfBirth: action.user.user.dateOfBirth,
         description: action.user.user.description,
         loadingUser: false,
@@ -98,7 +98,7 @@ function userReducer(state = initialState, action) {
       }
       return {
         ...state,
-        userArea: action.identifier,
+        userArea: action.value,
       };
     case UPDATE_AVATAR:
       return {

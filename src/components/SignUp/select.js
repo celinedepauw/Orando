@@ -14,7 +14,7 @@ const SelectField = ({
 }) => {
   const handleChange = (evt) => {
     console.log(evt.value);
-    manageChange(evt.value, evt.label);
+    manageChange(identifier, evt.value);
   };
 
   return (
@@ -41,6 +41,15 @@ SelectField.propTypes = {
   placeholder: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   manageChange: PropTypes.func.isRequired,
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+      ]).isRequired,
+      label: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
 };
 
 export default SelectField;
