@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
+import moment from 'moment';
 
 import Field from 'src/components/Field';
 import SelectField from 'src/components/SignUp/select';
@@ -55,11 +55,12 @@ const UpdateProfile = ({
       label: area.name,
     }
   ));
-  console.log('userarea', userArea);
+  console.log('date de naissance', moment(dateOfBirth).format('DD/MM/YYYY'));
+  const areaSelected = areasListSelect.find((area) => area.value === userDatas.area.id);
   const handleSubmitUpdateProfile = (evt) => {
     evt.preventDefault();
     submitUpdateProfile();
-  }
+  };
   return (
     <main className="update_profil" onSubmit={handleSubmitUpdateProfile}>
       <form className="update_profil_form">
@@ -108,10 +109,9 @@ const UpdateProfile = ({
         />
         <Field
           identifier="dateOfBirth"
-          placeholder={userDatas.dateOfBirth}
           label="date anniversaire"
           type="date"
-          value={dateOfBirth}
+          value={moment(dateOfBirth).format('YYYY-MM-DD')}
           changeField={(identifier, newValue) => {
             updateSignUp(identifier, newValue);
             console.log(`changeField sur nom : identifier=${identifier}, newValue=${newValue}`);
@@ -133,7 +133,7 @@ const UpdateProfile = ({
           identifier="userArea"
           options={areasListSelect}
           value={userArea}
-          placeholder={userDatas.area.name}
+          defaultValue={areaSelected}
           manageChange={(identifier, newValue) => {
             updateSignUp(identifier, newValue);
             console.log(`manageChange sur area : identifier=${identifier}, newValue=${newValue}`);

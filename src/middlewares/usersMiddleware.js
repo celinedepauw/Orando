@@ -108,7 +108,7 @@ const usersMiddleware = (store) => (next) => (action) => {
       bodyFormData.append('firstname', firstname);
       bodyFormData.append('lastname', lastname);
       bodyFormData.append('area', userArea);
-      bodyFormData.append('picture', '');
+      bodyFormData.append('picture', picture);
       bodyFormData.append('dateOfBirth', dateOfBirth);
       bodyFormData.append('description', description);
       bodyFormData.append('password', '');

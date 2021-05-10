@@ -10,7 +10,7 @@ const SelectField = ({
   identifier,
   placeholder,
   options,
-
+  defaultValue,
 }) => {
   const handleChange = (evt) => {
     console.log(evt.value);
@@ -28,6 +28,7 @@ const SelectField = ({
       </label>
       <Select
         options={options}
+        defaultValue={defaultValue}
         placeholder={placeholder}
         className="select_field_input"
         onChange={handleChange}
