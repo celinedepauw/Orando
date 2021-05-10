@@ -252,7 +252,6 @@ const CreateWalk = ({
           minLength="2"
           required
           rows="5"
-          wrap="hard"
           changeField={(identifier, newValue) => {
             console.log(`changeField sur description : identifier=${identifier}, newValue=${newValue}`);
             updateCreateWalkField(identifier, newValue);
