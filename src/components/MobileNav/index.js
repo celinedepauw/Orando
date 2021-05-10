@@ -20,10 +20,18 @@ const MobileNav = ({ isLogged, handleLogout }) => (
       <img src={homeLogo} alt="home logo" className="mobilenav_home" />
       <p className="mobilenav_home_text">Accueil</p>
     </Link>
-    <Link to="/create" className="mobilenav_create_content">
-      <img src={createLogo} alt="create hike" className="mobilenav_create" />
-      <p className="mobilenav_create_text">Créer</p>
-    </Link>
+    {!isLogged && (
+      <Link to="/authentication" className="mobilenav_create_content">
+        <img src={createLogo} alt="create hike" className="mobilenav_create" />
+        <p className="mobilenav_create_text">Créer</p>
+      </Link>
+    )}
+    {isLogged && (
+      <Link to="/create" className="mobilenav_create_content">
+        <img src={createLogo} alt="create hike" className="mobilenav_create" />
+        <p className="mobilenav_create_text">Créer</p>
+      </Link>
+    )}
     {!isLogged && (
       <Link to="/authentication" className="mobilenav_login_content">
         <img src={login} alt="login" className="mobilenav_login" />

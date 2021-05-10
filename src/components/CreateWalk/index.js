@@ -5,8 +5,8 @@ import Moment from 'react-moment';
 
 import createLogo from 'src/assets/images/create.png';
 import Field from 'src/components/Field';
-import Select from 'react-select';
-import SelectField from 'src/components/CreateWalk/select';
+import SelectField from 'src/components/SelectField';
+import TextField from 'src/components/TextField';
 
 import './createWalk.scss';
 
@@ -17,6 +17,7 @@ const CreateWalk = ({
   walkAreaId,
   walkStartingPoint,
   walkEndPoint,
+  walkTags,
   walkDate,
   walkDuration,
   walkDistance,
@@ -25,6 +26,7 @@ const CreateWalk = ({
   walkDescription,
   updateCreateWalkField,
   updateCreateWalkSelect,
+  updateTags,
   handleCreate,
   isCreated,
 }) => {
@@ -61,7 +63,7 @@ const CreateWalk = ({
     { value: 'plus de 5 heures', label: 'plus de 5 heures' },
   ];
 
-  const date = Date();
+  // const date = Date();
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -79,13 +81,13 @@ const CreateWalk = ({
         <h2 className="createWalk_title_text">Ma nouvelle randonnée</h2>
       </div>
       <p className="createWalk_asterisk">(*) Champs obligatoires</p>
-      <p>{date}</p>
       <form className="createWalk_form" onSubmit={handleSubmit}>
         <Field
           identifier="walkTitle"
           placeholder="titre de la randonnée"
           label="Titre *"
           value={walkTitle}
+          required
           changeField={(identifier, newValue) => {
             console.log(`changeField sur titre : identifier=${identifier}, newValue=${newValue}`);
             updateCreateWalkField(identifier, newValue);
@@ -106,8 +108,25 @@ const CreateWalk = ({
           />
         </div>
         <div className="createWalk_tag">
-          <p className="createWalk_tag_label">Thème (choix multiple possible)</p>
-          <Select
+          <p className="createWalk_tag_title">Thème (choix multiple possible)</p>
+          <div className="createWalk_tag_list">
+            {tags.map((tag) => (
+              <label className="createWalk_tag_label" key={tag.id}>{tag.name}
+                <input
+                  className="createWalk_tag_checkbox"
+                  type="checkbox"
+                  name={tag.name}
+                  value={tag.id}
+                  onChange={(theTag) => {
+                    console.log('tags', theTag.target.value);
+                    updateTags(theTag.target.value);
+                  }}
+                />
+              </label>
+            ))}
+          </div>
+          {/* comments
+            <Select
             className="createWalk_tag_select"
             label="Thème (choix multiple possible)"
             identifier="walkTags"
@@ -122,12 +141,14 @@ const CreateWalk = ({
               ));
             }}
           />
+          */}
         </div>
         <Field
           identifier="walkStartingPoint"
           placeholder="point de départ"
           label="Point de départ *"
           value={walkStartingPoint}
+          required
           changeField={(identifier, newValue) => {
             console.log(`changeField sur point de départ : identifier=${identifier}, newValue=${newValue}`);
             updateCreateWalkField(identifier, newValue);
@@ -148,7 +169,8 @@ const CreateWalk = ({
           placeholder="date et heure"
           label="Date et heure du départ *"
           type="datetime-local"
-          min="2021-04-23T00:00"
+          min="2021-05-03T00:00"
+          required
           value={walkDate}
           changeField={(identifier, newValue) => {
             // console.log(`changeField sur date : identifier=${identifier}, newValue=${newValue}`);
@@ -156,22 +178,28 @@ const CreateWalk = ({
             updateCreateWalkField(identifier, newValue);
           }}
         />
-        <SelectField
-          identifier="walkDuration"
-          placeholder="durée"
-          label="Durée approximative *"
-          value={walkDuration}
-          options={durations}
-          manageChange={(identifier, newValue) => {
-            console.log(`changeField sur durée : identifier=${identifier}, newValue=${newValue}`);
-            updateCreateWalkSelect(identifier, newValue);
-          }}
-        />
+        <div className="createWalk_duration">
+          <SelectField
+            className="createWalk_duration_select"
+            identifier="walkDuration"
+            placeholder="durée"
+            label="Durée approximative *"
+            value={walkDuration}
+            options={durations}
+            manageChange={(identifier, newValue) => {
+              console.log(`changeField sur durée : identifier=${identifier}, newValue=${newValue}`);
+              updateCreateWalkSelect(identifier, newValue);
+            }}
+          />
+        </div>
         <Field
           identifier="walkDistance"
           placeholder="distance en kms"
           label="Nombre de kilomètres"
-          type="number"
+          type="text"
+          pattern="([1-9]?[0-9])|99"
+          minLength="1"
+          maxLength="2"
           value={walkDistance}
           changeField={(identifier, newValue) => {
             console.log(`changeField sur distance : identifier=${identifier}, newValue=${newValue}`);
@@ -195,7 +223,9 @@ const CreateWalk = ({
           identifier="walkElevation"
           placeholder="dénivelé"
           label="Dénivelé (en mètres)"
-          type="number"
+          type="text"
+          pattern="([1-9]?[0-9])|2000"
+          minLength="3"
           value={walkElevation}
           changeField={(identifier, newValue) => {
             console.log(`changeField sur dénivelé : identifier=${identifier}, newValue=${newValue}`);
@@ -205,19 +235,23 @@ const CreateWalk = ({
         <Field
           identifier="walkNumberPeople"
           placeholder="nombre de personnes"
-          label="Nombre de personnes maximum"
-          type="number"
+          label="Nombre de personnes maximum (jusqu'à 30 personnes)"
+          type="text"
+          pattern="([1-9]?[0-9])|30"
           value={walkNumberPeople}
           changeField={(identifier, newValue) => {
             console.log(`changeField sur nb de participants : identifier=${identifier}, newValue=${newValue}`);
             updateCreateWalkField(identifier, newValue);
           }}
         />
-        <Field
+        <TextField
           identifier="walkDescription"
           placeholder="description"
           label="Description / Infos pratiques *"
           value={walkDescription}
+          minLength="2"
+          required
+          rows="5"
           changeField={(identifier, newValue) => {
             console.log(`changeField sur description : identifier=${identifier}, newValue=${newValue}`);
             updateCreateWalkField(identifier, newValue);
@@ -258,6 +292,7 @@ CreateWalk.propTypes = {
   updateCreateWalkField: PropTypes.func.isRequired,
   updateCreateWalkSelect: PropTypes.func.isRequired,
   handleCreate: PropTypes.func.isRequired,
+  updateTags: PropTypes.func.isRequired,
   isCreated: PropTypes.bool.isRequired,
 };
 

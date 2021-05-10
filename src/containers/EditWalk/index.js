@@ -1,15 +1,19 @@
 import { connect } from 'react-redux';
-import { participateWalk, walkToEdit } from 'src/actions/walks';
 
 // on importe le composant de présentation
-import Walk from 'src/components/Walk';
+import EditWalk from 'src/components/EditWalk';
+
+import { updateWalkField, updateWalkSelect, editWalk, updateTags } from 'src/actions/walks';
 
 // === mapStateToProps
 // si on a besoin de lire des informations dans le state
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
+  areas: state.areasList.areas,
+  tags: state.tagsList.tags,
   walks: state.walksList.walks,
   loadingWalk: state.walksList.loadingWalk,
+  walkId: state.walksList.walkId,
   walkTitle: state.walksList.walkTitle,
   walkAreaId: state.walksList.walkAreaId,
   walkTags: state.walksList.walkTags,
@@ -28,13 +32,23 @@ const mapStateToProps = (state) => ({
 // si on a besoin de dispatcher des actions vers le store (mettre à jour le state)
 const mapDispatchToProps = (dispatch) => ({
   // nom de la prop à remplir: fonction qui dispatch l'action
-  handleParticipation: (walkId) => {
-    dispatch(participateWalk(walkId));
+  updateWalkField: (identifier, newValue) => {
+    const action = updateWalkField(identifier, newValue);
+    dispatch(action);
   },
-  handleClickEdit: (walkId) => {
-    dispatch(walkToEdit(walkId));
+  updateWalkSelect: (identifier, newValue) => {
+    const action = updateWalkSelect(identifier, newValue);
+    dispatch(action);
+  },
+  handleEdit: (walkId) => {
+    const action = editWalk(walkId);
+    dispatch(action);
+  },
+  updateTags: (tagId) => {
+    const action = updateTags(tagId);
+    dispatch(action);
   },
 });
 
 // === création de l'assistant
-export default connect(mapStateToProps, mapDispatchToProps)(Walk);
+export default connect(mapStateToProps, mapDispatchToProps)(EditWalk);

@@ -1,12 +1,13 @@
 @use 'src/styles/vars';
 
-.createWalk {
+.editWalk {
+  color: vars.$blackRed;
   background: linear-gradient(vars.$lightYellow, white);
   margin-top: -15px;
   min-height: 100vh;
-  color: vars.$blackRed;
+  
 
-  .createWalk_title {
+  .editWalk_title {
     background: linear-gradient(to bottom right, vars.$regularGreen, vars.$darkGreen);
     border-radius: 10px;
     padding: 1rem;
@@ -20,11 +21,11 @@
       width: 60%;
     }
 
-    .createWalk_create_logo {
+    .editWalk_create_logo {
       width: 50px;
     }
 
-    .createWalk_title_text {
+    .editWalk_title_text {
       color: white;
       font-weight: bold;
       padding: 0.5rem;
@@ -32,29 +33,27 @@
     }
   }
 
-  .createWalk_asterisk {
+  .editWalk_asterisk {
     padding: 0.5rem;
-    display: block;
     margin: 0 auto 1rem auto;
     width: 90%;
 
     @media(min-width: vars.$breakpointTablet) {
       width: 60%;
     }
-  
   }
 
-  .createWalk_form {
+  .editWalk_form {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 
-    .createWalk_area {
+    .editWalk_area {
       width: 100%; 
       margin-bottom: 1rem;
     }
 
-    .createWalk_tag {
+    .editWalk_tag {
       margin: 0 auto 1rem auto;
       width: 90%;
 
@@ -62,35 +61,34 @@
         width: 60%;
       }
 
-      .createWalk_tag_title {
+      .editWalk_tag_title {
         padding-bottom: 1rem;
       }
 
-      .createWalk_tag_list {
+      .editWalk_tag_list {
         display: flex;
         flex-wrap: wrap;
 
-        .createWalk_tag_label {
+        .editWalk_tag_label {
           width: 100%;
           padding: 0.2rem 0rem;
         }
       }
     }
 
-    .createWalk_difficulty {
+    .editWalk_difficulty {
       width: 100%;
     }
 
-    .createWalk_duration {
+    .editWalk_duration {
       width: 100%;
     }
 
-    .createWalk_submit {
+    .editWalk_submit {
       width: 90%;
       color: white;
       font-weight: bold;
       padding: 1rem;
-      margin: 1rem 0rem;
       border: none;
       border-radius: 10px;
       background: linear-gradient(to bottom right, vars.$regularYellow, vars.$darkYellow);

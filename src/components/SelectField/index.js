@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Select from 'react-select';
 
+import './selectField.scss';
+
 const SelectField = ({
   label,
   manageChange,
@@ -15,7 +17,7 @@ const SelectField = ({
   };
 
   return (
-    <div className="select">
+    <div className="selectField">
       <label
         className="label"
         htmlFor={identifier}

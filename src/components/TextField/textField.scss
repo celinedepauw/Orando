@@ -1,0 +1,34 @@
+@use 'src/styles/vars';
+
+.textField {
+  margin: 0 auto 1rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+
+  @media(min-width: vars.$breakpointTablet) {
+    width: 60%;
+  }
+
+  .label {
+  padding: 1rem 0;
+   color: vars.$blackRed; 
+   width: 100%;
+   text-align: left;
+  }
+
+  .input {
+    padding: 1rem;
+    border: solid 2px vars.$darkGreen;
+    border-radius: 10px;
+    width: 100%;
+    text-align: left;
+
+    &:focus {
+      border-color: vars.$darkRed;
+      & + .label {
+        color: vars.$darkRed;
+      }
+    }
+  }
+}

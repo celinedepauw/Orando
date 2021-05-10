@@ -3,7 +3,12 @@ import { connect } from 'react-redux';
 // on importe le composant de présentation
 import CreateWalk from 'src/components/CreateWalk';
 
-import { updateCreateWalkField, updateCreateWalkSelect, createWalk } from 'src/actions/walks';
+import {
+  updateCreateWalkField,
+  updateCreateWalkSelect,
+  createWalk,
+  updateTags,
+} from 'src/actions/walks';
 
 // === mapStateToProps
 // si on a besoin de lire des informations dans le state
@@ -40,6 +45,10 @@ const mapDispatchToProps = (dispatch) => ({
   },
   handleCreate: () => {
     const action = createWalk();
+    dispatch(action);
+  },
+  updateTags: (tagId) => {
+    const action = updateTags(tagId);
     dispatch(action);
   },
 });
