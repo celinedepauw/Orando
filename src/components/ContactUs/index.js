@@ -29,6 +29,7 @@ const ContactUs = ({
           placeholder=""
           label="Sujet"
           value={subject}
+          required
           changeField={(identifier, newValue) => {
             console.log(`changeField sur sujet : identifier=${identifier}, newValue=${newValue}`);
             updateContactField(identifier, newValue);
@@ -39,6 +40,8 @@ const ContactUs = ({
           placeholder=""
           label="Email"
           value={email}
+          required
+          type="email"
           changeField={(identifier, newValue) => {
             console.log(`changeField sur email : identifier=${identifier}, newValue=${newValue}`);
             updateContactField(identifier, newValue);
@@ -49,6 +52,7 @@ const ContactUs = ({
           placeholder=""
           label="Votre message"
           value={message}
+          required
           changeField={(identifier, newValue) => {
             console.log(`changeField sur message : identifier=${identifier}, newValue=${newValue}`);
             updateContactField(identifier, newValue);

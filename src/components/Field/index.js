@@ -14,6 +14,7 @@ const Field = ({
   value,
   min,
   changeField,
+  required,
 }) => {
   const handleChange = (event) => {
     const { value: inputValue, name } = event.target;
@@ -36,6 +37,7 @@ const Field = ({
         type={type}
         value={value}
         min={min}
+        required={required}
         onChange={handleChange}
       />
     </div>
@@ -59,6 +61,7 @@ Field.propTypes = {
    */
   changeField: PropTypes.func.isRequired,
   min: PropTypes.string,
+  required: PropTypes.bool.isRequired,
 };
 
 Field.defaultProps = {
