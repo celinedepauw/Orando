@@ -1,23 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './field.scss';
+import './textField.scss';
 
-/**
- * A field to be used inside a form : label and input
- */
-const Field = ({
+const TextField = ({
   identifier,
   placeholder,
   label,
   type,
   value,
-  min,
   changeField,
-  pattern,
-  minLength,
-  maxLength,
   required,
+  rows,
 }) => {
   const handleChange = (event) => {
     const { value: inputValue, name } = event.target;
@@ -25,32 +19,29 @@ const Field = ({
   };
 
   return (
-    <div className="field">
+    <div className="textField">
       <label
         className="label"
         htmlFor={identifier}
       >
         {label}
       </label>
-      <input
+      <textarea
         className="input"
         id={identifier}
         placeholder={placeholder}
         name={identifier}
         type={type}
         value={value}
-        min={min}
-        pattern={pattern}
-        minLength={minLength}
-        maxLength={maxLength}
         required={required}
+        rows={rows}
         onChange={handleChange}
       />
     </div>
   );
 };
 
-Field.propTypes = {
+TextField.propTypes = {
   /** identifier for the input : used both for name and id => must be unique */
   identifier: PropTypes.string.isRequired,
   /** text used as placeholder */
@@ -72,14 +63,11 @@ Field.propTypes = {
    * - new value
    */
   changeField: PropTypes.func.isRequired,
-  min: PropTypes.string,
-  required: PropTypes.bool.isRequired,
 };
 
-Field.defaultProps = {
+TextField.defaultProps = {
   type: 'text',
   value: '',
-  min: '',
 };
 
-export default Field;
+export default TextField;

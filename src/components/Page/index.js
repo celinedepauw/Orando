@@ -18,6 +18,8 @@ import Error from 'src/components/Error';
 import HowOrandoWorks from 'src/components/HowOrandoWorks';
 import SignUp from 'src/containers/SignUp';
 import UpdateProfile from 'src/containers/UpdateProfile';
+import EditWalk from 'src/containers/EditWalk';
+import ContactUs from 'src/containers/ContactUs';
 
 const Page = () => (
   <div className="page">
@@ -61,11 +63,17 @@ const Page = () => (
       <Route exact path="/create">
         <CreateWalk />
       </Route>
+      <Route exact path="/edit/:id">
+        <EditWalk />
+      </Route>
       <Route exact path="/how_works">
         <HowOrandoWorks />
       </Route>
       <Route exact path="/about_us">
         <AboutUs />
+      </Route>
+      <Route exact path="/contact_us">
+        <ContactUs />
       </Route>
       <Route exact path="/">
         <Home2 />

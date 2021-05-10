@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import AreaSmall from 'src/containers/Home2/areaSmall';
 
 import './home2.scss';
 
-const Home2 = ({ areas }) => (
+const Home2 = ({ areas, isLogged }) => (
   <main className="home2">
     <h2 className="home2_title">Explorez toutes les randonnées disponibles dans votre région !</h2>
     <div className="home_areas_list">
@@ -20,9 +21,16 @@ const Home2 = ({ areas }) => (
     </div>
     <div className="home2_end">
       <p className="home2_go">A vous de jouer !</p>
-      <a href="https://orando.me/o/walk/create">
-        <button className="home2_button" type="button">Proposez une randonnée</button>
-      </a>
+      {!isLogged && (
+        <Link to="/authentication">
+          <button className="home2_button" type="button">Proposez une randonnée</button>
+        </Link>
+      )}
+      {isLogged && (
+        <Link to="/create">
+          <button className="home2_button" type="button">Proposez une randonnée</button>
+        </Link>
+      )}
     </div>
   </main>
 );
@@ -33,6 +41,7 @@ Home2.propTypes = {
       id: PropTypes.number.isRequired,
     }).isRequired,
   ).isRequired,
+  isLogged: PropTypes.bool.isRequired,
 };
 
 export default Home2;
