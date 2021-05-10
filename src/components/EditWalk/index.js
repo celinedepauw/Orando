@@ -5,8 +5,8 @@ import Loader from 'src/components/Loader';
 
 import editLogo from 'src/assets/images/create.png';
 import Field from 'src/components/Field';
-import Select from 'react-select';
 import SelectField from 'src/components/SelectField';
+import TextField from 'src/components/TextField';
 
 import './editWalk.scss';
 
@@ -227,7 +227,7 @@ const EditWalk = ({
               updateWalkField(identifier, newValue);
             }}
           />
-          <Field
+          <TextField
             identifier="walkDescription"
             placeholder={walk.description}
             label="Description / Infos pratiques *"
