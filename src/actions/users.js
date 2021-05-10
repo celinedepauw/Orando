@@ -11,6 +11,7 @@ export const UPDATE_SIGN_UP = 'UPDATE_SIGN_UP';
 export const SUBMIT_SIGN_UP = 'SUBMIT_SIGN_UP';
 export const UPDATE_AVATAR = 'UPDATE_AVATAR';
 export const SAVE_USER_CREATE = 'SAVE_USER_CREATE';
+export const SUBMIT_UPDATE_PROFILE = 'SUBMIT_UPDATE_PROFILE';
 
 // === action creators
 export const fetchUser = () => ({
@@ -84,3 +85,26 @@ export const saveUserCreate = (isSuccess) => ({
   type: SAVE_USER_CREATE,
   isSuccess,
 });
+
+export const submitUpdateProfile = (
+  email,
+  alias,
+  password,
+  lastname,
+  firstname,
+  picture,
+  userArea,
+  dateOfBirth,
+  description,
+) => ({
+  type: SUBMIT_UPDATE_PROFILE,
+  email: email,
+  alias: alias,
+  password: password,
+  lastname: lastname,
+  firstname: firstname,
+  picture: picture,
+  userArea: userArea,
+  dateOfBirth: dateOfBirth,
+  description: description,
+})

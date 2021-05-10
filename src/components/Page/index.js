@@ -17,6 +17,7 @@ import CreateWalk from 'src/containers/CreateWalk';
 import Error from 'src/components/Error';
 import HowOrandoWorks from 'src/components/HowOrandoWorks';
 import SignUp from 'src/containers/SignUp';
+import UpdateProfile from 'src/containers/UpdateProfile';
 import EditWalk from 'src/containers/EditWalk';
 import ContactUs from 'src/containers/ContactUs';
 
@@ -43,6 +44,9 @@ const Page = () => (
       </Route>
       <Route exact path="/account">
         <Account />
+      </Route>
+      <Route exact path="/update_profile">
+        <UpdateProfile />
       </Route>
       <Route exact path="/profile">
         <Profile />

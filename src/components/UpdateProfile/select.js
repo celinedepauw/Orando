@@ -10,7 +10,7 @@ const SelectField = ({
   identifier,
   placeholder,
   options,
-  defaultValue,
+
 }) => {
   const handleChange = (evt) => {
     console.log(evt.value);
@@ -28,7 +28,6 @@ const SelectField = ({
       </label>
       <Select
         options={options}
-        defaultValue={defaultValue}
         placeholder={placeholder}
         className="select_field_input"
         onChange={handleChange}
@@ -42,15 +41,6 @@ SelectField.propTypes = {
   placeholder: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   manageChange: PropTypes.func.isRequired,
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      value: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-      ]).isRequired,
-      label: PropTypes.string.isRequired,
-    }).isRequired,
-  ).isRequired,
 };
 
 export default SelectField;

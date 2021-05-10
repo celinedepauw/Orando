@@ -95,4 +95,37 @@
     }
     
   }
+
+  .profile_udpate_button {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem auto;
+    border: none;
+    border-radius: 10px;
+    background-color: vars.$regularGreen;
+    padding: 10px;
+
+    
+    
+
+
+    .profile_update_button_text {
+      font-size: 1.3em;
+      color: vars.$blackRed;
+    }
+
+    @media(min-width: vars.$breakpointTablet) {
+      font-size: 1.8em;
+     
+    }
+
+    .profile_update_button_icon {
+      width: 40px;
+    }
+
+
+  
+  }
 }
