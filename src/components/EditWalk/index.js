@@ -156,7 +156,6 @@ const EditWalk = ({
             type="datetime-local"
             min="2021-05-03T00:00"
             value={walkDate}
-            required
             changeField={(identifier, newValue) => {
             // console.log(`changeField sur date : identifier=${identifier}, newValue=${newValue}`);
               // console.log('heure', goodDate);
