@@ -12,7 +12,6 @@ export const SUBMIT_SIGN_UP = 'SUBMIT_SIGN_UP';
 export const UPDATE_AVATAR = 'UPDATE_AVATAR';
 export const SAVE_USER_CREATE = 'SAVE_USER_CREATE';
 
-
 // === action creators
 export const fetchUser = () => ({
   type: FETCH_USER,

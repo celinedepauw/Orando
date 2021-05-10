@@ -28,7 +28,7 @@ const Footer = () => (
       <Link to="/about_us" className="footer_informations_link">
         Qui sommes-nous
       </Link>
-      <a href="https://orando.me/o/contact" className="footer_contact_link">Contact</a>
+      <Link to="/contact_us">Contact</Link>
     </div>
     <div className="footer_icon_right">
       <img className="icon_right" src={mushrooms} alt="icone" />
