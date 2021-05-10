@@ -11,6 +11,7 @@ const TextField = ({
   value,
   changeField,
   required,
+  rows,
 }) => {
   const handleChange = (event) => {
     const { value: inputValue, name } = event.target;
@@ -33,6 +34,7 @@ const TextField = ({
         type={type}
         value={value}
         required={required}
+        rows={rows}
         onChange={handleChange}
       />
     </div>
