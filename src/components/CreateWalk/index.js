@@ -6,6 +6,7 @@ import Moment from 'react-moment';
 import createLogo from 'src/assets/images/create.png';
 import Field from 'src/components/Field';
 import SelectField from 'src/components/SelectField';
+import TextField from 'src/components/TextField';
 
 import './createWalk.scss';
 
@@ -243,7 +244,7 @@ const CreateWalk = ({
             updateCreateWalkField(identifier, newValue);
           }}
         />
-        <Field
+        <TextField
           identifier="walkDescription"
           placeholder="description"
           label="Description / Infos pratiques *"
