@@ -13,6 +13,7 @@ const mapStateToProps = (state) => ({
   tags: state.tagsList.tags,
   walks: state.walksList.walks,
   loadingWalk: state.walksList.loadingWalk,
+  walkId: state.walksList.walkId,
   walkTitle: state.walksList.walkTitle,
   walkAreaId: state.walksList.walkAreaId,
   walkTags: state.walksList.walkTags,

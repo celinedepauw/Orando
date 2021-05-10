@@ -12,6 +12,7 @@ export const UPDATE_CREATE_WALK_SELECT = 'UPDATE_CREATE_WALK_SELECT';
 export const UPDATE_WALK_FIELD = 'UPDATE_WALK_FIELD';
 export const UPDATE_WALK_SELECT = 'UPDATE_WALK_SELECT';
 export const UPDATE_TAGS = 'UPDATE_TAGS';
+export const WALK_TO_EDIT = 'WALK_TO_EDIT';
 
 // === action creators
 export const fetchWalks = () => ({
@@ -36,6 +37,11 @@ export const deleteWalk = (walkId) => ({
 export const participateWalk = (walkId) => ({
   type: PARTIPATE_WALK,
   walkId: walkId,
+});
+
+export const walkToEdit = (walk) => ({
+  type: WALK_TO_EDIT,
+  walk: walk,
 });
 
 export const createWalk = (

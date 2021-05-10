@@ -8,11 +8,13 @@ import {
   SAVE_CREATED_WALK,
   CREATE_WALK,
   EDIT_WALK,
+  WALK_TO_EDIT,
 } from 'src/actions/walks';
 
 const initialState = {
   walks: [],
   loadingWalk: true,
+  walkId: '',
   walkTitle: '',
   walkAreaId: '',
   walkTags: [],
@@ -33,6 +35,7 @@ function walkReducer(state = initialState, action) {
     case EDIT_WALK:
       return {
         ...state,
+        walkId: '',
         walkTitle: '',
         walkAreaId: '',
         walkTags: [],
@@ -45,6 +48,23 @@ function walkReducer(state = initialState, action) {
         walkElevation: '',
         walkNumberPeople: '',
         walkDescription: '',
+      };
+    case WALK_TO_EDIT:
+      return {
+        ...state,
+        walkId: action.walk.id,
+        walkTitle: action.walk.title,
+        walkAreaId: action.walk.area.id,
+        walkTags: action.walk.tags,
+        walkStartingPoint: action.walk.startingPoint,
+        walkEndPoint: action.walk.endPoint,
+        walkDate: action.walk.date,
+        walkDuration: action.walk.duration,
+        walkDistance: action.walk.kilometre,
+        walkDifficulty: action.walk.difficulty,
+        walkElevation: action.walk.elevation,
+        walkNumberPeople: action.walk.maxNbPersons,
+        walkDescription: action.walk.description,
       };
     case CREATE_WALK:
       return {

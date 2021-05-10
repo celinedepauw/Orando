@@ -17,13 +17,14 @@ import twoHikes from 'src/assets/icones/two_hikes.svg';
 import info from 'src/assets/icones/info.svg';
 import distance from 'src/assets/icones/012-map.svg';
 
-const Walk = ({ walks, loadingWalk, handleParticipation }) => {
+const Walk = ({ walks, loadingWalk, handleParticipation, handleClickEdit }) => {
   // console.log(walks);
 
   const { id } = useParams();
 
   const walk = walks.find((item) => item.id == id);
   const userId = localStorage.getItem('currentUserId');
+  console.log('rando que je veux modifier', walk);
 
   return (
     <>
@@ -75,7 +76,7 @@ const Walk = ({ walks, loadingWalk, handleParticipation }) => {
           <div className="walk-links">
             {walk.creator.id == userId ? (
               <Link to={`/edit/${id}`} className="walk_edit_link">
-                <button className="walk_button_edit" type="button">Modifier la randonnée</button>
+                <button className="walk_button_edit" type="button" onClick={() => handleClickEdit(walk)}>Modifier la randonnée</button>
               </Link>
             ) : (
               <>
@@ -107,6 +108,7 @@ Walk.propTypes = {
     }).isRequired,
   ).isRequired,
   handleParticipation: PropTypes.func.isRequired,
+  handleClickEdit: PropTypes.func.isRequired,
 };
 
 Walk.funcdefaultProps = {
