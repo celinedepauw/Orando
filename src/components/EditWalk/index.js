@@ -44,13 +44,6 @@ const EditWalk = ({
 
   const areaSelected = areasList.find((area) => area.value === walk.area.id);
 
-  const tagsList = tags.map((tag) => (
-    {
-      value: tag.id,
-      label: tag.name,
-    }
-  ));
-
   const difficulties = [
     { value: 'Facile', label: 'Facile' },
     { value: 'Moyen', label: 'Moyen' },
