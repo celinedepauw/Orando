@@ -18,6 +18,7 @@ const EditWalk = ({
   loadingWalk,
   walkTitle,
   walkAreaId,
+  walkTags,
   walkStartingPoint,
   walkEndPoint,
   walkDate,
@@ -63,6 +64,8 @@ const EditWalk = ({
     { value: 'plus de 5 heures', label: 'plus de 5 heures' },
   ];
 
+  console.log('tags sélectionnés', walkTags);
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
     handleEdit(id);
@@ -96,7 +99,7 @@ const EditWalk = ({
               label="Région *"
               identifier="walkAreaId"
               options={areasList}
-              value={walk.area.id}
+              value={walkAreaId}
               defaultValue={areaSelected}
               placeholder={walk.area.name}
               manageChange={(identifier, newValue) => {
@@ -114,7 +117,7 @@ const EditWalk = ({
                     className="editWalk_tag_checkbox"
                     type="checkbox"
                     name={tag.name}
-                    value={tag.id}
+                    value={walkTags}
                     checked={walk.tags.find((walkTag) => walkTag.name === tag.name)}
                     onChange={(theTag) => {
                       // console.log(theTag.target.name);
@@ -293,6 +296,12 @@ EditWalk.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]).isRequired,
+  walkTags: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
   walkStartingPoint: PropTypes.string.isRequired,
   walkEndPoint: PropTypes.string,
   walkDate: PropTypes.string.isRequired,
