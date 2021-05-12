@@ -118,6 +118,7 @@ const EditWalk = ({
                     type="checkbox"
                     name={tag.name}
                     value={tag.id}
+                    checked={walk.tags.find((walkTag) => walkTag.name === tag.name)}
                     onChange={(theTag) => {
                       // console.log(theTag.target.name);
                       // console.log(theTag.target.checked);
