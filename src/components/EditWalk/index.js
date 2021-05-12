@@ -23,6 +23,7 @@ const EditWalk = ({
   walkEndPoint,
   walkDate,
   walkDuration,
+  walkDifficulty,
   walkDistance,
   walkElevation,
   walkNumberPeople,
@@ -51,6 +52,8 @@ const EditWalk = ({
     { value: 'Difficile', label: 'Difficile' },
   ];
 
+  const difficultySelected = difficulties.find((difficulty) => difficulty.value === walk.difficulty);
+
   const durations = [
     { value: '1 heure', label: '1 heure' },
     { value: '1 heure 30', label: '1 heure 30' },
@@ -64,7 +67,7 @@ const EditWalk = ({
     { value: 'plus de 5 heures', label: 'plus de 5 heures' },
   ];
 
-  console.log('tags sélectionnés', walkTags);
+  const durationSelected = durations.find((duration) => duration.value === walk.duration);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -169,6 +172,7 @@ const EditWalk = ({
               placeholder={walk.duration}
               label="Durée approximative *"
               value={walkDuration}
+              defaultValue={durationSelected}
               options={durations}
               manageChange={(identifier, newValue) => {
                 console.log(`changeField sur durée : identifier=${identifier}, newValue=${newValue}`);
@@ -196,6 +200,8 @@ const EditWalk = ({
               label="Niveau de difficulté *"
               identifier="walkDifficulty"
               options={difficulties}
+              value={walkDifficulty}
+              defaultValue={difficultySelected}
               placeholder={walk.difficulty}
               manageChange={(identifier, newValue) => {
                 console.log(`manageChange sur difficulté: identifier=${identifier}, newValue=${newValue}`);
