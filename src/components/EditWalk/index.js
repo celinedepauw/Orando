@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import Loader from 'src/components/Loader';
+import moment from 'moment';
 
 import editLogo from 'src/assets/images/create.png';
 import Field from 'src/components/Field';
@@ -40,6 +41,8 @@ const EditWalk = ({
       label: area.name,
     }
   ));
+
+  const areaSelected = areasList.find((area) => area.value === walk.area.id);
 
   const tagsList = tags.map((tag) => (
     {
@@ -101,6 +104,7 @@ const EditWalk = ({
               identifier="walkAreaId"
               options={areasList}
               value={walk.area.id}
+              defaultValue={areaSelected}
               placeholder={walk.area.name}
               manageChange={(identifier, newValue) => {
                 console.log(`manageChange sur area : identifier=${identifier}, newValue=${newValue}`);
@@ -156,7 +160,7 @@ const EditWalk = ({
             label="Date et heure du départ *"
             type="datetime-local"
             min="2021-05-03T00:00"
-            value={walkDate}
+            value={moment(walkDate).format('YYYY-MM-DDTHH:mm')}
             changeField={(identifier, newValue) => {
             // console.log(`changeField sur date : identifier=${identifier}, newValue=${newValue}`);
               // console.log('heure', goodDate);
