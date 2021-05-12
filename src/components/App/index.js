@@ -26,7 +26,7 @@ const App = ({
   return (
     <div className="app">
       <Header />
-      <Page />
+      <Page  />
       <Footer />
       <MobileNav />
     </div>
