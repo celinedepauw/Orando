@@ -115,7 +115,7 @@ const SignUp = ({
             console.log(`updateAvatar sur picture : file=${file}`);
           }}
         />
-        <button type="submit" className="signUp_form_submit">C'est partie pour l'aventure <img className="signUp_form_submit_picture" src={signup} alt="logo-welcome" /></button>
+        <button type="submit" className="signUp_form_submit">C'est parti pour l'aventure <img className="signUp_form_submit_picture" src={signup} alt="logo-welcome" /></button>
       </form>
     </main>
   );
