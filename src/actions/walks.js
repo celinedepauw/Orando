@@ -2,7 +2,7 @@
 export const FETCH_WALKS = 'FETCH_WALKS';
 export const SAVE_WALKS = 'SAVE_WALKS';
 export const DELETE_WALK = 'DELETE_WALK';
-export const PARTIPATE_WALK = 'PARTIPATE_WALK';
+export const PARTICIPATE_WALK = 'PARTICIPATE_WALK';
 export const CANCEL_PARTICIPATE = 'CANCEL_PARTICIPATE';
 export const CREATE_WALK = 'CREATE_WALK';
 export const SAVE_CREATED_WALK = 'SAVE_CREATED_WALK';
@@ -35,7 +35,7 @@ export const deleteWalk = (walkId) => ({
 });
 
 export const participateWalk = (walkId) => ({
-  type: PARTIPATE_WALK,
+  type: PARTICIPATE_WALK,
   walkId: walkId,
 });
 
