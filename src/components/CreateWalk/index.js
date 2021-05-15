@@ -188,7 +188,7 @@ const CreateWalk = ({
         <Field
           identifier="walkDistance"
           placeholder="distance en kms"
-          label="Nombre de kilomètres"
+          label="Nombre de kilomètres (jusqu'à 35 kilomètres)"
           type="text"
           pattern="([1-9]?[0-9])|99"
           minLength="1"
@@ -215,10 +215,10 @@ const CreateWalk = ({
         <Field
           identifier="walkElevation"
           placeholder="dénivelé"
-          label="Dénivelé (en mètres)"
+          label="Dénivelé (entre 50 et 1500 mètres)"
           type="text"
-          pattern="([1-9]?[0-9])|2000"
-          minLength="3"
+          pattern="([0-9]?[0-9])|2000"
+          minLength="2"
           value={walkElevation}
           changeField={(identifier, newValue) => {
             console.log(`changeField sur dénivelé : identifier=${identifier}, newValue=${newValue}`);

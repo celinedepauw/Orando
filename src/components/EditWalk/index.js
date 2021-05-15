@@ -185,7 +185,7 @@ const EditWalk = ({
           <Field
             identifier="walkDistance"
             placeholder={walk.kilometre}
-            label="Nombre de kilomètres"
+            label="Nombre de kilomètres (jusqu'à 35 kilomètres)"
             type="text"
             pattern="([1-9]?[0-9])|99"
             minLength="1"
@@ -214,7 +214,7 @@ const EditWalk = ({
           <Field
             identifier="walkElevation"
             placeholder={walk.elevation}
-            label="Dénivelé (en mètres)"
+            label="Dénivelé (entre 50 et 1500 mètres)"
             type="text"
             pattern="([1-9]?[0-9])|2000"
             minLength="3"
