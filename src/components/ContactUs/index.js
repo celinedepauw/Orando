@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Field from 'src/components/Field';
+import TextField from 'src/components/TextField';
 import contactLogo from 'src/assets/images/email.png';
 
 import './contactUs.scss';
@@ -47,7 +48,7 @@ const ContactUs = ({
             updateContactField(identifier, newValue);
           }}
         />
-        <Field
+        <TextField
           identifier="message"
           placeholder=""
           label="Votre message"
@@ -64,7 +65,7 @@ const ContactUs = ({
   );
 };
 
-ContactUs.prototypes = {
+ContactUs.propTypes = {
   subject: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired,

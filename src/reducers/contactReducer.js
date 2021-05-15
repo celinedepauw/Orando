@@ -1,4 +1,4 @@
-import { UPDATE_CONTACT_FIELD } from '../actions/contact';
+import { UPDATE_CONTACT_FIELD, CONTACT_WEBSITE } from '../actions/contact';
 
 const initialState = {
   subject: '',
@@ -24,6 +24,13 @@ function contactReducer(state = initialState, action) {
       return {
         ...state,
         message: action.value,
+      };
+    case CONTACT_WEBSITE:
+      return {
+        ...state,
+        subject: '',
+        email: '',
+        message: '',
       };
     default:
       return state;
