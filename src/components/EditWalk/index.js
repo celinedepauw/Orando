@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useParams } from 'react-router-dom';
+import { useParams, Redirect } from 'react-router-dom';
 import Loader from 'src/components/Loader';
 import moment from 'moment';
 
@@ -28,6 +28,7 @@ const EditWalk = ({
   walkElevation,
   walkNumberPeople,
   walkDescription,
+  isUpdated,
   updateWalkField,
   updateWalkSelect,
   updateTags,
@@ -74,6 +75,7 @@ const EditWalk = ({
     handleEdit(id);
   };
 
+  if (isUpdated) return <Redirect to="/my_hikes/" />;
   return (
     <>
       {loadingWalk && <div> <Loader /> </div> }
@@ -312,6 +314,7 @@ EditWalk.propTypes = {
   walkEndPoint: PropTypes.string,
   walkDate: PropTypes.string.isRequired,
   walkDuration: PropTypes.string.isRequired,
+  walkDifficulty: PropTypes.string.isRequired,
   walkDistance: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
@@ -329,6 +332,7 @@ EditWalk.propTypes = {
   updateWalkSelect: PropTypes.func.isRequired,
   updateTags: PropTypes.func.isRequired,
   handleEdit: PropTypes.func.isRequired,
+  isUpdated: PropTypes.bool.isRequired,
 };
 
 EditWalk.defaultProps = {

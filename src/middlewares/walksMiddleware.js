@@ -5,6 +5,7 @@ import {
   saveWalks,
   fetchWalks,
   saveCreatedWalk,
+  saveUpdatedWalk,
   PARTICIPATE_WALK,
   CANCEL_PARTICIPATE,
   CREATE_WALK,
@@ -249,7 +250,7 @@ const walksMiddleware = (store) => (next) => (action) => {
                 .then((response) => {
                   store.dispatch(saveUser(response.data));
                   store.dispatch(fetchWalks());
-                  // store.dispatch(saveCreatedWalk(true));
+                  store.dispatch(saveUpdatedWalk(false));
                 })
                 .catch((error) => {
                   console.log('error: ', error);
