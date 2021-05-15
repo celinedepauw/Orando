@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { CONTACT_WEBSITE } from 'src/actions/contact';
+import { CONTACT_WEBSITE, saveMessageSent } from 'src/actions/contact';
 
 const contactMiddleware = (store) => (next) => (action) => {
   // console.log('je suis dans contactMiddleware', action);
@@ -20,6 +20,7 @@ const contactMiddleware = (store) => (next) => (action) => {
           // console.log('réponse dans contact middleware', response);
           if (response.status === 200) {
             alert('Votre message a bien été envoyé !');
+            store.dispatch(saveMessageSent(false));
           }
         })
         .catch((error) => {

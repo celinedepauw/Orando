@@ -12,6 +12,7 @@ const mapStateToProps = (state) => ({
   subject: state.contactInfo.subject,
   email: state.contactInfo.email,
   message: state.contactInfo.message,
+  isSent: state.contactInfo.isSent,
 });
 
 // === mapDispatchToProps

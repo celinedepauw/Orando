@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import Field from 'src/components/Field';
@@ -11,6 +12,7 @@ const ContactUs = ({
   subject,
   email,
   message,
+  isSent,
   handleContact,
   updateContactField,
 }) => {
@@ -18,6 +20,7 @@ const ContactUs = ({
     evt.preventDefault();
     handleContact();
   };
+  if (isSent) return <Redirect to="/" />;
   return (
     <main className="contactUs">
       <div className="contactUs_title">
@@ -69,6 +72,7 @@ ContactUs.propTypes = {
   subject: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired,
+  isSent: PropTypes.bool.isRequired,
   handleContact: PropTypes.func.isRequired,
   updateContactField: PropTypes.func.isRequired,
 };
