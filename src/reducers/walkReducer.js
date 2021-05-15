@@ -81,6 +81,7 @@ function walkReducer(state = initialState, action) {
         walkElevation: '',
         walkNumberPeople: '',
         walkDescription: '',
+        isCreated: true,
       };
     case UPDATE_TAGS: {
       const theTags = [...state.walkTags, action.value];
@@ -98,7 +99,7 @@ function walkReducer(state = initialState, action) {
     case SAVE_CREATED_WALK:
       return {
         ...state,
-        isCreated: true,
+        isCreated: false,
       };
     case UPDATE_CREATE_WALK_FIELD:
       if (action.identifier === 'walkTitle') {
