@@ -76,7 +76,7 @@ const Page = () => (
       <Route exact path="/contact_us">
         <ContactUs />
       </Route>
-      <Route exact path="/contact_user">
+      <Route exact path="/contact_user/:id">
         <ContactUser />
       </Route>
       <Route exact path="/">

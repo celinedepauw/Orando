@@ -1,10 +1,16 @@
-import { UPDATE_CONTACT_FIELD, CONTACT_WEBSITE, SAVE_MESSAGE_SENT } from '../actions/contact';
+import {
+  UPDATE_CONTACT_FIELD,
+  CONTACT_WEBSITE,
+  SAVE_MESSAGE_SENT,
+  CONTACT,
+} from '../actions/contact';
 
 const initialState = {
   subject: '',
   email: '',
   message: '',
   messageUser: '',
+  creatorId: '',
   isSent: false,
 };
 
@@ -45,6 +51,11 @@ function contactReducer(state = initialState, action) {
       return {
         ...state,
         isSent: false,
+      };
+    case CONTACT:
+      return {
+        ...state,
+        creatorId: action.creatorId,
       };
     default:
       return state;

@@ -7,6 +7,7 @@ import { updateContactField, contactUser } from 'src/actions/contact';
 // === mapStateToProps
 const mapStateToProps = (state) => ({
   messageUser: state.contactInfo.messageUser,
+  creatorId: '',
   isSent: state.contactInfo.isSent,
 });
 

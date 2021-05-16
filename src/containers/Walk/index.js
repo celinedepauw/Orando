@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { participateWalk, walkToEdit } from 'src/actions/walks';
+import { contact } from 'src/actions/contact';
 
 // on importe le composant de présentation
 import Walk from 'src/components/Walk';
@@ -33,6 +34,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   handleClickEdit: (walkId) => {
     dispatch(walkToEdit(walkId));
+  },
+  handleClickContact: (creatorId) => {
+    dispatch(contact(creatorId));
   },
 });
 

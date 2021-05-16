@@ -31,13 +31,19 @@ const contactMiddleware = (store) => (next) => (action) => {
     }
     case CONTACT_USER: {
       console.log('je suis dans le case de contact USER');
+      const authenticationToken = localStorage.getItem('Token');
       const currentUserId = localStorage.getItem('currentUserId');
       const {
         messageUser,
+        creatorId,
       } = store.getState().contactInfo;
-      axios.post(`https://orando.me/o/api/contact-user/${action.creatorId}`, {
+      axios.post(`https://orando.me/o/api/contact-user/${creatorId}`, {
         user: currentUserId,
         message: messageUser,
+      }, {
+        headers: {
+          Authorization: `Bearer ${authenticationToken}`,
+        },
       })
         .then((response) => {
           console.log('réponse dans contact middleware', response);

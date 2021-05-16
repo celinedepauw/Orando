@@ -6,7 +6,12 @@ import contactLogo from 'src/assets/images/email.png';
 
 import './contactUser.scss';
 
-const ContactUser = ({ messageUser, isSent, updateContactField, handleContactUser }) => {
+const ContactUser = ({
+  messageUser,
+  isSent,
+  updateContactField,
+  handleContactUser,
+}) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     handleContactUser();
@@ -40,5 +45,6 @@ ContactUser.propTypes = {
   isSent: PropTypes.bool.isRequired,
   updateContactField: PropTypes.func.isRequired,
   handleContactUser: PropTypes.func.isRequired,
+  creatorId: PropTypes.number.isRequired,
 };
 export default ContactUser;
