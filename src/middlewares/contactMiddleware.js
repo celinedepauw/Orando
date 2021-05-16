@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { CONTACT_WEBSITE, saveMessageSent } from 'src/actions/contact';
+import { CONTACT_WEBSITE, CONTACT_USER, saveMessageSent } from 'src/actions/contact';
 
 const contactMiddleware = (store) => (next) => (action) => {
   // console.log('je suis dans contactMiddleware', action);
@@ -18,6 +18,29 @@ const contactMiddleware = (store) => (next) => (action) => {
       })
         .then((response) => {
           // console.log('réponse dans contact middleware', response);
+          if (response.status === 200) {
+            alert('Votre message a bien été envoyé !');
+            store.dispatch(saveMessageSent(false));
+          }
+        })
+        .catch((error) => {
+          console.log('error: ', error);
+        });
+      next(action);
+      break;
+    }
+    case CONTACT_USER: {
+      console.log('je suis dans le case de contact USER');
+      const currentUserId = localStorage.getItem('currentUserId');
+      const {
+        messageUser,
+      } = store.getState().contactInfo;
+      axios.post(`https://orando.me/o/api/contact-user/${action.creatorId}`, {
+        user: currentUserId,
+        message: messageUser,
+      })
+        .then((response) => {
+          console.log('réponse dans contact middleware', response);
           if (response.status === 200) {
             alert('Votre message a bien été envoyé !');
             store.dispatch(saveMessageSent(false));
