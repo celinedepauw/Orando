@@ -37,14 +37,12 @@ const contactMiddleware = (store) => (next) => (action) => {
         messageUser,
         creatorId,
       } = store.getState().contactInfo;
-      axios.post(`https://orando.me/o/api/contact-user/${creatorId}`, {
-        user: currentUserId,
-        message: messageUser,
-      }, {
-        headers: {
-          Authorization: `Bearer ${authenticationToken}`,
-        },
-      })
+      axios.post(`https://orando.me/o/api/contact-user/${creatorId}`,
+        { user: currentUserId, message: messageUser }, {
+          headers: {
+            Authorization: `Bearer ${authenticationToken}`,
+          },
+        })
         .then((response) => {
           console.log('réponse dans contact middleware', response);
           if (response.status === 200) {

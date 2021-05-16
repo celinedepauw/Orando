@@ -368,28 +368,28 @@
         } 
       }
       
-      .walk_contact_link {      
-        padding: 1rem; 
-        background-color: vars.$regularGreen;
-        border: none;
-        border-radius: 10px;
+      .walk_contact_link {  
         text-align: center;
-        width: 100%;
         margin: 0.5rem 1rem;
-        font-weight: bold;
+        
+        .walk_button_contact {
+          color: white;
+          font-weight: bold;
+          padding: 1rem;
+          background-color: vars.$regularGreen;
+          border: none;
+          border-radius: 10px;
+          font-size: 1.1rem;
 
           &:hover {
             box-shadow: 5px 5px 5px vars.$darkGreen;
             transform: scale(1.1);
           }
 
-          @media(min-width: vars.$breakpointTablet) {
-            width: 30%;
-          }
-
           .walk_contact_link_nickname {
             color: vars.$blackRed;
           }
+        }
       }
 
       .walk_participate_button {
@@ -400,7 +400,7 @@
         border-radius: 10px;
         font-size: 1.1rem;
         font-weight: bold;
-        width: 100%;
+         
         margin: 0.5rem 1rem;
         text-align: center;
 
