@@ -217,7 +217,7 @@ const EditWalk = ({
             label="Dénivelé (entre 50 et 1500 mètres)"
             type="text"
             pattern="([1-9]?[0-9])|2000"
-            minLength="3"
+            minLength="2"
             value={walkElevation}
             changeField={(identifier, newValue) => {
               console.log(`changeField sur dénivelé : identifier=${identifier}, newValue=${newValue}`);
