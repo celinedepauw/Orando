@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import ContactUser from 'src/components/ContactUser';
 
-import { updateContactField, contactWebsite } from 'src/actions/contact';
+import { updateContactField, contactUser } from 'src/actions/contact';
 
 // === mapStateToProps
 const mapStateToProps = (state) => ({
@@ -16,8 +16,8 @@ const mapDispatchToProps = (dispatch) => ({
     const action = updateContactField(identifier, newValue);
     dispatch(action);
   },
-  handleContact: () => {
-    const action = contactWebsite();
+  handleContactUser: () => {
+    const action = contactUser();
     dispatch(action);
   },
 });

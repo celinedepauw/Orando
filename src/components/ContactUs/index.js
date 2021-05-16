@@ -59,7 +59,6 @@ const ContactUs = ({
           required
           rows="10"
           changeField={(identifier, newValue) => {
-            console.log(`changeField sur message : identifier=${identifier}, newValue=${newValue}`);
             updateContactField(identifier, newValue);
           }}
         />
