@@ -1,6 +1,7 @@
 import {
   UPDATE_CONTACT_FIELD,
   CONTACT_WEBSITE,
+  CONTACT_USER,
   SAVE_MESSAGE_SENT,
   CONTACT,
 } from '../actions/contact';
@@ -45,6 +46,12 @@ function contactReducer(state = initialState, action) {
         subject: '',
         email: '',
         message: '',
+        isSent: true,
+      };
+    case CONTACT_USER:
+      return {
+        ...state,
+        messageUser: '',
         isSent: true,
       };
     case SAVE_MESSAGE_SENT:

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import TextField from 'src/components/TextField';
@@ -16,6 +17,7 @@ const ContactUser = ({
     evt.preventDefault();
     handleContactUser();
   };
+  if (isSent) return <Redirect to="/" />;
   return (
     <main className="contactUser">
       <div className="contactUser_title">
