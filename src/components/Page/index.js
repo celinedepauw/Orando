@@ -20,7 +20,7 @@ import SignUp from 'src/containers/SignUp';
 import UpdateProfile from 'src/containers/UpdateProfile';
 import EditWalk from 'src/containers/EditWalk';
 import ContactUs from 'src/containers/ContactUs';
-import ContactUser from 'src/components/ContactUser';
+import ContactUser from 'src/containers/ContactUser';
 
 const Page = () => (
   <div className="page">

@@ -241,6 +241,7 @@ const EditWalk = ({
             placeholder={walk.description}
             label="Description / Infos pratiques *"
             required
+            rows="10"
             minLength="2"
             type="text"
             value={walkDescription}

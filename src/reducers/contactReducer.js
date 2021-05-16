@@ -4,6 +4,7 @@ const initialState = {
   subject: '',
   email: '',
   message: '',
+  messageUser: '',
   isSent: false,
 };
 
@@ -22,9 +23,15 @@ function contactReducer(state = initialState, action) {
           email: action.value,
         };
       }
+      if (action.identifier === 'message') {
+        return {
+          ...state,
+          message: action.value,
+        };
+      }
       return {
         ...state,
-        message: action.value,
+        messageUser: action.value,
       };
     case CONTACT_WEBSITE:
       return {
