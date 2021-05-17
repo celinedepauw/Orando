@@ -85,8 +85,22 @@ const Walk = ({
               </Link>
             ) : (
               <>
-                <Link className="walk_contact_link" to={`/contact_user/${creatorId}`}><button className="walk_button_contact" type="button" onClick={() => handleClickContact(creatorId)}>Contacter <span className="walk_contact_link_nickname">{walk.creator.nickname}</span> pour avoir plus d'informations !</button></Link>
-                { userId ? <button className="walk_participate_button" type="button" onClick={() => handleParticipation(id)}>Je souhaite participer !</button> : <Link to="/authentication" className="walk_participate_button">Je souhaite participer !</Link>}
+                { userId ? (
+                  <Link className="walk_contact_link" to={`/contact_user/${creatorId}`}>
+                    <button className="walk_button_contact" type="button" onClick={() => handleClickContact(creatorId)}>
+                      Contacter <span className="walk_contact_link_nickname">{walk.creator.nickname}</span> pour avoir plus d'informations !
+                    </button>
+                  </Link>
+                ) : (
+                  <Link className="walk_contact_link" to="/authentication">
+                    <button className="walk_button_contact" type="button" onClick={() => handleClickContact(creatorId)}>
+                      Contacter <span className="walk_contact_link_nickname">{walk.creator.nickname}</span> pour avoir plus d'informations !
+                    </button>
+                  </Link>
+                ) }
+                { userId
+                  ? <button className="walk_participate_button" type="button" onClick={() => handleParticipation(id)}>Je souhaite participer !</button>
+                  : <Link to="/authentication" className="walk_participate_button">Je souhaite participer !</Link>}
               </>
             )}
           </div>
