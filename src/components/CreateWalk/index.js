@@ -65,7 +65,7 @@ const CreateWalk = ({
 
   console.log('isCreated : ', isCreated);
 
-  if (isCreated) return <Redirect to="/my_hikes/" />;
+  // if (isCreated) return <Redirect to="/my_hikes/" />;
 
   return (
     <main className="createWalk">
@@ -93,6 +93,7 @@ const CreateWalk = ({
             identifier="walkAreaId"
             options={areasList}
             value={walkAreaId}
+            required
             placeholder="Choix de la région"
             manageChange={(identifier, newValue) => {
               console.log(`manageChange sur area : identifier=${identifier}, newValue=${newValue}`);
@@ -162,7 +163,6 @@ const CreateWalk = ({
           placeholder="date et heure"
           label="Date et heure du départ *"
           type="datetime-local"
-          min="2021-05-03T00:00"
           required
           value={walkDate}
           changeField={(identifier, newValue) => {
@@ -178,6 +178,7 @@ const CreateWalk = ({
             placeholder="durée"
             label="Durée approximative *"
             value={walkDuration}
+            required
             options={durations}
             manageChange={(identifier, newValue) => {
               console.log(`changeField sur durée : identifier=${identifier}, newValue=${newValue}`);
@@ -205,6 +206,7 @@ const CreateWalk = ({
             label="Niveau de difficulté *"
             identifier="walkDifficulty"
             options={difficulties}
+            required
             placeholder="Niveau de difficulté"
             manageChange={(identifier, newValue) => {
               console.log(`manageChange sur difficulté: identifier=${identifier}, newValue=${newValue}`);

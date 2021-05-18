@@ -30,7 +30,6 @@ const Walk = ({
   const walk = walks.find((item) => item.id == id);
   const userId = localStorage.getItem('currentUserId');
   const creatorId = walk.creator.id;
-  console.log(userId);
 
   return (
     <>
