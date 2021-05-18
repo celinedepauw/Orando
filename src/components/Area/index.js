@@ -28,12 +28,12 @@ const Area = ({ areas, loadingAreas, isLogged }) => {
           </div>
           {!isLogged && (
             <Link to="/authentication">
-              <button className="area_add_walk_button" type="button">Proposer une randonnée</button>
+              <button className="area_add_walk_button" type="button">Proposez une randonnée</button>
             </Link>
           )}
           {isLogged && (
             <Link to="/create">
-              <button className="area_add_walk_button" type="button">Proposer une randonnée</button>
+              <button className="area_add_walk_button" type="button">Proposez une randonnée</button>
             </Link>
           )}
         </main>

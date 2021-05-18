@@ -2,11 +2,12 @@
 export const FETCH_WALKS = 'FETCH_WALKS';
 export const SAVE_WALKS = 'SAVE_WALKS';
 export const DELETE_WALK = 'DELETE_WALK';
-export const PARTIPATE_WALK = 'PARTIPATE_WALK';
+export const PARTICIPATE_WALK = 'PARTICIPATE_WALK';
 export const CANCEL_PARTICIPATE = 'CANCEL_PARTICIPATE';
 export const CREATE_WALK = 'CREATE_WALK';
 export const SAVE_CREATED_WALK = 'SAVE_CREATED_WALK';
 export const EDIT_WALK = 'EDIT_WALK';
+export const SAVE_UPDATED_WALK = 'SAVE_UPDATED_WALK';
 export const UPDATE_CREATE_WALK_FIELD = 'UPDATE_CREATE_WALK_FIELD';
 export const UPDATE_CREATE_WALK_SELECT = 'UPDATE_CREATE_WALK_SELECT';
 export const UPDATE_WALK_FIELD = 'UPDATE_WALK_FIELD';
@@ -35,7 +36,7 @@ export const deleteWalk = (walkId) => ({
 });
 
 export const participateWalk = (walkId) => ({
-  type: PARTIPATE_WALK,
+  type: PARTICIPATE_WALK,
   walkId: walkId,
 });
 
@@ -76,6 +77,11 @@ export const createWalk = (
 export const editWalk = (walkId) => ({
   type: EDIT_WALK,
   walkId: walkId,
+});
+
+export const saveUpdatedWalk = (isUpdated) => ({
+  type: SAVE_UPDATED_WALK,
+  isUpdated,
 });
 
 export const updateTags = (tagId) => ({

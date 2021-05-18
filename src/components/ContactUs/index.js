@@ -1,7 +1,9 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import Field from 'src/components/Field';
+import TextField from 'src/components/TextField';
 import contactLogo from 'src/assets/images/email.png';
 
 import './contactUs.scss';
@@ -10,6 +12,7 @@ const ContactUs = ({
   subject,
   email,
   message,
+  isSent,
   handleContact,
   updateContactField,
 }) => {
@@ -17,6 +20,7 @@ const ContactUs = ({
     evt.preventDefault();
     handleContact();
   };
+  if (isSent) return <Redirect to="/" />;
   return (
     <main className="contactUs">
       <div className="contactUs_title">
@@ -47,14 +51,14 @@ const ContactUs = ({
             updateContactField(identifier, newValue);
           }}
         />
-        <Field
+        <TextField
           identifier="message"
           placeholder=""
           label="Votre message"
           value={message}
           required
+          rows="10"
           changeField={(identifier, newValue) => {
-            console.log(`changeField sur message : identifier=${identifier}, newValue=${newValue}`);
             updateContactField(identifier, newValue);
           }}
         />
@@ -64,10 +68,11 @@ const ContactUs = ({
   );
 };
 
-ContactUs.prototypes = {
+ContactUs.propTypes = {
   subject: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired,
+  isSent: PropTypes.bool.isRequired,
   handleContact: PropTypes.func.isRequired,
   updateContactField: PropTypes.func.isRequired,
 };

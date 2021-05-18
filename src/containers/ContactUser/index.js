@@ -1,15 +1,13 @@
 import { connect } from 'react-redux';
 
-// on importe le composant de présentation
-import ContactUs from 'src/components/ContactUs';
+import ContactUser from 'src/components/ContactUser';
 
-import { updateContactField, contactWebsite } from 'src/actions/contact';
+import { updateContactField, contactUser } from 'src/actions/contact';
 
 // === mapStateToProps
 const mapStateToProps = (state) => ({
-  subject: state.contactInfo.subject,
-  email: state.contactInfo.email,
-  message: state.contactInfo.message,
+  messageUser: state.contactInfo.messageUser,
+  creatorId: '',
   isSent: state.contactInfo.isSent,
 });
 
@@ -19,11 +17,11 @@ const mapDispatchToProps = (dispatch) => ({
     const action = updateContactField(identifier, newValue);
     dispatch(action);
   },
-  handleContact: () => {
-    const action = contactWebsite();
+  handleContactUser: () => {
+    const action = contactUser();
     dispatch(action);
   },
 });
 
 // === création de l'assistant
-export default connect(mapStateToProps, mapDispatchToProps)(ContactUs);
+export default connect(mapStateToProps, mapDispatchToProps)(ContactUser);

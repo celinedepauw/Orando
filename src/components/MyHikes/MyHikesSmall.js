@@ -26,9 +26,9 @@ const MyHikesSmall = ({
       <Link to={`/walks/${id}`}>
         <button type="button" className="walk_button_more_infos">Plus de détails</button>
       </Link>
-      {// Bouton "voir les participants"
-      // V1 : l'organisateur peut visualiser les participants à sa randonnée
-      // V2 : l'organisateur pourra accepter ou refuser la participation d'un utilisateur
+      {// Button "see the participants"
+      // V1 : the creator can see the participants of his walk
+      // V2 : the creator will be able to accept or reject the participation of a user
       }
       <Link to={`/participants/walks/${id}`}>
         <button type="button" className="walk_button_attendees">Voir les participants</button>

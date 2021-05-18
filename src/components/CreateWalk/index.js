@@ -37,13 +37,6 @@ const CreateWalk = ({
     }
   ));
 
-  const tagsList = tags.map((tag) => (
-    {
-      value: tag.id,
-      label: tag.name,
-    }
-  ));
-
   const difficulties = [
     { value: 'Facile', label: 'Facile' },
     { value: 'Moyen', label: 'Moyen' },
@@ -72,7 +65,7 @@ const CreateWalk = ({
 
   console.log('isCreated : ', isCreated);
 
-  if (isCreated) return <Redirect to="/my_hikes/" />;
+  // if (isCreated) return <Redirect to="/my_hikes/" />;
 
   return (
     <main className="createWalk">
@@ -88,6 +81,7 @@ const CreateWalk = ({
           label="Titre *"
           value={walkTitle}
           required
+          pattern="[^<>]+"
           changeField={(identifier, newValue) => {
             console.log(`changeField sur titre : identifier=${identifier}, newValue=${newValue}`);
             updateCreateWalkField(identifier, newValue);
@@ -100,6 +94,7 @@ const CreateWalk = ({
             identifier="walkAreaId"
             options={areasList}
             value={walkAreaId}
+            required
             placeholder="Choix de la région"
             manageChange={(identifier, newValue) => {
               console.log(`manageChange sur area : identifier=${identifier}, newValue=${newValue}`);
@@ -149,6 +144,7 @@ const CreateWalk = ({
           label="Point de départ *"
           value={walkStartingPoint}
           required
+          pattern="[^<>]+"
           changeField={(identifier, newValue) => {
             console.log(`changeField sur point de départ : identifier=${identifier}, newValue=${newValue}`);
             updateCreateWalkField(identifier, newValue);
@@ -159,6 +155,7 @@ const CreateWalk = ({
           placeholder="point d'arrivée"
           label="Point d'arrivée (si différent du point de départ)"
           value={walkEndPoint}
+          pattern="[^<>]+"
           changeField={(identifier, newValue) => {
             console.log(`changeField sur point d'arrivée : identifier=${identifier}, newValue=${newValue}`);
             updateCreateWalkField(identifier, newValue);
@@ -169,7 +166,6 @@ const CreateWalk = ({
           placeholder="date et heure"
           label="Date et heure du départ *"
           type="datetime-local"
-          min="2021-05-03T00:00"
           required
           value={walkDate}
           changeField={(identifier, newValue) => {
@@ -185,6 +181,7 @@ const CreateWalk = ({
             placeholder="durée"
             label="Durée approximative *"
             value={walkDuration}
+            required
             options={durations}
             manageChange={(identifier, newValue) => {
               console.log(`changeField sur durée : identifier=${identifier}, newValue=${newValue}`);
@@ -195,9 +192,9 @@ const CreateWalk = ({
         <Field
           identifier="walkDistance"
           placeholder="distance en kms"
-          label="Nombre de kilomètres"
+          label="Nombre de kilomètres (nombre entier)"
           type="text"
-          pattern="([1-9]?[0-9])|99"
+          pattern="\d*"
           minLength="1"
           maxLength="2"
           value={walkDistance}
@@ -212,6 +209,7 @@ const CreateWalk = ({
             label="Niveau de difficulté *"
             identifier="walkDifficulty"
             options={difficulties}
+            required
             placeholder="Niveau de difficulté"
             manageChange={(identifier, newValue) => {
               console.log(`manageChange sur difficulté: identifier=${identifier}, newValue=${newValue}`);
@@ -222,10 +220,11 @@ const CreateWalk = ({
         <Field
           identifier="walkElevation"
           placeholder="dénivelé"
-          label="Dénivelé (en mètres)"
+          label="Dénivelé (entre 10 et 2000 mètres)"
           type="text"
-          pattern="([1-9]?[0-9])|2000"
-          minLength="3"
+          pattern="[^<>]+"
+          minLength="2"
+          maxLength="4"
           value={walkElevation}
           changeField={(identifier, newValue) => {
             console.log(`changeField sur dénivelé : identifier=${identifier}, newValue=${newValue}`);
@@ -237,7 +236,7 @@ const CreateWalk = ({
           placeholder="nombre de personnes"
           label="Nombre de personnes maximum (jusqu'à 30 personnes)"
           type="text"
-          pattern="([1-9]?[0-9])|30"
+          pattern="[^<>]+"
           value={walkNumberPeople}
           changeField={(identifier, newValue) => {
             console.log(`changeField sur nb de participants : identifier=${identifier}, newValue=${newValue}`);
@@ -251,7 +250,8 @@ const CreateWalk = ({
           value={walkDescription}
           minLength="2"
           required
-          rows="5"
+          pattern="[^<>]+"
+          rows="10"
           changeField={(identifier, newValue) => {
             console.log(`changeField sur description : identifier=${identifier}, newValue=${newValue}`);
             updateCreateWalkField(identifier, newValue);

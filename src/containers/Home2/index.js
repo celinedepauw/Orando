@@ -1,20 +1,19 @@
 import { connect } from 'react-redux';
 
-// on importe le composant de présentation
 import Home2 from 'src/components/Home2';
 
 // === mapStateToProps
-// si on a besoin de lire des informations dans le state
+// if we need to read informations in the state
 const mapStateToProps = (state) => ({
-  // nom de la prop à remplir: élément à récupérer dans le state
+  // prop's name to fill : element to get in the state
   areas: state.areasList.areas,
   isLogged: state.userInfo.isLogged,
 });
 
 // === mapDispatchToProps
-// si on a besoin de dispatcher des actions vers le store (mettre à jour le state)
+// if we need to dispatch actions to the store (update the state)
 const mapDispatchToProps = (dispatch) => ({
-  // nom de la prop à remplir: fonction qui dispatch l'action
+  // prop's name to fill : function wich dispatches the action
 });
 
 // === création de l'assistant

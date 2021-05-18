@@ -5,7 +5,8 @@ import {
   saveWalks,
   fetchWalks,
   saveCreatedWalk,
-  PARTIPATE_WALK,
+  saveUpdatedWalk,
+  PARTICIPATE_WALK,
   CANCEL_PARTICIPATE,
   CREATE_WALK,
   EDIT_WALK,
@@ -64,7 +65,7 @@ const walksMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     }
-    case PARTIPATE_WALK: {
+    case PARTICIPATE_WALK: {
       const authenticationToken = localStorage.getItem('Token');
       const currentUserId = localStorage.getItem('currentUserId');
       // console.log(action.walkId);
@@ -77,7 +78,6 @@ const walksMiddleware = (store) => (next) => (action) => {
         },
       })
         .then((response) => {
-          console.log('toto aime le chocolat', response);
           if (response.status === 201) {
             alert(response.data.message);
             axios.get(`https://orando.me/o/api/users/${currentUserId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
@@ -93,7 +93,6 @@ const walksMiddleware = (store) => (next) => (action) => {
           console.log(`error: ${error.response.data.message}`);
           alert('Votre participation a déjà été prise en compte');
         });
-    
       next(action);
       break;
     }
@@ -180,7 +179,7 @@ const walksMiddleware = (store) => (next) => (action) => {
                 .then((response) => {
                   store.dispatch(saveUser(response.data));
                   store.dispatch(fetchWalks());
-                  // store.dispatch(saveCreatedWalk(true));
+                  store.dispatch(saveCreatedWalk(false));
                 })
                 .catch((error) => {
                   console.log('error: ', error);
@@ -251,7 +250,7 @@ const walksMiddleware = (store) => (next) => (action) => {
                 .then((response) => {
                   store.dispatch(saveUser(response.data));
                   store.dispatch(fetchWalks());
-                  // store.dispatch(saveCreatedWalk(true));
+                  store.dispatch(saveUpdatedWalk(false));
                 })
                 .catch((error) => {
                   console.log('error: ', error);

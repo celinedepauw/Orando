@@ -10,12 +10,7 @@ import avatar from 'src/assets/images/054-hiker.png';
 const NavTop = ({ handleLogout, isLogged }) => (
   <nav className="header_nav">
     <Link to="/" className="header_nav_item"><img className="header_nav_home_logo" src={homeLogo} alt="logo-orando" />Accueil</Link>
-    {!isLogged && (
-      <Link to="/authentication" className="header_nav_item"><img className="header_nav_create_logo" src={createLogo} alt="logo-create-walk" />Créer une randonnée</Link>
-    )}
-    {isLogged && (
-      <Link to="/create" className="header_nav_item"><img className="header_nav_create_logo" src={createLogo} alt="logo-create-walk" />Créer une randonnée</Link>
-    )}
+    {isLogged ? <Link to="/create" className="header_nav_item"><img className="header_nav_create_logo" src={createLogo} alt="logo-create-walk" />Créer une randonnée</Link> : <Link to="/authentication" className="header_nav_item"><img className="header_nav_create_logo" src={createLogo} alt="logo-create-walk" />Créer une randonnée</Link>}
     {!isLogged && (
       <Link to="/authentication" className="header_nav_item"><img className="header_nav_home_connect" src={connect} alt="logo-connect" />Connexion</Link>
     )}

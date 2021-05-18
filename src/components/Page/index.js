@@ -20,6 +20,7 @@ import SignUp from 'src/containers/SignUp';
 import UpdateProfile from 'src/containers/UpdateProfile';
 import EditWalk from 'src/containers/EditWalk';
 import ContactUs from 'src/containers/ContactUs';
+import ContactUser from 'src/containers/ContactUser';
 
 const Page = () => (
   <div className="page">
@@ -74,6 +75,9 @@ const Page = () => (
       </Route>
       <Route exact path="/contact_us">
         <ContactUs />
+      </Route>
+      <Route exact path="/contact_user/:id">
+        <ContactUser />
       </Route>
       <Route exact path="/">
         <Home2 />
