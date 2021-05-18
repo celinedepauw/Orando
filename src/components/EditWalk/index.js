@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import Loader from 'src/components/Loader';
@@ -29,6 +29,7 @@ const EditWalk = ({
   updateWalkSelect,
   updateTags,
   handleEdit,
+  tagsListToUpdate,
 }) => {
   const { id } = useParams();
 
@@ -72,6 +73,8 @@ const EditWalk = ({
     handleEdit(id);
   };
 
+  console.log('MA DEMANDE', tagsListToUpdate);
+
   return (
     <>
       {loadingWalk && <div> <Loader /> </div> }
@@ -112,7 +115,7 @@ const EditWalk = ({
             <p className="editWalk_tag_title">Thème (choix multiple possible)</p>
             <div className="editWalk_tag_list">
               {tags.map((tag) => (
-                <label className="editWalk_tag_label" key={tag.id}>{tag.name}
+                <label className="editWalk_tag_label" htmlFor={tag.name} key={tag.id}>{tag.name}
                   <input
                     className="editWalk_tag_checkbox"
                     type="checkbox"
@@ -122,7 +125,7 @@ const EditWalk = ({
                     onChange={(theTag) => {
                       // console.log(theTag.target.name);
                       // console.log(theTag.target.checked);
-                      updateTags(theTag.target.value);
+                      updateTags(theTag.target);
                     }}
                   />
                 </label>
@@ -317,6 +320,7 @@ EditWalk.propTypes = {
   updateWalkSelect: PropTypes.func.isRequired,
   updateTags: PropTypes.func.isRequired,
   handleEdit: PropTypes.func.isRequired,
+  tagsListToUpdate: PropTypes.array.isRequired,
 };
 
 EditWalk.defaultProps = {

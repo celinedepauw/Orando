@@ -11,6 +11,10 @@ import {
   WALK_TO_EDIT,
 } from 'src/actions/walks';
 
+import {
+  SAVE_TAGS,
+} from 'src/actions/tags';
+
 const initialState = {
   walks: [],
   loadingWalk: true,
@@ -32,6 +36,14 @@ const initialState = {
 
 function walkReducer(state = initialState, action) {
   switch (action.type) {
+    case SAVE_TAGS:
+      return {
+        ...state,
+        tagsList: action.tags.map((tag) => ({
+          id: tag.id, name: tag.name, color: tag.color, checked: false,
+        })),
+      };
+
     case EDIT_WALK:
       return {
         ...state,
@@ -49,7 +61,13 @@ function walkReducer(state = initialState, action) {
         walkNumberPeople: '',
         walkDescription: '',
       };
-    case WALK_TO_EDIT:
+    case WALK_TO_EDIT: {
+      const actualTags = action.walk.tags.map((tag) => tag.id);
+      const tagsToUpdate = state.tagsList.map((tag) => ({
+        ...tag,
+        checked: actualTags.find((actualtag) => actualtag == tag.id ) !== undefined,
+      }));
+
       return {
         ...state,
         walkId: action.walk.id,
@@ -65,7 +83,10 @@ function walkReducer(state = initialState, action) {
         walkElevation: action.walk.elevation,
         walkNumberPeople: action.walk.maxNbPersons,
         walkDescription: action.walk.description,
+        tagsList: tagsToUpdate,
       };
+    }
+
     case CREATE_WALK:
       return {
         ...state,
@@ -82,13 +103,22 @@ function walkReducer(state = initialState, action) {
         walkNumberPeople: '',
         walkDescription: '',
       };
+
     case UPDATE_TAGS: {
       const theTags = [...state.walkTags, action.value];
+
+      const tagsToUpdate = state.tagsList.map((actualTag) => ({
+        ...actualTag,
+        checked: actualTag.id == action.value ? action.tagChecked : actualTag.checked,
+      }));
+
       return {
         ...state,
         walkTags: theTags,
+        tagsList: tagsToUpdate,
       };
     }
+
     case SAVE_WALKS:
       return {
         ...state,
@@ -252,6 +282,7 @@ function walkReducer(state = initialState, action) {
       return {
         ...state,
       };
+
     default:
       return state;
   }

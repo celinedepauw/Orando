@@ -26,6 +26,7 @@ const mapStateToProps = (state) => ({
   walkElevation: state.walksList.walkElevation,
   walkNumberPeople: state.walksList.walkNumberPeople,
   walkDescription: state.walksList.walkDescription,
+  tagsListToUpdate: state.walksList.tagsList,
 });
 
 // === mapDispatchToProps
@@ -45,7 +46,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(action);
   },
   updateTags: (tagId) => {
-    const action = updateTags(tagId);
+    const action = updateTags(tagId.value, tagId.checked);
     dispatch(action);
   },
 });

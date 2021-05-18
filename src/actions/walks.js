@@ -78,9 +78,10 @@ export const editWalk = (walkId) => ({
   walkId: walkId,
 });
 
-export const updateTags = (tagId) => ({
+export const updateTags = (tagId, tagChecked) => ({
   type: UPDATE_TAGS,
   value: tagId,
+  tagChecked,
 });
 
 export const updateCreateWalkField = (identifier, newValue) => ({
