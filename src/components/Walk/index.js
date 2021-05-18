@@ -17,14 +17,19 @@ import twoHikes from 'src/assets/icones/two_hikes.svg';
 import info from 'src/assets/icones/info.svg';
 import distance from 'src/assets/icones/012-map.svg';
 
-const Walk = ({ walks, loadingWalk, handleParticipation, handleClickEdit }) => {
+const Walk = ({
+  walks, loadingWalk,
+  handleParticipation,
+  handleClickEdit,
+  handleClickContact,
+}) => {
   // console.log(walks);
 
   const { id } = useParams();
 
   const walk = walks.find((item) => item.id == id);
   const userId = localStorage.getItem('currentUserId');
-  console.log('rando que je veux modifier', walk);
+  const creatorId = walk.creator.id;
 
   return (
     <>
@@ -80,8 +85,22 @@ const Walk = ({ walks, loadingWalk, handleParticipation, handleClickEdit }) => {
               </Link>
             ) : (
               <>
-                <a className="walk_contact_link" href={`https://orando.me/o/profile/${walk.creator.id}/contact-user`}>Contacter <span className="walk_contact_link_nickname">{walk.creator.nickname}</span> pour avoir plus d'informations !</a>
-                { userId ? <button className="walk_participate_button" type="button" onClick={() => handleParticipation(id)}>Je souhaite participer !</button> : <Link to="/authentication" className="walk_participate_button">Je souhaite participer !</Link>}
+                { userId ? (
+                  <Link className="walk_contact_link" to={`/contact_user/${creatorId}`}>
+                    <button className="walk_button_contact" type="button" onClick={() => handleClickContact(creatorId)}>
+                      Contacter <span className="walk_contact_link_nickname">{walk.creator.nickname}</span> pour avoir plus d'informations !
+                    </button>
+                  </Link>
+                ) : (
+                  <Link className="walk_contact_link" to="/authentication">
+                    <button className="walk_button_contact" type="button">
+                      Contacter <span className="walk_contact_link_nickname">{walk.creator.nickname}</span> pour avoir plus d'informations !
+                    </button>
+                  </Link>
+                ) }
+                { userId
+                  ? <button className="walk_participate_button" type="button" onClick={() => handleParticipation(id)}>Je souhaite participer !</button>
+                  : <Link to="/authentication" className="walk_participate_button">Je souhaite participer !</Link>}
               </>
             )}
           </div>
@@ -109,6 +128,7 @@ Walk.propTypes = {
   ).isRequired,
   handleParticipation: PropTypes.func.isRequired,
   handleClickEdit: PropTypes.func.isRequired,
+  handleClickContact: PropTypes.func.isRequired,
 };
 
 Walk.funcdefaultProps = {

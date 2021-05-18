@@ -1,0 +1,47 @@
+@use 'src/styles/vars';
+
+.contactUser {
+  color: vars.$blackRed;
+  margin: 1rem;
+
+  .contactUser_title {
+    background: linear-gradient(to bottom right, vars.$regularYellow, vars.$darkYellow);
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .contactUser_contact_logo {
+      width: 50px;
+    }
+
+    .contactUser_title_text {
+      color: white;
+      font-weight: bold;
+      padding: 0.5rem;
+      font-size: 2rem;
+    }
+  }
+
+  .contactUser_form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    .contactUser_button {
+      color: white;
+      font-weight: bold;
+      padding: 1rem;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(to bottom right, vars.$regularYellow, vars.$darkYellow);
+  
+      &:hover {
+        box-shadow: 5px 5px 5px vars.$darkYellow;
+        transform: scale(1.1);
+      }
+    }
+  }
+  
+}

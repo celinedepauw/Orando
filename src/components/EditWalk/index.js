@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useParams } from 'react-router-dom';
+import { useParams, Redirect } from 'react-router-dom';
 import Loader from 'src/components/Loader';
+import moment from 'moment';
 
 import editLogo from 'src/assets/images/create.png';
 import Field from 'src/components/Field';
@@ -17,14 +18,17 @@ const EditWalk = ({
   loadingWalk,
   walkTitle,
   walkAreaId,
+  walkTags,
   walkStartingPoint,
   walkEndPoint,
   walkDate,
   walkDuration,
+  walkDifficulty,
   walkDistance,
   walkElevation,
   walkNumberPeople,
   walkDescription,
+  isUpdated,
   updateWalkField,
   updateWalkSelect,
   updateTags,
@@ -42,18 +46,15 @@ const EditWalk = ({
     }
   ));
 
-  const tagsList = tags.map((tag) => (
-    {
-      value: tag.id,
-      label: tag.name,
-    }
-  ));
+  const areaSelected = areasList.find((area) => area.value === walk.area.id);
 
   const difficulties = [
     { value: 'Facile', label: 'Facile' },
     { value: 'Moyen', label: 'Moyen' },
     { value: 'Difficile', label: 'Difficile' },
   ];
+
+  const difficultySelected = difficulties.find((difficulty) => difficulty.value === walk.difficulty);
 
   const durations = [
     { value: '1 heure', label: '1 heure' },
@@ -68,12 +69,15 @@ const EditWalk = ({
     { value: 'plus de 5 heures', label: 'plus de 5 heures' },
   ];
 
+  const durationSelected = durations.find((duration) => duration.value === walk.duration);
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
     handleEdit(id);
   };
 
-  console.log('MA DEMANDE', walkTagsToUpdate);
+
+  if (isUpdated) return <Redirect to="/my_hikes/" />;
 
   return (
     <>
@@ -92,6 +96,7 @@ const EditWalk = ({
             label="Titre *"
             value={walkTitle}
             required
+            pattern="[^<>]+"
             changeField={(identifier, newValue) => {
               console.log(`changeField sur titre : identifier=${identifier}, newValue=${newValue}`);
               updateWalkField(identifier, newValue);
@@ -103,7 +108,8 @@ const EditWalk = ({
               label="Région *"
               identifier="walkAreaId"
               options={areasList}
-              value={walk.area.id}
+              value={walkAreaId}
+              defaultValue={areaSelected}
               placeholder={walk.area.name}
               manageChange={(identifier, newValue) => {
                 console.log(`manageChange sur area : identifier=${identifier}, newValue=${newValue}`);
@@ -123,6 +129,7 @@ const EditWalk = ({
                     value={tag.id}
                     // checked={walk.tags.find((walkTag) => walkTag.name === tag.name)}
                     checked={tag.checked}
+
                     onChange={(theTag) => {
                       // console.log(theTag.target.name);
                       // console.log(theTag.target.checked);
@@ -139,6 +146,7 @@ const EditWalk = ({
             label="Point de départ *"
             value={walkStartingPoint}
             required
+            pattern="[^<>]+"
             changeField={(identifier, newValue) => {
               console.log(`changeField sur point de départ : identifier=${identifier}, newValue=${newValue}`);
               updateWalkField(identifier, newValue);
@@ -149,6 +157,7 @@ const EditWalk = ({
             placeholder={walk.endPoint}
             label="Point d'arrivée (si différent du point de départ)"
             value={walkEndPoint}
+            pattern="[^<>]+"
             changeField={(identifier, newValue) => {
               console.log(`changeField sur point d'arrivée : identifier=${identifier}, newValue=${newValue}`);
               updateWalkField(identifier, newValue);
@@ -160,7 +169,7 @@ const EditWalk = ({
             label="Date et heure du départ *"
             type="datetime-local"
             min="2021-05-03T00:00"
-            value={walkDate}
+            value={moment(walkDate).format('YYYY-MM-DDTHH:mm')}
             changeField={(identifier, newValue) => {
             // console.log(`changeField sur date : identifier=${identifier}, newValue=${newValue}`);
               // console.log('heure', goodDate);
@@ -173,6 +182,7 @@ const EditWalk = ({
               placeholder={walk.duration}
               label="Durée approximative *"
               value={walkDuration}
+              defaultValue={durationSelected}
               options={durations}
               manageChange={(identifier, newValue) => {
                 console.log(`changeField sur durée : identifier=${identifier}, newValue=${newValue}`);
@@ -183,9 +193,9 @@ const EditWalk = ({
           <Field
             identifier="walkDistance"
             placeholder={walk.kilometre}
-            label="Nombre de kilomètres"
+            label="Nombre de kilomètres (nombre entier)"
             type="text"
-            pattern="([1-9]?[0-9])|99"
+            pattern="\d*"
             minLength="1"
             maxLength="2"
             value={walkDistance}
@@ -200,6 +210,8 @@ const EditWalk = ({
               label="Niveau de difficulté *"
               identifier="walkDifficulty"
               options={difficulties}
+              value={walkDifficulty}
+              defaultValue={difficultySelected}
               placeholder={walk.difficulty}
               manageChange={(identifier, newValue) => {
                 console.log(`manageChange sur difficulté: identifier=${identifier}, newValue=${newValue}`);
@@ -210,10 +222,11 @@ const EditWalk = ({
           <Field
             identifier="walkElevation"
             placeholder={walk.elevation}
-            label="Dénivelé (en mètres)"
+            label="Dénivelé (entre 10 et 2000 mètres)"
             type="text"
-            pattern="([1-9]?[0-9])|2000"
-            minLength="3"
+            pattern="[^<>]+"
+            minLength="2"
+            maxLength="4"
             value={walkElevation}
             changeField={(identifier, newValue) => {
               console.log(`changeField sur dénivelé : identifier=${identifier}, newValue=${newValue}`);
@@ -225,7 +238,8 @@ const EditWalk = ({
             placeholder={walk.maxNbPersons}
             label="Nombre de personnes maximum (jusqu'à 30 personnes)"
             type="text"
-            pattern="([1-9]?[0-9])|30"
+            pattern="\d*"
+            maxLength="2"
             value={walkNumberPeople}
             changeField={(identifier, newValue) => {
               console.log(`changeField sur nb de participants : identifier=${identifier}, newValue=${newValue}`);
@@ -237,6 +251,8 @@ const EditWalk = ({
             placeholder={walk.description}
             label="Description / Infos pratiques *"
             required
+            pattern="[^<>]+"
+            rows="10"
             minLength="2"
             type="text"
             value={walkDescription}
@@ -300,10 +316,17 @@ EditWalk.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]).isRequired,
+  walkTags: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
   walkStartingPoint: PropTypes.string.isRequired,
   walkEndPoint: PropTypes.string,
   walkDate: PropTypes.string.isRequired,
   walkDuration: PropTypes.string.isRequired,
+  walkDifficulty: PropTypes.string.isRequired,
   walkDistance: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
@@ -328,6 +351,7 @@ EditWalk.propTypes = {
       checked: PropTypes.bool.isRequired,
     }).isRequired,
   ).isRequired,
+  isUpdated: PropTypes.bool.isRequired,
 };
 
 EditWalk.defaultProps = {

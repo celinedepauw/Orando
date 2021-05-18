@@ -8,6 +8,7 @@ import {
   SAVE_CREATED_WALK,
   CREATE_WALK,
   EDIT_WALK,
+  SAVE_UPDATED_WALK,
   WALK_TO_EDIT,
 } from 'src/actions/walks';
 
@@ -33,6 +34,7 @@ const initialState = {
   walkDescription: '',
   isCreated: false,
   walkTagsToUpdate: [],
+  isUpdated: false,
 };
 
 function walkReducer(state = initialState, action) {
@@ -65,6 +67,7 @@ function walkReducer(state = initialState, action) {
         walkElevation: '',
         walkNumberPeople: '',
         walkDescription: '',
+        isUpdated: true,
       };
     case WALK_TO_EDIT: {
       const actualTags = action.walk.tags.map((tag) => tag.id);
@@ -110,6 +113,7 @@ function walkReducer(state = initialState, action) {
         walkElevation: '',
         walkNumberPeople: '',
         walkDescription: '',
+        isCreated: true,
       };
 
     case UPDATE_TAGS: {
@@ -136,7 +140,12 @@ function walkReducer(state = initialState, action) {
     case SAVE_CREATED_WALK:
       return {
         ...state,
-        isCreated: true,
+        isCreated: false,
+      };
+    case SAVE_UPDATED_WALK:
+      return {
+        ...state,
+        isUpdated: false,
       };
     case UPDATE_CREATE_WALK_FIELD:
       if (action.identifier === 'walkTitle') {
