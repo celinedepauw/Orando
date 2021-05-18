@@ -32,8 +32,9 @@ const mapDispatchToProps = (dispatch) => ({
   handleParticipation: (walkId) => {
     dispatch(participateWalk(walkId));
   },
-  handleClickEdit: (walkId) => {
-    dispatch(walkToEdit(walkId));
+  handleClickEdit: (walk) => {
+    console.log('walkID', walk);
+    dispatch(walkToEdit(walk));
   },
   handleClickContact: (creatorId) => {
     dispatch(contact(creatorId));

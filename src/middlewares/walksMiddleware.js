@@ -130,6 +130,7 @@ const walksMiddleware = (store) => (next) => (action) => {
     case CREATE_WALK: {
       const authenticationToken = localStorage.getItem('Token');
       const currentUserId = localStorage.getItem('currentUserId');
+
       const {
         walkTitle,
         walkAreaId,
@@ -143,7 +144,13 @@ const walksMiddleware = (store) => (next) => (action) => {
         walkDifficulty,
         walkElevation,
         walkNumberPeople,
+        walkTagsToUpdate,
       } = store.getState().walksList;
+
+      const tagsForNewWalk = walkTagsToUpdate.filter((tags) => tags.checked).map((tags) => tags.id);
+
+      console.log(tagsForNewWalk);
+
       if (
         walkTitle
         && walkAreaId
@@ -156,7 +163,7 @@ const walksMiddleware = (store) => (next) => (action) => {
           title: walkTitle,
           area: walkAreaId,
           creator: currentUserId,
-          tags: walkTags,
+          tags: tagsForNewWalk,
           startingPoint: walkStartingPoint,
           endPoint: walkEndPoint,
           date: walkDate,
@@ -196,10 +203,12 @@ const walksMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     }
+
     case EDIT_WALK: {
       const authenticationToken = localStorage.getItem('Token');
       const currentUserId = localStorage.getItem('currentUserId');
       console.log('il faut modifier une randonnée', action.walkId);
+
       const {
         walkTitle,
         walkAreaId,
@@ -213,7 +222,24 @@ const walksMiddleware = (store) => (next) => (action) => {
         walkDifficulty,
         walkElevation,
         walkNumberPeople,
+        walkTagsToUpdate,
       } = store.getState().walksList;
+
+      // console.log(walkTagsToUpdate);
+
+      /**
+       * Je viens faire un filter sur le tableau comportant tous les tags
+       * J'en ressors seulement ceux dont le checked est true
+       * Je vais ensuite faire un map sur le tableau filtré
+       */
+      const tagsToUpdate = walkTagsToUpdate.filter((tags) => tags.checked).map((tags) => tags.id);
+
+      // console.log(tagsToUpdate);
+
+      // const XXX = tagsToUpdate.map((tags) => tags.id);
+
+      // console.log(XXX);
+
       if (
         walkTitle
         && walkAreaId
@@ -226,7 +252,7 @@ const walksMiddleware = (store) => (next) => (action) => {
           title: walkTitle,
           area: walkAreaId,
           creator: currentUserId,
-          tags: walkTags,
+          tags: tagsToUpdate,
           startingPoint: walkStartingPoint,
           endPoint: walkEndPoint,
           date: walkDate,
@@ -267,6 +293,7 @@ const walksMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     }
+
     default:
       next(action);
   }

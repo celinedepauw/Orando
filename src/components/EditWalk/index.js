@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useParams, Redirect } from 'react-router-dom';
 import Loader from 'src/components/Loader';
@@ -33,6 +33,7 @@ const EditWalk = ({
   updateWalkSelect,
   updateTags,
   handleEdit,
+  walkTagsToUpdate,
 }) => {
   const { id } = useParams();
 
@@ -75,7 +76,9 @@ const EditWalk = ({
     handleEdit(id);
   };
 
+
   if (isUpdated) return <Redirect to="/my_hikes/" />;
+
   return (
     <>
       {loadingWalk && <div> <Loader /> </div> }
@@ -117,18 +120,20 @@ const EditWalk = ({
           <div className="editWalk_tag">
             <p className="editWalk_tag_title">Thème (choix multiple possible)</p>
             <div className="editWalk_tag_list">
-              {tags.map((tag) => (
-                <label className="editWalk_tag_label" key={tag.id}>{tag.name}
+              {walkTagsToUpdate.map((tag) => (
+                <label className="editWalk_tag_label" htmlFor={tag.name} key={tag.id}>{tag.name}
                   <input
                     className="editWalk_tag_checkbox"
                     type="checkbox"
                     name={tag.name}
-                    value={walkTags}
-                    checked={walk.tags.find((walkTag) => walkTag.name === tag.name)}
+                    value={tag.id}
+                    // checked={walk.tags.find((walkTag) => walkTag.name === tag.name)}
+                    checked={tag.checked}
+
                     onChange={(theTag) => {
                       // console.log(theTag.target.name);
                       // console.log(theTag.target.checked);
-                      updateTags(theTag.target.value);
+                      updateTags(theTag.target);
                     }}
                   />
                 </label>
@@ -339,6 +344,13 @@ EditWalk.propTypes = {
   updateWalkSelect: PropTypes.func.isRequired,
   updateTags: PropTypes.func.isRequired,
   handleEdit: PropTypes.func.isRequired,
+  walkTagsToUpdate: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      checked: PropTypes.bool.isRequired,
+    }).isRequired,
+  ).isRequired,
   isUpdated: PropTypes.bool.isRequired,
 };
 

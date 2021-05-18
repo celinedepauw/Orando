@@ -114,7 +114,7 @@ const CreateWalk = ({
                   value={tag.id}
                   onChange={(theTag) => {
                     console.log('tags', theTag.target.value);
-                    updateTags(theTag.target.value);
+                    updateTags(theTag.target);
                   }}
                 />
               </label>

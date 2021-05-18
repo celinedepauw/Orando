@@ -12,6 +12,10 @@ import {
   WALK_TO_EDIT,
 } from 'src/actions/walks';
 
+import {
+  SAVE_TAGS,
+} from 'src/actions/tags';
+
 const initialState = {
   walks: [],
   loadingWalk: true,
@@ -29,11 +33,24 @@ const initialState = {
   walkNumberPeople: '',
   walkDescription: '',
   isCreated: false,
+  walkTagsToUpdate: [],
   isUpdated: false,
 };
 
 function walkReducer(state = initialState, action) {
   switch (action.type) {
+    /**
+     * Create a new array from the existing tag list with one more index "checked"
+     */
+    case SAVE_TAGS:
+      return {
+        ...state,
+        walkTagsToUpdate: action.tags.map((tag) => ({
+          ...tag,
+          checked: false,
+        })),
+      };
+
     case EDIT_WALK:
       return {
         ...state,
@@ -52,7 +69,16 @@ function walkReducer(state = initialState, action) {
         walkDescription: '',
         isUpdated: true,
       };
-    case WALK_TO_EDIT:
+    case WALK_TO_EDIT: {
+      const actualTags = action.walk.tags.map((tag) => tag.id);
+
+      console.log('Je ne récupère que les IDs des tags de la randonnée actuelle', actualTags);
+
+      const tagsToUpdate = state.walkTagsToUpdate.map((tag) => ({
+        ...tag,
+        checked: actualTags.find((actualtag) => actualtag == tag.id) !== undefined,
+      }));
+
       return {
         ...state,
         walkId: action.walk.id,
@@ -68,7 +94,10 @@ function walkReducer(state = initialState, action) {
         walkElevation: action.walk.elevation,
         walkNumberPeople: action.walk.maxNbPersons,
         walkDescription: action.walk.description,
+        walkTagsToUpdate: tagsToUpdate,
       };
+    }
+
     case CREATE_WALK:
       return {
         ...state,
@@ -86,13 +115,22 @@ function walkReducer(state = initialState, action) {
         walkDescription: '',
         isCreated: true,
       };
+
     case UPDATE_TAGS: {
       const theTags = [...state.walkTags, action.value];
+
+      const tagsToUpdate = state.walkTagsToUpdate.map((actualTag) => ({
+        ...actualTag,
+        checked: actualTag.id == action.value ? action.tagChecked : actualTag.checked,
+      }));
+
       return {
         ...state,
         walkTags: theTags,
+        walkTagsToUpdate: tagsToUpdate,
       };
     }
+
     case SAVE_WALKS:
       return {
         ...state,
@@ -261,6 +299,7 @@ function walkReducer(state = initialState, action) {
       return {
         ...state,
       };
+
     default:
       return state;
   }
