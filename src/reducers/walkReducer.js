@@ -37,13 +37,14 @@ const initialState = {
 
 function walkReducer(state = initialState, action) {
   switch (action.type) {
+    /**
+     * Create a new array from the existing tag list with one more index "checked"
+     */
     case SAVE_TAGS:
       return {
         ...state,
         walkTagsToUpdate: action.tags.map((tag) => ({
-          id: tag.id,
-          name: tag.name,
-          color: tag.color,
+          ...tag,
           checked: false,
         })),
       };
@@ -68,9 +69,11 @@ function walkReducer(state = initialState, action) {
     case WALK_TO_EDIT: {
       const actualTags = action.walk.tags.map((tag) => tag.id);
 
+      console.log('Je ne récupère que les IDs des tags de la randonnée actuelle', actualTags);
+
       const tagsToUpdate = state.walkTagsToUpdate.map((tag) => ({
         ...tag,
-        checked: actualTags.find((actualtag) => actualtag == tag.id ) !== undefined,
+        checked: actualTags.find((actualtag) => actualtag == tag.id) !== undefined,
       }));
 
       return {
@@ -111,6 +114,7 @@ function walkReducer(state = initialState, action) {
 
     case UPDATE_TAGS: {
       const theTags = [...state.walkTags, action.value];
+
       const tagsToUpdate = state.walkTagsToUpdate.map((actualTag) => ({
         ...actualTag,
         checked: actualTag.id == action.value ? action.tagChecked : actualTag.checked,

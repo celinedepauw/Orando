@@ -47,8 +47,8 @@ const mapDispatchToProps = (dispatch) => ({
     const action = createWalk();
     dispatch(action);
   },
-  updateTags: (tagId) => {
-    const action = updateTags(tagId.value, tagId.checked);
+  updateTags: (tagTarget) => {
+    const action = updateTags(tagTarget.value, tagTarget.checked);
     dispatch(action);
   },
 });

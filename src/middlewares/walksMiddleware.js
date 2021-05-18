@@ -213,7 +213,7 @@ const walksMiddleware = (store) => (next) => (action) => {
       const {
         walkTitle,
         walkAreaId,
-        // walkTags,
+        walkTags,
         walkStartingPoint,
         walkEndPoint,
         walkDate,
@@ -228,9 +228,18 @@ const walksMiddleware = (store) => (next) => (action) => {
 
       // console.log(walkTagsToUpdate);
 
+      /**
+       * Je viens faire un filter sur le tableau comportant tous les tags
+       * J'en ressors seulement ceux dont le checked est true
+       * Je vais ensuite faire un map sur le tableau filtré
+       */
       const tagsToUpdate = walkTagsToUpdate.filter((tags) => tags.checked).map((tags) => tags.id);
 
       // console.log(tagsToUpdate);
+
+      // const XXX = tagsToUpdate.map((tags) => tags.id);
+
+      // console.log(XXX);
 
       if (
         walkTitle
