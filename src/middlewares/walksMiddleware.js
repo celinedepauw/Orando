@@ -197,14 +197,16 @@ const walksMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     }
+
     case EDIT_WALK: {
       const authenticationToken = localStorage.getItem('Token');
       const currentUserId = localStorage.getItem('currentUserId');
       console.log('il faut modifier une randonnée', action.walkId);
+
       const {
         walkTitle,
         walkAreaId,
-        walkTags,
+        // walkTags,
         walkStartingPoint,
         walkEndPoint,
         walkDate,
@@ -214,7 +216,15 @@ const walksMiddleware = (store) => (next) => (action) => {
         walkDifficulty,
         walkElevation,
         walkNumberPeople,
+        walkTagsToUpdate,
       } = store.getState().walksList;
+
+      // console.log(walkTagsToUpdate);
+
+      const tagsToUpdate = walkTagsToUpdate.filter((tags) => tags.checked).map((tags) => tags.id);
+
+      // console.log(tagsToUpdate);
+
       if (
         walkTitle
         && walkAreaId
@@ -227,7 +237,7 @@ const walksMiddleware = (store) => (next) => (action) => {
           title: walkTitle,
           area: walkAreaId,
           creator: currentUserId,
-          tags: walkTags,
+          tags: tagsToUpdate,
           startingPoint: walkStartingPoint,
           endPoint: walkEndPoint,
           date: walkDate,
@@ -268,6 +278,7 @@ const walksMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     }
+
     default:
       next(action);
   }

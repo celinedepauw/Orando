@@ -32,6 +32,7 @@ const initialState = {
   walkNumberPeople: '',
   walkDescription: '',
   isCreated: false,
+  walkTagsToUpdate: [],
 };
 
 function walkReducer(state = initialState, action) {
@@ -39,8 +40,11 @@ function walkReducer(state = initialState, action) {
     case SAVE_TAGS:
       return {
         ...state,
-        tagsList: action.tags.map((tag) => ({
-          id: tag.id, name: tag.name, color: tag.color, checked: false,
+        walkTagsToUpdate: action.tags.map((tag) => ({
+          id: tag.id,
+          name: tag.name,
+          color: tag.color,
+          checked: false,
         })),
       };
 
@@ -63,7 +67,8 @@ function walkReducer(state = initialState, action) {
       };
     case WALK_TO_EDIT: {
       const actualTags = action.walk.tags.map((tag) => tag.id);
-      const tagsToUpdate = state.tagsList.map((tag) => ({
+
+      const tagsToUpdate = state.walkTagsToUpdate.map((tag) => ({
         ...tag,
         checked: actualTags.find((actualtag) => actualtag == tag.id ) !== undefined,
       }));
@@ -83,7 +88,7 @@ function walkReducer(state = initialState, action) {
         walkElevation: action.walk.elevation,
         walkNumberPeople: action.walk.maxNbPersons,
         walkDescription: action.walk.description,
-        tagsList: tagsToUpdate,
+        walkTagsToUpdate: tagsToUpdate,
       };
     }
 
@@ -106,8 +111,7 @@ function walkReducer(state = initialState, action) {
 
     case UPDATE_TAGS: {
       const theTags = [...state.walkTags, action.value];
-
-      const tagsToUpdate = state.tagsList.map((actualTag) => ({
+      const tagsToUpdate = state.walkTagsToUpdate.map((actualTag) => ({
         ...actualTag,
         checked: actualTag.id == action.value ? action.tagChecked : actualTag.checked,
       }));
@@ -115,7 +119,7 @@ function walkReducer(state = initialState, action) {
       return {
         ...state,
         walkTags: theTags,
-        tagsList: tagsToUpdate,
+        walkTagsToUpdate: tagsToUpdate,
       };
     }
 

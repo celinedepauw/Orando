@@ -29,7 +29,7 @@ const EditWalk = ({
   updateWalkSelect,
   updateTags,
   handleEdit,
-  tagsListToUpdate,
+  walkTagsToUpdate,
 }) => {
   const { id } = useParams();
 
@@ -73,7 +73,7 @@ const EditWalk = ({
     handleEdit(id);
   };
 
-  console.log('MA DEMANDE', tagsListToUpdate);
+  console.log('MA DEMANDE', walkTagsToUpdate);
 
   return (
     <>
@@ -114,14 +114,15 @@ const EditWalk = ({
           <div className="editWalk_tag">
             <p className="editWalk_tag_title">Thème (choix multiple possible)</p>
             <div className="editWalk_tag_list">
-              {tags.map((tag) => (
+              {walkTagsToUpdate.map((tag) => (
                 <label className="editWalk_tag_label" htmlFor={tag.name} key={tag.id}>{tag.name}
                   <input
                     className="editWalk_tag_checkbox"
                     type="checkbox"
                     name={tag.name}
                     value={tag.id}
-                    checked={walk.tags.find((walkTag) => walkTag.name === tag.name)}
+                    // checked={walk.tags.find((walkTag) => walkTag.name === tag.name)}
+                    checked={tag.checked}
                     onChange={(theTag) => {
                       // console.log(theTag.target.name);
                       // console.log(theTag.target.checked);
@@ -320,7 +321,7 @@ EditWalk.propTypes = {
   updateWalkSelect: PropTypes.func.isRequired,
   updateTags: PropTypes.func.isRequired,
   handleEdit: PropTypes.func.isRequired,
-  tagsListToUpdate: PropTypes.array.isRequired,
+  walkTagsToUpdate: PropTypes.array.isRequired,
 };
 
 EditWalk.defaultProps = {
