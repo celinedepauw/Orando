@@ -131,6 +131,7 @@ const walksMiddleware = (store) => (next) => (action) => {
     case CREATE_WALK: {
       const authenticationToken = localStorage.getItem('Token');
       const currentUserId = localStorage.getItem('currentUserId');
+
       const {
         walkTitle,
         walkAreaId,
@@ -144,7 +145,13 @@ const walksMiddleware = (store) => (next) => (action) => {
         walkDifficulty,
         walkElevation,
         walkNumberPeople,
+        walkTagsToUpdate,
       } = store.getState().walksList;
+
+      const tagsForNewWalk = walkTagsToUpdate.filter((tags) => tags.checked).map((tags) => tags.id);
+
+      console.log(tagsForNewWalk);
+
       if (
         walkTitle
         && walkAreaId
@@ -157,7 +164,7 @@ const walksMiddleware = (store) => (next) => (action) => {
           title: walkTitle,
           area: walkAreaId,
           creator: currentUserId,
-          tags: walkTags,
+          tags: tagsForNewWalk,
           startingPoint: walkStartingPoint,
           endPoint: walkEndPoint,
           date: walkDate,

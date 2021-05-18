@@ -321,7 +321,13 @@ EditWalk.propTypes = {
   updateWalkSelect: PropTypes.func.isRequired,
   updateTags: PropTypes.func.isRequired,
   handleEdit: PropTypes.func.isRequired,
-  walkTagsToUpdate: PropTypes.array.isRequired,
+  walkTagsToUpdate: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      checked: PropTypes.bool.isRequired,
+    }).isRequired,
+  ).isRequired,
 };
 
 EditWalk.defaultProps = {
