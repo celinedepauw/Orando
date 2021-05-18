@@ -47,6 +47,5 @@ ContactUser.propTypes = {
   isSent: PropTypes.bool.isRequired,
   updateContactField: PropTypes.func.isRequired,
   handleContactUser: PropTypes.func.isRequired,
-  creatorId: PropTypes.number.isRequired,
 };
 export default ContactUser;

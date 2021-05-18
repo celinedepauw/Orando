@@ -30,6 +30,7 @@ const Walk = ({
   const walk = walks.find((item) => item.id == id);
   const userId = localStorage.getItem('currentUserId');
   const creatorId = walk.creator.id;
+  console.log(userId);
 
   return (
     <>
@@ -93,7 +94,7 @@ const Walk = ({
                   </Link>
                 ) : (
                   <Link className="walk_contact_link" to="/authentication">
-                    <button className="walk_button_contact" type="button" onClick={() => handleClickContact(creatorId)}>
+                    <button className="walk_button_contact" type="button">
                       Contacter <span className="walk_contact_link_nickname">{walk.creator.nickname}</span> pour avoir plus d'informations !
                     </button>
                   </Link>

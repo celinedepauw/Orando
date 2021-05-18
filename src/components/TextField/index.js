@@ -59,7 +59,7 @@ TextField.propTypes = {
     PropTypes.number,
   ]),
   required: PropTypes.bool.isRequired,
-  rows: PropTypes.number.isRequired,
+  rows: PropTypes.string.isRequired,
   /** called when onChange event is received by the input, two parameters :
    * - identifier
    * - new value

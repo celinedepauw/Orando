@@ -30,7 +30,6 @@ const contactMiddleware = (store) => (next) => (action) => {
       break;
     }
     case CONTACT_USER: {
-      console.log('je suis dans le case de contact USER');
       const authenticationToken = localStorage.getItem('Token');
       const currentUserId = localStorage.getItem('currentUserId');
       const {
