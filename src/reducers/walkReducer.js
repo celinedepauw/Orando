@@ -101,18 +101,6 @@ function walkReducer(state = initialState, action) {
     case CREATE_WALK:
       return {
         ...state,
-        walkTitle: '',
-        walkAreaId: '',
-        walkTags: [],
-        walkStartingPoint: '',
-        walkEndPoint: '',
-        walkDate: '',
-        walkDuration: '',
-        walkDistance: '',
-        walkDifficulty: '',
-        walkElevation: '',
-        walkNumberPeople: '',
-        walkDescription: '',
         isCreated: true,
       };
 
@@ -140,6 +128,18 @@ function walkReducer(state = initialState, action) {
     case SAVE_CREATED_WALK:
       return {
         ...state,
+        walkTitle: '',
+        walkAreaId: '',
+        walkTags: [],
+        walkStartingPoint: '',
+        walkEndPoint: '',
+        walkDate: '',
+        walkDuration: '',
+        walkDistance: '',
+        walkDifficulty: '',
+        walkElevation: '',
+        walkNumberPeople: '',
+        walkDescription: '',
         isCreated: false,
       };
     case SAVE_UPDATED_WALK:
