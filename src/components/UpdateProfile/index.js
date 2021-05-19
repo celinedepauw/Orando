@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import { Link } from 'react-router-dom';
 
 import Field from 'src/components/Field';
 import SelectField from 'src/components/SignUp/select';
@@ -70,99 +71,104 @@ const UpdateProfile = ({
     <main className="update_profil" onSubmit={handleSubmitUpdateProfile}>
       {loadingUser && <div> <Loader /></div>}
       {!loadingUser && (
-      <form className="update_profil_form">
-        <div>
-          {userDatas.picture !== null ? <img className="profile_picture" alt="photography" src={`https://orando.me/o/uploads/profile/${userDatas.picture}`} /> : <img className="profile_avatar" alt="avatar" src={fox} />}
-        </div>
-        <InputPicture
-          identifier="picture"
-          placeholder=""
-          label="Si modification, veuillez charger une nouvelle photo"
-          file={picture}
-          manageChangePicture={(file) => {
-            updateAvatar(file);
-            console.log(`updateAvatar sur picture : file=${file}`);
-          }}
-        />
-        <Field
-          identifier="alias"
-          placeholder={userDatas.nickname}
-          label="Pseudo*"
-          value={alias}
-          required
-          changeField={(identifier, newValue) => {
-            updateSignUp(identifier, newValue);
-            console.log(`changeField sur pseudo : identifier=${identifier}, newValue=${newValue}`);
-          }}
-        />
-        <Field
-          identifier="firstname*"
-          placeholder={userDatas.firstname}
-          label="Prénom"
-          value={firstname}
-          required
-          changeField={(identifier, newValue) => {
-            updateSignUp(identifier, newValue);
-            console.log(`changeField sur prénom : identifier=${identifier}, newValue=${newValue}`);
-          }}
-        />
-        <Field
-          identifier="lastname*"
-          placeholder={userDatas.lastname}
-          label="Nom"
-          value={lastname}
-          required
-          changeField={(identifier, newValue) => {
-            updateSignUp(identifier, newValue);
-            console.log(`changeField sur nom : identifier=${identifier}, newValue=${newValue}`);
-          }}
-        />
-        <Field
-          identifier="dateOfBirth"
-          label="date anniversaire"
-          type="date"
-          value={moment(dateOfBirth).format('YYYY-MM-DD')}
-          changeField={(identifier, newValue) => {
-            updateSignUp(identifier, newValue);
-            console.log(`changeField sur nom : identifier=${identifier}, newValue=${newValue}`);
-          }}
-        />
-        <Field
-          identifier="email*"
-          placeholder={userDatas.email}
-          label="Adresse e-mail"
-          type="email"
-          value={email}
-          required
-          changeField={(identifier, newValue) => {
-            updateSignUp(identifier, newValue);
-            console.log(`changeField sur email : identifier=${identifier}, newValue=${newValue}`);
-          }}
-        />
-        <SelectField
-          label="Région*"
-          identifier="userArea"
-          options={areasListSelect}
-          value={userArea}
-          defaultValue={areaSelected}
-          manageChange={(identifier, newValue) => {
-            updateSignUp(identifier, newValue);
-            console.log(`manageChange sur area : identifier=${identifier}, newValue=${newValue}`);
-          }}
-        />
-        <Field
-          identifier="description"
-          placeholder={userDatas.description}
-          label="Description"
-          type="description"
-          value={description}
-          changeField={(identifier, newValue) => {
-            updateSignUp(identifier, newValue);
-            console.log(`changeField sur email : identifier=${identifier}, newValue=${newValue}`);
-          }}
-        />
-        <button type="submit" className="update_profil_form_submit">Validation <img className="signUp_form_submit_picture" src={signup} alt="logo-welcome" /></button>
-      </form>
+        <>
+          <Link to="/profile">
+            <img className="update_return_profile" src={sign3} alt="retour" />
+          </Link>
+          <form className="update_profil_form">
+            <div>
+              {userDatas.picture !== null ? <img className="profile_picture" alt="photography" src={`https://orando.me/o/uploads/profile/${userDatas.picture}`} /> : <img className="profile_avatar" alt="avatar" src={fox} />}
+            </div>
+            <InputPicture
+              identifier="picture"
+              placeholder=""
+              label="Si modification, veuillez charger une nouvelle photo"
+              file={picture}
+              manageChangePicture={(file) => {
+                updateAvatar(file);
+                console.log(`updateAvatar sur picture : file=${file}`);
+              }}
+            />
+            <Field
+              identifier="alias"
+              placeholder={userDatas.nickname}
+              label="Pseudo*"
+              value={alias}
+              required
+              changeField={(identifier, newValue) => {
+                updateSignUp(identifier, newValue);
+                console.log(`changeField sur pseudo : identifier=${identifier}, newValue=${newValue}`);
+              }}
+            />
+            <Field
+              identifier="firstname*"
+              placeholder={userDatas.firstname}
+              label="Prénom"
+              value={firstname}
+              required
+              changeField={(identifier, newValue) => {
+                updateSignUp(identifier, newValue);
+                console.log(`changeField sur prénom : identifier=${identifier}, newValue=${newValue}`);
+              }}
+            />
+            <Field
+              identifier="lastname*"
+              placeholder={userDatas.lastname}
+              label="Nom"
+              value={lastname}
+              required
+              changeField={(identifier, newValue) => {
+                updateSignUp(identifier, newValue);
+                console.log(`changeField sur nom : identifier=${identifier}, newValue=${newValue}`);
+              }}
+            />
+            <Field
+              identifier="dateOfBirth"
+              label="date anniversaire"
+              type="date"
+              value={moment(dateOfBirth).format('YYYY-MM-DD')}
+              changeField={(identifier, newValue) => {
+                updateSignUp(identifier, newValue);
+                console.log(`changeField sur nom : identifier=${identifier}, newValue=${newValue}`);
+              }}
+            />
+            <Field
+              identifier="email*"
+              placeholder={userDatas.email}
+              label="Adresse e-mail"
+              type="email"
+              value={email}
+              required
+              changeField={(identifier, newValue) => {
+                updateSignUp(identifier, newValue);
+                console.log(`changeField sur email : identifier=${identifier}, newValue=${newValue}`);
+              }}
+            />
+            <SelectField
+              label="Région*"
+              identifier="userArea"
+              options={areasListSelect}
+              value={userArea}
+              defaultValue={areaSelected}
+              manageChange={(identifier, newValue) => {
+                updateSignUp(identifier, newValue);
+                console.log(`manageChange sur area : identifier=${identifier}, newValue=${newValue}`);
+              }}
+            />
+            <Field
+              identifier="description"
+              placeholder={userDatas.description}
+              label="Description"
+              type="description"
+              value={description}
+              changeField={(identifier, newValue) => {
+                updateSignUp(identifier, newValue);
+                console.log(`changeField sur email : identifier=${identifier}, newValue=${newValue}`);
+              }}
+            />
+            <button type="submit" className="update_profil_form_submit">Validation <img className="signUp_form_submit_picture" src={signup} alt="logo-welcome" /></button>
+          </form>
+        </>
       )}
     </main>
 
