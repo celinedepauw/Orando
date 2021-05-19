@@ -9,6 +9,7 @@ import {
   SUBMIT_SIGN_UP,
   saveUserCreate,
   SUBMIT_UPDATE_PROFILE,
+  saveUpdateProfile,
 } from 'src/actions/users';
 
 
@@ -117,13 +118,24 @@ const usersMiddleware = (store) => (next) => (action) => {
       const authenticationToken = localStorage.getItem('Token');
       axios.post(`https://orando.me/o/api/users/${currentUserId}`,
         bodyFormData,
-        { headers: { 
-          'Content-Type': 'multipart/form-data',
-          Authorization: `Bearer ${authenticationToken}`,
-        },
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            Authorization: `Bearer ${authenticationToken}`,
+          },
         })
         .then((response) => {
-          console.log(response);
+          if (response.status === 200) {
+            alert('vos modifications ont bien été prises en compte');
+            axios.get(`https://orando.me/o/api/users/${currentUserId}`, { headers: { Authorization: `Bearer ${authenticationToken}` } })
+              .then((response) => {
+                store.dispatch(saveUser(response.data));
+                store.dispatch(saveUpdateProfile(false));
+              })
+              .catch((error) => {
+                console.log('error: ', error);
+              });
+          }
         })
         .catch((errors) => {
           console.log('error: ', errors);

@@ -27,6 +27,7 @@ const UpdateProfile = ({
   dateOfBirth,
   description,
   submitUpdateProfile,
+  isUpdated,
 
 }) => {
   const userDatas = user.user;
@@ -61,8 +62,12 @@ const UpdateProfile = ({
     evt.preventDefault();
     submitUpdateProfile();
   };
+
+  if (isUpdated) return <Redirect to="/Profile" />;
   return (
     <main className="update_profil" onSubmit={handleSubmitUpdateProfile}>
+      {loadingUser && <div> <Loader /></div>}
+      {!loadingUser && (
       <form className="update_profil_form">
         <div>
           {userDatas.picture !== null ? <img className="profile_picture" alt="photography" src={`https://orando.me/o/uploads/profile/${userDatas.picture}`} /> : <img className="profile_avatar" alt="avatar" src={fox} />}
@@ -82,6 +87,7 @@ const UpdateProfile = ({
           placeholder={userDatas.nickname}
           label="Pseudo"
           value={alias}
+          required
           changeField={(identifier, newValue) => {
             updateSignUp(identifier, newValue);
             console.log(`changeField sur pseudo : identifier=${identifier}, newValue=${newValue}`);
@@ -92,6 +98,7 @@ const UpdateProfile = ({
           placeholder={userDatas.firstname}
           label="Prénom"
           value={firstname}
+          required
           changeField={(identifier, newValue) => {
             updateSignUp(identifier, newValue);
             console.log(`changeField sur prénom : identifier=${identifier}, newValue=${newValue}`);
@@ -102,6 +109,7 @@ const UpdateProfile = ({
           placeholder={userDatas.lastname}
           label="Nom"
           value={lastname}
+          required
           changeField={(identifier, newValue) => {
             updateSignUp(identifier, newValue);
             console.log(`changeField sur nom : identifier=${identifier}, newValue=${newValue}`);
@@ -123,6 +131,7 @@ const UpdateProfile = ({
           label="Adresse e-mail"
           type="email"
           value={email}
+          required
           changeField={(identifier, newValue) => {
             updateSignUp(identifier, newValue);
             console.log(`changeField sur email : identifier=${identifier}, newValue=${newValue}`);
@@ -152,6 +161,7 @@ const UpdateProfile = ({
         />
         <button type="submit" className="update_profil_form_submit">Validation <img className="signUp_form_submit_picture" src={signup} alt="logo-welcome" /></button>
       </form>
+      )}
     </main>
 
   );
@@ -178,10 +188,13 @@ UpdateProfile.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]).isRequired,
+  dateOfBirth: PropTypes.string,
+  submitUpdateProfile: PropTypes.func.isRequired,
 };
 
 UpdateProfile.defaultProps = {
   picture: '',
+  dateOfBirth: '',
 };
 
 

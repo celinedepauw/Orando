@@ -19,6 +19,7 @@ const mapStateToProps = (state) => ({
   firstname: state.userInfo.firstname,
   email: state.userInfo.email,
   description: state.userInfo.description,
+  isUpdated: state.userInfo.isUpdated,
   
 });
 
