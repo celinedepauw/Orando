@@ -7,7 +7,9 @@ import Field from 'src/components/Field';
 import SelectField from 'src/components/SignUp/select';
 import InputPicture from 'src/components/SignUp/inputPicture';
 import fox from 'src/assets/icones/fox.svg';
+import sign3 from 'src/assets/icones/sign3.svg';
 import signup from 'src/assets/icones/signup.svg';
+import Loader from 'src/components/Loader';
 
 import './updateprofile.scss';
 
@@ -75,7 +77,7 @@ const UpdateProfile = ({
         <InputPicture
           identifier="picture"
           placeholder=""
-          label="Photo de profil"
+          label="Si modification, veuillez charger une nouvelle photo"
           file={picture}
           manageChangePicture={(file) => {
             updateAvatar(file);
@@ -85,7 +87,7 @@ const UpdateProfile = ({
         <Field
           identifier="alias"
           placeholder={userDatas.nickname}
-          label="Pseudo"
+          label="Pseudo*"
           value={alias}
           required
           changeField={(identifier, newValue) => {
@@ -94,7 +96,7 @@ const UpdateProfile = ({
           }}
         />
         <Field
-          identifier="firstname"
+          identifier="firstname*"
           placeholder={userDatas.firstname}
           label="Prénom"
           value={firstname}
@@ -105,7 +107,7 @@ const UpdateProfile = ({
           }}
         />
         <Field
-          identifier="lastname"
+          identifier="lastname*"
           placeholder={userDatas.lastname}
           label="Nom"
           value={lastname}
@@ -126,7 +128,7 @@ const UpdateProfile = ({
           }}
         />
         <Field
-          identifier="email"
+          identifier="email*"
           placeholder={userDatas.email}
           label="Adresse e-mail"
           type="email"
@@ -138,7 +140,7 @@ const UpdateProfile = ({
           }}
         />
         <SelectField
-          label="Région"
+          label="Région*"
           identifier="userArea"
           options={areasListSelect}
           value={userArea}
@@ -190,6 +192,7 @@ UpdateProfile.propTypes = {
   ]).isRequired,
   dateOfBirth: PropTypes.string,
   submitUpdateProfile: PropTypes.func.isRequired,
+  isUpdated: PropTypes.bool.isRequired,
 };
 
 UpdateProfile.defaultProps = {

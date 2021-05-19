@@ -3,8 +3,125 @@
 
 .update_profil {
 
+  background: linear-gradient(#e5ece3, #fff);
+  margin-top: -20px;
+  min-height: 100vh;
 
   .update_profil_form {
     
+    .profile_picture {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      box-shadow: 0px 10px 20px grey;
+      display: block;
+      margin: 20px auto;
+    }
+    .profile_avatar {
+      width: 150px;
+      border-radius: 50%;
+      box-shadow: 0px 10px 20px grey;
+      display: block;
+      margin: 20px auto;
+    }
+    .inputPicture {
+
+      margin: 0 auto 1rem auto;
+      display: flex;
+      flex-wrap: wrap;
+      width: 90%;
+      
+
+      @media(min-width: vars.$breakpointTablet) {
+        width: 60%;
+      }
+
+      .inputPicture_label {
+
+        padding: 1rem 0;
+        color: vars.$blackRed; 
+        width: 100%;
+        text-align: left;
+      }
+
+      .inputPicture_field {
+        padding: 1rem;
+        border: solid 2px vars.$darkGreen;;
+        border-radius: 10px;
+        width: 100%;
+        text-align: left;
+        background-color: white;
+        
+        &:focus {
+          border-color: vars.$darkRed;
+          & + .label {
+            color: vars.$darkRed;
+          }
+        }
+
+      }
+    }
+    .select_field {
+
+      margin: 0 auto 1rem auto;
+      display: flex;
+      flex-wrap: wrap;
+      width: 90%;
+
+      @media(min-width: vars.$breakpointTablet) {
+        width: 60%;
+      }
+
+      .select_field_label {
+        padding: 1rem 0;
+        color: vars.$blackRed; 
+        width: 100%;
+        text-align: left;
+
+      }
+
+      .select_field_input {
+        padding: 0.2rem 0;
+        border: solid 2px vars.$darkGreen;;
+        border-radius: 10px;
+        width: 100%;
+        text-align: left;
+        
+        &:focus {
+          border-color: vars.$darkRed;
+          & + .label {
+            color: vars.$darkRed;
+          }
+        }
+
+      }
+
+    }
+    .update_profil_form_submit {
+
+      padding: 0.5rem;
+      color: white;
+      font-weight: bold;
+      background-color: vars.$regularGreen;
+      border: none;
+      border-radius: 10px;
+      display: block;
+      margin: auto;
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
+      width: 60%;
+
+      @media(min-width: vars.$breakpointTablet) {
+        width: 40%;
+      }
+
+      &:hover {
+        box-shadow: 5px 5px 5px vars.$darkGreen;
+        transform: scale(1.1);
+      }
+      .signUp_form_submit_picture {
+        width: 40px;
+      }
+    }
   }
 }
