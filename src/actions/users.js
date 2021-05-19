@@ -107,4 +107,4 @@ export const submitUpdateProfile = (
   userArea: userArea,
   dateOfBirth: dateOfBirth,
   description: description,
-})
+});

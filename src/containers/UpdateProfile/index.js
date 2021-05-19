@@ -35,7 +35,7 @@ const mapDispatchToProps = (dispatch) => ({
   },
   submitUpdateProfile: () => {
     dispatch(submitUpdateProfile());
-  }
+  },
 });
 
 // === création de l'assistant
