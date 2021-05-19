@@ -9,6 +9,7 @@ import SelectField from 'src/components/SignUp/select';
 import InputPicture from 'src/components/SignUp/inputPicture';
 import fox from 'src/assets/icones/fox.svg';
 import sign3 from 'src/assets/icones/sign3.svg';
+import update from 'src/assets/icones/update.svg';
 import signup from 'src/assets/icones/signup.svg';
 import Loader from 'src/components/Loader';
 
@@ -75,6 +76,10 @@ const UpdateProfile = ({
           <Link to="/profile">
             <img className="update_return_profile" src={sign3} alt="retour" />
           </Link>
+          <div className="update_title_container">
+            <img className="update_icon" src={update} alt="modification-icone" />
+            <h2 className="update_title">Modification Profil</h2>
+          </div>
           <form className="update_profil_form">
             <div>
               {userDatas.picture !== null ? <img className="profile_picture" alt="photography" src={`https://orando.me/o/uploads/profile/${userDatas.picture}`} /> : <img className="profile_avatar" alt="avatar" src={fox} />}
@@ -166,7 +171,7 @@ const UpdateProfile = ({
                 console.log(`changeField sur email : identifier=${identifier}, newValue=${newValue}`);
               }}
             />
-            <button type="submit" className="update_profil_form_submit">Validation <img className="signUp_form_submit_picture" src={signup} alt="logo-welcome" /></button>
+            <button type="submit" className="update_profil_form_submit">Je valide <img className="signUp_form_submit_picture" src={signup} alt="logo-welcome" /></button>
           </form>
         </>
       )}
