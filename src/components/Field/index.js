@@ -76,7 +76,7 @@ Field.propTypes = {
   required: PropTypes.bool,
   minLength: PropTypes.string.isRequired,
   maxLength: PropTypes.string.isRequired,
-  pattern: PropTypes.string.isRequired,
+  pattern: PropTypes.string,
 };
 
 Field.defaultProps = {
@@ -84,6 +84,7 @@ Field.defaultProps = {
   value: '',
   min: '',
   required: false,
+  pattern: '',
 };
 
 export default Field;
