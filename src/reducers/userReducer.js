@@ -126,7 +126,6 @@ function userReducer(state = initialState, action) {
         ...state,
         isUpdated: true,
       };
-
     default:
       return state;
   }
