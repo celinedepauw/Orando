@@ -53,7 +53,7 @@ SelectField.propTypes = {
       label: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
-  required: PropTypes.bool.isRequired,
+  required: PropTypes.bool,
   defaultValue: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
@@ -62,6 +62,7 @@ SelectField.propTypes = {
 
 SelectField.defaultProps = {
   defaultValue: undefined,
+  required: false,
 };
 
 export default SelectField;

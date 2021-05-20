@@ -31,7 +31,6 @@ const Participants = ({ walks, loadingWalk }) => {
                     <OneParticipant
                       key={participant.user.id}
                       {...participant.user}
-                      creator={walk.creator}
                     />
                   );
                 }
