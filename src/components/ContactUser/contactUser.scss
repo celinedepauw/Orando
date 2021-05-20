@@ -4,6 +4,12 @@
   color: vars.$blackRed;
   margin: 1rem;
 
+  .contactUser_home_return {
+    width: 90px;
+    padding: 15px;
+    transform: rotateY(180deg);
+  }
+
   .contactUser_title {
     background: linear-gradient(to bottom right, vars.$regularYellow, vars.$darkYellow);
     border-radius: 10px;
