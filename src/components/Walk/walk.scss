@@ -351,6 +351,12 @@
 
       .walk_edit_link {
         text-align: center;
+        margin: 0.5rem 1rem;
+        width: 90%;
+
+        @media(min-width: vars.$breakpointTablet) {
+          width: 32%;
+        }
 
         .walk_button_edit { 
           color: white;
@@ -360,8 +366,7 @@
           border: none;
           border-radius: 10px;
           font-size: 1.1rem;
-          width: 90%;
-
+          
           &:hover {
             box-shadow: 5px 5px 5px vars.$darkRed;
             transform: scale(1.1);
@@ -374,9 +379,7 @@
         margin: 0.5rem 1rem;
         width: 90%;
 
-        @media(min-width: vars.$breakpointTablet) {
-          width: 32%;
-        }
+     
         
         .walk_button_contact {
           color: white;
@@ -387,7 +390,6 @@
           border-radius: 10px;
           font-size: 1.1rem;
           
-
           &:hover {
             box-shadow: 5px 5px 5px vars.$darkGreen;
             transform: scale(1.1);
