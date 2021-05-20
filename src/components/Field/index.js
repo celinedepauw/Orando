@@ -74,9 +74,9 @@ Field.propTypes = {
   changeField: PropTypes.func.isRequired,
   min: PropTypes.string,
   required: PropTypes.bool,
-  minLength: PropTypes.string.isRequired,
-  maxLength: PropTypes.string.isRequired,
-  pattern: PropTypes.string.isRequired,
+  minLength: PropTypes.string,
+  maxLength: PropTypes.string,
+  pattern: PropTypes.string,
 };
 
 Field.defaultProps = {
@@ -84,6 +84,9 @@ Field.defaultProps = {
   value: '',
   min: '',
   required: false,
+  pattern: undefined,
+  minLength: undefined,
+  maxLength: undefined,
 };
 
 export default Field;
