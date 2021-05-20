@@ -1,9 +1,10 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import Field from 'src/components/Field';
 import TextField from 'src/components/TextField';
+import sign3 from 'src/assets/icones/sign3.svg';
 import contactLogo from 'src/assets/images/email.png';
 
 import './contactUs.scss';
@@ -23,6 +24,9 @@ const ContactUs = ({
   if (isSent) return <Redirect to="/" />;
   return (
     <main className="contactUs">
+      <Link to="/">
+        <img className="contactUs_home_return" src={sign3} alt="retour" />
+      </Link>
       <div className="contactUs_title">
         <img className="contactUs_contact_logo" src={contactLogo} alt="logo-create-walk" />
         <h2 className="contactUs_title_text">Nous contacter</h2>
