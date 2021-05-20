@@ -1,4 +1,12 @@
-import { SAVE_USER, UPDATE_AUTHENTICATION_FIELD, SAVE_USER_AUTH, UPDATE_SIGN_UP, UPDATE_AVATAR, SAVE_USER_CREATE } from 'src/actions/users';
+import {
+  SAVE_USER,
+  UPDATE_AUTHENTICATION_FIELD,
+  SAVE_USER_AUTH,
+  UPDATE_SIGN_UP,
+  UPDATE_AVATAR,
+  SAVE_USER_CREATE,
+  SAVE_UPDATE_PROFILE,
+} from 'src/actions/users';
 
 const initialState = {
   user: {},
@@ -15,6 +23,7 @@ const initialState = {
   isLogged: false,
   dateOfBirth: '',
   description: '',
+  isUpdated: false,
 };
 
 function userReducer(state = initialState, action) {
@@ -111,6 +120,11 @@ function userReducer(state = initialState, action) {
         isSuccess: true,
         email: '',
         password: '',
+      };
+    case SAVE_UPDATE_PROFILE:
+      return {
+        ...state,
+        isUpdated: true,
       };
 
     default:

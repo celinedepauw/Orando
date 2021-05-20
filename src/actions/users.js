@@ -12,6 +12,7 @@ export const SUBMIT_SIGN_UP = 'SUBMIT_SIGN_UP';
 export const UPDATE_AVATAR = 'UPDATE_AVATAR';
 export const SAVE_USER_CREATE = 'SAVE_USER_CREATE';
 export const SUBMIT_UPDATE_PROFILE = 'SUBMIT_UPDATE_PROFILE';
+export const SAVE_UPDATE_PROFILE = 'SAVE_UPDATE_PROFILE';
 
 // === action creators
 export const fetchUser = () => ({
@@ -26,6 +27,11 @@ export const saveUser = (user) => ({
 export const saveUserAuth = (isLogged) => ({
   type: SAVE_USER_AUTH,
   isLogged,
+});
+
+export const saveUpdateProfile = (isUpdated) => ({
+  type: SAVE_UPDATE_PROFILE,
+  isUpdated,
 });
 
 export const updateAuthenticationField = (identifier, newValue) => ({
