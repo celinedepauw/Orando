@@ -57,7 +57,11 @@ SelectField.propTypes = {
   defaultValue: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
-  ]).isRequired,
+  ]),
+};
+
+SelectField.defaultProps = {
+  defaultValue: undefined,
 };
 
 export default SelectField;
