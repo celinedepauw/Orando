@@ -11,6 +11,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 1rem auto;
+    width: 90%;
+
+    @media(min-width: vars.$breakpointTablet) {
+      width: 60%;
+    }
 
     .contactUs_contact_logo {
       width: 50px;
@@ -36,10 +42,15 @@
       border: none;
       border-radius: 10px;
       background: linear-gradient(to bottom right, vars.$regularYellow, vars.$darkYellow);
+      width: 90%;
   
       &:hover {
         box-shadow: 5px 5px 5px vars.$darkYellow;
         transform: scale(1.1);
+      }
+
+      @media(min-width: vars.$breakpointTablet) {
+        width: 60%;
       }
     }
   }
