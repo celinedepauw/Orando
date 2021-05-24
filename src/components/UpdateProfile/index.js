@@ -131,6 +131,7 @@ const UpdateProfile = ({
               identifier="dateOfBirth"
               label="Date de naissance"
               type="date"
+              placeholder="date de naissance"
               value={moment(dateOfBirth).format('YYYY-MM-DD')}
               changeField={(identifier, newValue) => {
                 updateSignUp(identifier, newValue);
@@ -152,6 +153,7 @@ const UpdateProfile = ({
             <SelectField
               label="Région*"
               identifier="userArea"
+              placeholder="Region"
               options={areasListSelect}
               value={userArea}
               defaultValue={areaSelected}

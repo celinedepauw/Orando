@@ -43,8 +43,10 @@ InputPicture.propTypes = {
   label: PropTypes.string.isRequired,
   identifier: PropTypes.string.isRequired,
   manageChangePicture: PropTypes.func.isRequired,
-  file: PropTypes.object.isRequired,
+  file: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]).isRequired,
 };
-
 
 export default InputPicture;
