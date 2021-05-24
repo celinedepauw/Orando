@@ -183,14 +183,17 @@ const UpdateProfile = ({
 UpdateProfile.propTypes = {
   loadingUser: PropTypes.bool.isRequired,
   user: PropTypes.object.isRequired,
-  picture: PropTypes.object,
+  picture: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]),
   updateAvatar: PropTypes.func.isRequired,
   updateSignUp: PropTypes.func.isRequired,
   email: PropTypes.string.isRequired,
   alias: PropTypes.string.isRequired,
   lastname: PropTypes.string.isRequired,
   firstname: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
   areas: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -209,6 +212,7 @@ UpdateProfile.propTypes = {
 UpdateProfile.defaultProps = {
   picture: '',
   dateOfBirth: '',
+  description: '',
 };
 
 
