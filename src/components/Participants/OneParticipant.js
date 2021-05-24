@@ -6,7 +6,7 @@ import avatar from 'src/assets/icones/fox.svg';
 
 const OneParticipant = ({ nickname, picture }) => (
   <div className="oneParticipant">
-    { picture !== null ? <img className="one_participant_image" size={50} src={`https://orando.me/o/uploads/profile/${picture}`} alt="profile-photography" /> : <img className="one_participant_image" size={50} src={avatar} alt="avatar" />}
+    { picture !== '' ? <img className="one_participant_image" size={50} src={`https://orando.me/o/uploads/profile/${picture}`} alt="profile-photography" /> : <img className="one_participant_image" size={50} src={avatar} alt="avatar" />}
     <p className="one_participant_contact">
       <a href="">Contacter<span className="one_participant_nickname">{nickname}</span></a>
     </p>

@@ -113,12 +113,16 @@
 
     .profile_update_button_text {
       font-size: 1.3em;
-      color: vars.$blackRed;
+      color: white;
     }
 
     @media(min-width: vars.$breakpointTablet) {
       font-size: 1.8em;
      
+    }
+    &:hover {
+      box-shadow: 5px 5px 5px vars.$darkGreen;
+      transform: scale(1.1);
     }
 
     .profile_update_button_icon {

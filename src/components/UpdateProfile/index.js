@@ -82,7 +82,7 @@ const UpdateProfile = ({
           </div>
           <form className="update_profil_form">
             <div>
-              {userDatas.picture !== null ? <img className="profile_picture" alt="photography" src={`https://orando.me/o/uploads/profile/${userDatas.picture}`} /> : <img className="profile_avatar" alt="avatar" src={fox} />}
+              {userDatas.picture !== '' ? <img className="profile_picture" alt="photography" src={`https://orando.me/o/uploads/profile/${userDatas.picture}`} /> : <img className="profile_avatar" alt="avatar" src={fox} />}
             </div>
             <InputPicture
               identifier="picture"
@@ -171,7 +171,7 @@ const UpdateProfile = ({
                 console.log(`changeField sur email : identifier=${identifier}, newValue=${newValue}`);
               }}
             />
-            <button type="submit" className="update_profil_form_submit">Je valide <img className="signUp_form_submit_picture" src={signup} alt="logo-welcome" /></button>
+            <button type="submit" className="update_profil_form_submit"> Valider <img className="signUp_form_submit_picture" src={signup} alt="logo-welcome" /></button>
           </form>
         </>
       )}

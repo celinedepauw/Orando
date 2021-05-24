@@ -17,7 +17,7 @@ const NavTop = ({ handleLogout, isLogged }) => (
     {isLogged && (
       <>
         <Link to="/account" className="header_nav_item"><img className="header_nav_home_avatar" src={avatar} alt="logo-avatar" />Mon Compte</Link>
-        <Link href="/" className="header_nav_item" type="submit" onClick={handleLogout}><img className="header_nav_home_disconnect" src={exit2} alt="logo-disconnect" />Déconnexion</Link>
+        <Link to="/" className="header_nav_item" type="submit" onClick={handleLogout}><img className="header_nav_home_disconnect" src={exit2} alt="logo-disconnect" />Déconnexion</Link>
       </>
     )}
   </nav>

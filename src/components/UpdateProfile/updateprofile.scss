@@ -135,7 +135,6 @@
 
     }
     .update_profil_form_submit {
-
       padding: 0.5rem;
       color: white;
       font-weight: bold;
@@ -145,11 +144,13 @@
       display: block;
       margin: auto;
       margin-bottom: 2rem;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       width: 60%;
+      
 
       @media(min-width: vars.$breakpointTablet) {
         width: 40%;
+        font-size: 1.8em;
       }
 
       &:hover {
