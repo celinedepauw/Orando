@@ -106,9 +106,9 @@ const UpdateProfile = ({
               }}
             />
             <Field
-              identifier="firstname*"
+              identifier="firstname"
               placeholder={userDatas.firstname}
-              label="Prénom"
+              label="Prénom*"
               value={firstname}
               required
               changeField={(identifier, newValue) => {
@@ -117,9 +117,9 @@ const UpdateProfile = ({
               }}
             />
             <Field
-              identifier="lastname*"
+              identifier="lastname"
               placeholder={userDatas.lastname}
-              label="Nom"
+              label="Nom*"
               value={lastname}
               required
               changeField={(identifier, newValue) => {
@@ -129,7 +129,7 @@ const UpdateProfile = ({
             />
             <Field
               identifier="dateOfBirth"
-              label="date anniversaire"
+              label="Date de naissance"
               type="date"
               value={moment(dateOfBirth).format('YYYY-MM-DD')}
               changeField={(identifier, newValue) => {
@@ -138,9 +138,9 @@ const UpdateProfile = ({
               }}
             />
             <Field
-              identifier="email*"
+              identifier="email"
               placeholder={userDatas.email}
-              label="Adresse e-mail"
+              label="Adresse e-mail*"
               type="email"
               value={email}
               required
