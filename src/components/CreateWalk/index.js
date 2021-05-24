@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Moment from 'react-moment';
 
 import Field from 'src/components/Field';
@@ -67,7 +67,7 @@ const CreateWalk = ({
 
   console.log('isCreated : ', isCreated);
 
-  // if (isCreated) return <Redirect to="/my_hikes/" />;
+  if (isCreated) return <Redirect to="/my_hikes/" />;
 
   return (
     <main className="createWalk">

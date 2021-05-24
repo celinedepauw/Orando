@@ -78,7 +78,6 @@ const EditWalk = ({
     handleEdit(id);
   };
 
-
   if (isUpdated) return <Redirect to="/my_hikes/" />;
 
   return (

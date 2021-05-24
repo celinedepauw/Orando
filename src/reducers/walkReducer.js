@@ -125,6 +125,7 @@ function walkReducer(state = initialState, action) {
         walks: action.walks,
         loadingWalk: false,
       };
+
     case SAVE_CREATED_WALK:
       return {
         ...state,
