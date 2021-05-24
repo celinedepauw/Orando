@@ -125,23 +125,6 @@ const CreateWalk = ({
               </label>
             ))}
           </div>
-          {/* comments
-            <Select
-            className="createWalk_tag_select"
-            label="Thème (choix multiple possible)"
-            identifier="walkTags"
-            options={tagsList}
-            placeholder="Thème(s)"
-            isMulti
-            onChange={(selectedTags) => {
-              console.log(selectedTags);
-              selectedTags.map((tag) => (
-                // console.log(tag.value)
-                updateCreateWalkSelect('walkTags', tag.value)
-              ));
-            }}
-          />
-          */}
         </div>
         <Field
           identifier="walkStartingPoint"
