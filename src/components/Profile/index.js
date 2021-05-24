@@ -35,7 +35,7 @@ const Profile = ({ user, loadingUser }) => {
               </div>
               <div className="profile_pseudo">Prénom: {userDatas.firstname}</div>
               <div className="profile_pseudo">Nom: {userDatas.lastname}</div>
-              <div className="profile_pseudo">Date de naissance: <Moment format="DD/MM/YYYY">{userDatas.dateOfBirth}</Moment></div>
+              <div className="profile_pseudo">Date de naissance:{userDatas.dateOfBirth !== null ? <Moment format="DD/MM/YYYY">{userDatas.dateOfBirth}</Moment> : ''} </div>
               <div className="profile_pseudo">Email: {userDatas.email}</div>
               <div className="profile_pseudo">Région: {userDatas.area.name}</div>
               <div className="profile_pseudo">
