@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { useParams, Redirect, Link } from 'react-router-dom';
 import Loader from 'src/components/Loader';
@@ -15,12 +15,10 @@ import './editWalk.scss';
 
 const EditWalk = ({
   areas,
-  tags,
   walks,
   loadingWalk,
   walkTitle,
   walkAreaId,
-  walkTags,
   walkStartingPoint,
   walkEndPoint,
   walkDate,
@@ -133,7 +131,6 @@ const EditWalk = ({
                     value={tag.id}
                     // checked={walk.tags.find((walkTag) => walkTag.name === tag.name)}
                     checked={tag.checked}
-
                     onChange={(theTag) => {
                       // console.log(theTag.target.name);
                       // console.log(theTag.target.checked);
@@ -294,12 +291,6 @@ EditWalk.propTypes = {
       name: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
-  tags: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
-    }).isRequired,
-  ).isRequired,
   walks: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
@@ -320,12 +311,6 @@ EditWalk.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]).isRequired,
-  walkTags: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
-    }).isRequired,
-  ).isRequired,
   walkStartingPoint: PropTypes.string.isRequired,
   walkEndPoint: PropTypes.string,
   walkDate: PropTypes.string.isRequired,
@@ -350,7 +335,7 @@ EditWalk.propTypes = {
   handleEdit: PropTypes.func.isRequired,
   walkTagsToUpdate: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
       checked: PropTypes.bool.isRequired,
     }).isRequired,
