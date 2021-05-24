@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useParams, Redirect } from 'react-router-dom';
+import { useParams, Redirect, Link } from 'react-router-dom';
 import Loader from 'src/components/Loader';
 import moment from 'moment';
 
-import editLogo from 'src/assets/images/create.png';
 import Field from 'src/components/Field';
 import SelectField from 'src/components/SelectField';
 import TextField from 'src/components/TextField';
+
+import editLogo from 'src/assets/images/create.png';
+import sign3 from 'src/assets/icones/sign3.svg';
 
 import './editWalk.scss';
 
@@ -76,7 +78,6 @@ const EditWalk = ({
     handleEdit(id);
   };
 
-
   if (isUpdated) return <Redirect to="/my_hikes/" />;
 
   return (
@@ -84,6 +85,9 @@ const EditWalk = ({
       {loadingWalk && <div> <Loader /> </div> }
       {!loadingWalk && (
       <main className="editWalk">
+        <Link to="/my_hikes">
+          <img className="editWalk_home_return" src={sign3} alt="retour" />
+        </Link>
         <div className="editWalk_title">
           <img className="editWalk_create_logo" src={editLogo} alt="logo-edit-walk" />
           <h2 className="editWalk_title_text">Modification de ma randonnée</h2>

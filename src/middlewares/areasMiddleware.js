@@ -3,10 +3,10 @@ import { FETCH_AREAS, saveAreas } from 'src/actions/areas';
 import { FETCH_TAGS, saveTags } from 'src/actions/tags';
 
 const areasMiddleware = (store) => (next) => (action) => {
-  // console.log('on a intercepté une action dans areaMiddleware: ', action);
+  // console.log('we get an action in areaMiddleware: ', action);
   switch (action.type) {
     case FETCH_AREAS:
-      // console.log('il faut récupérer les régions');
+      // console.log('we need to get the areas');
       axios.get('https://orando.me/o/api/areas/')
         .then((response) => {
           // console.log(response.data);
@@ -18,7 +18,7 @@ const areasMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     case FETCH_TAGS:
-      // console.log('il faut récupérer les tags');
+      // console.log('we need to get the tags');
       axios.get('https://orando.me/o/api/tags/')
         .then((response) => {
           // console.log(response.data);

@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Moment from 'react-moment';
 
-import createLogo from 'src/assets/images/create.png';
 import Field from 'src/components/Field';
 import SelectField from 'src/components/SelectField';
 import TextField from 'src/components/TextField';
+
+import createLogo from 'src/assets/images/create.png';
+import sign3 from 'src/assets/icones/sign3.svg';
 
 import './createWalk.scss';
 
@@ -65,10 +67,13 @@ const CreateWalk = ({
 
   console.log('isCreated : ', isCreated);
 
-  // if (isCreated) return <Redirect to="/my_hikes/" />;
+  if (isCreated) return <Redirect to="/my_hikes/" />;
 
   return (
     <main className="createWalk">
+      <Link to="/">
+        <img className="createWalk_home_return" src={sign3} alt="retour" />
+      </Link>
       <div className="createWalk_title">
         <img className="createWalk_create_logo" src={createLogo} alt="logo-create-walk" />
         <h2 className="createWalk_title_text">Ma nouvelle randonnée</h2>

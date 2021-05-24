@@ -44,10 +44,10 @@ const MobileNav = ({ isLogged, handleLogout }) => (
           <img className="mobilenav_connected" src={hiker} alt="logged" />
           <p className="mobilenav_connected_text">Mon compte</p>
         </Link>
-        <a href="https://orando.me/o/logout" className="mobilenav_logout_content" type="submit" onClick={handleLogout}>
+        <Link to="/" className="mobilenav_logout_content" type="submit" onClick={handleLogout}>
           <img className="mobilenav_logout" src={exit2} alt="logged" />
           <p className="mobilenav_logout_text">Deconnexion</p>
-        </a>
+        </Link>
       </>
     )}
   </nav>
