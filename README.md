@@ -24,8 +24,12 @@ Toute personne souhaitant faire une randonnée en groupe, qui aime partager ses 
 
 ## Rôle de chacun
 
-Product Owner : Céline
-Scrum Master : Alexandrine
-Lead Front : Jean-Baptiste
-Lead Back : Bérénice
-Git Master : Pierre-Yves
+Product Owner : Céline Depauw
+
+Scrum Master : Alexandrine Heutte
+
+Lead Front : Jean-Baptiste Lafont
+
+Lead Back : Bérénice Saé
+
+Git Master : Pierre-Yves Loukakou
